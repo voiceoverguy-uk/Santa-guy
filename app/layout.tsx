@@ -15,9 +15,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     siteName: "SantaGuy",
+    images: [
+      {
+        url: "/santa-guy-logo-og.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/santa-guy-logo-og.png"],
   },
   icons: {
     icon: "/favicon.ico",

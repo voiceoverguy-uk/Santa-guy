@@ -14,10 +14,35 @@ import DemoCards from "@/components/DemoCards";
 import VideoCard from "@/components/VideoCard";
 
 export const metadata: Metadata = {
-  title: "SantaGuy | The UK's Trusted Voice of Santa — Guy Harris",
+  title: "Santa Guy | The UK's Trusted Voice of Santa | Guy Harris",
   description:
-    "Guy Harris is the UK's trusted voice of Santa. Professional Santa voiceover artist for radio, TV, podcasts, brands, and Christmas campaigns. Trusted by BBC Radio 2, Heart, Capital, ITV, Tesco, CBeebies and more.",
-  alternates: { canonical: "/" },
+    "Guy Harris is the UK's trusted voice of Santa, heard on BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.",
+  alternates: { canonical: "https://santaguy.co.uk/" },
+  openGraph: {
+    title: "Santa Guy | The UK's Trusted Voice of Santa | Guy Harris",
+    description:
+      "Guy Harris is the UK's trusted voice of Santa, heard on BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.",
+    url: "https://santaguy.co.uk/",
+    type: "website",
+    locale: "en_GB",
+    siteName: "SantaGuy",
+    images: [
+      {
+        url: "https://santaguy.co.uk/santa-guy-logo-og.png",
+        width: 1200,
+        height: 630,
+        alt: "SantaGuy — The UK's Trusted Voice of Santa",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Santa Guy | The UK's Trusted Voice of Santa | Guy Harris",
+    description:
+      "Guy Harris is the UK's trusted voice of Santa, heard on BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.",
+    images: ["https://santaguy.co.uk/santa-guy-logo-og.png"],
+    site: "@voiceoverman",
+  },
 };
 
 const services = [
@@ -86,34 +111,24 @@ const videos = [
 
 const faqs = [
   {
-    question: "Who is SantaGuy?",
+    question: "Who is the voice of Santa in the UK?",
     answer:
-      "SantaGuy is the professional name for Guy Harris's Santa voiceover work. Guy is an established UK voice artist whose Santa voice has been trusted by BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins, CBeebies, and many more leading broadcasters and brands.",
+      "Guy Harris is widely recognised as the UK's trusted voice of Santa, heard on BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.",
   },
   {
-    question: "What can I hire the Santa voice for?",
+    question: "Can I hire the voice of Santa?",
     answer:
-      "You can hire Guy's Santa voice for radio and TV commercials, podcast appearances, radio station Christmas campaigns, branded content, web videos, personalised Santa messages, and any festive voiceover project. He works with agencies, producers, radio stations, and brands across the UK.",
+      "Yes. Guy Harris provides professional Santa voiceovers for radio, TV, podcasts, advertising campaigns, festive events and brand promotions.",
   },
   {
-    question: "How quickly can Santa voiceover be delivered?",
+    question: "Who does the Santa voice for BBC Radio?",
     answer:
-      "Guy records from a professional broadcast-quality studio and can typically deliver Santa voiceover within 24 hours for standard projects. Same-day turnaround is available for urgent bookings. Remote session recording via ISDN, Source-Connect, and other platforms is also available.",
+      "Guy Harris has performed as the voice of Santa for BBC Radio 2 and other UK broadcasters, as well as brands and Christmas campaigns.",
   },
   {
-    question: "Is the Santa voice available for live radio or podcast appearances?",
+    question: "What is a Santa voiceover used for?",
     answer:
-      "Yes. Guy regularly appears as Santa on national and regional radio stations, podcasts, and live broadcasts during the festive season. He can join remotely or in person depending on the project requirements.",
-  },
-  {
-    question: "Can I get a personalised Santa video message?",
-    answer:
-      "Yes. Personalised Santa video messages are available through Festive Studio. These are perfect for brands, corporate events, and special occasions. Visit the Santa Message page for more details.",
-  },
-  {
-    question: "What is Santa Radio?",
-    answer:
-      "Santa Radio is a free online Christmas radio station hosted by the real voice of Santa. It plays non-stop Christmas music and festive content, and is available to listen online or via the free Santa Radio app.",
+      "Santa voiceovers are used for Christmas advertising, radio promotions, TV campaigns, festive events, podcasts, brand marketing and seasonal entertainment.",
   },
 ];
 
@@ -123,7 +138,7 @@ const websiteSchema = {
   name: "SantaGuy",
   url: "https://santaguy.co.uk",
   description:
-    "The UK's trusted voice of Santa. Professional Santa voiceover for radio, TV, podcasts, brands, and festive campaigns.",
+    "The UK's trusted voice of Santa. Professional Santa voiceover for radio, TV, podcasts, brands and Christmas campaigns.",
 };
 
 const organizationSchema = {
@@ -131,16 +146,78 @@ const organizationSchema = {
   "@type": "Organization",
   name: "SantaGuy",
   url: "https://santaguy.co.uk",
-  description:
-    "Professional Santa voice artist Guy Harris — the UK's trusted voice of Santa for broadcasters, agencies, and brands.",
+  logo: "https://santaguy.co.uk/santa-guy-logo-og.png",
   sameAs: ["https://www.voiceoverguy.co.uk"],
 };
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Guy Harris",
+  jobTitle: "Voice Actor",
+  description:
+    "The UK's trusted voice of Santa heard on BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.",
+  url: "https://santaguy.co.uk",
+  sameAs: ["https://www.voiceoverguy.co.uk"],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Santa Guy | The UK's Trusted Voice of Santa",
+  url: "https://santaguy.co.uk",
+};
+
+const videoSchemas = videos.map((video) => ({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: video.title,
+  description: `Guy Harris performing as the voice of Santa — ${video.title}.`,
+  thumbnailUrl: `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`,
+  uploadDate: "2024-01-01T08:00:00+00:00",
+  embedUrl: `https://www.youtube.com/embed/${video.id}`,
+}));
+
+const audioSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "AudioObject",
+    name: "Santa Voice Demo 1",
+    description: "Professional Santa voice showreel performed by Guy Harris.",
+    contentUrl: "https://santaguy.co.uk/demos/Santa-voice-Guy-Demo-1.mp3",
+    uploadDate: "2024-01-01T08:00:00+00:00",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "AudioObject",
+    name: "Santa Voice Demo 2",
+    description: "Santa voice demo featuring Guy Harris on BBC Radio 2 Naughty and Nice list.",
+    contentUrl: "https://santaguy.co.uk/demos/Santa-voice-Guy-Demo-2.mp3",
+    uploadDate: "2024-01-01T08:00:00+00:00",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "AudioObject",
+    name: "Santa Voice Demo 3",
+    description: "Guy Harris as Santa chatting with Zoe Ball on BBC Radio 2 Breakfast Show.",
+    contentUrl: "https://santaguy.co.uk/demos/Santa-voice-Guy-Demo-3.mp3",
+    uploadDate: "2024-01-01T08:00:00+00:00",
+  },
+];
 
 export default function HomePage() {
   return (
     <>
       <StructuredData data={websiteSchema} />
       <StructuredData data={organizationSchema} />
+      <StructuredData data={personSchema} />
+      <StructuredData data={webPageSchema} />
+      {videoSchemas.map((schema, i) => (
+        <StructuredData key={`video-${i}`} data={schema} />
+      ))}
+      {audioSchemas.map((schema, i) => (
+        <StructuredData key={`audio-${i}`} data={schema} />
+      ))}
 
       <Hero
         title="The UK's Trusted Voice of Santa"
