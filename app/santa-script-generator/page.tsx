@@ -87,7 +87,7 @@ export default function SantaScriptGeneratorPage() {
       <CTASection
         title="Got Your Script Ready?"
         description="Send your script to Guy Harris and get broadcast-quality Santa voiceover delivered fast."
-        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Contact", href: "/contact-santa-guy" }}
       />
     </>

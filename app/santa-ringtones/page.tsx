@@ -99,7 +99,7 @@ export default function SantaRingtonesPage() {
       <CTASection
         title="Want the Santa Voice for Your Brand?"
         description="The voice behind the ringtones is available for professional voiceover. Hire Guy Harris for your Christmas campaign."
-        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Contact", href: "/contact-santa-guy" }}
       />
     </>

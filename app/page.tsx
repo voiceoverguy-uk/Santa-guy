@@ -11,6 +11,7 @@ import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import StructuredData from "@/components/StructuredData";
 import DemoCards from "@/components/DemoCards";
+import VideoCard from "@/components/VideoCard";
 
 export const metadata: Metadata = {
   title: "SantaGuy | The UK's Trusted Voice of Santa — Guy Harris",
@@ -144,7 +145,7 @@ export default function HomePage() {
       <Hero
         title="The UK's Trusted Voice of Santa"
         subtitle="Guy Harris is the voice of Santa trusted by BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins, CBeebies, and leading brands across the UK. Available for radio, TV, podcasts, campaigns, and festive voiceover."
-        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Contact Santa Guy", href: "/contact-santa-guy" }}
         logoSrc="/santaguy-logo-white.png"
       />
@@ -180,24 +181,7 @@ export default function HomePage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {videos.map((video) => (
-              <div
-                key={video.id}
-                className="rounded-xl overflow-hidden border border-santa-red/15 shadow-md hover:shadow-lg transition-shadow bg-white"
-              >
-                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                  <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src={`https://www.youtube.com/embed/${video.id}`}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                </div>
-                <div className="px-4 py-3">
-                  <h3 className="text-sm font-semibold text-gray-900">{video.title}</h3>
-                </div>
-              </div>
+              <VideoCard key={video.id} id={video.id} title={video.title} />
             ))}
           </div>
         </div>
@@ -281,7 +265,7 @@ export default function HomePage() {
       <CTASection
         title="Ready to Hire the UK's Trusted Voice of Santa?"
         description="Whether you need Santa voiceover for a national campaign, a podcast guest appearance, or festive radio imaging — Guy Harris delivers broadcast-quality recordings fast."
-        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Get in Touch", href: "/contact-santa-guy" }}
       />
 

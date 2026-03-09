@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Mail, Clock, Mic } from "lucide-react";
+import { Clock, Mic, Mail, Shield, Radio, Zap } from "lucide-react";
 import Hero from "@/components/Hero";
 import ContactForm from "@/components/ContactForm";
+import EmailButton from "@/components/EmailButton";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
@@ -19,6 +20,12 @@ const pageSchema = {
   url: "https://santaguy.co.uk/contact-santa-guy",
 };
 
+const trustBadges = [
+  { label: "BBC Trusted", icon: Shield },
+  { label: "Broadcast Quality", icon: Radio },
+  { label: "Fast Response", icon: Zap },
+];
+
 export default function ContactPage() {
   return (
     <>
@@ -34,11 +41,25 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
+              <div className="flex flex-wrap gap-3 mb-6">
+                {trustBadges.map((badge) => (
+                  <span
+                    key={badge.label}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs font-medium text-gray-600"
+                  >
+                    <badge.icon className="w-3.5 h-3.5 text-santa-red" />
+                    {badge.label}
+                  </span>
+                ))}
+              </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                Send an Enquiry
+                Check Availability
               </h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 mb-2">
                 Fill in the form below and Guy will get back to you as quickly as possible.
+              </p>
+              <p className="text-sm text-gray-500 mb-8">
+                Guy Harris is the voice of Santa trusted by BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.
               </p>
               <ContactForm />
             </div>
@@ -49,15 +70,10 @@ export default function ContactPage() {
                   <Mail className="w-5 h-5 text-santa-red" />
                   <h3 className="font-semibold text-gray-900">Email Directly</h3>
                 </div>
-                <p className="text-sm text-gray-600 mb-2">
-                  Prefer to email? Send your enquiry directly to:
+                <p className="text-sm text-gray-600 mb-4">
+                  Prefer email? Click below to send your enquiry directly.
                 </p>
-                <a
-                  href="mailto:enquiries@voiceoverguy.co.uk"
-                  className="text-sm font-medium text-santa-red hover:text-santa-red-dark transition-colors"
-                >
-                  enquiries@voiceoverguy.co.uk
-                </a>
+                <EmailButton />
               </div>
 
               <div className="bg-gray-50 rounded-xl p-6">

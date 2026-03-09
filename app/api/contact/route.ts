@@ -27,6 +27,71 @@ function isRateLimited(ip: string): boolean {
   return entry.count > RATE_LIMIT;
 }
 
+function buildEmailHtml(safeName: string, safeEmail: string, safeReason: string, safeMessage: string): string {
+  return `
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" /></head>
+<body style="margin:0;padding:0;background-color:#f4f4f5;font-family:Arial,Helvetica,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f5;padding:32px 16px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:8px;overflow:hidden;max-width:600px;width:100%;">
+          <!-- Header -->
+          <tr>
+            <td style="background-color:#9C060B;padding:24px 32px;">
+              <h1 style="margin:0;color:#ffffff;font-size:20px;font-weight:700;">New SantaGuy Website Enquiry</h1>
+              <p style="margin:4px 0 0 0;color:#ffffff;font-size:13px;opacity:0.85;">SantaGuy.co.uk</p>
+            </td>
+          </tr>
+          <!-- Details -->
+          <tr>
+            <td style="padding:28px 32px 0 32px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding:0 0 16px 0;border-bottom:1px solid #e5e7eb;">
+                    <p style="margin:0 0 2px 0;font-size:11px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;">Name</p>
+                    <p style="margin:0;font-size:15px;color:#111827;">${safeName}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:16px 0;border-bottom:1px solid #e5e7eb;">
+                    <p style="margin:0 0 2px 0;font-size:11px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;">Email</p>
+                    <p style="margin:0;font-size:15px;"><a href="mailto:${safeEmail}" style="color:#9C060B;text-decoration:none;">${safeEmail}</a></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:16px 0 0 0;">
+                    <p style="margin:0 0 2px 0;font-size:11px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;">Reason</p>
+                    <p style="margin:0;font-size:15px;color:#111827;">${safeReason}</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Message -->
+          <tr>
+            <td style="padding:24px 32px;">
+              <p style="margin:0 0 8px 0;font-size:11px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;">Message</p>
+              <div style="background-color:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:16px;font-size:14px;color:#374151;line-height:1.6;">
+                ${safeMessage}
+              </div>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="padding:16px 32px 24px 32px;border-top:1px solid #e5e7eb;">
+              <p style="margin:0;font-size:12px;color:#9ca3af;text-align:center;">Sent from the SantaGuy website contact form</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+}
+
 export async function POST(request: Request) {
   try {
     const ip =
@@ -97,20 +162,14 @@ export async function POST(request: Request) {
     const safeReason = escapeHtml(reason);
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
 
+    const html = buildEmailHtml(safeName, safeEmail, safeReason, safeMessage);
+
     const result = await resend.emails.send({
       from: `SantaGuy Website <${contactFrom}>`,
       to: contactTo,
       replyTo: email,
       subject: `SantaGuy Enquiry: ${safeReason}`,
-      html: `
-        <h2>New SantaGuy Website Enquiry</h2>
-        <p><strong>Name:</strong> ${safeName}</p>
-        <p><strong>Email:</strong> ${safeEmail}</p>
-        <p><strong>Reason:</strong> ${safeReason}</p>
-        <hr />
-        <p><strong>Message:</strong></p>
-        <p>${safeMessage}</p>
-      `,
+      html,
     });
 
     console.log("Resend API response:", JSON.stringify(result));

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import EmailButton from "./EmailButton";
 
 const mainLinks = [
   { label: "Home", href: "/" },
@@ -96,9 +97,10 @@ export default function Footer() {
               ))}
             </ul>
             <div className="mt-6">
-              <p className="text-sm text-gray-400">
-                enquiries@voiceoverguy.co.uk
-              </p>
+              <EmailButton
+                label="Email Santa Guy"
+                className="text-sm text-gray-400 hover:text-white transition-colors underline hover:no-underline cursor-pointer"
+              />
             </div>
           </div>
         </div>

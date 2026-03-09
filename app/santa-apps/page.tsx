@@ -141,7 +141,7 @@ export default function SantaAppsPage() {
       <CTASection
         title="Want Santa for Your Campaign?"
         description="The voice behind the apps is available for hire. Book Guy Harris for your next Christmas project."
-        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Contact", href: "/contact-santa-guy" }}
       />
     </>

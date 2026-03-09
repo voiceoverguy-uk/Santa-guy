@@ -186,7 +186,7 @@ export default function AboutPage() {
       <CTASection
         title="Ready to Work with the UK's Trusted Santa Voice?"
         description="Hire Guy Harris for your next Christmas campaign, radio appearance, or festive voiceover project."
-        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Get in Touch", href: "/contact-santa-guy" }}
       />
     </>

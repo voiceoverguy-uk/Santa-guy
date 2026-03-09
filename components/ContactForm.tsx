@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 
 const reasons = [
@@ -24,6 +24,11 @@ export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [messageError, setMessageError] = useState("");
+
+  const openEmail = useCallback(() => {
+    const parts = ["enquiries", "voiceoverguy.co.uk"];
+    window.location.href = `mailto:${parts[0]}@${parts[1]}`;
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -91,13 +96,14 @@ export default function ContactForm() {
               {errorMessage}
             </p>
             <p className="text-sm text-red-700 mt-1">
-              You can also email us directly at{" "}
-              <a
-                href="mailto:enquiries@voiceoverguy.co.uk"
-                className="underline"
+              You can also{" "}
+              <button
+                type="button"
+                onClick={openEmail}
+                className="underline hover:no-underline"
               >
-                enquiries@voiceoverguy.co.uk
-              </a>
+                email us directly
+              </button>
             </p>
           </div>
         </div>

@@ -63,7 +63,7 @@ export default function Header() {
               href="/hire-santa-voice"
               className="ml-2 px-4 py-2 bg-santa-red text-white text-sm font-semibold rounded-lg hover:bg-santa-red-dark transition-colors shadow-sm"
             >
-              Hire Santa Voice
+              Check Availability
             </Link>
           </nav>
 
@@ -98,7 +98,7 @@ export default function Header() {
               onClick={() => setMobileOpen(false)}
               className="block mt-3 px-4 py-3 bg-santa-red text-white text-center font-semibold rounded-lg hover:bg-santa-red-dark transition-colors"
             >
-              Hire Santa Voice
+              Check Availability
             </Link>
           </nav>
         </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import { useRef, useCallback } from "react";
+
 const demos = [
   {
     image: "/santa-guy-voice-over-1.jpg",
@@ -22,6 +24,16 @@ const demos = [
 ];
 
 export default function DemoCards() {
+  const audioRefs = useRef<(HTMLAudioElement | null)[]>([]);
+
+  const handlePlay = useCallback((index: number) => {
+    audioRefs.current.forEach((audio, i) => {
+      if (i !== index && audio && !audio.paused) {
+        audio.pause();
+      }
+    });
+  }, []);
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
       {demos.map((demo, i) => (
@@ -41,10 +53,12 @@ export default function DemoCards() {
               {demo.caption}
             </p>
             <audio
+              ref={(el) => { audioRefs.current[i] = el; }}
               controls
               preload="none"
               className="w-full h-10"
               aria-label={`Santa voice demo ${i + 1}`}
+              onPlay={() => handlePlay(i)}
               style={{ filter: "sepia(20%) saturate(70%) grayscale(0) contrast(99%) invert(0)" }}
             >
               <source src={demo.audio} type="audio/mpeg" />

@@ -119,7 +119,7 @@ export default function SantaRadioPage() {
       <CTASection
         title="Want Santa on Your Radio Station?"
         description="Hire the real voice of Santa for your station's Christmas campaign, imaging, or guest appearances."
-        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Contact", href: "/contact-santa-guy" }}
       />
     </>

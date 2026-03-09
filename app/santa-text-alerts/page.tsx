@@ -105,7 +105,7 @@ export default function SantaTextAlertsPage() {
       <CTASection
         title="Need the Santa Voice for Your Project?"
         description="Hire Guy Harris for professional Santa voiceover. Trusted by the UK's biggest broadcasters and brands."
-        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Contact", href: "/contact-santa-guy" }}
       />
     </>

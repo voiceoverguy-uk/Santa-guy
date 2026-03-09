@@ -40,7 +40,7 @@ export default function SantaVoiceDemoPage() {
       <Hero
         title="Santa Voice Demo"
         subtitle="Hear the Santa voice trusted by the BBC, ITV, Heart, Capital, and leading brands. Listen to showreel clips and demo recordings from the UK's most established Santa voice artist."
-        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Contact", href: "/contact-santa-guy" }}
         compact
       />
@@ -92,7 +92,7 @@ export default function SantaVoiceDemoPage() {
       <CTASection
         title="Like What You Hear?"
         description="Hire the UK's most trusted Santa voice for your next project. Broadcast-quality recordings delivered fast."
-        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Contact Santa Guy", href: "/contact-santa-guy" }}
       />
     </>
