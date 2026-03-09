@@ -22,12 +22,12 @@ const pageSchema = {
 };
 
 const ringtones = [
-  { title: "Santa's Greeting", description: "A warm festive greeting from Santa for your ringtone", file: "/ringtones/santa-guy-ringtone-1.zip" },
-  { title: "Ho Ho Ho!", description: "The classic Santa laugh — perfect for incoming calls", file: "/ringtones/santa-guy-ringtone-2.zip" },
-  { title: "Merry Christmas!", description: "Santa wishes you a Merry Christmas every time your phone rings", file: "/ringtones/santa-guy-ringtone-3.zip" },
-  { title: "Santa's Jingle", description: "A festive jingle with Santa's voice and sleigh bells", file: "/ringtones/santa-guy-ringtone-4.zip" },
-  { title: "Naughty or Nice?", description: "Santa checks his list — are you naughty or nice?", file: "/ringtones/santa-guy-ringtone-5.zip" },
-  { title: "Christmas Eve Alert", description: "Santa's on his way — a festive alert tone", file: "/ringtones/santa-guy-ringtone-6.zip" },
+  { title: "Santa's Greeting", description: "A warm festive greeting from Santa for your ringtone", file: "/ringtones/santa-guy-ringtone-1.zip", preview: "/ringtones/santa-guy-ringtone-1.mp3" },
+  { title: "Ho Ho Ho!", description: "The classic Santa laugh — perfect for incoming calls", file: "/ringtones/santa-guy-ringtone-2.zip", preview: "/ringtones/santa-guy-ringtone-2.mp3" },
+  { title: "Merry Christmas!", description: "Santa wishes you a Merry Christmas every time your phone rings", file: "/ringtones/santa-guy-ringtone-3.zip", preview: "/ringtones/santa-guy-ringtone-3.mp3" },
+  { title: "Santa's Jingle", description: "A festive jingle with Santa's voice and sleigh bells", file: "/ringtones/santa-guy-ringtone-4.zip", preview: "/ringtones/santa-guy-ringtone-4.mp3" },
+  { title: "Naughty or Nice?", description: "Santa checks his list — are you naughty or nice?", file: "/ringtones/santa-guy-ringtone-5.zip", preview: "/ringtones/santa-guy-ringtone-5.mp3" },
+  { title: "Christmas Eve Alert", description: "Santa's on his way — a festive alert tone", file: "/ringtones/santa-guy-ringtone-6.zip", preview: "/ringtones/santa-guy-ringtone-6.mp3" },
 ];
 
 export default function SantaRingtonesPage() {
@@ -56,6 +56,7 @@ export default function SantaRingtonesPage() {
                 description={ringtone.description}
                 downloadHref={ringtone.file}
                 placeholder={false}
+                previewSrc={ringtone.preview}
               />
             ))}
           </div>
