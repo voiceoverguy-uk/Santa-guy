@@ -10,6 +10,7 @@ interface HeroProps {
   secondaryCTA?: { label: string; href: string };
   compact?: boolean;
   logoSrc?: string;
+  overlayHeader?: boolean;
 }
 
 export default function Hero({
@@ -19,14 +20,19 @@ export default function Hero({
   secondaryCTA,
   compact = false,
   logoSrc,
+  overlayHeader = false,
 }: HeroProps) {
+  const paddingClasses = overlayHeader
+    ? "pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-36"
+    : compact
+      ? "py-16 sm:py-20"
+      : "py-20 sm:py-28 lg:py-36";
+
   return (
-    <section
-      className={`relative overflow-hidden ${compact ? "py-16 sm:py-20" : "py-20 sm:py-28 lg:py-36"}`}
-    >
+    <section className={`relative overflow-hidden ${paddingClasses}`}>
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-        <div className="absolute inset-0 bg-[url('/hero-santa-guy.webp')] bg-cover bg-center opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+        <div className="absolute inset-0 bg-[url('/hero-santa-guy.webp')] bg-cover bg-center opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-gray-900/60" />
       </div>
 
       <Snowfall />
@@ -37,7 +43,7 @@ export default function Hero({
             <img
               src={logoSrc}
               alt="SantaGuy"
-              className="mx-auto h-16 sm:h-20 w-auto drop-shadow-lg"
+              className="mx-auto h-20 sm:h-24 w-auto drop-shadow-lg"
             />
           </div>
         )}

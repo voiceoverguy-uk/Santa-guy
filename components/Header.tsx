@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -14,17 +15,40 @@ const navItems = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+  const isHomepage = pathname === "/";
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  useEffect(() => {
+    if (!isHomepage) return;
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHomepage]);
+
+  const isTransparent = isHomepage && !scrolled;
+
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+    <header
+      className={`${isHomepage ? "fixed" : "sticky"} top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isTransparent
+          ? "bg-transparent"
+          : "bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" className="flex items-center group">
             <img
-              src="/santaguy-logo.png"
+              src={isTransparent ? "/santaguy-logo-white.png" : "/santaguy-logo-black.png"}
               alt="SantaGuy"
-              className="h-10 sm:h-12 w-auto"
+              className="h-10 sm:h-12 w-auto transition-opacity duration-300"
             />
           </Link>
 
@@ -33,7 +57,11 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-santa-red rounded-lg hover:bg-santa-cream transition-all"
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+                  isTransparent
+                    ? "text-white/90 hover:text-white hover:bg-white/10"
+                    : "text-gray-700 hover:text-santa-red hover:bg-santa-cream"
+                }`}
               >
                 {item.label}
               </Link>
@@ -48,8 +76,11 @@ export default function Header() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-gray-700 hover:text-santa-red transition-colors"
+            className={`lg:hidden p-2 transition-colors duration-300 ${
+              isTransparent ? "text-white hover:text-white/80" : "text-gray-700 hover:text-santa-red"
+            }`}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

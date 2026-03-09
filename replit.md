@@ -15,6 +15,12 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **Primary colour**: #9C060B (VoiceoverGuy red)
 - **Style**: Premium, festive, modern, spacious, trustworthy
 - **Font**: Inter (system fallback)
+- **Logos**: `santaguy-logo-black.png` (dark text, for white backgrounds), `santaguy-logo-white.png` (white text, for dark backgrounds/hero/footer)
+
+## Header Behaviour
+- **Homepage**: Transparent overlay header (fixed, over hero). White logo + white nav links initially. On scroll (>80px), transitions to solid white background with black logo and dark nav links. Smooth 300ms CSS transition.
+- **Other pages**: Normal sticky white header with black logo and dark nav links.
+- **Mobile menu**: Always white/solid background regardless of page or scroll state.
 
 ## Routes / Pages
 | URL | Purpose |
@@ -34,6 +40,8 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 ## Key Files
 - `app/layout.tsx` — Root layout with Header/Footer
 - `app/globals.css` — Tailwind + custom theme
+- `components/Header.tsx` — Responsive header with transparent/solid scroll transition on homepage
+- `components/Hero.tsx` — Hero section with `overlayHeader` prop for homepage
 - `components/` — Reusable UI components
 - `app/api/contact/route.ts` — Contact form API route (Resend)
 - `app/sitemap.ts` — Dynamic sitemap generation
@@ -42,14 +50,13 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 ## Environment Variables
 - `RESEND_API_KEY` — Required for contact form to work
 
-## Placeholder Assets Needed
-- Hero background image
-- Client logos (BBC Radio 2, Heart, Capital, ITV, Tesco, etc.)
+## Client Logos
+18 real client logos in `public/clients/` — displayed at full colour in the ClientLogos component.
+
+## Placeholder Assets Still Needed
 - Guy Harris portrait photo
 - Cartoon images for About page
 - Audio demo MP3 files
 - YouTube embed URLs
 - App Store / Google Play badge images
-- 6 ringtone zip files
-- Favicon and OG image
 - Testimonial quotes (real ones to replace placeholders)

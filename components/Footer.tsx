@@ -30,9 +30,9 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-block mb-4">
               <img
-                src="/santaguy-logo.png"
+                src="/santaguy-logo-white.png"
                 alt="SantaGuy"
-                className="h-10 w-auto brightness-110"
+                className="h-10 w-auto"
               />
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
