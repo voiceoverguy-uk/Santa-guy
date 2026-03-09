@@ -20,7 +20,7 @@ export default function Hero({
       className={`relative overflow-hidden ${compact ? "py-16 sm:py-20" : "py-20 sm:py-28 lg:py-36"}`}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-        <div className="absolute inset-0 bg-[url('/placeholder-hero.jpg')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-[url('/hero-santa-guy.webp')] bg-cover bg-center opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
       </div>
 
