@@ -55,11 +55,11 @@ export default function SantaRingtonesPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-600">
               <div>
                 <p className="font-medium text-gray-900 mb-1">Android</p>
-                <p>Download the zip file, extract the MP3, then go to Settings &gt; Sound &gt; Phone Ringtone and select the file from your downloads.</p>
+                <p>Download the zip file and extract the MP3. Go to Settings &gt; Sounds and vibration &gt; Ringtone, tap the + icon in the top right corner, browse to your downloaded file, and tap Done.</p>
               </div>
               <div>
                 <p className="font-medium text-gray-900 mb-1">iPhone / Apple</p>
-                <p>Download the zip file and extract the MP3. Use GarageBand or a ringtone maker app to convert it, then set it via Settings &gt; Sounds &amp; Haptics &gt; Ringtone.</p>
+                <p>Download the zip file and extract the MP3. Save it to the Files app, long-press the file, tap Share, then select Use as Ringtone. You can also set it via Settings &gt; Sounds &amp; Haptics &gt; Ringtone.</p>
               </div>
             </div>
           </div>
