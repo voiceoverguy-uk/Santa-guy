@@ -1,0 +1,111 @@
+CONTACT FORM EMAIL TEMPLATE IMPROVEMENT
+
+Please improve the email template that is sent from the SantaGuy website contact form.
+
+GOAL:
+The enquiry email currently works, but it looks too plain and utilitarian.
+I want it to look cleaner, more branded, more polished, and easier to read when received in email.
+
+IMPORTANT:
+- Keep it reliable and email-safe
+- Use simple HTML email styling
+- Do NOT over-design it
+- It should still render well in Gmail and other email clients
+- Make it feel premium and professional
+
+==================================================
+EMAIL TEMPLATE IMPROVEMENTS
+==================================================
+
+Please redesign the outgoing enquiry email with:
+
+1. A clean branded header
+- Title: New SantaGuy Website Enquiry
+- Optional small subtext: SantaGuy.co.uk
+- Use subtle branding accents in the SantaGuy / VoiceoverGuy red tone
+- Keep it simple and tasteful
+
+2. Better content layout
+Please format the submitted details into clean sections/cards/rows such as:
+
+Name
+Email
+Reason
+Message
+
+3. Improve readability
+- Add spacing between sections
+- Use clear labels
+- Make the message section easier to read
+- Avoid everything feeling cramped
+
+4. Email address presentation
+- Make the sender’s email clickable
+- Keep it easy to reply to
+
+5. Better message presentation
+- Put the message content in a lightly styled box/container
+- Preserve line breaks if the user enters multiple lines
+- Make it stand out from the labels
+
+6. Footer note
+Add a small subtle footer line such as:
+Sent from the SantaGuy website contact form
+
+==================================================
+STYLE DIRECTION
+==================================================
+
+Please use:
+- white background
+- subtle light grey sections or dividers
+- dark readable text
+- red accent only where needed
+- rounded corners only if email-safe
+- tasteful spacing and padding
+
+The result should feel:
+- premium
+- organised
+- easy to scan
+- not flashy
+- not over-styled
+
+==================================================
+TECHNICAL NOTES
+==================================================
+
+- Keep using a simple HTML email template compatible with Gmail
+- Do not rely on advanced CSS that may fail in email clients
+- Inline styles are fine if needed
+- Make sure the reply-to still works correctly
+- Make sure the subject line still clearly identifies the enquiry
+
+==================================================
+EXAMPLE STRUCTURE
+==================================================
+
+Header:
+New SantaGuy Website Enquiry
+SantaGuy.co.uk
+
+Details section:
+Name: Guy
+Email: voiceoverguymedia@gmail.com
+Reason: Commercial project
+
+Message section:
+hello, please let me hire your voice
+
+Footer:
+Sent from the SantaGuy website contact form
+
+==================================================
+AFTER CHANGING IT
+==================================================
+
+Please confirm:
+1. which file/function generates the email template
+2. whether the template is plain text + HTML or HTML only
+3. whether reply-to is still working correctly
+4. if the new template was tested successfully

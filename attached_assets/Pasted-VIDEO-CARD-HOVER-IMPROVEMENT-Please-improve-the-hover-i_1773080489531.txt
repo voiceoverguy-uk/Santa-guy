@@ -1,0 +1,86 @@
+VIDEO CARD HOVER IMPROVEMENT
+
+Please improve the hover interaction on the YouTube video cards.
+
+Currently the hover effect is barely noticeable (only a very small shadow change).
+I want the hover state to feel clearer and more intentional.
+
+GOAL:
+Make it obvious the cards are interactive without becoming gimmicky.
+
+==================================================
+NEW HOVER BEHAVIOUR
+==================================================
+
+When the user hovers over a video card:
+
+1. Slight card lift
+Move the card up slightly using transform.
+
+Example direction:
+transform: translateY(-6px)
+
+2. Stronger shadow
+Increase the drop shadow so the card feels elevated.
+
+Example direction:
+box-shadow should become deeper and softer than the default state.
+
+3. Subtle image zoom
+The video thumbnail image should scale slightly.
+
+Example direction:
+scale around 1.04 to 1.06
+
+The zoom must be subtle and smooth.
+
+==================================================
+ANIMATION
+==================================================
+
+Use smooth transitions.
+
+Example direction:
+transition around 200–300ms ease.
+
+Avoid anything jumpy or slow.
+
+==================================================
+IMPORTANT
+==================================================
+
+The hover should affect:
+- the whole card
+- not just the shadow
+
+The image zoom should stay contained within the card (no overflow).
+
+Ensure the interaction works well across:
+- desktop
+- tablet
+
+Mobile obviously won't use hover.
+
+==================================================
+VISUAL GOAL
+==================================================
+
+The interaction should feel:
+
+clean  
+premium  
+modern  
+subtle but noticeable  
+
+Similar to interactions used on modern media cards or streaming platforms.
+
+Not flashy or playful.
+
+==================================================
+AFTER CHANGING
+==================================================
+
+Please confirm:
+1. what transform value was used
+2. what shadow strength was used
+3. what scale amount was used for the thumbnail
