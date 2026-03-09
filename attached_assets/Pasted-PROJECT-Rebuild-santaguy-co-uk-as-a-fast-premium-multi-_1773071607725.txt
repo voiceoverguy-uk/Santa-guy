@@ -1,0 +1,290 @@
+PROJECT: Rebuild santaguy.co.uk as a fast, premium, multi-page Next.js site on Vercel
+
+GOAL:
+Rebuild the existing SantaGuy website into a cleaner, more premium, more professional site without losing existing SEO value.
+This is NOT a one-page site.
+This site must clearly position Guy Harris as THE UK’S TRUSTED VOICE OF SANTA for agencies, producers, radio, podcasts, brands, and festive campaigns.
+
+IMPORTANT CONSTRAINTS:
+- Use Next.js (App Router) suitable for Vercel deployment
+- Hard-code content for now (NO CMS / admin panel in phase 1)
+- Keep the structure multi-page
+- Prioritise SEO, speed, mobile responsiveness, and clear conversion paths
+- Preserve existing high-value URLs where possible
+- Use clean modern code with reusable components
+- No unnecessary over-engineering
+- Build in a way that is easy to extend later
+- Use placeholders where assets are not yet final
+- Keep the design festive but premium and professional, not cheesy or cluttered
+
+BRAND / STYLE:
+- Primary accent colour: VoiceoverGuy red (#9C060B)
+- Use the same/similar font styling approach as VoiceoverGuy / Voice of God
+- Design should feel:
+  - premium
+  - festive
+  - modern
+  - spacious
+  - trustworthy
+  - suitable for London agencies and broadcast clients
+- Avoid the old full-page snowy background look
+- Instead use:
+  - a clean light background
+  - subtle festive accents
+  - elegant cards/sections
+  - hero image placeholder with soft dark/light overlay
+- Include tasteful festive touches, but do NOT make it feel dated
+
+SITE STRUCTURE:
+
+TOP NAV:
+1. Home
+2. About Santa Guy
+3. Hire Santa Voice
+4. Santa Apps
+5. Santa Radio
+6. Contact
+
+FOOTER / SUPPORTING PAGES:
+- Santa Message
+- Santa Voice Demo
+- Santa Ringtones
+- Santa Text Alerts
+- Santa Script Generator
+- VoiceoverGuy external link
+- Festive Studio external link (placeholder for now)
+
+URLS TO PRESERVE / CREATE:
+
+Keep these existing URLs:
+- /
+- /guy-harris-santa-voice
+- /santa-apps
+- /santa-radio
+- /contact-santa-guy
+- /santa-guy-message
+- /santa-ringtones
+- /santa-text-alerts
+- /santa-voice-demo
+
+Create this NEW page:
+- /hire-santa-voice
+
+Optional new supporting page:
+- /santa-script-generator
+
+CORE PAGE PURPOSES:
+
+1) HOME (/)
+Purpose:
+- Broad authority landing page
+- Position Guy Harris as “The UK’s Trusted Voice of Santa”
+- Speak to agencies, producers, radio, podcasts, and brands
+- Route visitors quickly to the right next step
+
+Homepage hero:
+- Main heading: The UK’s Trusted Voice of Santa
+- Supporting copy should make it immediately clear that Guy Harris is trusted by major UK broadcasters and brands including BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins, CBeebies and more
+- Hero image placeholder for now
+- Primary CTA: Hire Santa Voice
+- Secondary CTA: Contact Santa Guy
+
+Homepage sections:
+- Hero
+- Trust / featured clients logos placeholder strip
+- Short audio/video proof section
+- “What Santa Guy Can Do” cards:
+  - Santa voiceover for radio, TV and web
+  - podcast and radio appearances
+  - personalised Santa videos via Festive Studio
+  - Santa apps
+  - Santa Radio
+- About preview section linking to /guy-harris-santa-voice
+- Testimonials placeholder carousel/slider (horizontal)
+- Countdown to Christmas section (subtle, small, tasteful)
+- Final CTA section near bottom
+- FAQ section for SEO / conversions
+
+2) ABOUT SANTA GUY (/guy-harris-santa-voice)
+Purpose:
+- Authority page
+- Bio + credibility + awards + why trust Guy Harris
+- This page should reuse the spirit of the current cartoon/image-rich about page, but in a cleaner premium layout
+
+Include:
+- Intro / biography
+- Awards and recognition
+- Trusted by major brands and stations
+- Flexible recording / remote session options
+- Links back to VoiceoverGuy
+- Cartoon image placeholders / image blocks
+- Internal links to Hire Santa Voice and Contact
+
+3) HIRE SANTA VOICE (/hire-santa-voice) NEW PAGE
+Purpose:
+- Main commercial conversion page for agencies, producers, radio stations, podcasts, brands, campaigns
+
+This page should be strongly sales-led and premium.
+Include sections for:
+- Santa voiceover for radio, TV, web and branded content
+- Santa for podcasts and festive guest appearances
+- Santa check-ins for radio stations and presenters
+- Christmas campaign promos
+- Personalised Santa videos via Festive Studio
+- Optional mention of bespoke messages, but do NOT lead with low-value live calls
+- Trust signals
+- Audio/video examples placeholder
+- Strong CTA to contact form
+
+4) SANTA APPS (/santa-apps)
+Purpose:
+- Showcase Santa apps clearly
+- Support SEO for Santa apps / free Christmas apps
+- Include placeholder download badges/links
+- Mention Santa Radio app and voicemail app
+- Link internally to Santa Radio and Contact
+
+5) SANTA RADIO (/santa-radio)
+Purpose:
+- Showcase Santa Radio as a supporting but useful brand page
+- Hosted by the real voice of Santa
+- Encourage listen/live actions
+- Link out to the real Santa Radio destination as needed
+- Include clean CTA and supporting copy
+
+6) CONTACT (/contact-santa-guy)
+Purpose:
+- Clean contact page with modern working form
+
+Requirements:
+- Build working contact form using Resend
+- Send enquiries to: enquiries@voiceoverguy.co.uk
+- Use the same approach already used successfully on Voice of God / other microsites
+- Include reason dropdown:
+  - Commercial project
+  - Radio / podcast appearance
+  - Personalised Santa video
+  - Santa apps enquiry
+  - General enquiry
+- Include success/error states
+- Include fallback email address shown on page
+
+7) SANTA MESSAGE (/santa-guy-message)
+Purpose:
+- Supporting page for personalised Santa messages / videos
+- Mention Festive Studio clearly
+- Link out to Festive Studio
+- Keep SEO value but do not make this the central money page
+
+8) SANTA VOICE DEMO (/santa-voice-demo)
+Purpose:
+- Supporting SEO and proof page
+- Include multiple audio player placeholders
+- Clear descriptions
+- Link back to Hire Santa Voice and Contact
+
+9) SANTA RINGTONES (/santa-ringtones)
+Purpose:
+- Preserve existing ranking URL
+- This page should remain live and optimised
+- Not in top nav
+- Add placeholder download cards/links for 6 ringtone zip files
+- User will upload the 6 ringtone zips later
+- Include supporting text and internal links to Santa Apps and Hire Santa Voice
+
+10) SANTA TEXT ALERTS (/santa-text-alerts)
+Purpose:
+- Preserve SEO/supporting traffic
+- Keep as supporting page in footer
+- Include placeholder download/info area
+- Link internally to Santa Apps and Santa Ringtones
+
+11) OPTIONAL: SANTA SCRIPT GENERATOR (/santa-script-generator)
+Purpose:
+- Supporting tool page
+- Link to main VoiceoverGuy site where appropriate
+- Could include placeholder area for the script generator or CTA to use it
+
+SEO REQUIREMENTS:
+- Preserve existing URL structure exactly where listed above
+- Every page must have:
+  - unique title
+  - unique meta description
+  - one H1
+  - clear H2/H3 hierarchy
+- Write strong SEO-friendly copy, but keep it natural and polished
+- Emphasise terms like:
+  - voice of Santa
+  - Santa voice
+  - Father Christmas voice
+  - Santa voiceover
+  - trusted voice of Santa
+  - Santa voice actor
+  - hire Santa voice
+- Use strong internal linking across all pages
+- Support AI Overviews and featured snippet style clarity
+- Add structured data where sensible:
+  - Organization / Person
+  - WebSite
+  - WebPage
+  - FAQPage where appropriate
+  - AudioObject for demo pages where appropriate
+  - VideoObject placeholders where appropriate
+- Make sure schema is valid and clean
+
+MEDIA / PLACEHOLDERS:
+- Hero image: placeholder for now
+- Client logos: placeholder strip for now
+- Testimonials: placeholder slider for now
+- YouTube embeds: placeholder components/sections for now
+- Audio demos: placeholder audio player components for now
+- Cartoon images on About page: placeholder cards/slots for now
+- Ringtones: placeholder download blocks for 6 zip files
+- App badges: placeholder buttons
+
+COUNTDOWN:
+- Add a small, tasteful live countdown to Christmas
+- Place it subtly near the bottom CTA area on homepage
+- It should feel polished, not gimmicky
+
+TECHNICAL REQUIREMENTS:
+- Next.js App Router
+- Clean component structure
+- Reusable layout/header/footer
+- Responsive navigation
+- Good mobile design
+- Optimised images using Next Image
+- Vercel-friendly deployment
+- Keep code tidy and easy to edit
+- Use semantic HTML
+- Add favicon/OG placeholder support
+- Prepare for future image replacements and content refinement
+
+COPY / TONE:
+- Professional
+- Festive
+- Authoritative
+- Warm
+- Premium
+- Clear for agencies and producers
+- Avoid sounding amateur or hobbyist
+- Make it obvious this is not a part-time Santa entertainer — this is an established professional voice artist trusted by major brands and broadcasters
+
+HOMEPAGE MESSAGING PRIORITY:
+A visitor from a London agency should instantly understand:
+- who Guy Harris is
+- that he is trusted by major broadcasters and brands
+- that he is available for commercial festive voiceover work
+- that he can be hired quickly
+
+DELIVERABLE:
+Build the full site structure and first-pass design with placeholder assets and strong starter copy.
+Do NOT leave it as a rough wireframe.
+Make it look polished, launchable, and easy to refine.
+
+AFTER BUILDING:
+Please provide:
+1. a list of all created routes/pages
+2. a list of placeholder assets still needed from me
+3. where to swap in logos, testimonials, YouTube links, MP3s, and ringtone zips
+4. any environment variables needed for Resend form
