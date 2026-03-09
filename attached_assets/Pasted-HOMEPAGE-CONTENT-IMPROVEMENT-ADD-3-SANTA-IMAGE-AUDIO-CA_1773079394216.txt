@@ -1,0 +1,137 @@
+HOMEPAGE CONTENT IMPROVEMENT – ADD 3 SANTA IMAGE + AUDIO CARDS
+
+Please improve the homepage by adding a strong visual/audio section using 3 uploaded Santa studio images and 3 uploaded MP3 demo files.
+
+GOAL:
+I do NOT want the homepage to become a wall of text below the hero.
+I want a premium-looking section that feels similar in spirit to the old SantaGuy site, but cleaner and more modern.
+
+Please create a new homepage section featuring 3 visual/audio cards.
+
+==================================================
+ASSETS TO USE
+==================================================
+
+IMAGES:
+- santa-guy-voice-over-1.jpg
+- santa-guy-voice-over-2.jpg
+- santa-guy-voice-over-3.jpg
+
+MP3 FILES:
+- Santa-voice-Guy-Demo-1.mp3
+- Santa-voice-Guy-Demo-2.mp3
+- Santa-voice-Guy-Demo-3.mp3
+
+Please pair one MP3 with each image.
+
+==================================================
+LAYOUT
+==================================================
+
+Please create a 3-column section on desktop:
+- Image on top
+- Short caption text underneath
+- Audio player underneath that
+
+Tablet:
+- 2 columns if it fits nicely
+- otherwise stack cleanly
+
+Mobile:
+- 1 column stacked
+- keep spacing generous and polished
+
+==================================================
+STYLE
+==================================================
+
+Each card should feel premium and festive, not cluttered.
+
+Please add:
+- soft drop shadow to each image/card
+- subtle rounded corners
+- tasteful spacing
+- a gentle hover effect on the image/card
+  - for example a slight lift, soft zoom, or shadow enhancement
+- keep hover classy, not gimmicky
+
+The section should blend with the homepage design and not feel bolted on.
+
+==================================================
+TEXT / CAPTIONS
+==================================================
+
+Please use these captions under the matching cards:
+
+CARD 1
+Image: santa-guy-voice-over-1.jpg
+Audio: Santa-voice-Guy-Demo-1.mp3
+Text:
+Hear Santa’s showreel featuring festive clips from top brands, showcasing the magic and versatility of the UK’s leading Santa voice.
+
+CARD 2
+Image: santa-guy-voice-over-2.jpg
+Audio: Santa-voice-Guy-Demo-2.mp3
+Text:
+Listen to Santa on Radio 2’s celebrity Naughty and Nice list promo, sharing festive fun as he checks who’s made the cut this Christmas.
+
+CARD 3
+Image: santa-guy-voice-over-3.jpg
+Audio: Santa-voice-Guy-Demo-3.mp3
+Text:
+Join Santa chatting with Zoe Ball on BBC Radio 2’s Breakfast Show, sharing updates on Christmas preparations and spreading festive cheer.
+
+==================================================
+AUDIO PLAYER
+==================================================
+
+Please style the audio players so they feel clean and modern.
+Do not leave them feeling too raw or ugly if styling is possible.
+Keep them usable and accessible.
+
+If custom styling is limited, then at least give the surrounding card/layout enough polish so the players feel intentional.
+
+==================================================
+PLACEMENT
+==================================================
+
+Please place this section in a strong position on the homepage so it helps break up the page visually.
+
+Suggested placement:
+- below the hero/trust area
+- and/or near the video section if that creates a strong “Watch and Listen” flow
+
+Use your best design judgement so the homepage feels balanced.
+
+==================================================
+SECTION INTRO
+==================================================
+
+Please add a small heading and intro above the 3 cards.
+
+Suggested heading ideas:
+- Listen to Santa Guy
+- Hear the Voice of Santa
+- Santa Demos and Studio Clips
+
+Please choose the one that best fits the homepage.
+
+Add a short intro sentence that supports trust and authority without being too wordy.
+
+==================================================
+IMPORTANT
+==================================================
+
+- Keep the section premium and visually balanced
+- Avoid making the homepage too text-heavy
+- Make sure the cards look good on desktop and mobile
+- Ensure filenames are referenced correctly
+- Use the actual uploaded assets
+- Keep this section aligned with the overall festive but professional style of the site
+
+AFTER ADDING:
+Please tell me:
+1. where the section was placed
+2. what heading was used
+3. whether any image cropping/aspect ratio adjustments were needed
+4. if the MP3s were wired successfully

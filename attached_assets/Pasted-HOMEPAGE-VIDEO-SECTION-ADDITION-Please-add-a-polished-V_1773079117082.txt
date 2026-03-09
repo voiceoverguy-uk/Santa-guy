@@ -1,0 +1,79 @@
+HOMEPAGE VIDEO SECTION ADDITION
+
+Please add a polished VIDEO SHOWCASE section to the homepage using the following 4 YouTube videos.
+
+GOAL:
+I want a premium-looking homepage section that adds proof and authority.
+This section should help visitors instantly see and trust that Guy Harris is the UK’s Trusted Voice of Santa.
+
+VIDEOS TO USE:
+
+1. Voice of Santa for BBC Radio 2
+https://www.youtube.com/watch?v=5o9Va4YsI3g
+
+2. CBeebies Santa for the Go Jetters
+https://www.youtube.com/watch?v=yi-4Fm40nmE
+
+3. Santa on Zoe Ball Breakfast Show
+https://www.youtube.com/watch?v=Qqu-HDA2KJE
+
+4. Voice of Santa for P&O Ferries Christmas Campaign
+https://www.youtube.com/watch?v=Jjj1as7mpUw&t=1s
+
+REQUIREMENTS:
+
+1) Add a new homepage section below the hero / trust area in a strong visual position.
+
+2) Section heading ideas:
+- Watch Santa Guy in Action
+- Hear and See the Voice of Santa
+- Trusted by Major Broadcasters and Brands
+
+Choose the heading that fits best with the homepage design.
+
+3) Display the 4 videos in a premium responsive layout:
+- desktop: 2 x 2 grid
+- tablet: 2 columns if possible
+- mobile: 1 column stacked
+
+4) Style:
+- each video should sit inside a clean card
+- add a soft border using the site red (#9C060B) or a subtle red-tinted accent
+- do NOT make the border thick or harsh
+- rounded corners
+- subtle shadow
+- premium spacing
+- keep it elegant, not heavy-handed
+
+5) Under each video, show the title clearly:
+- Voice of Santa for BBC Radio 2
+- CBeebies Santa for the Go Jetters
+- Santa on Zoe Ball Breakfast Show
+- Voice of Santa for P&O Ferries Christmas Campaign
+
+6) Add a short intro paragraph above the videos explaining that Guy Harris has been trusted as Santa by major broadcasters, brands, and festive campaigns across the UK.
+
+7) Make sure embeds are responsive and do not break layout.
+
+8) Keep the design consistent with the rest of the site:
+- festive but professional
+- premium
+- clean
+- agency-friendly
+
+9) SEO / content:
+Please include a small amount of supporting copy in this section that naturally reinforces:
+- voice of Santa
+- Santa voice
+- trusted by BBC Radio 2, CBeebies, Zoe Ball, P&O Ferries
+- festive voiceover work
+
+10) Please ensure performance is sensible:
+- use YouTube embed approach efficiently
+- do not let the section become oversized or clunky
+
+AFTER ADDING:
+Please tell me:
+1. where the section was placed on the homepage
+2. what heading you used
+3. if any styling adjustments were needed to keep it balanced

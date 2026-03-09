@@ -1,0 +1,126 @@
+SITE-WIDE HEADER + CONTACT FORM FIXES
+
+Please make the following improvements across the whole SantaGuy site.
+
+==================================================
+1) MAKE THE HEADER CONSISTENT ACROSS ALL PAGES
+==================================================
+
+GOAL:
+The header/nav should behave the same way across the entire site, not just on the homepage.
+
+Please apply the SAME reusable header component and behaviour to:
+- Home
+- About Santa Guy
+- Hire Santa Voice
+- Santa Apps
+- Santa Radio
+- Contact
+- Santa Message
+- Santa Voice Demo
+- Santa Ringtones
+- Santa Text Alerts
+- any other existing/supporting pages
+
+HEADER REQUIREMENTS:
+- Use one shared/reusable header component
+- Header should be slightly LESS DEEP / less tall than it is now
+- Reduce vertical padding so it feels cleaner and more premium
+- Keep the logo nicely proportioned
+- Keep the red CTA button on the right
+
+BEHAVIOUR:
+- At page load: header overlays the hero/banner area cleanly
+- On scroll: header becomes sticky/fixed
+- On scroll: header background should become a WHITE / very LIGHT background
+- But make the scrolled header slightly more transparent / softer than it is now
+- Not fully glassmorphism, just a subtle transparency so it feels lighter and more premium
+- Add a subtle blur/shadow/border only if it helps polish the look
+- Keep transitions smooth and not jumpy
+
+IMPORTANT:
+- The header should work properly on ALL page hero sections, not just the homepage
+- Make sure page content does not disappear behind the header
+- Ensure mobile responsiveness is preserved
+- Keep text contrast accessible
+
+TARGET FEEL:
+- Premium
+- Clean
+- Modern
+- Similar polished behaviour to voiceofgod.co.uk
+- Festive but professional
+
+==================================================
+2) REDUCE HEADER DEPTH / HEIGHT
+==================================================
+
+Please reduce the header height a bit:
+- slightly less vertical padding
+- slightly tighter spacing around logo and nav items
+- keep it elegant, not cramped
+
+I want the site to feel more refined and allow more of the hero to show.
+
+==================================================
+3) CONTACT FORM NOT SENDING - DEBUG AND FIX
+==================================================
+
+The contact form is currently not sending.
+I have now updated the Secrets / environment variables.
+
+Please:
+- inspect the contact form submission flow
+- inspect the API route / backend handler
+- inspect the Resend integration
+- inspect field names and payload
+- inspect validation and error handling
+- inspect whether the environment variables are being read correctly
+
+Secrets now set:
+- RESEND_API_KEY
+- CONTACT_TO_EMAIL = enquiries@voiceoverguy.co.uk
+- CONTACT_FROM_EMAIL = noreply@voiceoverguy.co.uk
+
+Please make the form fully work.
+
+REQUIREMENTS:
+- send enquiries to enquiries@voiceoverguy.co.uk
+- use noreply@voiceoverguy.co.uk as the from/sender address
+- show a clear success message on successful send
+- show a clear error message if sending fails
+- log useful errors in the server console during development
+- do not silently fail
+
+Please test the full send flow locally in the Replit environment and make sure the route is wired correctly.
+
+==================================================
+4) ADD 25-CHARACTER MINIMUM MESSAGE VALIDATION
+==================================================
+
+Before the form can send:
+- the MESSAGE field must contain at least 25 characters
+
+Please implement:
+- front-end validation
+- back-end validation
+
+Front-end:
+- if message is under 25 characters, show a helpful validation message and do not submit
+
+Back-end:
+- if message is under 25 characters, reject the request and return a validation error
+
+Please make the validation message friendly and clear, for example:
+"Please enter at least 25 characters so we have enough detail to help."
+
+==================================================
+5) FINAL CHECKS
+==================================================
+
+After completing the above, please:
+1. list what you changed
+2. confirm which shared header component is now being used site-wide
+3. confirm the contact form route/file that handles submission
+4. confirm the message-length validation is active on both frontend and backend
+5. note any remaining issues or missing assets
