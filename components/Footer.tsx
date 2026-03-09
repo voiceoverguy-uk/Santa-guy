@@ -29,9 +29,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <Link href="/" className="inline-block mb-4">
-              <span className="text-2xl font-bold text-white">
-                Santa<span className="text-santa-red">Guy</span>
-              </span>
+              <img
+                src="/santaguy-logo.png"
+                alt="SantaGuy"
+                className="h-10 w-auto brightness-110"
+              />
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
               The UK&apos;s trusted voice of Santa. Professional Santa voiceover for

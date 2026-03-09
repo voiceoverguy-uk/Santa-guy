@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import Snowfall from "./Snowfall";
 
 interface HeroProps {
   title: string;
@@ -6,6 +9,7 @@ interface HeroProps {
   primaryCTA?: { label: string; href: string };
   secondaryCTA?: { label: string; href: string };
   compact?: boolean;
+  logoSrc?: string;
 }
 
 export default function Hero({
@@ -14,6 +18,7 @@ export default function Hero({
   primaryCTA,
   secondaryCTA,
   compact = false,
+  logoSrc,
 }: HeroProps) {
   return (
     <section
@@ -24,11 +29,18 @@ export default function Hero({
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
       </div>
 
-      <div className="absolute top-10 left-10 w-2 h-2 bg-santa-gold rounded-full opacity-40 animate-pulse" />
-      <div className="absolute top-20 right-20 w-1.5 h-1.5 bg-santa-gold rounded-full opacity-30 animate-pulse delay-700" />
-      <div className="absolute bottom-16 left-1/4 w-1 h-1 bg-santa-gold rounded-full opacity-25 animate-pulse delay-1000" />
+      <Snowfall />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-[2] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {logoSrc && (
+          <div className="mb-6">
+            <img
+              src={logoSrc}
+              alt="SantaGuy"
+              className="mx-auto h-16 sm:h-20 w-auto drop-shadow-lg"
+            />
+          </div>
+        )}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
           {title}
         </h1>

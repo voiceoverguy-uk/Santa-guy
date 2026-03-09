@@ -55,6 +55,7 @@ export default function SantaRadioPage() {
         subtitle="Non-stop Christmas music hosted by the real voice of Santa. The UK's favourite festive radio station — listen free online or via the Santa Radio app."
         primaryCTA={{ label: "Listen Live", href: "#listen" }}
         secondaryCTA={{ label: "Download the App", href: "/santa-apps" }}
+        logoSrc="/santa-radio-logo.png"
         compact
       />
 

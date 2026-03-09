@@ -127,6 +127,7 @@ export default function HomePage() {
         subtitle="Guy Harris is the voice of Santa trusted by BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins, CBeebies, and leading brands across the UK. Available for radio, TV, podcasts, campaigns, and festive voiceover."
         primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Contact Santa Guy", href: "/contact-santa-guy" }}
+        logoSrc="/santaguy-logo.png"
       />
 
       <ClientLogos />

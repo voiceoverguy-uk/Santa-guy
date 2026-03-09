@@ -20,13 +20,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <Link href="/" className="flex items-center gap-2 group">
-            <span className="text-2xl sm:text-3xl font-bold text-santa-red tracking-tight group-hover:text-santa-red-dark transition-colors">
-              Santa
-            </span>
-            <span className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
-              Guy
-            </span>
+          <Link href="/" className="flex items-center group">
+            <img
+              src="/santaguy-logo.png"
+              alt="SantaGuy"
+              className="h-10 sm:h-12 w-auto"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
@@ -43,7 +42,7 @@ export default function Header() {
               href="/hire-santa-voice"
               className="ml-2 px-5 py-2.5 bg-santa-red text-white text-sm font-semibold rounded-lg hover:bg-santa-red-dark transition-colors shadow-sm"
             >
-              Hire Santa
+              Hire Santa Voice
             </Link>
           </nav>
 
