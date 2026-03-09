@@ -221,7 +221,8 @@ export default function HomePage() {
                 major brand campaigns every festive season.
               </p>
               <p className="mt-4 text-gray-600 leading-relaxed">
-                With years of professional voiceover experience and a purpose-built broadcast studio, Guy
+                With years of professional voiceover experience and a purpose-built{" "}
+                <a href="https://www.voiceoverguy.co.uk/voiceover-studio" target="_blank" rel="noopener noreferrer" className="text-santa-red font-semibold hover:text-santa-red-dark underline underline-offset-2 transition-colors">broadcast studio</a>, Guy
                 delivers authentic, warm, and instantly recognisable Santa recordings for agencies,
                 producers, and brands who demand the best.
               </p>
