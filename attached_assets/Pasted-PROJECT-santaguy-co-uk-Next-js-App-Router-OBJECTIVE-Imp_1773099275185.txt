@@ -1,0 +1,277 @@
+PROJECT: santaguy.co.uk (Next.js App Router)
+
+OBJECTIVE
+Improve the homepage SEO, metadata, Open Graph, Twitter cards, and structured data without changing the visual design or layout.
+
+IMPORTANT
+Do NOT refactor the site.
+Do NOT change page layout or styling.
+Only improve metadata, share cards, and structured data.
+
+The homepage should maintain strong keyword signals for:
+Santa Guy
+voice of Santa
+Santa voice
+Father Christmas voice
+Guy Harris
+Santa voiceover
+
+
+----------------------------------------------------
+
+TASK 1 — HOMEPAGE METADATA
+
+Update homepage metadata in:
+
+app/page.tsx
+
+Set the homepage title to:
+
+Santa Guy | The UK’s Trusted Voice of Santa | Guy Harris
+
+
+Set the meta description to:
+
+Guy Harris is the UK’s trusted voice of Santa, heard on BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.
+
+
+Set the canonical URL to:
+
+https://santaguy.co.uk/
+
+
+IMPORTANT
+Preserve metadataBase from app/layout.tsx
+
+
+----------------------------------------------------
+
+TASK 2 — OPEN GRAPH METADATA
+
+Add Open Graph metadata to the homepage.
+
+Values must be:
+
+og:title
+Santa Guy | The UK’s Trusted Voice of Santa | Guy Harris
+
+og:description
+Guy Harris is the UK’s trusted voice of Santa, heard on BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.
+
+og:url
+https://santaguy.co.uk/
+
+og:type
+website
+
+og:image
+https://santaguy.co.uk/santa-guy-logo-og.png
+
+og:image:width
+1200
+
+og:image:height
+630
+
+og:site_name
+SantaGuy
+
+
+The Open Graph share image file is:
+
+/santa-guy-logo-og.png
+
+
+----------------------------------------------------
+
+TASK 3 — TWITTER CARD METADATA
+
+Add Twitter/X card metadata.
+
+Values must be:
+
+twitter:card
+summary_large_image
+
+twitter:title
+Santa Guy | The UK’s Trusted Voice of Santa | Guy Harris
+
+twitter:description
+Guy Harris is the UK’s trusted voice of Santa, heard on BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.
+
+twitter:image
+https://santaguy.co.uk/santa-guy-logo-og.png
+
+twitter:site
+@voiceoverman
+
+
+----------------------------------------------------
+
+TASK 4 — VERIFY FAVICON AND ICONS
+
+Confirm the following icons remain correctly configured in metadata:
+
+/favicon.ico
+/apple-touch-icon.png
+
+Do NOT change them if already working.
+
+
+----------------------------------------------------
+
+TASK 5 — STRUCTURED DATA (JSON-LD)
+
+Expand homepage schema to include:
+
+Organization
+Person
+WebSite
+WebPage
+
+Additionally include:
+
+VideoObject schema for homepage videos
+AudioObject schema for MP3 demo audio if present
+FAQPage schema only if FAQs exist on the homepage
+
+
+----------------------------------------------------
+
+ORGANIZATION SCHEMA
+
+Add JSON-LD:
+
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "SantaGuy",
+ "url": "https://santaguy.co.uk",
+ "logo": "https://santaguy.co.uk/santa-guy-logo-og.png",
+ "sameAs": [
+  "https://www.voiceoverguy.co.uk"
+ ]
+}
+
+
+----------------------------------------------------
+
+PERSON SCHEMA
+
+Add JSON-LD:
+
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Guy Harris",
+ "jobTitle": "Voice Actor",
+ "description": "The UK's trusted voice of Santa heard on BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.",
+ "url": "https://santaguy.co.uk",
+ "sameAs": [
+  "https://www.voiceoverguy.co.uk"
+ ]
+}
+
+
+----------------------------------------------------
+
+WEBSITE SCHEMA
+
+Add JSON-LD:
+
+{
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "name": "SantaGuy",
+ "url": "https://santaguy.co.uk",
+ "description": "The UK's trusted voice of Santa. Professional Santa voiceover for radio, TV, podcasts, brands and Christmas campaigns."
+}
+
+
+----------------------------------------------------
+
+WEBPAGE SCHEMA
+
+Add JSON-LD:
+
+{
+ "@context": "https://schema.org",
+ "@type": "WebPage",
+ "name": "Santa Guy | The UK's Trusted Voice of Santa",
+ "url": "https://santaguy.co.uk"
+}
+
+
+----------------------------------------------------
+
+VIDEOOBJECT SCHEMA (FOR FEATURED VIDEOS)
+
+For each homepage video embed, add a VideoObject schema.
+
+Example structure:
+
+{
+ "@context": "https://schema.org",
+ "@type": "VideoObject",
+ "name": "Voice of Santa on BBC Radio 2",
+ "description": "Guy Harris performing as Santa for BBC Radio 2.",
+ "thumbnailUrl": "https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg",
+ "uploadDate": "2024-01-01T08:00:00+00:00",
+ "embedUrl": "https://www.youtube.com/embed/VIDEO_ID"
+}
+
+Use the real YouTube video IDs already present on the homepage.
+
+
+----------------------------------------------------
+
+AUDIOOBJECT SCHEMA (FOR DEMO MP3s)
+
+If MP3 demos exist on the homepage, add AudioObject schema entries.
+
+Example structure:
+
+{
+ "@context": "https://schema.org",
+ "@type": "AudioObject",
+ "name": "Santa Voice Demo",
+ "description": "Professional Santa voice demo performed by Guy Harris.",
+ "contentUrl": "https://santaguy.co.uk/audio/santa-demo.mp3",
+ "uploadDate": "2024-01-01T08:00:00+00:00"
+}
+
+
+----------------------------------------------------
+
+FINAL VALIDATION CHECKLIST
+
+After implementation verify:
+
+• Page title renders correctly
+• Meta description matches exactly
+• Canonical URL is correct
+• Open Graph preview works
+• Twitter/X preview works
+• Share image loads from /santa-guy-logo-og.png
+• JSON-LD passes Google Rich Results Test
+• Schema includes Organization, Person, WebSite and WebPage
+• VideoObject appears for homepage videos
+• AudioObject appears for MP3 demos if present
+• Favicon still loads correctly
+
+
+----------------------------------------------------
+
+IMPORTANT
+
+Ensure the homepage still naturally contains these phrases in visible content:
+
+Santa Guy
+voice of Santa
+Santa voice
+Father Christmas voice
+Guy Harris
+Santa voiceover
+
+Do not add keyword stuffing.
+Keep wording natural.
