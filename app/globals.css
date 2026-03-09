@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-santa-red: #9C060B;
+  --color-santa-red-dark: #7A0509;
+  --color-santa-red-light: #C41017;
+  --color-santa-cream: #FFF8F0;
+  --color-santa-gold: #D4A843;
+  --color-santa-green: #1B5E20;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1a1a1a;
+  background-color: #ffffff;
+}
+
+::selection {
+  background-color: #9C060B;
+  color: white;
+}

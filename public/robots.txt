@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://santaguy.co.uk/sitemap.xml

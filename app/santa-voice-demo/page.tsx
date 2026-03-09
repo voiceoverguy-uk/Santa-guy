@@ -1,0 +1,100 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Hero from "@/components/Hero";
+import SectionHeading from "@/components/SectionHeading";
+import AudioPlayer from "@/components/AudioPlayer";
+import CTASection from "@/components/CTASection";
+import StructuredData from "@/components/StructuredData";
+
+export const metadata: Metadata = {
+  title: "Santa Voice Demo — Hear the UK's Trusted Voice of Santa",
+  description:
+    "Listen to Santa voice demos from Guy Harris — the UK's trusted Santa voice artist. Showreel clips for radio, TV, podcast, and brand Christmas voiceover.",
+  alternates: { canonical: "/santa-voice-demo" },
+};
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Santa Voice Demo",
+  description: "Listen to Santa voice demos and showreel clips from Guy Harris.",
+  url: "https://santaguy.co.uk/santa-voice-demo",
+};
+
+const demos = [
+  { title: "Santa Commercial Reel", description: "Full showreel — radio and TV Santa voiceover highlights" },
+  { title: "Santa Character Voice", description: "Warm, authentic, classic Santa character voice" },
+  { title: "Radio Station Imaging", description: "Jingles, drops, and festive station imaging samples" },
+  { title: "Christmas Campaign Promo", description: "National brand campaign Santa voiceover example" },
+  { title: "Podcast Intro / Outro", description: "Santa hosting and guest appearance demo" },
+  { title: "Corporate Christmas Message", description: "Professional corporate festive greeting voiceover" },
+  { title: "Children's Content", description: "Santa voice for children's TV and family content" },
+  { title: "Live Radio Appearance", description: "Example of live Santa radio check-in" },
+];
+
+export default function SantaVoiceDemoPage() {
+  return (
+    <>
+      <StructuredData data={pageSchema} />
+
+      <Hero
+        title="Santa Voice Demo"
+        subtitle="Hear the Santa voice trusted by the BBC, ITV, Heart, Capital, and leading brands. Listen to showreel clips and demo recordings from the UK's most established Santa voice artist."
+        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        secondaryCTA={{ label: "Contact", href: "/contact-santa-guy" }}
+        compact
+      />
+
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="Listen to Santa Voice Demos"
+            subtitle="Broadcast-quality Santa voice recordings from Guy Harris's professional studio"
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {demos.map((demo) => (
+              <AudioPlayer
+                key={demo.title}
+                title={demo.title}
+                description={demo.description}
+              />
+            ))}
+          </div>
+
+          <div className="mt-12 bg-santa-cream rounded-xl p-6 sm:p-8 text-center">
+            <h3 className="font-semibold text-gray-900 mb-2">Video Showreel</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              Watch the full Santa Guy video showreel with highlights from campaigns and appearances.
+            </p>
+            <div className="bg-gray-100 rounded-xl aspect-video max-w-2xl mx-auto flex items-center justify-center">
+              <p className="text-gray-400 text-sm">YouTube embed placeholder</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-gray-600 leading-relaxed">
+            Want to hear more or discuss a specific requirement?{" "}
+            <Link href="/contact-santa-guy" className="text-santa-red hover:text-santa-red-dark font-medium">
+              Get in touch
+            </Link>{" "}
+            and Guy will be happy to provide bespoke demo material for your project. You can also{" "}
+            <Link href="/hire-santa-voice" className="text-santa-red hover:text-santa-red-dark font-medium">
+              learn more about hiring the Santa voice
+            </Link>.
+          </p>
+        </div>
+      </section>
+
+      <CTASection
+        title="Like What You Hear?"
+        description="Hire the UK's most trusted Santa voice for your next project. Broadcast-quality recordings delivered fast."
+        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        secondaryCTA={{ label: "Contact Santa Guy", href: "/contact-santa-guy" }}
+      />
+    </>
+  );
+}

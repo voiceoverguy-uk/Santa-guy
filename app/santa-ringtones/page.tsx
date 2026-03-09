@@ -1,0 +1,96 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Hero from "@/components/Hero";
+import SectionHeading from "@/components/SectionHeading";
+import DownloadCard from "@/components/DownloadCard";
+import CTASection from "@/components/CTASection";
+import StructuredData from "@/components/StructuredData";
+
+export const metadata: Metadata = {
+  title: "Santa Ringtones — Free Christmas Ringtones from SantaGuy",
+  description:
+    "Download free Santa ringtones for your phone. Festive Christmas ringtones featuring the real voice of Santa, Guy Harris. Available as free downloads.",
+  alternates: { canonical: "/santa-ringtones" },
+};
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Santa Ringtones",
+  description: "Free Christmas ringtones featuring the real voice of Santa.",
+  url: "https://santaguy.co.uk/santa-ringtones",
+};
+
+const ringtones = [
+  { title: "Santa's Greeting", description: "A warm festive greeting from Santa for your ringtone" },
+  { title: "Ho Ho Ho!", description: "The classic Santa laugh — perfect for incoming calls" },
+  { title: "Merry Christmas!", description: "Santa wishes you a Merry Christmas every time your phone rings" },
+  { title: "Santa's Jingle", description: "A festive jingle with Santa's voice and sleigh bells" },
+  { title: "Naughty or Nice?", description: "Santa checks his list — are you naughty or nice?" },
+  { title: "Christmas Eve Alert", description: "Santa's on his way — a festive alert tone" },
+];
+
+export default function SantaRingtonesPage() {
+  return (
+    <>
+      <StructuredData data={pageSchema} />
+
+      <Hero
+        title="Santa Ringtones"
+        subtitle="Free Christmas ringtones featuring the real voice of Santa. Download festive ringtones for your phone and spread the Christmas cheer every time it rings."
+        compact
+      />
+
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="Free Santa Ringtone Downloads"
+            subtitle="Six festive ringtones featuring the authentic voice of Santa, Guy Harris"
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {ringtones.map((ringtone) => (
+              <DownloadCard
+                key={ringtone.title}
+                title={ringtone.title}
+                description={ringtone.description}
+                placeholder
+              />
+            ))}
+          </div>
+
+          <p className="text-center text-sm text-gray-500 mt-8">
+            Ringtone zip files will be available for download soon. Check back for updates.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-gray-600 leading-relaxed">
+            Love the ringtones? Check out the{" "}
+            <Link href="/santa-apps" className="text-santa-red hover:text-santa-red-dark font-medium">
+              Santa Apps
+            </Link>{" "}
+            for more festive fun, or explore{" "}
+            <Link href="/santa-text-alerts" className="text-santa-red hover:text-santa-red-dark font-medium">
+              Santa Text Alerts
+            </Link>{" "}
+            for festive message tones. Want to{" "}
+            <Link href="/hire-santa-voice" className="text-santa-red hover:text-santa-red-dark font-medium">
+              hire the Santa voice
+            </Link>{" "}
+            for your own project?
+          </p>
+        </div>
+      </section>
+
+      <CTASection
+        title="Want the Santa Voice for Your Brand?"
+        description="The voice behind the ringtones is available for professional voiceover. Hire Guy Harris for your Christmas campaign."
+        primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
+        secondaryCTA={{ label: "Contact", href: "/contact-santa-guy" }}
+      />
+    </>
+  );
+}
