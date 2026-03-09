@@ -22,12 +22,12 @@ const pageSchema = {
 };
 
 const ringtones = [
-  { title: "Santa's Greeting", description: "A warm festive greeting from Santa for your ringtone" },
-  { title: "Ho Ho Ho!", description: "The classic Santa laugh — perfect for incoming calls" },
-  { title: "Merry Christmas!", description: "Santa wishes you a Merry Christmas every time your phone rings" },
-  { title: "Santa's Jingle", description: "A festive jingle with Santa's voice and sleigh bells" },
-  { title: "Naughty or Nice?", description: "Santa checks his list — are you naughty or nice?" },
-  { title: "Christmas Eve Alert", description: "Santa's on his way — a festive alert tone" },
+  { title: "Santa's Greeting", description: "A warm festive greeting from Santa for your ringtone", file: "/ringtones/santa-guy-ringtone-1.zip" },
+  { title: "Ho Ho Ho!", description: "The classic Santa laugh — perfect for incoming calls", file: "/ringtones/santa-guy-ringtone-2.zip" },
+  { title: "Merry Christmas!", description: "Santa wishes you a Merry Christmas every time your phone rings", file: "/ringtones/santa-guy-ringtone-3.zip" },
+  { title: "Santa's Jingle", description: "A festive jingle with Santa's voice and sleigh bells", file: "/ringtones/santa-guy-ringtone-4.zip" },
+  { title: "Naughty or Nice?", description: "Santa checks his list — are you naughty or nice?", file: "/ringtones/santa-guy-ringtone-5.zip" },
+  { title: "Christmas Eve Alert", description: "Santa's on his way — a festive alert tone", file: "/ringtones/santa-guy-ringtone-6.zip" },
 ];
 
 export default function SantaRingtonesPage() {
@@ -54,14 +54,25 @@ export default function SantaRingtonesPage() {
                 key={ringtone.title}
                 title={ringtone.title}
                 description={ringtone.description}
-                placeholder
+                downloadHref={ringtone.file}
+                placeholder={false}
               />
             ))}
           </div>
 
-          <p className="text-center text-sm text-gray-500 mt-8">
-            Ringtone zip files will be available for download soon. Check back for updates.
-          </p>
+          <div className="mt-10 bg-santa-cream rounded-xl p-6 sm:p-8">
+            <h3 className="font-semibold text-gray-900 mb-3 text-center">How to Set Your Santa Ringtone</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-600">
+              <div>
+                <p className="font-medium text-gray-900 mb-1">Android</p>
+                <p>Download the zip file, extract the MP3, then go to Settings &gt; Sound &gt; Phone Ringtone and select the file from your downloads.</p>
+              </div>
+              <div>
+                <p className="font-medium text-gray-900 mb-1">iPhone / Apple</p>
+                <p>Download the zip file and extract the MP3. Use GarageBand or a ringtone maker app to convert it, then set it via Settings &gt; Sounds &amp; Haptics &gt; Ringtone.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

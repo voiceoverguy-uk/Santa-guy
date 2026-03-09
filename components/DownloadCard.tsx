@@ -32,10 +32,11 @@ export default function DownloadCard({
             downloadHref && (
               <a
                 href={downloadHref}
+                download
                 className="inline-flex items-center gap-1 text-xs font-medium text-santa-red hover:text-santa-red-dark mt-2 transition-colors"
               >
                 <Download size={12} />
-                Download
+                Download (.zip)
               </a>
             )
           )}
