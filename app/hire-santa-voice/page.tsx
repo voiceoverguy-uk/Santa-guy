@@ -183,10 +183,10 @@ export default function HireSantaVoicePage() {
             subtitle="Hear the quality that leading broadcasters and brands rely on"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            <AudioPlayer title="Santa Commercial Reel" description="Radio & TV showcase" />
-            <AudioPlayer title="Santa Character Read" description="Warm, natural Santa voice" />
-            <AudioPlayer title="Radio Station Imaging" description="Jingles & drops" />
-            <AudioPlayer title="Christmas Campaign Promo" description="National brand example" />
+            <AudioPlayer title="Santa Commercial Reel" description="Radio & TV showcase" src="/demos/Santa-voice-Guy-Demo-1.mp3" />
+            <AudioPlayer title="Santa Character Read" description="Warm, natural Santa voice" src="/demos/Santa-voice-Guy-Demo-2.mp3" />
+            <AudioPlayer title="Radio Station Imaging" description="Jingles & drops" src="/demos/Santa-voice-Guy-Demo-3.mp3" />
+            <AudioPlayer title="Christmas Campaign Promo" description="National brand example" src="/demos/Santa-voice-Guy-Demo-1.mp3" />
           </div>
           <div className="text-center mt-8">
             <Link
