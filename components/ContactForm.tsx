@@ -11,6 +11,8 @@ const reasons = [
   "General enquiry",
 ];
 
+const MIN_MESSAGE_LENGTH = 25;
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -20,9 +22,19 @@ export default function ContactForm() {
     website: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [messageError, setMessageError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setMessageError("");
+    setErrorMessage("");
+
+    if (formData.message.trim().length < MIN_MESSAGE_LENGTH) {
+      setMessageError("Please enter at least 25 characters so we have enough detail to help.");
+      return;
+    }
+
     setStatus("sending");
 
     try {
@@ -32,14 +44,18 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
 
+      const data = await res.json();
+
       if (res.ok) {
         setStatus("success");
         setFormData({ name: "", email: "", reason: "", message: "", website: "" });
       } else {
         setStatus("error");
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
       }
     } catch {
       setStatus("error");
+      setErrorMessage("Something went wrong. Please try again or email us directly.");
     }
   };
 
@@ -63,6 +79,8 @@ export default function ContactForm() {
     );
   }
 
+  const charsRemaining = MIN_MESSAGE_LENGTH - formData.message.trim().length;
+
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       {status === "error" && (
@@ -70,10 +88,10 @@ export default function ContactForm() {
           <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
           <div>
             <p className="text-sm font-medium text-red-900">
-              Something went wrong
+              {errorMessage}
             </p>
             <p className="text-sm text-red-700 mt-1">
-              Please try again or email us directly at{" "}
+              You can also email us directly at{" "}
               <a
                 href="mailto:enquiries@voiceoverguy.co.uk"
                 className="underline"
@@ -144,11 +162,33 @@ export default function ContactForm() {
           id="message"
           required
           rows={5}
+          minLength={MIN_MESSAGE_LENGTH}
           value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-santa-red/20 focus:border-santa-red transition-colors resize-none"
+          onChange={(e) => {
+            setFormData({ ...formData, message: e.target.value });
+            if (messageError && e.target.value.trim().length >= MIN_MESSAGE_LENGTH) {
+              setMessageError("");
+            }
+          }}
+          className={`w-full px-4 py-3 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-santa-red/20 focus:border-santa-red transition-colors resize-none ${
+            messageError ? "border-red-300" : "border-gray-200"
+          }`}
           placeholder="Tell us about your project or enquiry..."
         />
+        <div className="flex justify-between items-center mt-1.5">
+          {messageError ? (
+            <p className="text-xs text-red-600">{messageError}</p>
+          ) : (
+            <p className="text-xs text-gray-400">
+              {charsRemaining > 0
+                ? `${charsRemaining} more character${charsRemaining === 1 ? "" : "s"} needed`
+                : ""}
+            </p>
+          )}
+          <p className="text-xs text-gray-400">
+            {formData.message.trim().length} / {MIN_MESSAGE_LENGTH} min
+          </p>
+        </div>
       </div>
 
       <div className="absolute opacity-0 pointer-events-none" aria-hidden="true">

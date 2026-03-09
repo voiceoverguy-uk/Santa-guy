@@ -6,11 +6,11 @@ import ClientLogos from "@/components/ClientLogos";
 import SectionHeading from "@/components/SectionHeading";
 import Card from "@/components/Card";
 import TestimonialSlider from "@/components/TestimonialSlider";
-import AudioPlayer from "@/components/AudioPlayer";
 import CountdownTimer from "@/components/CountdownTimer";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import StructuredData from "@/components/StructuredData";
+import DemoCards from "@/components/DemoCards";
 
 export const metadata: Metadata = {
   title: "SantaGuy | The UK's Trusted Voice of Santa — Guy Harris",
@@ -61,6 +61,25 @@ const services = [
       "Listen to Santa voice demos and showreel clips. Hear the voice trusted by the UK's biggest broadcasters and brands.",
     icon: Music,
     href: "/santa-voice-demo",
+  },
+];
+
+const videos = [
+  {
+    title: "Voice of Santa for BBC Radio 2",
+    id: "5o9Va4YsI3g",
+  },
+  {
+    title: "CBeebies Santa for the Go Jetters",
+    id: "yi-4Fm40nmE",
+  },
+  {
+    title: "Santa on Zoe Ball Breakfast Show",
+    id: "Qqu-HDA2KJE",
+  },
+  {
+    title: "Voice of Santa for P&O Ferries Christmas Campaign",
+    id: "Jjj1as7mpUw",
   },
 ];
 
@@ -128,7 +147,6 @@ export default function HomePage() {
         primaryCTA={{ label: "Hire Santa Voice", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Contact Santa Guy", href: "/contact-santa-guy" }}
         logoSrc="/santaguy-logo-white.png"
-        overlayHeader
       />
 
       <ClientLogos />
@@ -137,14 +155,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Hear the Voice of Santa"
-            subtitle="Listen to demo clips from the UK's most trusted Santa voice artist"
+            subtitle="Listen to real Santa voice demos recorded in the studio by Guy Harris — the UK's most trusted Santa voice artist"
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <AudioPlayer title="Santa Commercial Demo" description="Radio & TV voiceover reel" />
-            <AudioPlayer title="Santa Character Voice" description="Warm, authentic Santa voice" />
-            <AudioPlayer title="Santa Radio Jingle" description="Festive station imaging" />
-          </div>
-          <div className="text-center mt-8">
+          <DemoCards />
+          <div className="text-center mt-10">
             <Link
               href="/santa-voice-demo"
               className="text-sm font-medium text-santa-red hover:text-santa-red-dark transition-colors"
@@ -156,6 +170,40 @@ export default function HomePage() {
       </section>
 
       <section className="py-16 sm:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="Watch Santa Guy in Action"
+            subtitle="See why BBC Radio 2, CBeebies, Zoe Ball, and P&O Ferries trust Guy Harris as the voice of Santa for their biggest festive moments"
+          />
+          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 -mt-4 leading-relaxed">
+            From national radio broadcasts to major brand campaigns, Guy Harris has delivered the definitive Santa voice across television, radio, and digital platforms. Watch highlights from some of his most recognised festive voiceover work.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {videos.map((video) => (
+              <div
+                key={video.id}
+                className="rounded-xl overflow-hidden border border-santa-red/15 shadow-md hover:shadow-lg transition-shadow bg-white"
+              >
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src={`https://www.youtube.com/embed/${video.id}`}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
+                <div className="px-4 py-3">
+                  <h3 className="text-sm font-semibold text-gray-900">{video.title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="What Santa Guy Can Do"
@@ -175,7 +223,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -200,8 +248,12 @@ export default function HomePage() {
                 Read the full story &rarr;
               </Link>
             </div>
-            <div className="bg-gray-100 rounded-2xl aspect-[4/3] flex items-center justify-center">
-              <p className="text-gray-400 text-sm">Image placeholder — Guy Harris photo</p>
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="/santa-guy-voice-over-1.jpg"
+                alt="Guy Harris as Santa in his professional voiceover studio"
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>

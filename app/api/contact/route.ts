@@ -50,7 +50,14 @@ export async function POST(request: Request) {
 
     if (!name || !email || !reason || !message) {
       return NextResponse.json(
-        { error: "All fields are required" },
+        { error: "All fields are required." },
+        { status: 400 }
+      );
+    }
+
+    if (typeof message === "string" && message.trim().length < 25) {
+      return NextResponse.json(
+        { error: "Please enter at least 25 characters so we have enough detail to help." },
         { status: 400 }
       );
     }
@@ -58,16 +65,27 @@ export async function POST(request: Request) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { error: "Invalid email address" },
+        { error: "Please enter a valid email address." },
         { status: 400 }
       );
     }
 
     const apiKey = process.env.RESEND_API_KEY;
+    const contactTo = process.env.CONTACT_TO_EMAIL;
+    const contactFrom = process.env.CONTACT_FROM_EMAIL;
+
     if (!apiKey) {
       console.error("RESEND_API_KEY is not set");
       return NextResponse.json(
-        { error: "Email service not configured" },
+        { error: "Email service is not configured. Please try again later or email us directly." },
+        { status: 500 }
+      );
+    }
+
+    if (!contactTo || !contactFrom) {
+      console.error("CONTACT_TO_EMAIL or CONTACT_FROM_EMAIL is not set");
+      return NextResponse.json(
+        { error: "Email service is not configured. Please try again later or email us directly." },
         { status: 500 }
       );
     }
@@ -79,9 +97,9 @@ export async function POST(request: Request) {
     const safeReason = escapeHtml(reason);
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
 
-    await resend.emails.send({
-      from: "SantaGuy Website <onboarding@resend.dev>",
-      to: "enquiries@voiceoverguy.co.uk",
+    const result = await resend.emails.send({
+      from: `SantaGuy Website <${contactFrom}>`,
+      to: contactTo,
       replyTo: email,
       subject: `SantaGuy Enquiry: ${safeReason}`,
       html: `
@@ -95,11 +113,21 @@ export async function POST(request: Request) {
       `,
     });
 
+    console.log("Resend API response:", JSON.stringify(result));
+
+    if (result.error) {
+      console.error("Resend error:", result.error);
+      return NextResponse.json(
+        { error: "Failed to send message. Please try again or email us directly." },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Contact form error:", error);
     return NextResponse.json(
-      { error: "Failed to send message" },
+      { error: "Failed to send message. Please try again or email us directly." },
       { status: 500 }
     );
   }

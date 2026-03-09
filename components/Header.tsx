@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -15,14 +14,10 @@ const navItems = [
 ];
 
 export default function Header() {
-  const pathname = usePathname();
-  const isHomepage = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    if (!isHomepage) return;
-
     const handleScroll = () => {
       setScrolled(window.scrollY > 80);
     };
@@ -30,25 +25,23 @@ export default function Header() {
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHomepage]);
-
-  const isTransparent = isHomepage && !scrolled;
+  }, []);
 
   return (
     <header
-      className={`${isHomepage ? "fixed" : "sticky"} top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isTransparent
-          ? "bg-transparent"
-          : "bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           <Link href="/" className="flex items-center group">
             <img
-              src={isTransparent ? "/santaguy-logo-white.png" : "/santaguy-logo-black.png"}
+              src={scrolled ? "/santaguy-logo-black.png" : "/santaguy-logo-white.png"}
               alt="SantaGuy"
-              className="h-10 sm:h-12 w-auto transition-opacity duration-300"
+              className="h-8 sm:h-10 w-auto transition-opacity duration-300"
             />
           </Link>
 
@@ -57,10 +50,10 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                  isTransparent
-                    ? "text-white/90 hover:text-white hover:bg-white/10"
-                    : "text-gray-700 hover:text-santa-red hover:bg-santa-cream"
+                className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-300 ${
+                  scrolled
+                    ? "text-gray-700 hover:text-santa-red hover:bg-santa-cream"
+                    : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {item.label}
@@ -68,7 +61,7 @@ export default function Header() {
             ))}
             <Link
               href="/hire-santa-voice"
-              className="ml-2 px-5 py-2.5 bg-santa-red text-white text-sm font-semibold rounded-lg hover:bg-santa-red-dark transition-colors shadow-sm"
+              className="ml-2 px-4 py-2 bg-santa-red text-white text-sm font-semibold rounded-lg hover:bg-santa-red-dark transition-colors shadow-sm"
             >
               Hire Santa Voice
             </Link>
@@ -77,7 +70,7 @@ export default function Header() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={`lg:hidden p-2 transition-colors duration-300 ${
-              isTransparent ? "text-white hover:text-white/80" : "text-gray-700 hover:text-santa-red"
+              scrolled ? "text-gray-700 hover:text-santa-red" : "text-white hover:text-white/80"
             }`}
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}

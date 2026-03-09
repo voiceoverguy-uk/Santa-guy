@@ -20,13 +20,19 @@ export default function Hero({
   secondaryCTA,
   compact = false,
   logoSrc,
-  overlayHeader = false,
+  overlayHeader = true,
 }: HeroProps) {
-  const paddingClasses = overlayHeader
-    ? "pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-36"
-    : compact
-      ? "py-16 sm:py-20"
-      : "py-20 sm:py-28 lg:py-36";
+  let paddingClasses: string;
+
+  if (overlayHeader && compact) {
+    paddingClasses = "pt-24 pb-16 sm:pt-28 sm:pb-20";
+  } else if (overlayHeader && !compact) {
+    paddingClasses = "pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-36";
+  } else if (compact) {
+    paddingClasses = "py-16 sm:py-20";
+  } else {
+    paddingClasses = "py-20 sm:py-28 lg:py-36";
+  }
 
   return (
     <section className={`relative overflow-hidden ${paddingClasses}`}>
