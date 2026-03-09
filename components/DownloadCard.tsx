@@ -1,7 +1,7 @@
 "use client";
 
 import { Download, Play, Pause } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 interface DownloadCardProps {
   title: string;
@@ -9,6 +9,7 @@ interface DownloadCardProps {
   downloadHref?: string;
   placeholder?: boolean;
   previewSrc?: string;
+  onPlay?: (audio: HTMLAudioElement) => void;
 }
 
 export default function DownloadCard({
@@ -17,6 +18,7 @@ export default function DownloadCard({
   downloadHref,
   placeholder = true,
   previewSrc,
+  onPlay,
 }: DownloadCardProps) {
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -28,8 +30,29 @@ export default function DownloadCard({
     } else {
       audioRef.current?.play();
     }
-    setPlaying(!playing);
   };
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handlePlay = () => {
+      setPlaying(true);
+      onPlay?.(audio);
+    };
+    const handlePause = () => setPlaying(false);
+    const handleEnded = () => setPlaying(false);
+
+    audio.addEventListener("play", handlePlay);
+    audio.addEventListener("pause", handlePause);
+    audio.addEventListener("ended", handleEnded);
+
+    return () => {
+      audio.removeEventListener("play", handlePlay);
+      audio.removeEventListener("pause", handlePause);
+      audio.removeEventListener("ended", handleEnded);
+    };
+  }, [onPlay]);
 
   return (
     <div className="bg-white rounded-xl border border-gray-100 p-5 shadow-sm hover:shadow-md transition-shadow">
@@ -75,7 +98,6 @@ export default function DownloadCard({
         <audio
           ref={audioRef}
           src={previewSrc}
-          onEnded={() => setPlaying(false)}
           preload="none"
         />
       )}

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
-import DownloadCard from "@/components/DownloadCard";
+import RingtoneGrid from "@/components/RingtoneGrid";
 import CTASection from "@/components/CTASection";
 import StructuredData from "@/components/StructuredData";
 
@@ -48,18 +48,7 @@ export default function SantaRingtonesPage() {
             subtitle="Six festive ringtones featuring the authentic voice of Santa, Guy Harris"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {ringtones.map((ringtone) => (
-              <DownloadCard
-                key={ringtone.title}
-                title={ringtone.title}
-                description={ringtone.description}
-                downloadHref={ringtone.file}
-                placeholder={false}
-                previewSrc={ringtone.preview}
-              />
-            ))}
-          </div>
+          <RingtoneGrid ringtones={ringtones} />
 
           <div className="mt-10 bg-santa-cream rounded-xl p-6 sm:p-8">
             <h3 className="font-semibold text-gray-900 mb-3 text-center">How to Set Your Santa Ringtone</h3>
