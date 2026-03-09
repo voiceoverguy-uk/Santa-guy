@@ -216,7 +216,7 @@ export default function HomePage() {
               </h2>
               <div className="mt-4 w-16 h-1 bg-santa-red rounded-full" />
               <p className="mt-6 text-gray-600 leading-relaxed">
-                Guy Harris is one of the UK&apos;s most established and trusted voice artists. His Santa voice has
+                <a href="https://www.voiceoverguy.co.uk" target="_blank" rel="noopener noreferrer" className="text-santa-red font-semibold hover:text-santa-red-dark underline underline-offset-2 transition-colors">Guy Harris</a> is one of the UK&apos;s most established and trusted voice artists. His Santa voice has
                 become a staple of British Christmas broadcasting, heard on national radio, television, and
                 major brand campaigns every festive season.
               </p>
