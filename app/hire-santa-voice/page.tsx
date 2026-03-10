@@ -29,6 +29,9 @@ const services = [
     description:
       "Broadcast-quality Santa voiceover for commercials, promos, jingles, and branded content. Delivered fast from a professional studio with same-day turnaround available.",
     icon: Mic,
+    image: "/images/santa-voiceover-recording-studio.webp",
+    alt: "Animated Santa recording professional Santa voiceover in a studio booth",
+    badge: "BROADCAST QUALITY",
     features: [
       "Radio commercials and station imaging",
       "TV commercials and promos",
@@ -41,6 +44,9 @@ const services = [
     description:
       "Santa guest appearances on podcasts, radio shows, and live broadcasts. Perfect for festive specials, Christmas countdowns, and seasonal programming.",
     icon: Headphones,
+    image: "/images/santa-podcast-radio-guest.webp",
+    alt: "Animated Santa as a podcast and radio guest wearing headphones in a festive studio",
+    badge: "PODCAST GUEST",
     features: [
       "Podcast guest appearances as Santa",
       "Live and pre-recorded radio appearances",
@@ -53,6 +59,9 @@ const services = [
     description:
       "Dedicated Santa check-ins, jingle packages, and seasonal imaging for radio stations. Make your station the home of Christmas with the UK's most trusted Santa voice.",
     icon: Radio,
+    image: "/images/santa-radio-station-imaging.webp",
+    alt: "Animated Santa in a radio studio recording Santa radio imaging",
+    badge: "RADIO IMAGING",
     features: [
       "Daily Santa check-ins and countdowns",
       "Custom jingle and imaging packages",
@@ -65,6 +74,9 @@ const services = [
     description:
       "Powerful, premium Santa voiceover for national and regional Christmas campaigns. From high street retailers to online brands, give your campaign the definitive Santa voice.",
     icon: Megaphone,
+    image: "/images/santa-christmas-campaign-voiceover.webp",
+    alt: "Animated Santa flying over a snowy city for a national Christmas campaign",
+    badge: "CAMPAIGN VOICEOVER",
     features: [
       "National brand campaign voiceover",
       "Retail and e-commerce Christmas promos",
@@ -77,6 +89,9 @@ const services = [
     description:
       "Bespoke personalised video messages from Santa through Festive Studio. Ideal for brand activations, corporate gifts, events, and high-value personal messages.",
     icon: Video,
+    image: "/images/santa-personalised-video-messages.webp",
+    alt: "Animated Santa recording personalised Santa video messages in a festive studio",
+    badge: "PERSONALISED VIDEO",
     features: [
       "Branded corporate Santa video messages",
       "Event and activation Santa content",
@@ -144,10 +159,18 @@ export default function HireSantaVoicePage() {
                   </ul>
                 </div>
                 <div className="w-full lg:w-80 flex-shrink-0">
-                  <div className="bg-gray-100 rounded-xl aspect-video flex items-center justify-center">
-                    <p className="text-gray-400 text-xs text-center px-4">
-                      Video / image placeholder
-                    </p>
+                  <div className="group/img relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="aspect-video">
+                      <img
+                        src={service.image}
+                        alt={service.alt}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-black/45 via-black/18 to-transparent pointer-events-none" />
+                    <span className="absolute top-3 left-3 px-2.5 py-1 bg-black/60 backdrop-blur-sm text-white text-[10px] font-semibold tracking-wider uppercase rounded-full pointer-events-none">
+                      {service.badge}
+                    </span>
                   </div>
                 </div>
               </div>
