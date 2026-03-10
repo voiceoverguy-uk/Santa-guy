@@ -32,8 +32,8 @@ export default function ContactPage() {
       <StructuredData data={pageSchema} />
 
       <Hero
-        title="Contact Santa Guy"
-        subtitle="Ready to hire the UK's trusted voice of Santa? Get in touch to discuss your project. Whether it's a national campaign, radio appearance, or festive voiceover — let's talk."
+        title="Ready to Book the UK's Trusted Voice of Santa?"
+        subtitle="Get in touch to discuss your campaign, broadcast, or festive project."
         compact
       />
 
@@ -56,10 +56,10 @@ export default function ContactPage() {
                 Check Availability
               </h2>
               <p className="text-gray-600 mb-2">
-                Fill in the form below and Guy will get back to you as quickly as possible.
+                Fill in the form below and Guy will reply quickly to confirm availability and discuss your project.
               </p>
               <p className="text-sm text-gray-500 mb-8">
-                Guy Harris is the voice of Santa trusted by BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.
+                Guy Harris is the Voice of Santa trusted by BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.
               </p>
               <ContactForm />
             </div>
@@ -71,7 +71,7 @@ export default function ContactPage() {
                   <h3 className="font-semibold text-gray-900">Email Directly</h3>
                 </div>
                 <p className="text-sm text-gray-600 mb-4">
-                  Prefer email? Click below to send your enquiry directly.
+                  Prefer email? Send your project details directly to Guy.
                 </p>
                 <EmailButton />
               </div>
@@ -82,8 +82,7 @@ export default function ContactPage() {
                   <h3 className="font-semibold text-gray-900">Fast Response</h3>
                 </div>
                 <p className="text-sm text-gray-600">
-                  Guy typically responds within a few hours during the festive season and within 24 hours at
-                  other times. Urgent projects can often be accommodated — just mention it in your message.
+                  Guy usually replies within a few hours during the festive season, and within 24 hours at other times. Urgent projects can often be accommodated — just mention it in your message.
                 </p>
               </div>
 
@@ -93,7 +92,7 @@ export default function ContactPage() {
                   <h3 className="font-semibold text-gray-900">Also Available As</h3>
                 </div>
                 <p className="text-sm text-gray-600 mb-2">
-                  Looking for non-Santa voiceover? Visit Guy&apos;s main voiceover site:
+                  Need non-Santa voiceover too? Visit Guy&apos;s main voiceover site:
                 </p>
                 <a
                   href="https://www.voiceoverguy.co.uk"

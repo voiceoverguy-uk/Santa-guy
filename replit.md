@@ -59,6 +59,7 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - `components/DownloadCard.tsx` — Download card with optional audio preview (play/pause button)
 - `components/RingtoneGrid.tsx` — Wrapper for DownloadCards with exclusive audio playback
 - `components/ContactForm.tsx` — Form with 25-char min validation, honeypot, obfuscated email
+- `components/HirePageDemos.tsx` — Client wrapper for audio demos on hire page with exclusive playback
 - `components/EmailButton.tsx` — Reusable obfuscated email button (JS-based mailto, no raw email in HTML)
 - `components/FAQSection.tsx` — Accordion FAQ with auto-generated FAQPage JSON-LD schema
 - `app/api/contact/route.ts` — Contact API (Resend, env vars, rate limiting, branded HTML email template)

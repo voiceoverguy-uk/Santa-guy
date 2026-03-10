@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Mic, Radio, Headphones, Video, Megaphone, Star, CheckCircle } from "lucide-react";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
-import AudioPlayer from "@/components/AudioPlayer";
+import HirePageDemos from "@/components/HirePageDemos";
 import CTASection from "@/components/CTASection";
 import StructuredData from "@/components/StructuredData";
 
@@ -88,28 +89,35 @@ const services = [
   },
   {
     title: "Personalised Santa Videos",
-    description:
-      "Bespoke personalised video messages from Santa through Festive Studio. Ideal for brand activations, corporate gifts, events, and high-value personal messages.",
+    description: (
+      <>
+        Bespoke personalised video messages from Santa through{" "}
+        <a href="https://festivestudio.com" target="_blank" rel="noopener noreferrer" className="text-santa-red hover:text-santa-red-dark font-medium transition-colors">Festive Studio</a>.
+        Join Santa for a personalised tour around the North Pole! Meet the Elves and visit the toy workshop!
+      </>
+    ),
     icon: Video,
     image: "/images/santa-personalised-video-messages.webp",
     alt: "Animated Santa recording personalised Santa video messages in a festive studio",
     badge: "PERSONALISED VIDEO",
     features: [
-      "Branded corporate Santa video messages",
-      "Event and activation Santa content",
-      "High-quality personalised video greetings",
-      "Bulk booking options available",
+      "Personalised Santa video messages",
+      "Amazing high quality Santa film",
+      "Your children's names mentioned",
+      "Available for immediate download",
     ],
   },
 ];
 
+const voiceoverYears = new Date().getFullYear() - 2000;
+
 const trustSignals = [
-  "Trusted by BBC Radio 2, Radio 1, Heart, Capital, ITV",
-  "Professional broadcast studio with fast turnaround",
-  "Remote sessions via Source-Connect, ISDN, Cleanfeed",
-  "Same-day delivery available for urgent projects",
-  "Decades of professional voiceover experience",
-  "Used by Tesco, Butlins, CBeebies, and more",
+  "Trusted by BBC Radio 2, Radio 1, Heart, Capital, ITV, Butlins, Tesco and more",
+  "Remote sessions via Cleanfeed, Source-Connect, Teams, Zoom",
+  `${voiceoverYears} years of professional voiceover experience`,
+  "Professional broadcast studio with high quality WAV audio files",
+  "Same-day delivery available for urgent projects. Often within an hour.",
+  "Very good at ad-libbing and thinking on feet. You really are chatting with Santa!",
 ];
 
 export default function HireSantaVoicePage() {
@@ -207,12 +215,7 @@ export default function HireSantaVoicePage() {
             title="Listen to Santa Voice Demos"
             subtitle="Hear the quality that leading broadcasters and brands rely on"
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            <AudioPlayer title="Santa Commercial Reel" description="Radio & TV showcase" src="/demos/Santa-voice-Guy-Demo-1.mp3" />
-            <AudioPlayer title="Santa Character Read" description="Warm, natural Santa voice" src="/demos/Santa-voice-Guy-Demo-2.mp3" />
-            <AudioPlayer title="Radio Station Imaging" description="Jingles & drops" src="/demos/Santa-voice-Guy-Demo-3.mp3" />
-            <AudioPlayer title="Christmas Campaign Promo" description="National brand example" src="/demos/Santa-voice-Guy-Demo-1.mp3" />
-          </div>
+          <HirePageDemos />
           <div className="text-center mt-8">
             <Link
               href="/santa-voice-demo"

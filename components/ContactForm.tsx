@@ -213,8 +213,11 @@ export default function ContactForm() {
         className="w-full sm:w-auto px-8 py-3.5 bg-santa-red text-white font-semibold rounded-lg hover:bg-santa-red-dark transition-colors shadow-sm disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         <Send size={16} />
-        {status === "sending" ? "Sending..." : "Send Message"}
+        {status === "sending" ? "Sending..." : "Check Availability"}
       </button>
+      <p className="text-xs text-gray-500 mt-3">
+        No obligation enquiry. Most replies within a few hours.
+      </p>
     </form>
   );
 }
