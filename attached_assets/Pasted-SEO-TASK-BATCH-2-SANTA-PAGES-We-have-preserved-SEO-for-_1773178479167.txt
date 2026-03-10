@@ -1,0 +1,139 @@
+SEO TASK — BATCH 2 SANTA PAGES
+
+We have preserved SEO for the 4 core pages.
+
+Now optimise the supporting Santa pages so they strengthen the SantaGuy topical cluster.
+
+Pages to update:
+
+/santa-voice-demo
+/santa-ringtones
+/santa-apps
+/contact-santa-guy
+/santa-text-alerts
+
+For EACH page implement:
+
+1. Unique <title>
+2. Meta description (150–160 characters)
+3. Canonical URL (self-referencing)
+4. OG title and description
+5. Twitter card tags
+6. One clear H1
+7. JSON-LD schema
+8. Internal links to core Santa pages
+
+================================================
+
+PAGE: /santa-voice-demo
+
+Title:
+Santa Voice Demo | Hear the Voice of Father Christmas
+
+Meta description:
+Listen to the official Santa voice of Guy Harris. Hear festive Father Christmas voiceovers used in TV, radio promotions and Christmas campaigns.
+
+Schema:
+AudioObject
+
+H1:
+Santa Voice Demo
+
+================================================
+
+PAGE: /santa-ringtones
+
+Title:
+Santa Ringtones | Christmas Sounds from Santa
+
+Meta description:
+Download festive Santa ringtones and Christmas sounds featuring the voice of Father Christmas by UK voice actor Guy Harris.
+
+Schema:
+CreativeWork
+
+H1:
+Santa Ringtones
+
+================================================
+
+PAGE: /santa-apps
+
+Title:
+Santa Apps | Christmas Apps Featuring Santa
+
+Meta description:
+Explore festive Santa apps featuring the voice of Father Christmas. Discover Christmas apps and projects voiced by Guy Harris.
+
+Schema:
+SoftwareApplication
+
+H1:
+Santa Apps
+
+================================================
+
+PAGE: /contact-santa-guy
+
+Title:
+Contact Santa | Enquire About Santa Voiceovers
+
+Meta description:
+Contact Guy Harris, the UK's official Santa voice, to enquire about Santa voiceovers, Christmas campaigns, radio promotions or festive projects.
+
+Schema:
+ContactPage
+
+H1:
+Contact Santa
+
+================================================
+
+PAGE: /santa-text-alerts
+
+Title:
+Santa Text Alerts | Festive Messages from Santa
+
+Meta description:
+Sign up for festive Santa text alerts and Christmas messages from the voice of Father Christmas, Guy Harris.
+
+Schema:
+Service
+
+H1:
+Santa Text Alerts
+
+================================================
+
+TECHNICAL CHECKS
+
+For each page verify:
+
+- unique title
+- unique meta description
+- canonical URL
+- OG tags
+- Twitter card tags
+- valid JSON-LD schema
+- one H1
+- crawlable page
+
+================================================
+
+INTERNAL LINKS
+
+Add contextual internal links to:
+
+/guy-harris-santa-voice
+/santa-guy-message
+/
+
+Example anchor text:
+
+Santa voice
+Official Voice of Santa
+Santa message
+Father Christmas voice
+
+Goal:
+Strengthen the SantaGuy topical cluster while keeping metadata clean and search friendly.
