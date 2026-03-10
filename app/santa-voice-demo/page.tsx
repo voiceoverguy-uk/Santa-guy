@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import AudioPlayer from "@/components/AudioPlayer";
 import CTASection from "@/components/CTASection";
+import VideoCard from "@/components/VideoCard";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
@@ -67,8 +68,8 @@ export default function SantaVoiceDemoPage() {
             <p className="text-sm text-gray-600 mb-4">
               Watch the full Santa Guy video showreel with highlights from campaigns and appearances.
             </p>
-            <div className="bg-gray-100 rounded-xl aspect-video max-w-2xl mx-auto flex items-center justify-center">
-              <p className="text-gray-400 text-sm">YouTube embed placeholder</p>
+            <div className="max-w-2xl mx-auto">
+              <VideoCard id="P44bGiUI0vE" title="Santa Guy Video Showreel" alt="Santa Guy video showreel — highlights from campaigns and appearances by Guy Harris" />
             </div>
           </div>
         </div>
