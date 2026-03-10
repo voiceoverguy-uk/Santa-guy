@@ -1,9 +1,10 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 
 interface CardProps {
   title: string;
-  description: string;
+  description: ReactNode;
   icon?: LucideIcon;
   href?: string;
   linkLabel?: string;

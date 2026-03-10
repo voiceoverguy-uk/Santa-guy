@@ -107,16 +107,22 @@ export default function AboutPage() {
             </div>
 
             <div className="space-y-4">
-              <div className="bg-gray-100 rounded-2xl aspect-[4/3] flex items-center justify-center">
-                <p className="text-gray-400 text-sm">Image placeholder — Guy Harris / Santa portrait</p>
-              </div>
+              <img
+                src="/images/santa-guy-voice-over-1.jpg"
+                alt="Guy Harris as Santa in his professional voiceover studio"
+                className="rounded-2xl w-full aspect-[4/3] object-cover"
+              />
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-100 rounded-xl aspect-square flex items-center justify-center">
-                  <p className="text-gray-400 text-xs text-center px-2">Cartoon placeholder</p>
-                </div>
-                <div className="bg-gray-100 rounded-xl aspect-square flex items-center justify-center">
-                  <p className="text-gray-400 text-xs text-center px-2">Cartoon placeholder</p>
-                </div>
+                <img
+                  src="/images/voiceover-cartoon-santa-style.png"
+                  alt="Cartoon of Guy Harris voicing Santa in the studio"
+                  className="rounded-xl w-full aspect-square object-cover"
+                />
+                <img
+                  src="/images/voiceover-cartoon-santa-calls.png"
+                  alt="Cartoon of Guy Harris making live Santa calls"
+                  className="rounded-xl w-full aspect-square object-cover"
+                />
               </div>
             </div>
           </div>
@@ -168,18 +174,11 @@ export default function AboutPage() {
 
       <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="bg-gray-100 rounded-xl aspect-square flex items-center justify-center"
-              >
-                <p className="text-gray-400 text-xs text-center px-2">
-                  Cartoon / image placeholder {i}
-                </p>
-              </div>
-            ))}
-          </div>
+          <img
+            src="/images/santa-guy-montage.jpg"
+            alt="Santa Guy montage — Guy Harris as the Voice of Santa"
+            className="rounded-xl w-full object-cover"
+          />
         </div>
       </section>
 

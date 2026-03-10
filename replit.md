@@ -34,6 +34,7 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **All pages**: Fixed transparent overlay header. White logo + white nav links over dark hero.
 - **On scroll (>80px)**: Smoothly transitions to `bg-white/90 backdrop-blur-md` with black logo, dark nav links, subtle border/shadow.
 - **Height**: `h-14 sm:h-16` (refined, compact)
+- **Nav hover effect**: Animated red underline (`after:` pseudo-element, santa-red, slides left→right on hover)
 - **Mobile menu**: Always white/solid background.
 
 ## Routes / Pages
@@ -82,10 +83,11 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **Ringtone downloads**: 6 zips in `public/ringtones/santa-guy-ringtone-{1-6}.zip`
 - **Video thumbnails**: 4 custom WebP thumbnails in `public/images/` (santa-voice-bbc-radio-2, santa-cbeebies-go-jetters, santa-zoe-ball-bbc-radio-2, santa-po-ferries-christmas-ad)
 - **Hire page images**: 5 custom WebP illustrations in `public/images/` (santa-voiceover-recording-studio, santa-podcast-radio-guest, santa-radio-station-imaging, santa-christmas-campaign-voiceover, santa-personalised-video-messages) with gradient overlays and corner badges
+- **About page images**: `santa-guy-voice-over-1.jpg` (portrait), `voiceover-cartoon-santa-style.png`, `voiceover-cartoon-santa-calls.png`, `santa-guy-montage.jpg` (montage banner)
 - **Homepage videos**: 4 YouTube embeds (BBC Radio 2, CBeebies, Zoe Ball, P&O Ferries) with custom thumbnails, gradient overlays, and descriptive alt text
 - **OG image**: `public/santa-guy-logo-og.png` (1200×630)
 
 ## Placeholder Assets Still Needed
-- Cartoon images for About page
 - App Store / Google Play badge images
 - Testimonial quotes (real ones to replace placeholders)
+- About page bottom section: 4 cartoon/image placeholders removed, replaced with single montage

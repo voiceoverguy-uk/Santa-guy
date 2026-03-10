@@ -50,10 +50,10 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-300 ${
+                className={`relative px-3 py-1.5 text-sm font-medium transition-all duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-santa-red after:rounded-full after:transition-all after:duration-300 hover:after:w-full ${
                   scrolled
-                    ? "text-gray-700 hover:text-santa-red hover:bg-santa-cream"
-                    : "text-white/90 hover:text-white hover:bg-white/10"
+                    ? "text-gray-700 hover:text-santa-red"
+                    : "text-white/90 hover:text-white"
                 }`}
               >
                 {item.label}
