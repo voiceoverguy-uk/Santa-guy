@@ -62,6 +62,7 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - `components/ContactForm.tsx` — Form with 25-char min validation, honeypot, obfuscated email
 - `components/HirePageDemos.tsx` — Client wrapper for audio demos on hire page with exclusive playback
 - `components/EmailButton.tsx` — Reusable obfuscated email button (JS-based mailto, no raw email in HTML)
+- `components/SantaRadioPlayer.tsx` — Live stream player (HTML5 Audio, play/pause toggle, streams from Citrus3)
 - `components/FAQSection.tsx` — Accordion FAQ with auto-generated FAQPage JSON-LD schema
 - `app/api/contact/route.ts` — Contact API (Resend, env vars, rate limiting, branded HTML email template)
 
@@ -88,6 +89,4 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **OG image**: `public/santa-guy-logo-og.png` (1200×630)
 
 ## Placeholder Assets Still Needed
-- App Store / Google Play badge images
 - Testimonial quotes (real ones to replace placeholders)
-- About page bottom section: 4 cartoon/image placeholders removed, replaced with single montage
