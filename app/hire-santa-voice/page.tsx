@@ -143,7 +143,7 @@ export default function HireSantaVoicePage() {
             {services.map((service, i) => (
               <div
                 key={service.title}
-                className={`flex flex-col lg:flex-row gap-8 items-start ${
+                className={`flex flex-col lg:flex-row gap-8 items-end ${
                   i % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
