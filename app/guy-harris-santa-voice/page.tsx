@@ -43,7 +43,7 @@ const capabilities = [
   {
     title: "Remote Sessions Available",
     description:
-      "Available for remote directed sessions via Source-Connect, ISDN, Cleanfeed, and other industry-standard platforms. Work with Guy from anywhere.",
+      "Available for remote directed sessions via Cleanfeed, Source-Connect, Zoom, Teams and other industry-standard platforms. Work with Guy from anywhere, anytime.",
     icon: Monitor,
   },
   {
