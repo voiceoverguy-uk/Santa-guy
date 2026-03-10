@@ -4,9 +4,9 @@ import { useCallback, useRef } from "react";
 import AudioPlayer from "@/components/AudioPlayer";
 
 const demos = [
-  { title: "Santa Commercial Reel", description: "Radio & TV showcase", src: "/demos/Santa-voice-Guy-Demo-1.mp3" },
-  { title: "Santa Character Read", description: "Warm, natural Santa voice", src: "/demos/Santa-voice-Guy-Demo-2.mp3" },
-  { title: "Radio Station Imaging", description: "Jingles & drops", src: "/demos/Santa-voice-Guy-Demo-3.mp3" },
+  { title: "Santa Calls Capital Breakfast", description: "On air Christmas Day", src: "/demos/santa-calls-capital-breakfast-show.mp3" },
+  { title: `Santa Commercial Reel ${new Date().getFullYear() - 2000}`, description: "Radio & TV showcase", src: "/demos/Santa-voice-Guy-Demo-2.mp3" },
+  { title: "Zoe Ball Chats to Santa", description: "BBC Radio 2 Christmas", src: "/demos/Santa-voice-Guy-Demo-3.mp3" },
   { title: "Santa Gives Away the Global Cash Call", description: "Live radio moment", src: "/demos/global-cash-call-santa-guy-harris.mp3" },
 ];
 
