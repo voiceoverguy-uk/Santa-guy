@@ -1,0 +1,189 @@
+PROJECT: santaguy.co.uk
+
+OBJECTIVE
+Replace the current YouTube thumbnails on the homepage video cards with custom thumbnails stored in /public/images and add a play button overlay. When the thumbnail is clicked, load the YouTube iframe exactly as it works now.
+
+IMPORTANT
+Do NOT change page layout or styling of the cards.
+Only replace the thumbnail source and add a play button overlay.
+
+
+----------------------------------------------------
+
+TASK 1 — Use custom thumbnails for video cards
+
+Update the homepage video cards so they use the following thumbnails instead of YouTube thumbnails.
+
+File location:
+app/page.tsx
+(or the VideoCard component if the videos are rendered there)
+
+Use these image files:
+
+/images/santa-voice-bbc-radio-2.webp
+/images/santa-cbeebies-go-jetters.webp
+/images/santa-zoe-ball-bbc-radio-2.webp
+/images/santa-po-ferries-christmas-ad.webp
+
+
+----------------------------------------------------
+
+TASK 2 — Map thumbnails to the correct videos
+
+BBC Radio 2 video
+
+Thumbnail
+/images/santa-voice-bbc-radio-2.webp
+
+YouTube
+https://www.youtube.com/watch?v=5o9Va4YsI3g
+
+
+
+CBeebies Go Jetters
+
+Thumbnail
+/images/santa-cbeebies-go-jetters.webp
+
+YouTube
+https://www.youtube.com/watch?v=yi-4Fm40nmE
+
+
+
+Zoe Ball Santa
+
+Thumbnail
+/images/santa-zoe-ball-bbc-radio-2.webp
+
+YouTube
+https://www.youtube.com/watch?v=Qqu-HDA2KJE
+
+
+
+P&O Ferries Santa
+
+Thumbnail
+/images/santa-po-ferries-christmas-ad.webp
+
+YouTube
+https://www.youtube.com/watch?v=Jjj1as7mpUw
+
+
+----------------------------------------------------
+
+TASK 3 — Add play button overlay
+
+Add a centred play button on top of each thumbnail.
+
+Implementation:
+
+• Place thumbnail image inside a relative container
+• Add a play button overlay positioned absolutely
+• Center it with flexbox
+• Play button should scale slightly on hover
+
+
+Example structure
+
+<div class="video-card">
+  <img src="/images/santa-voice-bbc-radio-2.webp" alt="Guy Harris performing the voice of Santa for BBC Radio 2">
+  <div class="play-button">
+    ▶
+  </div>
+</div>
+
+
+----------------------------------------------------
+
+TASK 4 — Play button styling
+
+Style the play button similar to the YouTube play icon.
+
+Requirements
+
+• red circle
+• white triangle
+• centered
+• subtle hover animation
+
+Example CSS
+
+.video-card {
+ position: relative;
+ cursor: pointer;
+ overflow: hidden;
+}
+
+.video-card img {
+ width: 100%;
+ display: block;
+}
+
+.play-button {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ width: 68px;
+ height: 48px;
+ background: #ff0000;
+ border-radius: 12px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: white;
+ font-size: 26px;
+ transition: transform 0.2s ease;
+}
+
+.video-card:hover .play-button {
+ transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+----------------------------------------------------
+
+TASK 5 — Lazy load the YouTube iframe
+
+When the thumbnail is clicked:
+
+Replace the thumbnail with the YouTube iframe.
+
+This improves page speed because YouTube scripts do not load until the user clicks.
+
+
+----------------------------------------------------
+
+TASK 6 — Keep accessibility
+
+Ensure each thumbnail image includes descriptive alt text.
+
+BBC Radio 2
+
+alt="Guy Harris performing the voice of Santa for BBC Radio 2"
+
+CBeebies
+
+alt="Santa voice by Guy Harris for CBeebies Go Jetters"
+
+Zoe Ball
+
+alt="Guy Harris as Santa on the Zoe Ball BBC Radio 2 Christmas show"
+
+P&O Ferries
+
+alt="Santa voiceover by Guy Harris for the P&O Ferries Christmas campaign"
+
+
+----------------------------------------------------
+
+ACCEPTANCE CHECKLIST
+
+After implementation verify:
+
+• Each video card shows the custom thumbnail
+• A red play button appears centered
+• Hover makes the play button slightly larger
+• Clicking the thumbnail loads the YouTube video
+• Page loads faster because iframes are lazy loaded
+• Images load from /public/images
