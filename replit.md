@@ -79,7 +79,8 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **Audio demos**: 3 MP3s in `public/demos/Santa-voice-Guy-Demo-{1,2,3}.mp3`
 - **Ringtone previews**: 6 MP3s extracted from zips in `public/ringtones/santa-guy-ringtone-{1-6}.mp3`
 - **Ringtone downloads**: 6 zips in `public/ringtones/santa-guy-ringtone-{1-6}.zip`
-- **Homepage videos**: 4 YouTube embeds (BBC Radio 2, CBeebies, Zoe Ball, P&O Ferries)
+- **Video thumbnails**: 4 custom WebP thumbnails in `public/images/` (santa-voice-bbc-radio-2, santa-cbeebies-go-jetters, santa-zoe-ball-bbc-radio-2, santa-po-ferries-christmas-ad)
+- **Homepage videos**: 4 YouTube embeds (BBC Radio 2, CBeebies, Zoe Ball, P&O Ferries) with custom thumbnails, gradient overlays, and descriptive alt text
 - **OG image**: `public/santa-guy-logo-og.png` (1200×630)
 
 ## Placeholder Assets Still Needed

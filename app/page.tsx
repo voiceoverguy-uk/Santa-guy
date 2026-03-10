@@ -94,18 +94,26 @@ const videos = [
   {
     title: "Voice of Santa for BBC Radio 2",
     id: "5o9Va4YsI3g",
+    thumbnail: "/images/santa-voice-bbc-radio-2.webp",
+    alt: "Guy Harris performing the voice of Santa for BBC Radio 2",
   },
   {
     title: "CBeebies Santa for the Go Jetters",
     id: "yi-4Fm40nmE",
+    thumbnail: "/images/santa-cbeebies-go-jetters.webp",
+    alt: "Santa voice by Guy Harris for CBeebies Go Jetters",
   },
   {
     title: "Santa on Zoe Ball Breakfast Show",
     id: "Qqu-HDA2KJE",
+    thumbnail: "/images/santa-zoe-ball-bbc-radio-2.webp",
+    alt: "Guy Harris as Santa on the Zoe Ball BBC Radio 2 Christmas show",
   },
   {
     title: "Voice of Santa for P&O Ferries Christmas Campaign",
     id: "Jjj1as7mpUw",
+    thumbnail: "/images/santa-po-ferries-christmas-ad.webp",
+    alt: "Santa voiceover by Guy Harris for the P&O Ferries Christmas campaign",
   },
 ];
 
@@ -258,7 +266,7 @@ export default function HomePage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {videos.map((video) => (
-              <VideoCard key={video.id} id={video.id} title={video.title} />
+              <VideoCard key={video.id} id={video.id} title={video.title} thumbnail={video.thumbnail} alt={video.alt} />
             ))}
           </div>
         </div>

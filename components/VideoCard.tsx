@@ -5,12 +5,15 @@ import { useState } from "react";
 interface VideoCardProps {
   id: string;
   title: string;
+  thumbnail?: string;
+  alt?: string;
 }
 
-export default function VideoCard({ id, title }: VideoCardProps) {
+export default function VideoCard({ id, title, thumbnail, alt }: VideoCardProps) {
   const [playing, setPlaying] = useState(false);
 
-  const thumbnailUrl = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+  const thumbnailUrl = thumbnail || `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+  const imgAlt = alt || title;
 
   if (playing) {
     return (
@@ -41,9 +44,10 @@ export default function VideoCard({ id, title }: VideoCardProps) {
       <div className="relative w-full overflow-hidden" style={{ paddingBottom: "56.25%" }}>
         <img
           src={thumbnailUrl}
-          alt={title}
+          alt={imgAlt}
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
+        <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-black/55 via-black/25 to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
         <div className="absolute inset-0 flex items-center justify-center">
           <svg
