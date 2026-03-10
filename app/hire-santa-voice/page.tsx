@@ -32,6 +32,7 @@ const services = [
     image: "/images/santa-voiceover-recording-studio.webp",
     alt: "Animated Santa recording professional Santa voiceover in a studio booth",
     badge: "BROADCAST QUALITY",
+    badgeLeft: true,
     features: [
       "Radio commercials and station imaging",
       "TV commercials and promos",
@@ -62,6 +63,7 @@ const services = [
     image: "/images/santa-radio-station-imaging.webp",
     alt: "Animated Santa in a radio studio recording Santa radio imaging",
     badge: "RADIO IMAGING",
+    badgeLeft: true,
     features: [
       "Daily Santa check-ins and countdowns",
       "Custom jingle and imaging packages",
@@ -168,7 +170,7 @@ export default function HireSantaVoicePage() {
                       />
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-black/45 via-black/18 to-transparent pointer-events-none" />
-                    <span className="absolute top-3 right-3 px-2.5 py-1 bg-black/60 backdrop-blur-sm text-white text-[10px] font-semibold tracking-wider uppercase rounded-full pointer-events-none">
+                    <span className={`absolute top-3 ${service.badgeLeft ? "left-3" : "right-3"} px-2.5 py-1 bg-black/60 backdrop-blur-sm text-white text-[10px] font-semibold tracking-wider uppercase rounded-full pointer-events-none`}>
                       {service.badge}
                     </span>
                   </div>
