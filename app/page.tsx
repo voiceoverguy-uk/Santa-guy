@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Mic, Radio, Video, Smartphone, Music, Headphones } from "lucide-react";
 import Hero from "@/components/Hero";
 import ClientLogos from "@/components/ClientLogos";
 import SectionHeading from "@/components/SectionHeading";
@@ -50,43 +49,31 @@ const services = [
     title: "Santa Voiceover",
     description:
       "Professional Santa voice for radio, TV, and web campaigns. Broadcast-quality recordings delivered fast from a professional studio.",
-    icon: Mic,
-    href: "/hire-santa-voice",
   },
   {
     title: "Podcast & Radio Appearances",
     description:
       "Santa guest appearances for podcasts, radio shows, and live broadcasts. Perfect for festive specials and Christmas countdowns.",
-    icon: Headphones,
-    href: "/hire-santa-voice",
   },
   {
     title: "Personalised Santa Videos",
     description:
       "Bespoke personalised video messages from Santa via Festive Studio. Perfect for brands, events, and special occasions.",
-    icon: Video,
-    href: "/santa-guy-message",
   },
   {
     title: "Santa Apps",
     description:
       "Free Christmas apps including Santa Radio, Santa voicemail, and more. Fun festive tools for the whole family.",
-    icon: Smartphone,
-    href: "/santa-apps",
   },
   {
     title: "Santa Radio",
     description:
       "Non-stop Christmas music and festive fun hosted by the real voice of Santa. Listen live online or via the app.",
-    icon: Radio,
-    href: "/santa-radio",
   },
   {
     title: "Santa Voice Demo",
     description:
       "Listen to Santa voice demos and showreel clips. Hear the voice trusted by the UK's biggest broadcasters and brands.",
-    icon: Music,
-    href: "/santa-voice-demo",
   },
 ];
 
@@ -290,8 +277,6 @@ export default function HomePage() {
                 key={service.title}
                 title={service.title}
                 description={service.description}
-                icon={service.icon}
-                href={service.href}
               />
             ))}
           </div>
