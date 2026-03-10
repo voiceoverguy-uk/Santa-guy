@@ -30,7 +30,7 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **OG/Twitter**: All 4 core pages have explicit OG + Twitter tags matching meta title/description. twitter:site and twitter:creator = @voiceoverman
 - **metadataBase**: `https://santaguy.co.uk` (set in layout.tsx)
 - **Structured data (homepage)**: Organization (with logo), Person (with alternateName "Santa Guy"), WebSite, WebPage, VideoObject x4, AudioObject x3, FAQPage (4 SEO-optimised Q&As)
-- **Structured data (about)**: Person (with image, alternateName, jobTitle "Voice Actor"), BreadcrumbList
+- **Structured data (about)**: ProfilePage (with mainEntity: Person including image, alternateName, jobTitle "British Voiceover Artist and Voice of Santa"), BreadcrumbList
 - **Structured data (message)**: Service (serviceType: "Personalised Santa Messages / Santa Calls", provider: Guy Harris), BreadcrumbList
 - **Structured data (radio)**: RadioStation, BreadcrumbList
 - **robots.txt**: Generated via `app/robots.ts` — allows all crawling, references sitemap

@@ -41,17 +41,24 @@ export const metadata: Metadata = {
   },
 };
 
-const personSchema = {
+const profilePageSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Guy Harris",
-  alternateName: "Santa Guy",
-  jobTitle: "Voice Actor",
+  "@type": "ProfilePage",
+  name: "About Guy Harris — The Voice of Santa",
   url: "https://santaguy.co.uk/guy-harris-santa-voice",
-  image: "https://santaguy.co.uk/images/santa-guy-voice-over-1.jpg",
-  sameAs: ["https://www.voiceoverguy.co.uk"],
   description:
-    "Guy Harris is the UK's Official Voice of Santa, known for festive voiceovers for BBC, ITV, Heart, Tesco and Santa Radio.",
+    "Discover Guy Harris, the UK's Official Voice of Santa. Learn how his award-winning voice brings festive magic to BBC, ITV, Heart, Tesco, and Santa Radio.",
+  mainEntity: {
+    "@type": "Person",
+    name: "Guy Harris",
+    alternateName: "Santa Guy",
+    jobTitle: "British Voiceover Artist and Voice of Santa",
+    url: "https://santaguy.co.uk/guy-harris-santa-voice",
+    image: "https://santaguy.co.uk/images/santa-guy-voice-over-1.jpg",
+    sameAs: ["https://www.voiceoverguy.co.uk"],
+    description:
+      "Guy Harris is the UK's Official Voice of Santa, known for festive voiceovers for BBC, ITV, Heart, Tesco and Santa Radio.",
+  },
 };
 
 const breadcrumbSchema = {
@@ -106,7 +113,7 @@ const capabilities = [
 export default function AboutPage() {
   return (
     <>
-      <StructuredData data={personSchema} />
+      <StructuredData data={profilePageSchema} />
       <StructuredData data={breadcrumbSchema} />
 
       <Hero
