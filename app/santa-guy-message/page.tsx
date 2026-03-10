@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Video, Gift, Star, ExternalLink } from "lucide-react";
+import { CalendarDays, PoundSterling, Star, ExternalLink } from "lucide-react";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
@@ -43,19 +43,30 @@ export default function SantaMessagePage() {
               <div className="mt-4 w-16 h-1 bg-santa-red rounded-full" />
               <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Imagine receiving a personalised video message from the real voice of Santa — the same
+                  Imagine receiving a personalised video message with the real Voice of Santa — the same
                   voice trusted by the BBC, ITV, and the UK&apos;s biggest brands. That&apos;s exactly what
                   Festive Studio delivers.
                 </p>
                 <p>
-                  Each message is individually recorded by Guy Harris in his professional studio,
-                  ensuring broadcast-quality video and audio. Messages can be tailored to individuals,
-                  families, corporate teams, or brand audiences.
+                  Take a tour of the North Pole or join in the catchy song Fix the Sleigh. The videos
+                  can be downloaded in minutes after your personalisation.
                 </p>
                 <p>
-                  Whether you&apos;re a brand looking for a unique festive touchpoint, an agency creating a
-                  memorable client gift, or someone who wants to send something truly special — a
-                  personalised Santa message from Guy Harris is the premium choice.
+                  Or for something even quicker a{" "}
+                  <a
+                    href="https://festivestudio.com/store/santa-radio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-santa-red hover:text-santa-red-dark font-medium"
+                  >
+                    personalised Audio Message
+                  </a>
+                  . Custom build a message to your child from over 12,000 names available. Download in
+                  seconds and share on social media.
+                </p>
+                <p>
+                  If you are looking for a truly memorable gift for someone close to you, then a
+                  personalised Santa Video or Audio message is the premium choice.
                 </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -96,18 +107,18 @@ export default function SantaMessagePage() {
             {[
               {
                 title: "Brands & Agencies",
-                description: "Create unforgettable festive touchpoints for your clients and campaigns with a premium Santa message.",
+                description: "Create unforgettable festive moments for your clients and campaigns with a premium bespoke Santa message.",
                 icon: Star,
               },
               {
-                title: "Corporate & Events",
-                description: "Send personalised Santa greetings to teams, clients, or event attendees for a memorable Christmas.",
-                icon: Gift,
+                title: "Kids Advent Gifts",
+                description: "Pick a day in December and let a message from Santa be a great bonus Advent gift. Surprise the kids when they hear their own name by Santa.",
+                icon: CalendarDays,
               },
               {
-                title: "Special Occasions",
-                description: "Surprise someone special with a video message from the real voice of Santa — a gift they'll never forget.",
-                icon: Video,
+                title: "Costs",
+                description: "Audio messages from £3, Video messages from £10 and Custom bespoke messages please enquire and lets make it a magical Christmas.",
+                icon: PoundSterling,
               },
             ].map((item) => (
               <div
@@ -127,7 +138,7 @@ export default function SantaMessagePage() {
 
       <CTASection
         title="Ready to Order a Personalised Santa Message?"
-        description="Visit Festive Studio to create your bespoke Santa video, or get in touch directly for bulk bookings and brand enquiries."
+        description={<>Visit Festive Studio to create your bespoke Father Christmas video, from the UK&apos;s best{" "}<a href="https://www.voiceoverguy.co.uk/voice-of-santa-guy-harris" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-gray-200 transition-colors">Voice of Santa</a>.</>}
         primaryCTA={{ label: "Enquire About Santa Messages", href: "/contact-santa-guy" }}
       />
     </>

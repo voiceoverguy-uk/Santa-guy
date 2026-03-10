@@ -1,8 +1,9 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 
 interface CTASectionProps {
   title: string;
-  description: string;
+  description: ReactNode;
   primaryCTA: { label: string; href: string };
   secondaryCTA?: { label: string; href: string };
   dark?: boolean;

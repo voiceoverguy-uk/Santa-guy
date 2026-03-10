@@ -82,7 +82,7 @@ export default function ContactPage() {
                   <h3 className="font-semibold text-gray-900">Fast Response</h3>
                 </div>
                 <p className="text-sm text-gray-600">
-                  Guy usually replies within a few hours during the festive season, and within 24 hours at other times. Urgent projects can often be accommodated — just mention it in your message.
+                  Guy usually replies within a few hours during the festive season, and within 24 hours at other times. Urgent projects? Just mention it in your message.
                 </p>
               </div>
 
@@ -92,7 +92,10 @@ export default function ContactPage() {
                   <h3 className="font-semibold text-gray-900">Also Available As</h3>
                 </div>
                 <p className="text-sm text-gray-600 mb-2">
-                  Need non-Santa voiceover too? Visit Guy&apos;s main voiceover site:
+                  Need non-Santa voiceover too? Guy&apos;s{" "}
+                  <a href="https://www.voiceoverguy.co.uk/apple-voice-style" target="_blank" rel="noopener noreferrer" className="text-santa-red hover:text-santa-red-dark font-medium">regular voice</a>,{" "}
+                  <a href="https://www.voiceoverguy.co.uk/character-voiceover" target="_blank" rel="noopener noreferrer" className="text-santa-red hover:text-santa-red-dark font-medium">Characters</a>,{" "}
+                  <a href="https://www.voiceoverguy.co.uk/david-attenborough-voice" target="_blank" rel="noopener noreferrer" className="text-santa-red hover:text-santa-red-dark font-medium">David Attenborough</a>, visit Guy&apos;s main VoiceoverGuy site:
                 </p>
                 <a
                   href="https://www.voiceoverguy.co.uk"
