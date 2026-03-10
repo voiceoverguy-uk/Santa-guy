@@ -168,7 +168,7 @@ export default function HireSantaVoicePage() {
                       />
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-black/45 via-black/18 to-transparent pointer-events-none" />
-                    <span className="absolute top-3 left-3 px-2.5 py-1 bg-black/60 backdrop-blur-sm text-white text-[10px] font-semibold tracking-wider uppercase rounded-full pointer-events-none">
+                    <span className="absolute top-3 right-3 px-2.5 py-1 bg-black/60 backdrop-blur-sm text-white text-[10px] font-semibold tracking-wider uppercase rounded-full pointer-events-none">
                       {service.badge}
                     </span>
                   </div>
