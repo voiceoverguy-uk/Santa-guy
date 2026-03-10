@@ -272,8 +272,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 bg-white relative overflow-hidden">
+        <img
+          src="/images/santa-guy-can-do-bg.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.07] pointer-events-none"
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <SectionHeading
             title="What Santa Guy Can Do"
             subtitle="From broadcast voiceover to live radio appearances, Guy Harris delivers the definitive Santa voice for every platform"
