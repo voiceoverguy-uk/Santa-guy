@@ -1,0 +1,281 @@
+PROJECT: santaguy.co.uk
+
+SEO PRESERVATION TASK – COPY THE OLD SITE SEO FOR KEY RANKING PAGES
+
+IMPORTANT:
+We are rebuilding Santaguy.co.uk, but the OLD site already ranks in Google for important searches like:
+- santa guy
+- voice of santa
+
+Your job is to PRESERVE those rankings by matching the old site SEO as closely as possible for the core pages below.
+
+DO NOT invent totally new SEO copy.
+DO NOT replace ranking titles with “better” AI titles.
+DO NOT change URLs.
+We preserve first, then refine later after indexing.
+
+==================================================
+CORE RULES
+==================================================
+
+1. Keep these URLs EXACTLY the same:
+- /
+- /guy-harris-santa-voice
+- /santa-guy-message
+- /santa-radio
+
+2. For each page:
+- set the exact or near-exact meta title from the old site
+- set a matching meta description based on the old site screenshots
+- add canonical URL
+- add Open Graph tags
+- add Twitter Card tags
+- add structured data / schema
+- ensure one clear H1 per page
+- ensure metadata is server-rendered and visible in page source
+
+3. Do NOT noindex these pages.
+4. Do NOT add duplicate titles.
+5. Do NOT create conflicting canonicals.
+6. Use absolute URLs for canonicals and OG images.
+7. Preserve internal linking between these Santa-related pages.
+
+==================================================
+PAGES TO MATCH FROM OLD SITE
+==================================================
+
+PAGE 1: HOMEPAGE
+URL:
+https://www.santaguy.co.uk/
+
+Old ranking title seen in Google:
+Santa Voice | Guy Harris | Voice of Father Christmas
+
+Old ranking description seen in Google:
+Looking for a Santa voice or Father Christmas voice for your next TV advert, radio promo, or event? Welcome to SantaGuy, home of Guy Harris, the UK's leading ...
+
+Instruction:
+- Use the exact meta title:
+  Santa Voice | Guy Harris | Voice of Father Christmas
+
+- Use a meta description closely matching the old one, but complete it cleanly to 150–160 characters.
+Suggested:
+Looking for a Santa voice or Father Christmas voice for your next TV advert, radio promo or event? Welcome to SantaGuy, home of Guy Harris.
+
+- Canonical:
+  https://www.santaguy.co.uk/
+
+- OG title should match the meta title.
+- OG description should match the meta description.
+- OG URL should be the homepage URL.
+- Twitter card should match the same SEO content.
+
+- H1 on page should support the query intent:
+  Santa Voice
+  or
+  Santa Voiceover by Guy Harris
+
+PAGE 2: ABOUT / VOICE OF SANTA PAGE
+URL:
+https://www.santaguy.co.uk/guy-harris-santa-voice
+
+Old ranking title seen in Google:
+The UK's Official Voice of Santa | About SantaGuy.co.uk
+
+Old ranking description seen in Google:
+Discover Guy Harris, the UK's Official Voice of Santa. Learn how his award-winning voice brings festive magic to BBC, ITV, Heart, Tesco, and Santa Radio.
+
+Instruction:
+- Use the exact meta title:
+  The UK's Official Voice of Santa | About SantaGuy.co.uk
+
+- Use this exact meta description or an extremely close match:
+  Discover Guy Harris, the UK's Official Voice of Santa. Learn how his award-winning voice brings festive magic to BBC, ITV, Heart, Tesco, and Santa Radio.
+
+- Canonical:
+  https://www.santaguy.co.uk/guy-harris-santa-voice
+
+- OG title should match meta title.
+- OG description should match meta description.
+- Twitter card tags should match.
+- This page is very important for searches like:
+  voice of santa
+  official voice of santa
+  guy harris santa voice
+
+- H1 should align with the title and search intent:
+  The UK's Official Voice of Santa
+
+PAGE 3: SANTA MESSAGE PAGE
+URL:
+https://www.santaguy.co.uk/santa-guy-message
+
+Old ranking title seen in Google:
+Santa Message | Order a Christmas Santa call today
+
+Old ranking description seen in Google:
+Guy Harris, the UK's most recognisable Santa voice, is available to deliver personalised Santa messages and calls that will delight both children and adults ...
+
+Instruction:
+- Use the exact meta title:
+  Santa Message | Order a Christmas Santa call today
+
+- Use a meta description closely matching the old listing and finish it properly to 150–160 characters.
+Suggested:
+Guy Harris, the UK's most recognisable Santa voice, delivers personalised Santa messages and Santa calls that delight children and adults alike.
+
+- Canonical:
+  https://www.santaguy.co.uk/santa-guy-message
+
+- OG and Twitter tags must match.
+- H1 should support “Santa Message” / “Personalised Santa Message” intent.
+
+PAGE 4: SANTA RADIO PAGE
+URL:
+https://www.santaguy.co.uk/santa-radio
+
+Old ranking title seen in Google:
+The World's Biggest Christmas Radio Station | SantaGuy.co.uk
+
+Old ranking description seen in Google:
+Santa Radio, hosted by Santa himself and voiced by Guy Harris, streams Christmas hits 24/7. Tune in for festive favourites, celebrity MugShots, and Santa ...
+
+Instruction:
+- Use the meta title:
+  The World's Biggest Christmas Radio Station | SantaGuy.co.uk
+
+- Use a meta description closely matching the old site and complete it cleanly to 150–160 characters.
+Suggested:
+Santa Radio, hosted by Santa himself and voiced by Guy Harris, streams Christmas hits 24/7 with festive favourites, celebrity MugShots and Santa fun.
+
+- Canonical:
+  https://www.santaguy.co.uk/santa-radio
+
+- OG and Twitter tags must match.
+- H1 should support:
+  Santa Radio
+  or
+  The World's Biggest Christmas Radio Station
+
+==================================================
+SOCIAL / TWITTER CARD DETAILS
+==================================================
+
+The user does not actively use Twitter/X, but we still want Twitter Card tags because they are useful for link previews.
+
+Use:
+twitter:card = summary_large_image
+twitter:site = @voiceoverman
+twitter:creator = @voiceoverman
+
+Only use these as metadata tags.
+Do NOT add visible Twitter profile promotion unless already present on the page design.
+
+==================================================
+SCHEMA / STRUCTURED DATA
+==================================================
+
+Add clean valid JSON-LD schema, avoiding spammy or duplicate clutter.
+
+Sitewide / homepage:
+- WebSite
+- Organization
+
+About / voice page:
+- Person for Guy Harris
+- jobTitle: Voice Actor
+- alternateName: Santa Guy
+- description aligned with the page description
+- sameAs should include relevant official profiles only where appropriate
+- include the official profile image URL if available in project assets
+- include url = https://www.santaguy.co.uk/guy-harris-santa-voice
+
+Recommended entity details:
+name: Guy Harris
+alternateName: Santa Guy
+jobTitle: Voice Actor
+description: Guy Harris is the UK's Official Voice of Santa, known for festive voiceovers for BBC, ITV, Heart, Tesco and Santa Radio.
+
+Santa Message page:
+- Service schema
+- serviceType: Personalised Santa Messages / Santa Calls
+- provider: Guy Harris / SantaGuy
+
+Santa Radio page:
+- RadioStation or Organization + WebPage schema if appropriate
+- name: Santa Radio
+- description aligned with the meta description
+
+Also:
+- add BreadcrumbList schema for inner pages if the site structure supports it
+
+IMPORTANT:
+- Use valid JSON-LD
+- Do NOT include fake reviews
+- Do NOT include invalid aggregateRating
+- Do NOT overdo schema types
+- Keep it clean and Google-friendly
+
+==================================================
+TECHNICAL SEO CHECKS
+==================================================
+
+Please audit the current rebuild and confirm/fix all of the below:
+
+- each page has a unique <title>
+- each page has a unique meta description
+- each page has a self-referencing canonical
+- pages return 200 status
+- pages are crawlable
+- metadata is rendered in the HTML source, not client-only
+- OG image tags exist with absolute URLs
+- no duplicate H1s
+- no missing H1s
+- no accidental noindex tags
+- no robots.txt blocks affecting these URLs
+- sitemap includes these URLs
+- internal links point to these exact URLs
+
+==================================================
+INTERNAL LINKING
+==================================================
+
+Create sensible internal linking between the Santa pages:
+
+Homepage should link to:
+- /guy-harris-santa-voice
+- /santa-guy-message
+- /santa-radio
+
+About page should link to:
+- homepage
+- santa message page
+- santa radio page
+
+Santa Message page should link to:
+- homepage
+- about page
+
+Santa Radio page should link to:
+- homepage
+- about page
+
+Use natural anchor text such as:
+- Santa voice
+- Official Voice of Santa
+- Santa message
+- Santa Radio
+- Father Christmas voice
+
+==================================================
+OUTPUT REQUIRED
+==================================================
+
+1. Update the metadata implementation for all four pages above.
+2. Show me exactly which files were changed.
+3. Show me the final title, meta description, canonical, OG title, and schema type used for each page.
+4. Flag any page where the current rebuild differs from the old ranking metadata.
+5. Do not change any other URLs unless absolutely necessary.
+
+Goal:
+Preserve and transfer the old site’s ranking signals into the new Replit rebuild as safely as possible.
