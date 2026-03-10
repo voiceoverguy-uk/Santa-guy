@@ -1,0 +1,306 @@
+PROJECT: santaguy.co.uk
+
+TASK: Create a brand new SEO hub page at /santa-voice
+
+GOAL:
+Build a new “Santa Voice” authority page that helps Santaguy.co.uk rank more strongly for searches such as:
+- santa voice
+- voice of santa
+- father christmas voice
+- hire santa voice
+- santa voice actor
+- santa voiceover uk
+
+IMPORTANT STRATEGY:
+This page is a topical hub / authority page.
+It must SUPPORT the homepage and other existing Santa pages, not compete destructively with them.
+
+The page should internally link to:
+- /
+- /guy-harris-santa-voice
+- /santa-guy-message
+- /santa-radio
+- /santa-voice-demo
+
+Do NOT change those URLs.
+Do NOT remove or weaken those pages.
+Do NOT noindex this page.
+
+==================================================
+URL
+==================================================
+
+Create this page at:
+
+/santa-voice
+
+==================================================
+SEO METADATA
+==================================================
+
+Use the following metadata:
+
+Title:
+Santa Voice | Hire the Voice of Father Christmas
+
+Meta description:
+Hire the UK’s leading Santa voice. Guy Harris provides Father Christmas voiceovers for TV, radio, events, personalised messages and festive campaigns.
+
+Canonical:
+https://www.santaguy.co.uk/santa-voice
+
+Open Graph:
+og:title = Santa Voice | Hire the Voice of Father Christmas
+og:description = Hire the UK’s leading Santa voice. Guy Harris provides Father Christmas voiceovers for TV, radio, events, personalised messages and festive campaigns.
+og:url = https://www.santaguy.co.uk/santa-voice
+Use the site’s default OG image if a dedicated one does not yet exist.
+
+Twitter tags:
+twitter:card = summary_large_image
+twitter:title = Santa Voice | Hire the Voice of Father Christmas
+twitter:description = Hire the UK’s leading Santa voice. Guy Harris provides Father Christmas voiceovers for TV, radio, events, personalised messages and festive campaigns.
+twitter:site = @voiceoverman
+twitter:creator = @voiceoverman
+
+==================================================
+H1
+==================================================
+
+Use this H1:
+
+Santa Voice
+
+==================================================
+PAGE PURPOSE
+==================================================
+
+This page should clearly explain:
+- who Guy Harris is
+- why he is trusted as a Santa voice
+- what kinds of Santa voiceover work he provides
+- where his Santa voice has been heard
+- how people can hear demos
+- how people can order a personalised Santa message
+- how Santa Radio fits into the SantaGuy brand
+
+The tone should feel warm, festive, authoritative and professional.
+Not cheesy.
+Not over-written.
+Not spammy.
+Not AI waffle.
+
+Use British English spelling.
+
+==================================================
+PAGE STRUCTURE
+==================================================
+
+Build the page with the following sections in a clean, readable layout:
+
+1. HERO / INTRO
+Heading:
+Santa Voice
+
+Intro copy should explain that Guy Harris is one of the UK’s best-known Santa voices, providing Father Christmas voiceovers for broadcast, promotions, events and personalised messages.
+
+Include 1 strong CTA button linking to:
+- /santa-guy-message
+and another linking to:
+- /contact-santa-guy
+if that route exists in the build
+If /contact-santa-guy does not exist in the new build yet, use a general contact link already used on the site.
+
+2. WHY HIRE A PROFESSIONAL SANTA VOICE?
+Short section explaining the difference between a generic “ho ho ho” and a professional, broadcast-quality Santa performance.
+Mention uses such as:
+- TV adverts
+- radio promotions
+- retail campaigns
+- Christmas apps
+- live events
+- personalised Santa messages
+
+3. MEET THE VOICE OF SANTA
+Section focused on Guy Harris and authority signals.
+Include natural references to:
+- BBC
+- ITV
+- Heart
+- Tesco
+- Santa Radio
+
+This section should link naturally to:
+- /guy-harris-santa-voice
+
+Suggested subheading:
+Meet the UK’s Official Voice of Santa
+
+4. HEAR THE SANTA VOICE
+Section encouraging visitors to hear a demo.
+Link naturally to:
+- /santa-voice-demo
+
+Suggested subheading:
+Hear the Santa Voice Demo
+
+5. PERSONALISED SANTA MESSAGES
+Section about custom Santa calls / messages for families and children.
+Link naturally to:
+- /santa-guy-message
+
+Suggested subheading:
+Order a Personalised Santa Message
+
+6. LISTEN TO SANTA RADIO
+Short section introducing Santa Radio and how it fits the brand.
+Link naturally to:
+- /santa-radio
+
+Suggested subheading:
+Listen to Santa Radio
+
+7. FAQ SECTION
+Add a useful FAQ section with 5 to 7 questions.
+Use concise, helpful answers.
+Questions should include:
+
+- Who is the voice of Santa in the UK?
+- Can I hire a professional Santa voice actor?
+- What is the difference between Santa voice and Father Christmas voice?
+- Can I order a personalised Santa message?
+- Where can I hear a Santa voice demo?
+- What types of projects need a Santa voiceover?
+
+8. FINAL CTA
+End with a clean CTA section inviting users to:
+- order a Santa message
+- hear the demo
+- enquire about Santa voiceover work
+
+==================================================
+CONTENT REQUIREMENTS
+==================================================
+
+Write original page copy for the new page.
+Target around 900 to 1,400 words total.
+Do not keyword-stuff.
+Use natural phrasing and semantically related terms.
+
+Include these phrases naturally where appropriate:
+- Santa voice
+- voice of Santa
+- Father Christmas voice
+- Santa voiceover
+- Santa voice actor
+- personalised Santa message
+
+Do NOT cram them unnaturally.
+
+==================================================
+INTERNAL LINKING
+==================================================
+
+Within the body copy, naturally link to these pages:
+
+- /guy-harris-santa-voice
+Anchor examples:
+The UK’s Official Voice of Santa
+About Guy Harris
+
+- /santa-guy-message
+Anchor examples:
+personalised Santa message
+Santa call
+order a Santa message
+
+- /santa-radio
+Anchor examples:
+Santa Radio
+Christmas radio station
+
+- /santa-voice-demo
+Anchor examples:
+hear the Santa voice demo
+listen to Santa
+
+- /
+Anchor examples:
+SantaGuy homepage
+Santa voice homepage
+
+Please make these links contextual in the body, not just dumped in a footer list.
+
+==================================================
+SCHEMA
+==================================================
+
+Add valid JSON-LD schema to this page.
+
+Use:
+1. WebPage
+2. FAQPage
+3. Person reference for Guy Harris where appropriate
+
+Person details:
+name: Guy Harris
+alternateName: Santa Guy
+jobTitle: Voice Actor
+url: https://www.santaguy.co.uk/guy-harris-santa-voice
+
+Do NOT add fake reviews.
+Do NOT add aggregateRating.
+Do NOT add anything Google would flag as spammy.
+
+==================================================
+TECHNICAL SEO
+==================================================
+
+Ensure:
+- page is indexable
+- self-referencing canonical is correct
+- title and description are server-rendered
+- one H1 only
+- OG and Twitter tags render correctly
+- structured data is valid JSON-LD
+- page is included in sitemap if sitemap generation exists
+- page appears in internal navigation or footer if appropriate
+
+==================================================
+DESIGN / UX
+==================================================
+
+Keep the page visually consistent with the rest of the Santaguy rebuild.
+Use the same styling system and components already used on the new site.
+Make it look like a high-value landing page, not a blog post.
+Break up the content with sections, spacing, and clear headings.
+Do not make it a giant wall of text.
+
+If appropriate, include:
+- a hero image or existing Santa-related visual
+- a demo CTA block
+- a message CTA block
+- a radio CTA block
+
+==================================================
+IMPORTANT
+==================================================
+
+This page should strengthen topical authority for “Santa Voice” without replacing the role of the homepage.
+
+Do not overwrite existing metadata on the already-preserved pages unless required.
+Do not break existing internal links.
+Do not create duplicate H1s across reusable components.
+
+==================================================
+OUTPUT
+==================================================
+
+After building the page, tell me:
+
+1. Which files were created or updated
+2. The final meta title
+3. The final meta description
+4. The H1
+5. The schema types used
+6. The internal links added on the page
+7. Whether the page has been added to sitemap/navigation
