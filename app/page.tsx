@@ -226,14 +226,14 @@ export default function HomePage() {
       <Hero
         title="The UK's Trusted Voice of Santa"
         subtitle="Guy Harris is the voice of Santa trusted by BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins, CBeebies, and leading brands across the UK. Available for radio, TV, podcasts, campaigns, and festive voiceover."
-        primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
-        secondaryCTA={{ label: "Contact Santa Guy", href: "/contact-santa-guy" }}
+        primaryCTA={{ label: "Hear Santa", href: "#hear-santa" }}
+        secondaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         logoSrc="/santaguy-logo-white.png"
       />
 
       <ClientLogos />
 
-      <section className="py-16 sm:py-20 bg-white">
+      <section id="hear-santa" className="py-16 sm:py-20 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Hear the Voice of Santa"
