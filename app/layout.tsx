@@ -25,6 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@voiceoverman",
+    creator: "@voiceoverman",
     images: ["/santa-guy-logo-og.png"],
   },
   icons: {

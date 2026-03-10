@@ -7,21 +7,70 @@ import CTASection from "@/components/CTASection";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "About Guy Harris — The UK's Trusted Voice of Santa",
+  title: {
+    absolute: "The UK's Official Voice of Santa | About SantaGuy.co.uk",
+  },
   description:
-    "Learn about Guy Harris, the UK's most trusted Santa voice artist. Award-winning voiceover professional trusted by BBC, ITV, Heart, Capital, Tesco, and leading brands for Christmas campaigns.",
-  alternates: { canonical: "/guy-harris-santa-voice" },
+    "Discover Guy Harris, the UK's Official Voice of Santa. Learn how his award-winning voice brings festive magic to BBC, ITV, Heart, Tesco, and Santa Radio.",
+  alternates: { canonical: "https://santaguy.co.uk/guy-harris-santa-voice" },
+  openGraph: {
+    title: "The UK's Official Voice of Santa | About SantaGuy.co.uk",
+    description:
+      "Discover Guy Harris, the UK's Official Voice of Santa. Learn how his award-winning voice brings festive magic to BBC, ITV, Heart, Tesco, and Santa Radio.",
+    url: "https://santaguy.co.uk/guy-harris-santa-voice",
+    type: "website",
+    locale: "en_GB",
+    siteName: "SantaGuy",
+    images: [
+      {
+        url: "https://santaguy.co.uk/santa-guy-logo-og.png",
+        width: 1200,
+        height: 630,
+        alt: "The UK's Official Voice of Santa — Guy Harris",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The UK's Official Voice of Santa | About SantaGuy.co.uk",
+    description:
+      "Discover Guy Harris, the UK's Official Voice of Santa. Learn how his award-winning voice brings festive magic to BBC, ITV, Heart, Tesco, and Santa Radio.",
+    images: ["https://santaguy.co.uk/santa-guy-logo-og.png"],
+    site: "@voiceoverman",
+    creator: "@voiceoverman",
+  },
 };
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Guy Harris",
-  jobTitle: "Voice Artist / Voice of Santa",
+  alternateName: "Santa Guy",
+  jobTitle: "Voice Actor",
   url: "https://santaguy.co.uk/guy-harris-santa-voice",
+  image: "https://santaguy.co.uk/images/santa-guy-voice-over-1.jpg",
   sameAs: ["https://www.voiceoverguy.co.uk"],
   description:
-    "Guy Harris is the UK's most trusted professional Santa voice artist, known for his work with BBC, ITV, Heart, Capital, Tesco, CBeebies, and many more.",
+    "Guy Harris is the UK's Official Voice of Santa, known for festive voiceovers for BBC, ITV, Heart, Tesco and Santa Radio.",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://santaguy.co.uk",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About Guy Harris",
+      item: "https://santaguy.co.uk/guy-harris-santa-voice",
+    },
+  ],
 };
 
 const awards = [
@@ -58,9 +107,10 @@ export default function AboutPage() {
   return (
     <>
       <StructuredData data={personSchema} />
+      <StructuredData data={breadcrumbSchema} />
 
       <Hero
-        title="About Guy Harris"
+        title="The UK's Official Voice of Santa"
         subtitle="The UK's most established and trusted professional Santa voice artist. Trusted by the BBC, ITV, Heart, Capital, Tesco, CBeebies, and leading brands across the country."
         compact
       />
@@ -86,9 +136,11 @@ export default function AboutPage() {
                   most demanding agencies, producers, and broadcasters.
                 </p>
                 <p>
-                  Beyond voiceover, Guy created and hosts Santa Radio, a dedicated online Christmas radio station
-                  that brings festive cheer to listeners worldwide. He also developed a suite of popular
-                  Christmas apps and offers personalised Santa video messages through Festive Studio.
+                  Beyond voiceover, Guy created and hosts{" "}
+                  <Link href="/santa-radio" className="text-santa-red hover:text-santa-red-dark font-medium">Santa Radio</Link>,
+                  a dedicated online Christmas radio station that brings festive cheer to listeners worldwide.
+                  He also developed a suite of popular Christmas apps and offers{" "}
+                  <Link href="/santa-guy-message" className="text-santa-red hover:text-santa-red-dark font-medium">personalised Santa video messages</Link>.
                 </p>
                 <p>
                   Guy&apos;s wider voiceover career spans commercial, corporate, narration, and character work. He is

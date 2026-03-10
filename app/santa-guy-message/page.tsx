@@ -7,24 +7,80 @@ import CTASection from "@/components/CTASection";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Personalised Santa Message — Video Messages from the Real Santa",
+  title: {
+    absolute: "Santa Message | Order a Christmas Santa call today",
+  },
   description:
-    "Get a personalised video message from the real voice of Santa, Guy Harris. Bespoke Santa video messages for brands, events, and special occasions via Festive Studio.",
-  alternates: { canonical: "/santa-guy-message" },
+    "Guy Harris, the UK's most recognisable Santa voice, delivers personalised Santa messages and Santa calls that delight children and adults alike.",
+  alternates: { canonical: "https://santaguy.co.uk/santa-guy-message" },
+  openGraph: {
+    title: "Santa Message | Order a Christmas Santa call today",
+    description:
+      "Guy Harris, the UK's most recognisable Santa voice, delivers personalised Santa messages and Santa calls that delight children and adults alike.",
+    url: "https://santaguy.co.uk/santa-guy-message",
+    type: "website",
+    locale: "en_GB",
+    siteName: "SantaGuy",
+    images: [
+      {
+        url: "https://santaguy.co.uk/santa-guy-logo-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Santa Message — Personalised Santa Messages from Guy Harris",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Santa Message | Order a Christmas Santa call today",
+    description:
+      "Guy Harris, the UK's most recognisable Santa voice, delivers personalised Santa messages and Santa calls that delight children and adults alike.",
+    images: ["https://santaguy.co.uk/santa-guy-logo-og.png"],
+    site: "@voiceoverman",
+    creator: "@voiceoverman",
+  },
 };
 
-const pageSchema = {
+const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Personalised Santa Message",
-  description: "Personalised video messages from the real voice of Santa via Festive Studio.",
+  "@type": "Service",
+  name: "Personalised Santa Messages",
+  serviceType: "Personalised Santa Messages / Santa Calls",
+  description:
+    "Guy Harris, the UK's most recognisable Santa voice, delivers personalised Santa messages and Santa calls that delight children and adults alike.",
   url: "https://santaguy.co.uk/santa-guy-message",
+  provider: {
+    "@type": "Person",
+    name: "Guy Harris",
+    alternateName: "Santa Guy",
+    url: "https://santaguy.co.uk",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://santaguy.co.uk",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Santa Message",
+      item: "https://santaguy.co.uk/santa-guy-message",
+    },
+  ],
 };
 
 export default function SantaMessagePage() {
   return (
     <>
-      <StructuredData data={pageSchema} />
+      <StructuredData data={serviceSchema} />
+      <StructuredData data={breadcrumbSchema} />
 
       <Hero
         title="Personalised Santa Messages"
@@ -133,6 +189,17 @@ export default function SantaMessagePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            Santa messages are delivered by{" "}
+            <Link href="/guy-harris-santa-voice" className="text-santa-red hover:text-santa-red-dark font-medium">Guy Harris</Link>
+            , the{" "}
+            <Link href="/" className="text-santa-red hover:text-santa-red-dark font-medium">UK&apos;s Official Voice of Santa</Link>.
+          </p>
         </div>
       </section>
 

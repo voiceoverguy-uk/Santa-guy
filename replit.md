@@ -20,15 +20,22 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **CTA label**: "Check Availability" (not "Hire Santa Voice" — softer conversion language)
 - **Twitter/X handle**: @voiceoverman
 
-## SEO & Metadata
-- **Homepage title**: `Santa Guy | The UK's Trusted Voice of Santa | Guy Harris`
-- **Homepage description**: `Guy Harris is the UK's trusted voice of Santa, heard on BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.`
-- **Canonical**: Absolute URLs via `alternates.canonical`
-- **OG/Twitter images**: Default set in `app/layout.tsx` (relative, resolved via metadataBase). Homepage overrides with absolute URLs. Individual pages can override by setting their own `openGraph.images`/`twitter.images`.
+## SEO & Metadata (old-site ranking preservation)
+- **Homepage title**: `Santa Voice | Guy Harris | Voice of Father Christmas` (absolute, matches old Google listing)
+- **Homepage description**: `Looking for a Santa voice or Father Christmas voice for your next TV advert, radio promo or event? Welcome to SantaGuy, home of Guy Harris.`
+- **About page title**: `The UK's Official Voice of Santa | About SantaGuy.co.uk`
+- **Santa Message title**: `Santa Message | Order a Christmas Santa call today`
+- **Santa Radio title**: `The World's Biggest Christmas Radio Station | SantaGuy.co.uk`
+- **Canonical**: Absolute URLs via `alternates.canonical` (all 4 core pages use absolute https://santaguy.co.uk/...)
+- **OG/Twitter**: All 4 core pages have explicit OG + Twitter tags matching meta title/description. twitter:site and twitter:creator = @voiceoverman
 - **metadataBase**: `https://santaguy.co.uk` (set in layout.tsx)
-- **Structured data (homepage)**: Organization (with logo), Person, WebSite, WebPage, VideoObject x4, AudioObject x3, FAQPage (4 SEO-optimised Q&As)
+- **Structured data (homepage)**: Organization (with logo), Person (with alternateName "Santa Guy"), WebSite, WebPage, VideoObject x4, AudioObject x3, FAQPage (4 SEO-optimised Q&As)
+- **Structured data (about)**: Person (with image, alternateName, jobTitle "Voice Actor"), BreadcrumbList
+- **Structured data (message)**: Service (serviceType: "Personalised Santa Messages / Santa Calls", provider: Guy Harris), BreadcrumbList
+- **Structured data (radio)**: RadioStation, BreadcrumbList
 - **robots.txt**: Generated via `app/robots.ts` — allows all crawling, references sitemap
-- **sitemap.xml**: Generated via `app/sitemap.ts` — covers all 11 pages
+- **sitemap.xml**: Generated via `app/sitemap.ts` — covers all 10 pages
+- **Internal linking**: Homepage → about, message, radio; About → radio, message; Message → about, home; Radio → about, home
 
 ## Header Behaviour
 - **All pages**: Fixed transparent overlay header. White logo + white nav links over dark hero.

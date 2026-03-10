@@ -8,19 +8,66 @@ import StructuredData from "@/components/StructuredData";
 import SantaRadioPlayer from "@/components/SantaRadioPlayer";
 
 export const metadata: Metadata = {
-  title: "Santa Radio — Christmas Music Hosted by the Real Voice of Santa",
+  title: {
+    absolute: "The World's Biggest Christmas Radio Station | SantaGuy.co.uk",
+  },
   description:
-    "Listen to Santa Radio — non-stop Christmas music hosted by the real voice of Santa, Guy Harris. Stream free online or via the Santa Radio app on iOS.",
-  alternates: { canonical: "/santa-radio" },
+    "Santa Radio, hosted by Santa himself and voiced by Guy Harris, streams Christmas hits 24/7 with festive favourites, celebrity MugShots and Santa fun.",
+  alternates: { canonical: "https://santaguy.co.uk/santa-radio" },
+  openGraph: {
+    title: "The World's Biggest Christmas Radio Station | SantaGuy.co.uk",
+    description:
+      "Santa Radio, hosted by Santa himself and voiced by Guy Harris, streams Christmas hits 24/7 with festive favourites, celebrity MugShots and Santa fun.",
+    url: "https://santaguy.co.uk/santa-radio",
+    type: "website",
+    locale: "en_GB",
+    siteName: "SantaGuy",
+    images: [
+      {
+        url: "https://santaguy.co.uk/santa-guy-logo-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Santa Radio — The World's Biggest Christmas Radio Station",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The World's Biggest Christmas Radio Station | SantaGuy.co.uk",
+    description:
+      "Santa Radio, hosted by Santa himself and voiced by Guy Harris, streams Christmas hits 24/7 with festive favourites, celebrity MugShots and Santa fun.",
+    images: ["https://santaguy.co.uk/santa-guy-logo-og.png"],
+    site: "@voiceoverman",
+    creator: "@voiceoverman",
+  },
 };
 
-const pageSchema = {
+const radioStationSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": "RadioStation",
   name: "Santa Radio",
   description:
-    "Non-stop Christmas music hosted by the real voice of Santa. Listen free online or via app.",
+    "Santa Radio, hosted by Santa himself and voiced by Guy Harris, streams Christmas hits 24/7 with festive favourites, celebrity MugShots and Santa fun.",
   url: "https://santaguy.co.uk/santa-radio",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://santaguy.co.uk",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Santa Radio",
+      item: "https://santaguy.co.uk/santa-radio",
+    },
+  ],
 };
 
 const features = [
@@ -49,7 +96,8 @@ const features = [
 export default function SantaRadioPage() {
   return (
     <>
-      <StructuredData data={pageSchema} />
+      <StructuredData data={radioStationSchema} />
+      <StructuredData data={breadcrumbSchema} />
 
       <Hero
         title="Santa Radio"
@@ -113,6 +161,17 @@ export default function SantaRadioPage() {
             <Link href="/santa-apps" className="text-santa-red hover:text-santa-red-dark font-medium">
               View all Santa Apps &rarr;
             </Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            Santa Radio is powered by{" "}
+            <Link href="/guy-harris-santa-voice" className="text-santa-red hover:text-santa-red-dark font-medium">Guy Harris</Link>
+            , the{" "}
+            <Link href="/" className="text-santa-red hover:text-santa-red-dark font-medium">UK&apos;s Official Voice of Santa</Link>.
           </p>
         </div>
       </section>
