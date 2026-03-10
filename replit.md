@@ -50,7 +50,6 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 | `/santa-voice-demo` | Audio demos / showreel |
 | `/santa-ringtones` | Ringtone downloads (6 zip + 6 MP3 previews) |
 | `/santa-text-alerts` | Text alert tones |
-| `/santa-script-generator` | Script generator tool |
 
 ## Key Components
 - `components/Header.tsx` — Fixed header, transparent → solid scroll transition (all pages)

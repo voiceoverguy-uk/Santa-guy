@@ -142,8 +142,8 @@ export default function SantaAppsPage() {
       <StructuredData data={pageSchema} />
 
       <Hero
-        title="Santa Apps"
-        subtitle="7 free Christmas apps for iOS created by the real voice of Santa. Download Santa Radio, Santa Voicemail, Santa Messages, and more festive fun for the whole family."
+        title="Free iOS Santa Apps"
+        subtitle="7 free Christmas apps for iOS created by the real voice of Santa. Download Santa Radio, Santa Voicemail, Santa Messages, Santa Dash and more festive fun for the whole family."
         primaryCTA={{ label: "Listen to Santa Radio", href: "/santa-radio" }}
         secondaryCTA={{
           label: "Contact Santa Guy",

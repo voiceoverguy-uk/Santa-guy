@@ -28,7 +28,7 @@ export default function SantaMessagePage() {
 
       <Hero
         title="Personalised Santa Messages"
-        subtitle="Bespoke video messages from the real voice of Santa, recorded and delivered through Festive Studio. Perfect for brands, events, corporate gifts, and special occasions."
+        subtitle="Bespoke video messages from the real voice of Santa, 2 films to choose from. North Pole Tour and Fix the Sleigh. Your children's name is spoken by Santa. Not using AI."
         primaryCTA={{ label: "Enquire About Santa Messages", href: "/contact-santa-guy" }}
         compact
       />

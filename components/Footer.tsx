@@ -15,12 +15,10 @@ const supportLinks = [
   { label: "Santa Voice Demo", href: "/santa-voice-demo" },
   { label: "Santa Ringtones", href: "/santa-ringtones" },
   { label: "Santa Text Alerts", href: "/santa-text-alerts" },
-  { label: "Santa Script Generator", href: "/santa-script-generator" },
 ];
 
 const externalLinks = [
   { label: "VoiceoverGuy", href: "https://www.voiceoverguy.co.uk", external: true },
-  { label: "Festive Studio", href: "https://www.voiceoverguy.co.uk", external: true },
 ];
 
 export default function Footer() {
