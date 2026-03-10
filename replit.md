@@ -43,6 +43,11 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
   - `/contact-santa-guy`: title `Contact Santa | Enquire About Santa Voiceovers`, schema ContactPage
   - `/santa-text-alerts`: title `Santa Text Alerts | Festive Messages from Santa`, schema Service
   - All 5 pages have: absolute canonical, OG/Twitter tags, @voiceoverman, internal links to /, /guy-harris-santa-voice, /santa-guy-message
+- **SEO Hub page** (`/santa-voice`): topical authority page for "Santa Voice" queries
+  - Title: `Santa Voice | Hire the Voice of Father Christmas`, schema WebPage + Person + FAQPage
+  - 8 sections: Hero, Why Hire, Meet the Voice, Hear Demo, Personalised Messages, Santa Radio, FAQ (6 Qs), Final CTA
+  - Internal links to: /, /guy-harris-santa-voice, /santa-guy-message, /santa-radio, /santa-voice-demo
+  - Added to sitemap (priority 0.8) and header nav (between "About Santa Guy" and "Hire Santa Voice")
 
 ## Header Behaviour
 - **All pages**: Fixed transparent overlay header. White logo + white nav links over dark hero.
