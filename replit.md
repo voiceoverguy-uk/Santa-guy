@@ -36,6 +36,13 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **robots.txt**: Generated via `app/robots.ts` — allows all crawling, references sitemap
 - **sitemap.xml**: Generated via `app/sitemap.ts` — covers all 10 pages
 - **Internal linking**: Homepage → about, message, radio; About → radio, message; Message → about, home; Radio → about, home
+- **Batch 2 SEO (supporting pages)**: All 5 use `title: { absolute: "..." }` to avoid layout template suffix
+  - `/santa-voice-demo`: title `Santa Voice Demo | Hear the Voice of Father Christmas`, schema AudioObject
+  - `/santa-ringtones`: title `Santa Ringtones | Christmas Sounds from Santa`, schema CreativeWork
+  - `/santa-apps`: title `Santa Apps | Christmas Apps Featuring Santa`, schema SoftwareApplication
+  - `/contact-santa-guy`: title `Contact Santa | Enquire About Santa Voiceovers`, schema ContactPage
+  - `/santa-text-alerts`: title `Santa Text Alerts | Festive Messages from Santa`, schema Service
+  - All 5 pages have: absolute canonical, OG/Twitter tags, @voiceoverman, internal links to /, /guy-harris-santa-voice, /santa-guy-message
 
 ## Header Behaviour
 - **All pages**: Fixed transparent overlay header. White logo + white nav links over dark hero.

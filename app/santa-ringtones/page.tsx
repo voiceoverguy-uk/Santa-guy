@@ -7,17 +7,34 @@ import CTASection from "@/components/CTASection";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Santa Ringtones — Free Christmas Ringtones from SantaGuy",
+  title: {
+    absolute: "Santa Ringtones | Christmas Sounds from Santa",
+  },
   description:
-    "Download free Santa ringtones for your phone. Festive Christmas ringtones featuring the real voice of Santa, Guy Harris. Available as free downloads.",
-  alternates: { canonical: "/santa-ringtones" },
+    "Download festive Santa ringtones and Christmas sounds featuring the voice of Father Christmas by UK voice actor Guy Harris.",
+  alternates: { canonical: "https://santaguy.co.uk/santa-ringtones" },
+  openGraph: {
+    title: "Santa Ringtones | Christmas Sounds from Santa",
+    description:
+      "Download festive Santa ringtones and Christmas sounds featuring the voice of Father Christmas by UK voice actor Guy Harris.",
+    url: "https://santaguy.co.uk/santa-ringtones",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Santa Ringtones | Christmas Sounds from Santa",
+    description:
+      "Download festive Santa ringtones and Christmas sounds featuring the voice of Father Christmas by UK voice actor Guy Harris.",
+    site: "@voiceoverman",
+    creator: "@voiceoverman",
+  },
 };
 
 const pageSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": "CreativeWork",
   name: "Santa Ringtones",
-  description: "Free Christmas ringtones featuring the real voice of Santa.",
+  description: "Download festive Santa ringtones and Christmas sounds featuring the voice of Father Christmas by UK voice actor Guy Harris.",
   url: "https://santaguy.co.uk/santa-ringtones",
 };
 
@@ -81,7 +98,18 @@ export default function SantaRingtonesPage() {
             <Link href="/hire-santa-voice" className="text-santa-red hover:text-santa-red-dark font-medium">
               hire the Santa voice
             </Link>{" "}
-            for your own project?
+            for your own project? Learn more about{" "}
+            <Link href="/guy-harris-santa-voice" className="text-santa-red hover:text-santa-red-dark font-medium">
+              Guy Harris, the voice of Santa
+            </Link>{" "}
+            or send a{" "}
+            <Link href="/santa-guy-message" className="text-santa-red hover:text-santa-red-dark font-medium">
+              personalised Santa message
+            </Link>. Visit the{" "}
+            <Link href="/" className="text-santa-red hover:text-santa-red-dark font-medium">
+              Santa voice
+            </Link>{" "}
+            homepage for more.
           </p>
         </div>
       </section>

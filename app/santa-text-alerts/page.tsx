@@ -7,17 +7,35 @@ import CTASection from "@/components/CTASection";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Santa Text Alerts — Festive Message Tones from SantaGuy",
+  title: {
+    absolute: "Santa Text Alerts | Festive Messages from Santa",
+  },
   description:
-    "Download free Santa text alert tones for your phone. Festive message notification sounds featuring the real voice of Santa, Guy Harris.",
-  alternates: { canonical: "/santa-text-alerts" },
+    "Sign up for festive Santa text alerts and Christmas messages from the voice of Father Christmas, Guy Harris.",
+  alternates: { canonical: "https://santaguy.co.uk/santa-text-alerts" },
+  openGraph: {
+    title: "Santa Text Alerts | Festive Messages from Santa",
+    description:
+      "Sign up for festive Santa text alerts and Christmas messages from the voice of Father Christmas, Guy Harris.",
+    url: "https://santaguy.co.uk/santa-text-alerts",
+    siteName: "SantaGuy",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Santa Text Alerts | Festive Messages from Santa",
+    description:
+      "Sign up for festive Santa text alerts and Christmas messages from the voice of Father Christmas, Guy Harris.",
+    site: "@voiceoverman",
+    creator: "@voiceoverman",
+  },
 };
 
 const pageSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": "Service",
   name: "Santa Text Alerts",
-  description: "Free festive text alert tones featuring the real voice of Santa.",
+  description: "Sign up for festive Santa text alerts and Christmas messages from the voice of Father Christmas, Guy Harris.",
   url: "https://santaguy.co.uk/santa-text-alerts",
 };
 
@@ -97,7 +115,18 @@ export default function SantaTextAlertsPage() {
             <Link href="/santa-ringtones" className="text-santa-red hover:text-santa-red-dark font-medium">
               Santa Ringtones
             </Link>{" "}
-            for the full collection of free Christmas downloads.
+            for the full collection of free Christmas downloads. Learn more about{" "}
+            <Link href="/guy-harris-santa-voice" className="text-santa-red hover:text-santa-red-dark font-medium">
+              Guy Harris, the voice of Santa
+            </Link>{" "}
+            or{" "}
+            <Link href="/santa-guy-message" className="text-santa-red hover:text-santa-red-dark font-medium">
+              get a personalised Santa message
+            </Link>. Visit the{" "}
+            <Link href="/" className="text-santa-red hover:text-santa-red-dark font-medium">
+              Santa voice
+            </Link>{" "}
+            homepage for more.
           </p>
         </div>
       </section>

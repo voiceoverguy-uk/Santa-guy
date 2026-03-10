@@ -6,15 +6,32 @@ import CTASection from "@/components/CTASection";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Santa Apps — 7 Free Christmas Apps from SantaGuy",
+  title: {
+    absolute: "Santa Apps | Christmas Apps Featuring Santa",
+  },
   description:
-    "Download 7 free Santa apps for iOS including Santa Radio, Santa Voicemail, Santa Messages, Christmas Radio, Sleeps til Santa, Santa Text, and Santa Dash. Created by Guy Harris — the UK's trusted voice of Santa.",
-  alternates: { canonical: "/santa-apps" },
+    "Explore festive Santa apps featuring the voice of Father Christmas. Discover Christmas apps and projects voiced by Guy Harris.",
+  alternates: { canonical: "https://santaguy.co.uk/santa-apps" },
+  openGraph: {
+    title: "Santa Apps | Christmas Apps Featuring Santa",
+    description:
+      "Explore festive Santa apps featuring the voice of Father Christmas. Discover Christmas apps and projects voiced by Guy Harris.",
+    url: "https://santaguy.co.uk/santa-apps",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Santa Apps | Christmas Apps Featuring Santa",
+    description:
+      "Explore festive Santa apps featuring the voice of Father Christmas. Discover Christmas apps and projects voiced by Guy Harris.",
+    site: "@voiceoverman",
+    creator: "@voiceoverman",
+  },
 };
 
 const pageSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": "SoftwareApplication",
   name: "Santa Apps",
   description:
     "7 free Christmas apps for iOS from SantaGuy including Santa Radio, Santa Voicemail, Santa Messages, and more.",
@@ -142,7 +159,7 @@ export default function SantaAppsPage() {
       <StructuredData data={pageSchema} />
 
       <Hero
-        title="Free iOS Santa Apps"
+        title="Santa Apps"
         subtitle="7 free Christmas apps for iOS created by the real voice of Santa. Download Santa Radio, Santa Voicemail, Santa Messages, Santa Dash and more festive fun for the whole family."
         primaryCTA={{ label: "Listen to Santa Radio", href: "/santa-radio" }}
         secondaryCTA={{
@@ -242,7 +259,27 @@ export default function SantaAppsPage() {
             >
               Santa Text Alerts
             </Link>{" "}
-            pages for more free festive downloads.
+            pages for more free festive downloads. Learn more about{" "}
+            <Link
+              href="/guy-harris-santa-voice"
+              className="text-santa-red hover:text-santa-red-dark font-medium"
+            >
+              Guy Harris — the voice of Santa
+            </Link>{" "}
+            or{" "}
+            <Link
+              href="/santa-guy-message"
+              className="text-santa-red hover:text-santa-red-dark font-medium"
+            >
+              get a personalised Santa message
+            </Link>. Head back to the{" "}
+            <Link
+              href="/"
+              className="text-santa-red hover:text-santa-red-dark font-medium"
+            >
+              Father Christmas voice
+            </Link>{" "}
+            homepage for more.
           </p>
         </div>
       </section>

@@ -8,17 +8,34 @@ import VideoCard from "@/components/VideoCard";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Santa Voice Demo — Hear the UK's Trusted Voice of Santa",
+  title: {
+    absolute: "Santa Voice Demo | Hear the Voice of Father Christmas",
+  },
   description:
-    "Listen to Santa voice demos from Guy Harris — the UK's trusted Santa voice artist. Showreel clips for radio, TV, podcast, and brand Christmas voiceover.",
-  alternates: { canonical: "/santa-voice-demo" },
+    "Listen to the official Santa voice of Guy Harris. Hear festive Father Christmas voiceovers used in TV, radio promotions and Christmas campaigns.",
+  alternates: { canonical: "https://santaguy.co.uk/santa-voice-demo" },
+  openGraph: {
+    title: "Santa Voice Demo | Hear the Voice of Father Christmas",
+    description:
+      "Listen to the official Santa voice of Guy Harris. Hear festive Father Christmas voiceovers used in TV, radio promotions and Christmas campaigns.",
+    url: "https://santaguy.co.uk/santa-voice-demo",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Santa Voice Demo | Hear the Voice of Father Christmas",
+    description:
+      "Listen to the official Santa voice of Guy Harris. Hear festive Father Christmas voiceovers used in TV, radio promotions and Christmas campaigns.",
+    site: "@voiceoverman",
+    creator: "@voiceoverman",
+  },
 };
 
 const pageSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": "AudioObject",
   name: "Santa Voice Demo",
-  description: "Listen to Santa voice demos and showreel clips from Guy Harris.",
+  description: "Listen to the official Santa voice of Guy Harris. Hear festive Father Christmas voiceovers used in TV, radio promotions and Christmas campaigns.",
   url: "https://santaguy.co.uk/santa-voice-demo",
 };
 
@@ -85,7 +102,18 @@ export default function SantaVoiceDemoPage() {
             and Guy will be happy to provide bespoke demo material for your project. You can also{" "}
             <Link href="/hire-santa-voice" className="text-santa-red hover:text-santa-red-dark font-medium">
               learn more about hiring the Santa voice
-            </Link>.
+            </Link>. Find out about{" "}
+            <Link href="/guy-harris-santa-voice" className="text-santa-red hover:text-santa-red-dark font-medium">
+              Guy Harris — the voice of Santa
+            </Link>{" "}
+            or send a{" "}
+            <Link href="/santa-guy-message" className="text-santa-red hover:text-santa-red-dark font-medium">
+              personalised Santa message
+            </Link>. Return to the{" "}
+            <Link href="/" className="text-santa-red hover:text-santa-red-dark font-medium">
+              Santa voice
+            </Link>{" "}
+            homepage for more.
           </p>
         </div>
       </section>

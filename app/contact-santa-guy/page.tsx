@@ -6,17 +6,34 @@ import EmailButton from "@/components/EmailButton";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Contact Santa Guy — Hire the UK's Trusted Voice of Santa",
+  title: {
+    absolute: "Contact Santa | Enquire About Santa Voiceovers",
+  },
   description:
-    "Get in touch with Guy Harris to hire the UK's trusted Santa voice for your next project. Contact Santa Guy for radio, TV, podcast, and brand Christmas campaigns.",
-  alternates: { canonical: "/contact-santa-guy" },
+    "Contact Guy Harris, the UK's official Santa voice, to enquire about Santa voiceovers, Christmas campaigns, radio promotions or festive projects.",
+  alternates: { canonical: "https://santaguy.co.uk/contact-santa-guy" },
+  openGraph: {
+    title: "Contact Santa | Enquire About Santa Voiceovers",
+    description:
+      "Contact Guy Harris, the UK's official Santa voice, to enquire about Santa voiceovers, Christmas campaigns, radio promotions or festive projects.",
+    url: "https://santaguy.co.uk/contact-santa-guy",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Contact Santa | Enquire About Santa Voiceovers",
+    description:
+      "Contact Guy Harris, the UK's official Santa voice, to enquire about Santa voiceovers, Christmas campaigns, radio promotions or festive projects.",
+    site: "@voiceoverman",
+    creator: "@voiceoverman",
+  },
 };
 
 const pageSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Contact Santa Guy",
-  description: "Get in touch with Guy Harris to hire the UK's trusted Santa voice.",
+  "@type": "ContactPage",
+  name: "Contact Santa | Enquire About Santa Voiceovers",
+  description: "Contact Guy Harris, the UK's official Santa voice, to enquire about Santa voiceovers, Christmas campaigns, radio promotions or festive projects.",
   url: "https://santaguy.co.uk/contact-santa-guy",
 };
 
@@ -32,7 +49,7 @@ export default function ContactPage() {
       <StructuredData data={pageSchema} />
 
       <Hero
-        title={<>Ready to Book the UK&apos;s<br />Trusted Voice of Santa?</>}
+        title="Contact Santa"
         subtitle="Get in touch to discuss your campaign, broadcast, or festive project."
         compact
       />
@@ -59,7 +76,7 @@ export default function ContactPage() {
                 Fill in the form below and Guy will reply quickly to confirm availability and discuss your project.
               </p>
               <p className="text-sm text-gray-500 mb-8">
-                Guy Harris is the Voice of Santa trusted by BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies.
+                Guy Harris is the <a href="/guy-harris-santa-voice" className="text-santa-red hover:text-santa-red-dark font-medium">Voice of Santa</a> trusted by BBC Radio 2, BBC Radio 1, Heart, Capital, ITV, Tesco, Butlins and CBeebies. Learn more on the <a href="/" className="text-santa-red hover:text-santa-red-dark font-medium">Santa Guy homepage</a> or request a <a href="/santa-guy-message" className="text-santa-red hover:text-santa-red-dark font-medium">personalised Santa message</a>.
               </p>
               <ContactForm />
             </div>
