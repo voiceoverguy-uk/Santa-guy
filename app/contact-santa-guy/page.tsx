@@ -32,7 +32,7 @@ export default function ContactPage() {
       <StructuredData data={pageSchema} />
 
       <Hero
-        title="Ready to Book the UK's Trusted Voice of Santa?"
+        title={<>Ready to Book the UK&apos;s<br />Trusted Voice of Santa?</>}
         subtitle="Get in touch to discuss your campaign, broadcast, or festive project."
         compact
       />

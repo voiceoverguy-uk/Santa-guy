@@ -1,10 +1,11 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 import Snowfall from "./Snowfall";
 
 interface HeroProps {
-  title: string;
+  title: ReactNode;
   subtitle: string;
   primaryCTA?: { label: string; href: string };
   secondaryCTA?: { label: string; href: string };
