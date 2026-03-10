@@ -1,0 +1,209 @@
+PROJECT: santaguy.co.uk
+
+OBJECTIVE
+Replace the 5 current placeholder image blocks on the Hire Santa Voice page with the 5 finished custom images.
+Keep the page layout exactly as it is, but make the image areas feel polished, premium, and consistent.
+
+IMPORTANT
+Do NOT redesign the page.
+Do NOT change the section order.
+Only replace the placeholder image blocks and style the images consistently.
+
+PAGE
+/hire-santa-voice
+
+----------------------------------------------------
+TASK 1 — USE THE 5 REAL IMAGES
+----------------------------------------------------
+
+Please replace the current placeholder boxes on the Hire Santa Voice page with these image files from /public/images/:
+
+1. /images/santa-personalised-video-messages.webp
+2. /images/santa-radio-station-imaging.webp
+3. /images/santa-christmas-campaign-voiceover.webp
+4. /images/santa-voiceover-recording-studio.webp
+5. /images/santa-podcast-radio-guest.webp
+
+Map them to these sections:
+
+- Personalised Santa Videos
+  -> /images/santa-personalised-video-messages.webp
+
+- Radio Station Christmas Campaigns
+  -> /images/santa-radio-station-imaging.webp
+
+- Christmas Campaign Promos
+  -> /images/santa-christmas-campaign-voiceover.webp
+
+- Santa Voiceover for Radio, TV & Web
+  -> /images/santa-voiceover-recording-studio.webp
+
+- Podcast & Radio Appearances
+  -> /images/santa-podcast-radio-guest.webp
+
+
+----------------------------------------------------
+TASK 2 — KEEP IMAGE STYLE CONSISTENT
+----------------------------------------------------
+
+Please make all 5 images consistent in presentation:
+
+- same aspect ratio
+- same corner radius
+- same shadow style
+- same image treatment
+- same container styling
+
+Use a premium, polished style that matches the rest of the site.
+
+Recommended:
+- rounded corners
+- soft drop shadow
+- overflow hidden
+- image fills container cleanly
+- no awkward stretching
+
+If needed, use object-fit: cover.
+
+
+----------------------------------------------------
+TASK 3 — ADD THE SAME SUBTLE OVERLAY TO EVERY IMAGE
+----------------------------------------------------
+
+Please add the same subtle dark gradient overlay to every image so they feel cinematic and cohesive.
+
+Overlay style:
+- transparent at top
+- darker at bottom
+- subtle, not heavy
+- helps the badge and overall finish feel more premium
+
+Example CSS direction:
+
+background: linear-gradient(
+  to top,
+  rgba(0,0,0,0.45),
+  rgba(0,0,0,0.18),
+  rgba(0,0,0,0)
+);
+
+This overlay should sit above the image but below any badge.
+
+Make sure it is applied consistently to all 5 image blocks.
+
+
+----------------------------------------------------
+TASK 4 — ADD A SMALL CORNER BADGE TO EACH IMAGE
+----------------------------------------------------
+
+Yes — please add a tiny corner badge to each image.
+
+STYLE:
+- small
+- premium
+- subtle
+- rounded pill or soft rectangle
+- top-left corner
+- readable on top of the image
+- not too big or shouty
+
+Suggested style:
+- dark semi-transparent background OR very light cream background depending on what looks best
+- small icon optional
+- neat padding
+- small uppercase or clean label text
+
+Use these exact badge labels:
+
+1. Personalised Santa Videos
+Badge:
+PERSONALISED VIDEO
+
+2. Radio Station Christmas Campaigns
+Badge:
+RADIO IMAGING
+
+3. Christmas Campaign Promos
+Badge:
+CAMPAIGN VOICEOVER
+
+4. Santa Voiceover for Radio, TV & Web
+Badge:
+BROADCAST QUALITY
+
+5. Podcast & Radio Appearances
+Badge:
+PODCAST GUEST
+
+Make the badges feel classy and consistent.
+Do not make them look like stickers for a kids’ website.
+
+
+----------------------------------------------------
+TASK 5 — ALT TEXT
+----------------------------------------------------
+
+Please add proper alt text for each image:
+
+1. Personalised Santa Videos
+alt="Animated Santa recording personalised Santa video messages in a festive studio"
+
+2. Radio Station Christmas Campaigns
+alt="Animated Santa in a radio studio recording Santa radio imaging"
+
+3. Christmas Campaign Promos
+alt="Animated Santa flying over a snowy city for a national Christmas campaign"
+
+4. Santa Voiceover for Radio, TV & Web
+alt="Animated Santa recording professional Santa voiceover in a studio booth"
+
+5. Podcast & Radio Appearances
+alt="Animated Santa as a podcast and radio guest wearing headphones in a festive studio"
+
+
+----------------------------------------------------
+TASK 6 — KEEP RESPONSIVE
+----------------------------------------------------
+
+Make sure all 5 image blocks work nicely on:
+- desktop
+- tablet
+- mobile
+
+Images should stay visually strong and not become squashed or awkwardly cropped.
+
+Preserve the existing layout pattern where image and text alternate across the page.
+
+
+----------------------------------------------------
+TASK 7 — OPTIONAL MICRO POLISH
+----------------------------------------------------
+
+If it looks good, add a very subtle hover effect on desktop only:
+
+- slight lift
+- slightly deeper shadow
+- no dramatic zoom
+- premium, restrained
+
+Example:
+transform: translateY(-4px)
+
+Only do this if it improves the feel and remains subtle.
+
+
+----------------------------------------------------
+ACCEPTANCE CHECKLIST
+----------------------------------------------------
+
+After implementation verify:
+
+- all 5 placeholders are replaced with the correct real images
+- all images share the same visual treatment
+- all images have the same subtle dark overlay
+- each image has the correct corner badge
+- badges are readable and consistent
+- layout remains unchanged
+- page still looks clean and agency-friendly
+- alt text is added correctly
+- mobile layout still works
