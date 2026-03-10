@@ -7,7 +7,7 @@ const demos = [
   { title: "Santa Calls Capital Breakfast", description: "On air Christmas Day", src: "/demos/santa-calls-capital-breakfast-show.mp3" },
   { title: `Santa Commercial Reel ${new Date().getFullYear() - 2000}`, description: "Radio & TV showcase", src: "/demos/Santa-voice-Guy-Demo-2.mp3" },
   { title: "Zoe Ball Chats to Santa", description: "BBC Radio 2 Christmas", src: "/demos/Santa-voice-Guy-Demo-3.mp3" },
-  { title: "Santa Gives Away the Global Cash Call", description: "Live radio moment", src: "/demos/global-cash-call-santa-guy-harris.mp3" },
+  { title: "The Global Radio Cash Call with Santa", description: "Live radio moment", src: "/demos/global-cash-call-santa-guy-harris.mp3" },
 ];
 
 export default function HirePageDemos() {
