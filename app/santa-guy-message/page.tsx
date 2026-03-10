@@ -59,13 +59,15 @@ export default function SantaMessagePage() {
                 </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link
-                  href="/contact-santa-guy"
+                <a
+                  href="https://festivestudio.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-santa-red text-white font-semibold rounded-lg hover:bg-santa-red-dark transition-colors"
                 >
                   <ExternalLink size={16} />
                   Enquire About Festive Studio
-                </Link>
+                </a>
                 <Link
                   href="/contact-santa-guy"
                   className="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-santa-red hover:text-santa-red transition-colors"
@@ -75,12 +77,11 @@ export default function SantaMessagePage() {
               </div>
             </div>
 
-            <div className="bg-gray-100 rounded-2xl aspect-video flex items-center justify-center">
-              <div className="text-center">
-                <Video className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-                <p className="text-gray-400 text-sm">Video placeholder — Santa message example</p>
-              </div>
-            </div>
+            <img
+              src="/images/message-from-santa.png"
+              alt="Santa and elves reading from the book of names — personalised Santa messages"
+              className="rounded-2xl w-full object-cover"
+            />
           </div>
         </div>
       </section>
