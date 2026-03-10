@@ -90,3 +90,7 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 
 ## Placeholder Assets Still Needed
 - Testimonial quotes (real ones to replace placeholders)
+
+## App Store Badge
+- `public/images/available-on-the-app-store.webp` — official "Available on the App Store" badge used across Santa Radio page and Santa Apps page
+- App screenshots in `public/images/apps/` — 7 iOS app phone screenshots (santa-radio, santa-voicemail, santa-messages, christmas-radio, sleeps-til-santa, santa-text, santa-dash)
