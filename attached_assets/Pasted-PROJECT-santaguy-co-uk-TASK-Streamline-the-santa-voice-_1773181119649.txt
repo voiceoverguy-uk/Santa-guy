@@ -1,0 +1,232 @@
+PROJECT: santaguy.co.uk
+
+TASK: Streamline the /santa-voice hub page so it is tighter, clearer, and less similar to the /guy-harris-santa-voice About page.
+
+IMPORTANT GOAL
+
+The Santa Voice page should function as a SERVICE / HIRING hub, not a biography page.
+
+The About page already covers the background and story of Guy Harris.
+
+Therefore the Santa Voice page should focus more on:
+
+- hiring a Santa voice
+- hearing the Santa demo
+- ordering a Santa message
+- Santa voiceover services
+- Santa Radio
+
+Reduce biography content that duplicates the About page.
+
+==================================================
+
+CONTENT LENGTH
+
+Current page feels long-winded.
+
+Reduce overall content length by approximately 20–30%.
+
+Target length:
+700–900 words total.
+
+Do NOT remove key sections.
+Instead:
+- tighten sentences
+- remove repetitive phrasing
+- remove duplicated ideas
+- remove filler phrases
+
+==================================================
+
+KEEP THE SAME STRUCTURE
+
+Keep the existing 8 section structure:
+
+1. Hero / Introduction
+2. Why Hire a Professional Santa Voice
+3. Meet the UK's Official Voice of Santa
+4. Hear the Santa Voice Demo
+5. Personalised Santa Messages
+6. Listen to Santa Radio
+7. FAQ
+8. Final CTA
+
+But shorten the copy in each section.
+
+==================================================
+
+SECTION ADJUSTMENTS
+
+HERO / INTRO
+
+Goal:
+Explain quickly what the page is about.
+
+Limit intro to ~70–90 words.
+
+Focus on:
+- Santa voice
+- Father Christmas voice
+- voiceover work
+- campaigns / promotions / events
+
+Avoid long storytelling.
+
+--------------------------------------------------
+
+WHY HIRE A PROFESSIONAL SANTA VOICE
+
+Limit to ~120 words.
+
+Focus on:
+- difference between amateur Santa impressions and professional voiceover
+- broadcast quality
+- uses such as adverts, radio promotions, retail campaigns, apps, events.
+
+Avoid repeating phrases like “one of the UK’s most recognised”.
+
+--------------------------------------------------
+
+MEET THE UK’S OFFICIAL VOICE OF SANTA
+
+This section is currently too similar to the About page.
+
+Limit to ~120 words.
+
+Keep only:
+- Guy Harris credibility
+- mention BBC, ITV, Heart, Tesco
+- link to the About page
+
+Do NOT repeat full biography content.
+
+End with internal link:
+
+/guy-harris-santa-voice
+
+Anchor examples:
+"Learn more about the UK's Official Voice of Santa"
+
+--------------------------------------------------
+
+HEAR THE SANTA VOICE DEMO
+
+Limit to ~60–80 words.
+
+Focus on encouraging the user to hear the demo.
+
+Link to:
+
+/santa-voice-demo
+
+--------------------------------------------------
+
+PERSONALISED SANTA MESSAGES
+
+Limit to ~90–110 words.
+
+Focus on:
+- personalised Santa calls
+- festive family experiences
+
+Link to:
+
+/santa-guy-message
+
+--------------------------------------------------
+
+LISTEN TO SANTA RADIO
+
+Limit to ~70 words.
+
+Explain briefly what Santa Radio is and link to:
+
+/santa-radio
+
+--------------------------------------------------
+
+FAQ SECTION
+
+Keep the existing questions.
+
+Ensure answers are visible in the page HTML (not hidden or missing).
+
+Each answer should be:
+40–70 words.
+
+Avoid repeated phrasing.
+
+--------------------------------------------------
+
+FINAL CTA
+
+Keep strong call-to-action section.
+
+Encourage visitors to:
+
+- hear the Santa demo
+- order a Santa message
+- enquire about Santa voiceover work
+
+==================================================
+
+STYLE
+
+Use British English.
+
+Tone should be:
+
+- warm
+- confident
+- festive but professional
+- concise
+
+Avoid:
+
+- marketing fluff
+- long repetitive phrases
+- exaggerated claims
+
+==================================================
+
+SEO
+
+Do NOT change:
+
+Title:
+Santa Voice | Hire the Voice of Father Christmas
+
+Meta description:
+Hire the UK's leading Santa voice. Guy Harris provides Father Christmas voiceovers for TV, radio, events, personalised messages and festive campaigns.
+
+Canonical:
+/santa-voice
+
+H1:
+Santa Voice
+
+==================================================
+
+INTERNAL LINKS
+
+Ensure the following links remain naturally in the page:
+
+/
+/guy-harris-santa-voice
+/santa-guy-message
+/santa-radio
+/santa-voice-demo
+
+Do not move them all into one section. Keep them contextual.
+
+==================================================
+
+OUTPUT
+
+After editing the page show:
+
+1. Final word count
+2. Updated section headings
+3. Confirm internal links still exist
+4. Confirm metadata remains unchanged
+5. Confirm schema remains valid
