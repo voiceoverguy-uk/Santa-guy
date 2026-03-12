@@ -324,7 +324,7 @@ export default function HomePage() {
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <img
-                src="/guy-santa-voice_1773329170107.jpg"
+                src="/guy-santa-voice-over.jpg"
                 alt="Guy Harris as Santa in his professional voiceover studio"
                 className="w-full h-auto object-cover"
               />
