@@ -10,6 +10,18 @@ const testimonials = [
     author: "Simon Borszowski",
     company: "Producer, BBC",
   },
+  {
+    quote:
+      "The most convincing Santa voice we have ever had on our promos and liners. If you're looking for the real Santa, I'm pretty sure he's outsourced the job to Guy Harris.",
+    author: "Matt Lomax",
+    company: "Head of Sound Design, Heart",
+  },
+  {
+    quote:
+      "A Father Christmas who delivers every single year, even those last minute panic buys are no bother! Whether your list to him requires something spoken, sung or simply a bit of improvised flair, this Guy will oblige! All in return for a mince pie and some sherry — not bad!",
+    author: "Liam Hadley",
+    company: "Creative Audio Producer, BBC",
+  },
 ];
 
 export default function TestimonialSlider() {
