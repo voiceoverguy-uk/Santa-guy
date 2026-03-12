@@ -322,12 +322,13 @@ export default function HomePage() {
                 Read the full story &rarr;
               </Link>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <img
-                src="/santa-guy-voice-over-1.jpg"
+                src="/guy-santa-voice_1773329170107.jpg"
                 alt="Guy Harris as Santa in his professional voiceover studio"
                 className="w-full h-auto object-cover"
               />
+              <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-black/55 via-black/25 to-transparent pointer-events-none" />
             </div>
           </div>
         </div>
