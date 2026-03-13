@@ -69,6 +69,7 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 | `/santa-voice-demo` | Audio demos / showreel |
 | `/santa-ringtones` | Ringtone downloads (6 zip + 6 MP3 previews) |
 | `/santa-text-alerts` | Text alert tones |
+| `/santa-tracker` | Santa Tracker — live Christmas Eve journey |
 
 ## Key Components
 - `components/Header.tsx` — Fixed header, transparent → solid scroll transition (all pages)
@@ -105,6 +106,15 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **About page images**: `santa-guy-voice-over-1.jpg` (portrait), `voiceover-cartoon-santa-style.png`, `voiceover-cartoon-santa-calls.png`, `santa-guy-montage.jpg` (montage banner)
 - **Homepage videos**: 4 YouTube embeds (BBC Radio 2, CBeebies, Zoe Ball, P&O Ferries) with custom thumbnails, gradient overlays, and descriptive alt text
 - **OG image**: `public/santa-guy-logo-og.png` (1200×630)
+
+## Santa Tracker (`/santa-tracker`)
+- **Route engine**: `data/santaRouteStops.ts` (18 stops, UTC+14→UTC-10), `lib/santaRoute.ts` (pure functions, all accept Date)
+- **Preview mode**: `lib/santaPreview.ts` — activated via `?preview=1` query param; jump targets, speed multipliers, localStorage persistence
+- **Components**: SantaMap (inline SVG), SantaStats (dashboard cards), SantaStory (editorial), SantaTimeline (journey timeline), SantaPreviewPanel (preview controls), SantaTrackerClient (top-level client wrapper with Suspense)
+- **Journey**: Dec 24 10:00 UTC (Pacific/UTC+14) → Dec 25 10:00 UTC (Hawaii/UTC-10); UK at midnight UTC
+- **Map**: Equirectangular projection, no external map library; dwell-aware interpolation (marker stays put during stop, moves between stops)
+- **Off-season**: Shows countdown to Christmas Eve departure
+- **SEO**: WebPage + BreadcrumbList schema, OG/Twitter tags, sitemap entry (priority 0.8)
 
 ## Placeholder Assets Still Needed
 - Testimonial quotes (real ones to replace placeholders)

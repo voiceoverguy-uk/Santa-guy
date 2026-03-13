@@ -11,6 +11,7 @@ const navItems = [
   { label: "Hire Santa Voice", href: "/hire-santa-voice" },
   { label: "Santa Apps", href: "/santa-apps" },
   { label: "Santa Radio", href: "/santa-radio" },
+  { label: "Santa Tracker", href: "/santa-tracker" },
   { label: "Contact", href: "/contact-santa-guy" },
 ];
 
