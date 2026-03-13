@@ -36,7 +36,7 @@ export default function TestimonialSlider() {
     if (testimonials.length <= 1) return;
     const timer = setInterval(() => {
       setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
-    }, 4000);
+    }, 7000);
     return () => clearInterval(timer);
   }, []);
 
