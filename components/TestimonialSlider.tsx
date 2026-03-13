@@ -28,6 +28,12 @@ const testimonials = [
     author: "Dan Riedo",
     company: "The Property Podcast Producer",
   },
+  {
+    quote:
+      "Guy is on my Christmas list every year, and the festive season wouldn't be the same without him. His Santa is not just a seasonal audio treat, it's a Christmas miracle. Plus he's the nicest person to deal with, and never, ever naughty.",
+    author: "Jay Espindola",
+    company: "Producer, ITV / GB News",
+  },
 ];
 
 export default function TestimonialSlider() {
