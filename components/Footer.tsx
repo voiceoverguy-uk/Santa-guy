@@ -17,32 +17,32 @@ const externalLinks = [
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" className="inline-block mb-3">
               <img
                 src="/santaguy-logo-white.png"
                 alt="Guy Harris — Voice of Santa | Santa Voiceover | Father Christmas Voice | Voice of Father Christmas | SantaGuy.co.uk"
-                className="h-10 w-auto"
+                className="h-8 w-auto"
               />
             </Link>
-            <p className="text-sm leading-relaxed text-gray-400">
+            <p className="text-xs leading-relaxed text-gray-500">
               The UK&apos;s trusted voice of Santa. Professional Santa voiceover for
               radio, TV, podcasts, brands, and festive campaigns.
             </p>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+            <h3 className="text-white font-semibold mb-3 text-xs uppercase tracking-wider">
               More
             </h3>
-            <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            <ul className="flex flex-wrap gap-x-5 gap-y-2">
               {moreLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
+                    className="text-xs text-gray-400 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -52,17 +52,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+            <h3 className="text-white font-semibold mb-3 text-xs uppercase tracking-wider">
               Also By Guy Harris
             </h3>
-            <ul className="space-y-2">
+            <ul className="flex flex-wrap gap-x-5 gap-y-2">
               {externalLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
+                    className="text-xs text-gray-400 hover:text-white transition-colors"
                   >
                     {link.label} &rarr;
                   </a>
@@ -72,8 +72,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center">
-          <p className="text-sm text-gray-500">
+        <div className="mt-8 pt-6 border-t border-gray-800 text-center">
+          <p className="text-xs text-gray-500">
             &copy; 2000–{new Date().getFullYear()} SantaGuy / Guy Harris. All rights reserved.
           </p>
         </div>
