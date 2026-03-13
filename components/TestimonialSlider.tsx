@@ -22,6 +22,12 @@ const testimonials = [
     author: "Liam Hadley",
     company: "Creative Audio Producer, BBC",
   },
+  {
+    quote:
+      "After 20+ years in the industry and having heard thousands of voices. Guy is the undisputed gold standard Santa. It's not even close!",
+    author: "Dan Riedo",
+    company: "The Property Podcast Producer",
+  },
 ];
 
 export default function TestimonialSlider() {
