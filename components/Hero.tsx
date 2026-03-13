@@ -49,7 +49,7 @@ export default function Hero({
           <div className="mb-6">
             <img
               src={logoSrc}
-              alt="SantaGuy"
+              alt="Guy Harris — Voice of Santa | Santa Voiceover | Father Christmas Voice | Voice of Father Christmas | SantaGuy.co.uk"
               className="mx-auto h-20 sm:h-24 w-auto drop-shadow-lg"
             />
           </div>

@@ -151,7 +151,7 @@ export default function SantaRadioPage() {
             >
               <img
                 src="/images/available-on-the-app-store.webp"
-                alt="Download Santa Radio on the App Store"
+                alt="Download Santa Radio on the App Store — hosted by Guy Harris, Voice of Santa"
                 className="h-12 w-auto hover:opacity-80 transition-opacity"
               />
             </a>

@@ -146,7 +146,7 @@ export default function SantaMessagePage() {
 
             <img
               src="/images/message-from-santa.png"
-              alt="Santa and elves reading from the book of names — personalised Santa messages"
+              alt="Personalised Santa messages from Guy Harris — Voice of Father Christmas and Santa voiceover artist"
               className="rounded-2xl w-full object-cover"
             />
           </div>

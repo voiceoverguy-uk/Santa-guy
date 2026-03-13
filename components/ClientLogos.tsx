@@ -34,7 +34,7 @@ export default function ClientLogos() {
             >
               <img
                 src={client.src}
-                alt={client.name}
+                alt={`${client.name} — Guy Harris, Voice of Santa and Santa Voiceover Artist`}
                 className="h-full w-auto max-w-[100px] sm:max-w-[120px] object-contain"
               />
             </div>

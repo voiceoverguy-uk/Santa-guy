@@ -325,7 +325,7 @@ export default function HomePage() {
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <img
                 src="/guy-santa-voice-over.jpg"
-                alt="Guy Harris as Santa in his professional voiceover studio"
+                alt="Guy Harris — Voice of Santa and Santa voiceover artist in his professional recording studio"
                 className="w-full h-auto object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-black/55 via-black/25 to-transparent pointer-events-none" />

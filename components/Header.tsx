@@ -41,7 +41,7 @@ export default function Header() {
           <Link href="/" className="flex items-center group">
             <img
               src={scrolled ? "/santaguy-logo-black.png" : "/santaguy-logo-white.png"}
-              alt="SantaGuy"
+              alt="Guy Harris — Voice of Santa | Santa Voiceover | Father Christmas Voice | Voice of Father Christmas | SantaGuy.co.uk"
               className="h-8 sm:h-10 w-auto transition-opacity duration-300"
             />
           </Link>

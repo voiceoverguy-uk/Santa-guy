@@ -31,7 +31,7 @@ const services = [
       "Broadcast-quality Santa voiceover for commercials, promos, jingles, and branded content. Delivered fast from a professional studio with same-day turnaround available.",
     icon: Mic,
     image: "/images/santa-voiceover-recording-studio.webp",
-    alt: "Animated Santa recording professional Santa voiceover in a studio booth",
+    alt: "Animated Santa recording professional Santa voiceover in a studio booth — Guy Harris, Voice of Santa",
     badge: "BROADCAST QUALITY",
     badgeLeft: true,
     features: [
@@ -47,7 +47,7 @@ const services = [
       "Santa guest appearances on podcasts, radio shows, and live broadcasts. Perfect for festive specials, Christmas countdowns, and seasonal programming.",
     icon: Headphones,
     image: "/images/santa-podcast-radio-guest.webp",
-    alt: "Animated Santa as a podcast and radio guest wearing headphones in a festive studio",
+    alt: "Animated Santa as a podcast and radio guest — Father Christmas voice by Guy Harris",
     badge: "PODCAST GUEST",
     features: [
       "Podcast guest appearances as Santa",
@@ -62,7 +62,7 @@ const services = [
       "Dedicated Santa check-ins, jingle packages, and seasonal imaging for radio stations. Make your station the home of Christmas with the UK's most trusted Santa voice.",
     icon: Radio,
     image: "/images/santa-radio-station-imaging.webp",
-    alt: "Animated Santa in a radio studio recording Santa radio imaging",
+    alt: "Animated Santa in a radio studio recording festive imaging — Voice of Father Christmas, Guy Harris",
     badge: "RADIO IMAGING",
     badgeLeft: true,
     features: [
@@ -78,7 +78,7 @@ const services = [
       "Powerful, premium Santa voiceover for national and regional Christmas campaigns. From high street retailers to online brands, give your campaign the definitive Santa voice.",
     icon: Megaphone,
     image: "/images/santa-christmas-campaign-voiceover.webp",
-    alt: "Animated Santa flying over a snowy city for a national Christmas campaign",
+    alt: "Animated Santa flying over a snowy city — Santa voiceover for national Christmas campaigns by Guy Harris",
     badge: "CAMPAIGN VOICEOVER",
     features: [
       "National brand campaign voiceover",
@@ -98,7 +98,7 @@ const services = [
     ),
     icon: Video,
     image: "/images/santa-personalised-video-messages.webp",
-    alt: "Animated Santa recording personalised Santa video messages in a festive studio",
+    alt: "Animated Santa recording personalised video messages — Voice of Santa and Father Christmas, Guy Harris",
     badge: "PERSONALISED VIDEO",
     features: [
       "Personalised Santa video messages",

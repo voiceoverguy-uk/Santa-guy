@@ -30,7 +30,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-4">
               <img
                 src="/santaguy-logo-white.png"
-                alt="SantaGuy"
+                alt="Guy Harris — Voice of Santa | Santa Voiceover | Father Christmas Voice | Voice of Father Christmas | SantaGuy.co.uk"
                 className="h-10 w-auto"
               />
             </Link>

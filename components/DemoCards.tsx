@@ -8,18 +8,21 @@ const demos = [
     audio: "/demos/Santa-voice-Guy-Demo-1.mp3",
     caption:
       "Hear Santa's showreel featuring festive clips from top brands, showcasing the magic and versatility of the UK's leading Santa voice.",
+    alt: "Guy Harris Santa voiceover showreel — Voice of Santa demo featuring festive clips from top UK brands",
   },
   {
     image: "/santa-guy-voice-over-2.jpg",
     audio: "/demos/Santa-voice-Guy-Demo-2.mp3",
     caption:
       "Listen to Santa on Radio 2's celebrity Naughty and Nice list promo, sharing festive fun as he checks who's made the cut this Christmas.",
+    alt: "Guy Harris as the Voice of Father Christmas on BBC Radio 2 Naughty and Nice list promo",
   },
   {
     image: "/santa-guy-voice-over-3.jpg",
     audio: "/demos/Santa-voice-Guy-Demo-3.mp3",
     caption:
       "Join Santa chatting with Zoe Ball on BBC Radio 2's Breakfast Show, sharing updates on Christmas preparations and spreading festive cheer.",
+    alt: "Father Christmas voice by Guy Harris — Santa voiceover on the Zoe Ball BBC Radio 2 Breakfast Show",
   },
 ];
 
@@ -44,7 +47,7 @@ export default function DemoCards() {
           <div className="overflow-hidden">
             <img
               src={demo.image}
-              alt={`Santa Guy in the studio — demo ${i + 1}`}
+              alt={demo.alt}
               className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>

@@ -168,18 +168,18 @@ export default function AboutPage() {
             <div className="space-y-4">
               <img
                 src="/images/santa-guy-voice-over-1.jpg"
-                alt="Guy Harris as Santa in his professional voiceover studio"
+                alt="Guy Harris — Voice of Santa and Father Christmas voice artist in his professional recording studio"
                 className="rounded-2xl w-full aspect-[4/3] object-cover"
               />
               <div className="grid grid-cols-2 gap-4">
                 <img
                   src="/images/voiceover-cartoon-santa-style.png"
-                  alt="Cartoon of Guy Harris voicing Santa in the studio"
+                  alt="Cartoon of Guy Harris performing Santa voiceover in the studio — Voice of Father Christmas"
                   className="rounded-xl w-full aspect-square object-cover"
                 />
                 <img
                   src="/images/voiceover-cartoon-santa-calls.png"
-                  alt="Cartoon of Guy Harris making live Santa calls"
+                  alt="Cartoon of Guy Harris making live Father Christmas voice calls — Santa voiceover artist"
                   className="rounded-xl w-full aspect-square object-cover"
                 />
               </div>
@@ -235,7 +235,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <img
             src="/images/santa-guy-montage.jpg"
-            alt="Santa Guy montage — Guy Harris as the Voice of Santa"
+            alt="Guy Harris montage — Voice of Santa, Santa voiceover artist, and Voice of Father Christmas"
             className="rounded-xl w-full object-cover"
           />
         </div>

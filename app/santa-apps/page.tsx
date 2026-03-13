@@ -44,7 +44,7 @@ const apps = [
     description:
       "Non-stop Christmas music hosted by the real voice of Santa. Leave messages, play the Santa Soundboard, and enjoy festive fun all season long.",
     image: "/images/apps/santa-radio.png",
-    alt: "Santa Radio iOS app showing the main player screen",
+    alt: "Santa Radio iOS app — non-stop Christmas music hosted by Guy Harris, Voice of Santa",
     storeUrl: "https://apps.apple.com/us/app/santa-radio/id1021183593",
     features: [
       "Leave a message for Santa",
@@ -60,7 +60,7 @@ const apps = [
     description:
       "Let your child leave a FREE voicemail message for Santa. Call Santa, call the workshop, or try the Naughty List Hotline.",
     image: "/images/apps/santa-voicemail.png",
-    alt: "Santa Voicemail iOS app showing call options",
+    alt: "Santa Voicemail iOS app — leave a message for Father Christmas voiced by Guy Harris",
     storeUrl: "https://itunes.apple.com/us/app/santa-voicemail/id586387813",
     features: [
       "Leave a voicemail for Santa",
@@ -76,7 +76,7 @@ const apps = [
     description:
       "Santa has a personal message just for your child. Find their name, play the message, and share the magic.",
     image: "/images/apps/santa-messages.png",
-    alt: "Santa Messages iOS app showing personalised name selection",
+    alt: "Santa Messages iOS app — personalised messages from the Voice of Father Christmas, Guy Harris",
     storeUrl: "https://itunes.apple.com/gb/app/santa-messages/id1062532143",
     features: [
       "Find your child\u2019s name",
@@ -92,7 +92,7 @@ const apps = [
     description:
       "A simpler version of our radio app. Christmas music 24/7, 365 days a year \u2014 the classics to today\u2019s hits.",
     image: "/images/apps/christmas-radio.png",
-    alt: "Christmas Radio iOS app showing the music player",
+    alt: "Christmas Radio iOS app — festive music featuring the Voice of Santa, Guy Harris",
     storeUrl:
       "https://itunes.apple.com/gb/app/christmas-radio-uk/id1157967613",
     features: [
@@ -109,7 +109,7 @@ const apps = [
     description:
       "How many sleeps til Santa arrives? Count down to Christmas with a catchy tune and share the excitement.",
     image: "/images/apps/sleeps-til-santa.png",
-    alt: "Sleeps til Santa iOS app showing the countdown",
+    alt: "Sleeps til Santa iOS app — Christmas countdown featuring the Voice of Father Christmas",
     storeUrl: "https://itunes.apple.com/gb/app/sleeps-to-santa/id949843943",
     features: [
       "See how many sleeps til Santa",
@@ -124,7 +124,7 @@ const apps = [
     description:
       "Text Santa and the Father Christmas auto-bot will reply. Have a full text chat, send postcards, and enjoy free festive fun.",
     image: "/images/apps/santa-text.png",
-    alt: "Santa Text iOS app showing text chat options",
+    alt: "Santa Text iOS app — chat with Father Christmas voiced by Santa voiceover artist Guy Harris",
     storeUrl: "https://itunes.apple.com/gb/app/santa-text/id1024535991",
     features: [
       "Have a full text chat with Santa",
@@ -140,7 +140,7 @@ const apps = [
     description:
       "A great free festive game for all ages. Help Santa jump over the buildings and collect the mince pies!",
     image: "/images/apps/santa-dash.png",
-    alt: "Santa Dash iOS game showing Santa running across rooftops",
+    alt: "Santa Dash iOS game — festive fun from the Voice of Santa, Guy Harris",
     storeUrl:
       "https://itunes.apple.com/gb/app/santa-dash-from-santa-guy/id1057048397",
     landscape: true,
@@ -229,7 +229,7 @@ export default function SantaAppsPage() {
                       >
                         <img
                           src="/images/available-on-the-app-store.webp"
-                          alt={`Download ${app.title} on the App Store`}
+                          alt={`Download ${app.title} on the App Store — featuring the Voice of Santa, Guy Harris`}
                           className="h-12 w-auto hover:opacity-80 transition-opacity"
                         />
                       </a>
