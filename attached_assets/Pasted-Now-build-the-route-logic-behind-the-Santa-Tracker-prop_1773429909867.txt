@@ -1,0 +1,222 @@
+Now build the route logic behind the Santa Tracker properly.
+
+IMPORTANT:
+The Santa Tracker must not just look good — it must run on a clean, believable, editable route engine.
+
+GOAL:
+Create a reusable Santa route logic system that powers the /santa-tracker page and determines:
+- Santa’s current region
+- next stop
+- ETA
+- journey progress
+- countries/regions completed
+- countries/regions remaining
+- progress percentages
+- gifts delivered estimate
+- distance travelled estimate
+- current journey phase
+
+ARCHITECTURE:
+Create a dedicated route logic module and keep it separate from the page UI.
+
+Please create something like:
+- /lib/santaRoute.ts
+or
+- /lib/santaTracker/
+with clean helper functions and typed data
+
+Also create one central editable route data file, for example:
+- /data/santaRouteStops.ts
+
+This data file should control:
+- stop name
+- region label
+- optional country code / flag
+- UTC offset
+- approximate latitude/longitude for map placement
+- arrival time logic
+- departure time logic
+- dwell time
+- sort order
+- display label
+- optional fun fact / tradition
+- optional milestone type
+
+IMPORTANT PRINCIPLE:
+Do NOT hardcode nonsense assumptions in the UI.
+All route/timing output must be driven by the central route data + helper functions.
+
+LOGIC MODEL:
+Base Santa’s journey on local Christmas Eve midnight rolling across the globe.
+
+That means:
+- Santa begins when Christmas Eve reaches the earliest major timezone in the route model
+- he progresses westward through major regions as local midnight arrives
+- each stop/region has an active delivery window
+- the current position should be determined from the current UTC time relative to those windows
+- if current time is between stops, the tracker should show “in transit”
+- if before the first stop, show “preparing at the North Pole”
+- if after the final stop, show “journey complete”
+
+IMPORTANT:
+Make this system easy to tweak later.
+I want to be able to adjust timings, stops, labels, and pacing without rewriting the whole feature.
+
+ROUTE STRUCTURE:
+Use major regions / stops rather than trying to track every city on Earth.
+
+Suggested stops:
+1. International Date Line / Pacific kickoff
+2. New Zealand
+3. Eastern Australia
+4. Japan / South Korea
+5. China / Hong Kong / Singapore
+6. India
+7. UAE / Middle East
+8. East Africa
+9. Eastern Europe
+10. Central Europe
+11. UK
+12. Western Europe wrap
+13. Eastern USA
+14. Central USA
+15. Mountain USA
+16. West Coast USA
+17. Alaska
+18. Hawaii
+19. Journey complete / return state
+
+You may refine these if needed, but keep them believable and clean.
+
+TIMING RULES:
+For each stop:
+- compute a meaningful arrival and departure time based on local midnight and configurable dwell duration
+- allow a small pre-arrival / travel transition so Santa can be “en route”
+- support interpolation between map points for smooth marker movement
+- make all time calculations based on UTC internally
+- display local times cleanly for the user
+
+The UK view is especially important.
+The logic should make sense for a UK visitor checking in during Christmas Eve.
+
+For example:
+- before the route starts: countdown / preparing
+- during Asia/Middle East phase: “Santa is making his way toward Europe”
+- approaching UK midnight: excitement increases
+- at UK phase: “Santa is delivering in the UK”
+- after UK: “Santa is heading across the Atlantic”
+
+HELPER FUNCTIONS TO CREATE:
+Please build clean utility functions such as:
+- getSantaTrackerState(now)
+- getCurrentStop(now)
+- getNextStop(now)
+- getPreviousStop(now)
+- getJourneyProgress(now)
+- getStopProgress(now)
+- getInterpolatedMapPosition(now)
+- getCountdownToStart(now)
+- getCountdownToUK(now)
+- getCountdownToNextStop(now)
+- getSantaStatusLabel(now)
+
+Return structured typed objects so the UI can consume them easily.
+
+STATE TYPES:
+Support these clear states:
+- OFF_SEASON
+- PREPARING
+- LIVE_AT_STOP
+- IN_TRANSIT
+- UK_SPECIAL_WINDOW
+- COMPLETE
+
+If needed, PREPARING and OFF_SEASON can be different:
+- OFF_SEASON = most of year
+- PREPARING = Dec 24 before route start
+
+SEASONAL DATE RULES:
+Build date handling properly so the page behaves intelligently:
+- before Dec 24 = off-season countdown mode
+- Dec 24 before route begins = preparing mode
+- Dec 24 during live journey = live tracking
+- after final stop through Dec 25 = journey complete mode
+- all other dates = off-season mode
+
+If useful, create a helper such as:
+- getSeasonalTrackerMode(now)
+
+MAP / POSITION LOGIC:
+The route engine must support the animated map.
+
+Please:
+- store coordinates for each stop
+- interpolate smoothly between stops during transit
+- expose the current map position as x/y or lat/lng
+- support completed path vs upcoming path
+- support current marker pulse
+- keep the logic lightweight and deterministic
+
+DASHBOARD DATA:
+The route logic should also generate dashboard-friendly values:
+- current display location
+- current local time at Santa’s region
+- next stop name
+- ETA text
+- progress %
+- visited stops count
+- remaining stops count
+- gifts delivered estimate
+- distance travelled estimate
+- status headline
+- status subtext
+
+FUN / ESTIMATED METRICS:
+Because some figures are part of the magic, create sensible estimated calculations for:
+- gifts delivered
+- distance travelled
+- speed / “reindeer power”
+
+Make it clear in code and labels that these are estimated / part of the fun presentation.
+Do not make them random on every render. They should be deterministic based on progress through the route.
+
+CONFIGURABILITY:
+Please centralise constants such as:
+- total estimated gifts
+- total estimated distance
+- dwell minutes per stop
+- transit smoothing
+- UK special countdown threshold
+- season start/end thresholds
+
+So later I can tweak them easily.
+
+UI INTEGRATION:
+Refactor the page so all tracker UI pulls from this new route engine.
+Do not leave old duplicated timing logic inside components.
+
+The UI should be able to ask one main source of truth for:
+- current mode
+- current status
+- current stop
+- next stop
+- map position
+- counters
+- countdowns
+
+QUALITY REQUIREMENTS:
+- TypeScript throughout
+- clean readable code
+- comment the important logic
+- avoid brittle magic numbers scattered everywhere
+- no fake “real-time API” language
+- no inaccurate hardcoded table pretending to be factual
+- easy for future edits
+
+OPTIONAL NICE TOUCH:
+If current time falls within an important UK approach window, return a special excitement flag such as:
+- “approachingUK”: true
+so the UI can highlight the UK arrival card or badge.
+
+DELIVERABLE:
+Please implement the full Santa Tracker route engine now, wire it into the existing /santa-tracker page, and replace any placeholder timing logic with this proper centralised system.

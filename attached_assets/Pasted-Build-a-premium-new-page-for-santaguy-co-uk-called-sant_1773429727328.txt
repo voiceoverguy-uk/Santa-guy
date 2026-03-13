@@ -1,0 +1,225 @@
+Build a premium new page for santaguy.co.uk called /santa-tracker that looks visually stunning, festive, informative, and highly shareable.
+
+IMPORTANT GOAL:
+This page must feel like a “wow” feature that people come back to and talk about. It should look modern, smooth, magical, and believable — not childish, cluttered, or gimmicky. Think premium Christmas broadcast / NORAD-inspired / Apple-level polish, but still fun for families.
+
+CORE IDEA:
+Create a Santa Tracker page that shows where Santa is in relation to UK time and global time zones, using a time-based simulation model rather than relying on paid APIs. The page should work all year round, with different states depending on the date.
+
+VERY IMPORTANT:
+Do NOT hardcode inaccurate assumptions like “Santa is in Dubai at 7am UK time.” The route/timeline logic must be internally consistent and easy to tweak in one configuration file. Build the route system so major stops, UTC offsets, local-midnight windows, travel durations, and ETAs can be adjusted cleanly later.
+
+PAGE URL:
+ /santa-tracker
+
+NAVIGATION:
+Add “Santa Tracker” to the main navigation in a natural place.
+
+DESIGN DIRECTION:
+Use the existing SantaGuy visual style and brand red where appropriate, but elevate it.
+The page should feel cinematic and magical:
+- dark winter-night background with soft gradients
+- subtle stars / glow / snowy ambience
+- rich reds, warm gold highlights, crisp white text
+- smooth hover states and gentle animation
+- rounded panels/cards with glassy or softly lit appearance
+- mobile-first and fully responsive
+- no horizontal wobble or overflow on mobile
+- fast loading and clean code
+
+LAYOUT STRUCTURE:
+Build the page in this order:
+
+1. HERO SECTION
+- Big headline such as: “Track Santa’s Journey Around the World”
+- Supporting copy explaining that Santa travels across the globe as Christmas Eve reaches midnight in different parts of the world
+- A live status pill:
+  - “At the North Pole”
+  - “Preparing for Takeoff”
+  - “Delivering Now”
+  - “Journey Complete”
+- A large countdown or live tracker timer depending on season
+- Strong visual CTA button like:
+  - “See Where Santa Is Now”
+  - “View Tonight’s Route”
+
+2. FEATURE MAP SECTION
+Create a beautiful world-tracker visual.
+This does NOT need full Google Maps or paid APIs.
+An elegant SVG or stylised map is perfect.
+
+Include:
+- Santa marker moving along a route
+- glowing trail showing completed path
+- upcoming route highlighted faintly
+- current stop pulsing
+- tooltip/card for current location
+- subtle snowfall or festive particles only if performance remains smooth
+- on mobile, prioritise clarity and performance over complexity
+
+3. LIVE TRACKER DASHBOARD
+Build a premium stats panel with cards showing:
+- Current location
+- Current local time there
+- Next stop
+- ETA to next stop
+- Countries visited
+- Countries remaining
+- Estimated gifts delivered
+- Distance travelled
+- Speed (fun label allowed, e.g. “Reindeer Power”)
+- UK arrival estimate
+- Current journey phase
+
+The numbers should animate smoothly and feel alive.
+
+4. “WHERE IS SANTA RIGHT NOW?” STORY PANEL
+Create a standout content block written in a warm, exciting tone, dynamically changing based on tracker state.
+Examples:
+- Off-season: Santa is resting at the North Pole, checking lists, feeding the reindeer, and getting ready for Christmas Eve
+- Christmas Eve before departure: final preparations underway
+- During journey: describe which region he is currently delivering to
+- After completion: Santa has completed his worldwide journey
+
+This section should feel editorial and magical, not robotic.
+
+5. TIMELINE / MAJOR STOPS SECTION
+Create a beautifully designed horizontal or stacked timeline of major regions, for example:
+- Pacific / first midnight
+- New Zealand
+- Australia
+- Japan / Korea
+- China / Hong Kong / Singapore
+- India
+- Middle East
+- Eastern Europe
+- Central Europe
+- UK
+- Eastern USA
+- Central USA
+- West Coast USA
+- Hawaii / completion
+
+IMPORTANT:
+Structure this so stop names, labels, and timing can be edited easily from one data source.
+Do not present rough guesses as “facts.”
+Use wording like “estimated route” or “Santa’s journey timeline” unless exact logic is being calculated from the route model.
+
+6. FUN FACTS / CHRISTMAS TRADITIONS SECTION
+Add a rotating or card-based section with fun facts from countries or regions Santa visits.
+Examples:
+- festive traditions
+- local Christmas customs
+- food traditions
+- fun family-friendly facts
+
+Keep it light, charming, and skimmable.
+
+7. PAGE STATES (VERY IMPORTANT)
+The page must support 3 seasonal states automatically:
+
+A) OFF-SEASON
+For most of the year:
+- show countdown to Christmas Eve
+- show Santa at the North Pole
+- preview route
+- “Santa is preparing” tone
+- teaser cards and fun facts
+
+B) CHRISTMAS EVE / LIVE MODE
+On Christmas Eve:
+- activate full live tracker
+- update countdowns and progress
+- show “delivering now”
+- animate live stats
+- show current route progress
+
+C) CHRISTMAS DAY / POST-JOURNEY
+After the journey:
+- show “Journey Complete”
+- total gifts delivered
+- total distance travelled
+- completed route line
+- festive message from Santa
+
+8. OPTIONAL AUDIO / MAGIC TOUCH
+If easy to implement without hurting performance, add a subtle optional button for:
+- sleigh bell sound
+- “Ho Ho Ho” moment
+- festive ambience
+This must be muted by default and user-triggered only.
+
+TECHNICAL REQUIREMENTS:
+- Build in Next.js / current project structure
+- Keep code tidy, modular, and reusable
+- Create a single central data/config file for Santa route logic
+- Make it easy to adjust stop times, labels, and order later
+- Avoid heavy external dependencies where possible
+- No paid APIs required
+- Performance first
+- Ensure excellent mobile behaviour
+- No layout shift or sideways scrolling
+- Accessible contrast and readable text
+- Use smooth but restrained animation
+- Respect reduced-motion preferences if possible
+
+CONTENT / TONE:
+Copy should feel magical, exciting, premium, and family-friendly.
+Not cheesy, not overly childish, and not fake-scientific.
+The page should make both kids and adults smile.
+
+SEO REQUIREMENTS:
+Add strong on-page SEO without making it look spammy.
+Include:
+- unique title tag
+- meta description
+- canonical
+- Open Graph tags
+- Twitter card
+- schema where appropriate (WebPage at minimum)
+Target terms naturally such as:
+- Santa Tracker
+- Where is Santa now
+- Track Santa
+- Santa journey
+- Father Christmas tracker
+
+SUGGESTED META TITLE:
+Santa Tracker | Track Santa’s Journey Around the World
+
+SUGGESTED META DESCRIPTION:
+Track Santa’s magical Christmas Eve journey around the world with live updates, countdowns, route progress, festive facts, and family fun.
+
+VISUAL DETAILS TO INCLUDE:
+- glowing red status badges
+- gold accent highlights
+- polished countdown styling
+- elegant cards
+- map glow/trail effects
+- subtle festive icons where tasteful
+- premium loading states / skeletons if needed
+
+DO NOT:
+- make it look cheap
+- use tacky clipart styling
+- overload with too many fonts or colours
+- make false claims about real-time GPS
+- hardcode inaccurate timeline facts into the UI
+- rely on third-party map APIs unless absolutely necessary
+- break existing site styling or performance
+
+DELIVERABLES:
+1. Build the full /santa-tracker page
+2. Add nav link
+3. Create any needed reusable components
+4. Create editable Santa route config/data
+5. Add metadata and schema
+6. Ensure mobile optimisation and no horizontal overflow
+7. Make the page feel genuinely impressive and production-ready
+
+BONUS IDEA:
+If it looks good, add a small line near the hero or dashboard such as:
+“Estimated from Santa’s worldwide Christmas Eve route”
+This helps the feature feel clever and believable without pretending to be literal GPS tracking.
+
+Please go ahead and build the page fully, not just a placeholder.

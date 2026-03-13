@@ -1,0 +1,131 @@
+Add a safe preview / demo mode to the Santa Tracker so I can test and enjoy the full Christmas Eve experience at any time of year.
+
+GOAL:
+I want to be able to activate a “Christmas Eve Now” style mode from the page so the tracker behaves as if it is currently Christmas Eve during the live journey, even when it is not December 24.
+
+IMPORTANT:
+This must be a preview/testing mode only.
+It must NOT break or replace the real date-based tracker logic.
+The real tracker should still work automatically based on actual date/time.
+Preview mode should sit on top as an optional override.
+
+FEATURE TO BUILD:
+Add a clearly styled toggle or button on the Santa Tracker page, such as:
+- “Preview Christmas Eve”
+- “Christmas Eve Now”
+- “Test Live Tracker”
+
+When activated, the page should enter a simulated live mode.
+
+HOW IT SHOULD WORK:
+Create a preview mode that overrides the tracker’s “current time” with a simulated time.
+
+For example:
+- normal mode uses actual current date/time
+- preview mode uses a virtual date/time anchored to Christmas Eve
+- the simulated time should progress in real time once activated
+
+So if I switch preview mode on, the page should behave exactly as if Santa is currently on his Christmas Eve journey.
+
+CONTROLS:
+Please add a compact control panel, tasteful and premium looking, not too intrusive.
+
+Include:
+1. Toggle/button to turn Preview Mode on/off
+2. A simulated time display
+3. Optional speed controls:
+   - 1x real-time
+   - 10x
+   - 60x
+   - full-day fast demo
+4. Optional quick-jump buttons:
+   - Route Start
+   - Australia
+   - Asia
+   - Middle East
+   - UK Arrival
+   - USA
+   - Journey Complete
+
+This makes testing much easier and also makes the page more fun.
+
+BEST APPROACH:
+Build the tracker so all logic reads from one “effective current time” source.
+
+For example:
+- real current time in normal mode
+- simulated current time in preview mode
+
+Please refactor the tracker logic if needed so the route engine accepts a supplied date/time input rather than always pulling directly from new Date() everywhere.
+
+For example:
+- getSantaTrackerState(now)
+should work perfectly with either:
+- actual time
+- preview simulated time
+
+PREVIEW MODE REQUIREMENTS:
+- Preview mode should work any day of the year
+- It should simulate Dec 24 logic cleanly
+- It should update smoothly every second
+- It should be easy to stop and return to real-world mode
+- It should not affect SEO or server-rendered metadata
+- It should not create hydration issues or date mismatches
+- It should be client-side only where appropriate
+
+STATE / PERSISTENCE:
+Please store preview mode state in localStorage so if I refresh the page during testing, it can optionally stay active.
+
+Suggested stored values:
+- preview enabled true/false
+- simulated base time
+- speed multiplier
+- selected scenario / jump point
+
+Add sensible reset behaviour if stored preview data is invalid.
+
+UI COPY:
+When preview mode is active, show a small tasteful badge or notice such as:
+- “Preview Mode Active”
+- “Simulated Christmas Eve”
+- “Testing Live Journey”
+
+This avoids confusion for visitors.
+
+OPTIONAL SAFETY:
+If appropriate, only show the preview controls when:
+- a query parameter is present, e.g. ?preview=1
+OR
+- an admin/dev flag is enabled
+OR
+- a small discreet “Enable Preview” link is clicked
+
+I do not mind which method you choose, but I want it easy for me to access while keeping the public page clean if possible.
+
+BEST VERSION:
+A very good setup would be:
+- normal visitors just see the tracker
+- if I visit /santa-tracker?preview=1 I get the extra preview controls
+
+Please implement that if it fits cleanly.
+
+FUN EXTRA:
+In preview mode, allow a “Run Full Journey” button that compresses the whole Christmas Eve route into something like:
+- 2 minutes
+- 5 minutes
+- 10 minutes
+
+That would let me sit and watch Santa travel the world in one go, which is both useful for testing and genuinely fun.
+
+TECHNICAL REQUIREMENTS:
+- keep this modular
+- do not duplicate tracker logic
+- preview mode must reuse the same route engine
+- only the input time source should change
+- clean TypeScript
+- good mobile layout
+- no ugly developer-looking controls
+- no impact on real live mode behaviour
+
+DELIVERABLE:
+Please implement a polished preview/testing mode for the Santa Tracker, with a “Christmas Eve Now” style activation button, simulated time controls, optional jump points, and a safe reset back to real-world mode.
