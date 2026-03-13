@@ -16,6 +16,7 @@ export const TRACKER_CONSTANTS = {
   totalEstimatedGifts: 2_500_000_000,
   totalEstimatedDistanceKm: 510_000_000,
   ukSpecialWindowHours: 2,
+  defaultDwellMinutes: 45,
   defaultDwellFraction: 0.6,
   journeyStartUtcHour: 10,
   journeyEndUtcHour: 34,

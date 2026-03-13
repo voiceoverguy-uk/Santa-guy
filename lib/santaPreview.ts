@@ -12,6 +12,7 @@ export interface PreviewState {
   activatedAtRealMs: number;
   simulatedStartMs: number;
   speedMultiplier: number;
+  jumpTarget: JumpTarget | null;
 }
 
 const STORAGE_KEY = "santa-tracker-preview";
@@ -38,6 +39,7 @@ export function getDefaultPreviewState(): PreviewState {
     activatedAtRealMs: Date.now(),
     simulatedStartMs: getJumpTime("route-start").getTime(),
     speedMultiplier: 1,
+    jumpTarget: null,
   };
 }
 
@@ -99,6 +101,7 @@ export function activatePreview(
     activatedAtRealMs: Date.now(),
     simulatedStartMs: getJumpTime(target).getTime(),
     speedMultiplier: speed,
+    jumpTarget: target,
   };
   savePreviewState(state);
   return state;

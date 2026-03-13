@@ -49,6 +49,7 @@ export default function SantaPreviewPanel({
         speedMultiplier: speed,
         activatedAtRealMs: Date.now(),
         simulatedStartMs: effectiveTime.getTime(),
+        jumpTarget: previewState.jumpTarget,
       };
       savePreviewState(newState);
       onPreviewChange(newState);
@@ -64,6 +65,7 @@ export default function SantaPreviewPanel({
         activatedAtRealMs: Date.now(),
         simulatedStartMs: getJumpTime("route-start").getTime(),
         speedMultiplier: speed,
+        jumpTarget: "route-start",
       };
       savePreviewState(state);
       onPreviewChange(state);

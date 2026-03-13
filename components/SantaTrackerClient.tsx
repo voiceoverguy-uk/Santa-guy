@@ -189,7 +189,7 @@ function SantaTrackerInner() {
           <h2 className="text-lg sm:text-xl font-semibold text-white mb-4">
             Live Dashboard
           </h2>
-          <SantaStats data={data} />
+          <SantaStats effectiveTime={effectiveTime} />
         </div>
       </section>
 
