@@ -1,16 +1,6 @@
 import Link from "next/link";
-import EmailButton from "./EmailButton";
 
-const mainLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Santa Guy", href: "/guy-harris-santa-voice" },
-  { label: "Hire Santa Voice", href: "/hire-santa-voice" },
-  { label: "Santa Apps", href: "/santa-apps" },
-  { label: "Santa Radio", href: "/santa-radio" },
-  { label: "Contact", href: "/contact-santa-guy" },
-];
-
-const supportLinks = [
+const moreLinks = [
   { label: "Santa Message", href: "/santa-guy-message" },
   { label: "Santa Voice Demo", href: "/santa-voice-demo" },
   { label: "Santa Ringtones", href: "/santa-ringtones" },
@@ -18,14 +8,17 @@ const supportLinks = [
 ];
 
 const externalLinks = [
-  { label: "VoiceoverGuy", href: "https://www.voiceoverguy.co.uk", external: true },
+  { label: "VoiceoverGuy", href: "https://www.voiceoverguy.co.uk" },
+  { label: "Halloween Voice", href: "https://halloweenvoice.co.uk" },
+  { label: "Voice of God", href: "https://www.voiceofgod.co.uk" },
+  { label: "Pathe Voice", href: "https://www.pathevoice.co.uk" },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div>
             <Link href="/" className="inline-block mb-4">
               <img
@@ -42,28 +35,10 @@ export default function Footer() {
 
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
-              Pages
-            </h3>
-            <ul className="space-y-2">
-              {mainLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
               More
             </h3>
-            <ul className="space-y-2">
-              {supportLinks.map((link) => (
+            <ul className="flex flex-wrap gap-x-6 gap-y-2">
+              {moreLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -94,12 +69,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6">
-              <EmailButton
-                label="Email Santa Guy"
-                className="text-sm text-gray-400 hover:text-white transition-colors underline hover:no-underline cursor-pointer"
-              />
-            </div>
           </div>
         </div>
 
