@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getDashboardData, isDecemberPrep, type HolidayDestination } from "@/lib/santaRoute";
+import { getDashboardData, isDecemberPrep, isChristmasInJuly, type HolidayDestination } from "@/lib/santaRoute";
 
 interface SantaStoryProps {
   effectiveTime: Date;
@@ -61,6 +61,59 @@ const holidayPostcards = [
   "The elves texted to say everything's under control. That sentence has never been true.",
 ];
 
+const christmasInJulyPostcards = [
+  "It's Christmas in July and I've put the full suit on. Mrs Claus says I'm mad. She's right.",
+  "Happy Christmas in July! I've convinced the hotel to play carols by the pool. Mixed reviews.",
+  "Christmas in July means I can eat mince pies guilt-free. I brought a suitcase full.",
+  "The elves demanded a mid-year Christmas party. The workshop is covered in tinsel again.",
+  "I've hung stockings on the sun loungers. The other guests are intrigued.",
+  "Christmas in July is the one time of year I feel truly understood on holiday.",
+  "I decorated a palm tree with baubles. The hotel manager came to have a word.",
+  "Mrs Claus got me a 'Christmas in July' jumper. It's 30 degrees. I'm wearing it.",
+  "Rudolph sent a video of the reindeer doing a mid-year carol. It was mostly snorting.",
+  "I set up a pop-up grotto by the pool bar. Queue of one so far. It was Mrs Claus.",
+  "Mid-year stocktake at the workshop today. The elves say they're 'on track.' I have doubts.",
+  "I've been handing out candy canes at the beach. Some people are delighted. Others less so.",
+  "Christmas in July! I baked a turkey in the hotel kitchenette. The smoke alarm disagreed.",
+  "I made a Christmas playlist for the beach. 'Last Christmas' hits different by the sea.",
+  "The elves sent a banner that says 'Merry Half-Christmas.' It's hanging in reception.",
+  "Crackers on the patio tonight. I brought my own. The jokes are still terrible. Perfect.",
+  "Mrs Claus and I exchanged silly mid-year gifts. She got me new chimney gloves. Romantic.",
+  "I wrapped a coconut and gave it to Mrs Claus. She said it was the most pointless gift ever. I was thrilled.",
+  "I carved a snowman out of sand. He lasted about eight minutes. Rest in peace, Sandy.",
+  "I wore a Santa hat to breakfast. A child recognised me immediately. Cover blown. Worth it.",
+  "Had a Christmas in July dinner — roast with all the trimmings, 35 degrees outside. No regrets.",
+  "I tried to build an igloo out of ice cubes. Ambitious. The waiter brought me a bucket.",
+  "Halfway through the year, halfway through my list. Right on schedule. Mostly.",
+  "Christmas in July is basically a rehearsal. I'm treating it very seriously. Mrs Claus is not.",
+  "The elves are celebrating too. They've made a Yule log out of a pool noodle. Creative lot.",
+  "I insisted on pulling crackers at lunch. The family at the next table asked to join in.",
+  "Put fairy lights on the balcony. Mrs Claus admitted it looked quite nice. Victory.",
+  "Christmas in July fact: in Australia, July IS winter, so it's actually proper festive weather there.",
+  "I've started a petition for a second Christmas Day. One signature so far. It's mine.",
+  "A child asked me today if Santa takes holiday. I said even magic needs a recharge.",
+  "I spotted someone else wearing a Santa hat at the resort. We nodded. An unspoken bond.",
+  "I've been leaving mince pies out for myself. The tradition doesn't stop just because it's July.",
+  "Christmas in July countdown: only 153 days until the real thing. Not that I'm counting.",
+  "I tried to go down a waterslide. The belly made it faster than expected. New record.",
+  "Mrs Claus made mulled wine with ice. She calls it a 'summer warmer.' It's actually quite good.",
+  "The reindeer are jealous of Christmas in July. They want a 'Reindeer Games in July' too.",
+  "I wrote Christmas cards on the beach. Sand got in the envelopes. Adds character.",
+  "Spent the morning watching Christmas films in my swim shorts. Peak holiday behaviour.",
+  "A couple asked to take a selfie with me by the pool. I gave them my best Ho Ho Ho.",
+  "I brought a mini Christmas tree for the hotel room. It's 15cm tall and absolutely perfect.",
+  "The hotel is now playing 'Jingle Bells' on request. I may have tipped the DJ generously.",
+  "Christmas in July means the workshop gets a deep clean. The elves found things behind the shelves. I don't want to know what.",
+  "I made a 'Nice List — July Edition.' Currently only Mrs Claus and the hotel cat qualify.",
+  "I attempted to roast chestnuts on a barbecue. Technically it worked. Technically.",
+  "Just found a Christmas shop open in July. Spent an embarrassing amount of time in there.",
+  "I suggested a Christmas in July toast at dinner. Everyone raised a glass. Festive spirit is alive.",
+  "Mrs Claus caught me rehearsing 'the laugh' in the bathroom mirror. She said it needs work.",
+  "The mid-year magic check came back positive. All systems go for December.",
+  "I've been rating hotel chimneys again. This one gets a solid 7. Good flue. Nice brickwork.",
+  "Christmas in July is nearly over. Back to regular holiday mode tomorrow. It's been magical.",
+];
+
 const workshopDispatches = [
   "The workshop is in full swing. I can hear wrapping paper from three rooms away. It never stops.",
   "Rudolph's been doing nose warm-ups since 5am. The other reindeer are pretending not to be impressed.",
@@ -114,12 +167,12 @@ const workshopDispatches = [
   "The countdown is nearly over. The world is waiting. And honestly? I can't wait either.",
 ];
 
-function HolidayPostcard({ message, holiday }: { message: string; holiday: HolidayDestination }) {
+function HolidayPostcard({ message, holiday, isJuly }: { message: string; holiday: HolidayDestination; isJuly?: boolean }) {
   return (
     <div className="max-w-3xl mx-auto">
       <div className="absolute -top-3 left-6 bg-[#0f1d32] px-3 py-1 rounded-full border border-white/10 z-10">
         <span className="text-xs font-medium text-santa-gold uppercase tracking-wider">
-          {new Date().getFullYear()} Holiday Postcards
+          {isJuly ? "🎄 Christmas in July Postcards" : `${new Date().getFullYear()} Holiday Postcards`}
         </span>
       </div>
 
@@ -234,10 +287,13 @@ function WorkshopDispatch({ message }: { message: string }) {
 export default function SantaStory({ effectiveTime, holiday }: SantaStoryProps) {
   const data = getDashboardData(effectiveTime);
   const inDecemberPrep = data.state === "OFF_SEASON" && isDecemberPrep(effectiveTime);
+  const inJuly = data.state === "OFF_SEASON" && isChristmasInJuly(effectiveTime);
   const onHoliday = data.state === "OFF_SEASON" && !!holiday && !inDecemberPrep;
 
+  const activePostcards = inJuly ? christmasInJulyPostcards : holidayPostcards;
+
   const [postcardIndex, setPostcardIndex] = useState(() =>
-    Math.floor(Math.random() * holidayPostcards.length)
+    Math.floor(Math.random() * activePostcards.length)
   );
 
   const [dispatchIndex, setDispatchIndex] = useState(() =>
@@ -247,10 +303,10 @@ export default function SantaStory({ effectiveTime, holiday }: SantaStoryProps) 
   useEffect(() => {
     if (!onHoliday) return;
     const interval = setInterval(() => {
-      setPostcardIndex((prev) => (prev + 1) % holidayPostcards.length);
+      setPostcardIndex((prev) => (prev + 1) % activePostcards.length);
     }, 15000);
     return () => clearInterval(interval);
-  }, [onHoliday]);
+  }, [onHoliday, activePostcards.length]);
 
   useEffect(() => {
     if (!inDecemberPrep) return;
@@ -267,7 +323,7 @@ export default function SantaStory({ effectiveTime, holiday }: SantaStoryProps) 
   if (onHoliday && holiday) {
     return (
       <div className="max-w-3xl mx-auto relative">
-        <HolidayPostcard message={holidayPostcards[postcardIndex]} holiday={holiday} />
+        <HolidayPostcard message={activePostcards[postcardIndex]} holiday={holiday} isJuly={inJuly} />
       </div>
     );
   }

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { getDashboardData, getCountdownToStart, isHolidaySeason, getRandomHoliday, type HolidayDestination } from "@/lib/santaRoute";
+import { getDashboardData, getCountdownToStart, isHolidaySeason, isChristmasInJuly, getRandomHoliday, type HolidayDestination } from "@/lib/santaRoute";
 import { worldMapPaths } from "@/data/worldMapPaths";
 
 export default function SantaTrackerBanner() {
@@ -40,6 +40,7 @@ export default function SantaTrackerBanner() {
   const isLive = data.mode === "LIVE";
   const isComplete = data.mode === "COMPLETE";
   const onHoliday = data.mode === "OFF_SEASON" && holiday !== null;
+  const inJuly = data.mode === "OFF_SEASON" && isChristmasInJuly(now);
 
   const statusLabel = isLive
     ? data.state === "UK_SPECIAL_WINDOW"
@@ -49,6 +50,8 @@ export default function SantaTrackerBanner() {
     ? "Journey Complete"
     : data.mode === "PREPARING"
     ? "Final Preparations Underway"
+    : onHoliday && inJuly && holiday
+    ? `🎄 Christmas in July — ${holiday.name}`
     : onHoliday && holiday
     ? `🏖️ On Holiday in ${holiday.name}`
     : "At the North Pole";
@@ -59,6 +62,8 @@ export default function SantaTrackerBanner() {
       : "bg-green-400 animate-pulse"
     : isComplete
     ? "bg-santa-gold"
+    : onHoliday && inJuly
+    ? "bg-green-400"
     : onHoliday
     ? "bg-orange-400"
     : "bg-blue-400";
@@ -88,6 +93,8 @@ export default function SantaTrackerBanner() {
                 ? `Santa is live! Follow his Christmas Eve journey in real time. From the Pacific Islands to Hawaii, watch as he delivers gifts to ${(data.estimatedGifts / 1_000_000).toFixed(0)}M+ children.`
                 : isComplete
                 ? "Santa's journey is complete! Relive the route and explore fun facts from every region he visited."
+                : onHoliday && inJuly && holiday
+                ? `It's Christmas in July! Santa's celebrating mid-year festivities while ${holiday.activity.charAt(0).toLowerCase()}${holiday.activity.slice(1)}. Only ${Math.ceil((new Date(now.getFullYear(), 11, 25).getTime() - now.getTime()) / (1000 * 60 * 60 * 24))} days until the real thing!`
                 : onHoliday && holiday
                 ? `Santa's taking a well-earned break! He's currently ${holiday.activity.charAt(0).toLowerCase()}${holiday.activity.slice(1)}. He'll be back at the North Pole in October to start preparing for the big night.`
                 : "Follow Santa's Christmas Eve journey in real time. Live route updates, fun facts, a countdown, and the full itinerary."}

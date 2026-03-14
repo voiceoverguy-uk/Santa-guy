@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Clock, Navigation, Gift, Plane, Globe, Target, Zap } from "lucide-react";
-import { getDashboardData, formatNumber, type HolidayDestination } from "@/lib/santaRoute";
+import { getDashboardData, formatNumber, isChristmasInJuly, type HolidayDestination } from "@/lib/santaRoute";
 import { holidayDestinations } from "@/data/santaHolidays";
 
 interface SantaStatsProps {
@@ -58,6 +58,7 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
   const isLive = data.mode === "LIVE";
 
   const onHoliday = data.mode === "OFF_SEASON" && !!holiday;
+  const inJuly = data.mode === "OFF_SEASON" && isChristmasInJuly(effectiveTime);
   const [maybeNext] = useState(() => {
     const others = holidayDestinations.filter(d => d.name !== holiday?.name);
     return others[Math.floor(Math.random() * others.length)];
@@ -68,16 +69,26 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
     "Wrapping presents", "Elves on overtime", "Testing toys", "Quality control",
     "Sorting the nice list", "Counting requests",
   ];
+  const julyGifts = [
+    "Mid-year list check", "Half-year stocktake", "Testing summer toys",
+    "July wish review", "Checking the nice list", "Wrapping practice",
+  ];
   const offSeasonDistance = [
     "Sleigh in the garage", "Reindeer resting", "Polishing the sleigh", "Route planning",
     "Feeding reindeer", "Waxing the runners", "Map pinned to the wall", "GPS calibrating",
   ];
-  const [funGifts] = useState(() => offSeasonGifts[Math.floor(Math.random() * offSeasonGifts.length)]);
-  const [funDistance] = useState(() => offSeasonDistance[Math.floor(Math.random() * offSeasonDistance.length)]);
+  const julyDistance = [
+    "Sleigh mid-year MOT", "Reindeer on holiday too", "Route rehearsal",
+    "Compass calibrating", "Halfway there!", "Summer service complete",
+  ];
+  const activeGifts = inJuly ? julyGifts : offSeasonGifts;
+  const activeDistance = inJuly ? julyDistance : offSeasonDistance;
+  const [funGifts] = useState(() => activeGifts[Math.floor(Math.random() * activeGifts.length)]);
+  const [funDistance] = useState(() => activeDistance[Math.floor(Math.random() * activeDistance.length)]);
 
   if (onHoliday && holiday) {
     data.currentStopName = holiday.name;
-    data.currentStopFlag = "🏖️";
+    data.currentStopFlag = inJuly ? "🎄" : "🏖️";
   }
 
   const animatedGifts = useCountUp(data.estimatedGifts);
@@ -117,7 +128,7 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
     {
       icon: <Target size={18} />,
       label: "ETA",
-      value: onHoliday ? "Relaxing..." : data.etaText,
+      value: onHoliday ? (inJuly ? "Celebrating! 🎄" : "Relaxing...") : data.etaText,
     },
     {
       icon: <Gift size={18} />,
@@ -132,7 +143,7 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
     {
       icon: <Globe size={18} />,
       label: "Countries Visited",
-      value: onHoliday ? "Back in October" : `${animatedVisited} / ${data.visitedCount + data.remainingCount}`,
+      value: onHoliday ? (inJuly ? "Celebrating mid-year!" : "Back in October") : `${animatedVisited} / ${data.visitedCount + data.remainingCount}`,
     },
     {
       icon: <Zap size={18} />,

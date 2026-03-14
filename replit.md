@@ -120,6 +120,8 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **Route engine**: `data/santaRouteStops.ts` (45 stops, UTC+14→UTC-10), `lib/santaRoute.ts` (pure functions, all accept Date)
 - **Preview mode**: `lib/santaPreview.ts` — activated via `?preview=1` query param; jump targets, speed multipliers, localStorage persistence
 - **Components**: SantaMap (inline SVG), SantaStats (dashboard cards), SantaStory (editorial), SantaTimeline (journey timeline), SantaPreviewPanel (preview controls), SantaTrackerClient (top-level client wrapper with Suspense)
+- **Seasonal flow**: Mar–Jun: holiday postcards (50 rotating); **Jul 1–31: Christmas in July** (50 themed postcards, green status dot, "🎄 Christmas in July" branding, dynamic SEO metadata); Aug–Sep: holiday postcards; Oct–Nov: static North Pole Report; Dec 1–23: Workshop Dispatches (50 rotating); Dec 24+: PREPARING→LIVE→COMPLETE
+- **Christmas in July helper**: `isChristmasInJuly(now)` in `lib/santaRoute.ts`; used in SantaTrackerClient, SantaTrackerBanner, SantaStats, SantaStory
 - **Journey**: Dec 24 10:00 UTC (Pacific/UTC+14) → Dec 25 10:00 UTC (Hawaii/UTC-10); UK at midnight UTC
 - **Map**: Equirectangular projection, no external map library; dwell-aware interpolation (marker stays put during stop, moves between stops)
 - **Off-season**: Shows countdown to Christmas Eve departure; includes email notification signup widget
