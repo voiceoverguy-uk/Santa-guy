@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
+import { Share2, Download } from "lucide-react";
 import { getDashboardData, isDecemberPrep, isChristmasInJuly, type HolidayDestination } from "@/lib/santaRoute";
 
 interface SantaStoryProps {
@@ -168,9 +169,46 @@ const workshopDispatches = [
 ];
 
 function HolidayPostcard({ message, holiday, isJuly }: { message: string; holiday: HolidayDestination; isJuly?: boolean }) {
+  const postcardRef = useRef<HTMLDivElement>(null);
+  const [sharing, setSharing] = useState(false);
+
+  const handleShare = useCallback(async () => {
+    if (!postcardRef.current || sharing) return;
+    setSharing(true);
+    try {
+      const html2canvas = (await import("html2canvas")).default;
+      const canvas = await html2canvas(postcardRef.current, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: null,
+      });
+      const blob = await new Promise<Blob | null>((resolve) =>
+        canvas.toBlob(resolve, "image/png")
+      );
+      if (!blob) return;
+
+      if (navigator.share && navigator.canShare?.({ files: [new File([blob], "santa-postcard.png", { type: "image/png" })] })) {
+        const file = new File([blob], "santa-postcard.png", { type: "image/png" });
+        await navigator.share({ files: [file], title: "Santa's Postcard", text: "A postcard from Santa! 🎅" });
+      } else {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "santa-postcard.png";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+    } catch {
+    } finally {
+      setSharing(false);
+    }
+  }, [sharing]);
+
   return (
     <div className="max-w-3xl mx-auto">
-      <div className="relative rounded-lg overflow-hidden shadow-xl border border-amber-200/30 max-w-xl mx-auto" style={{ aspectRatio: "3 / 2" }}>
+      <div ref={postcardRef} className="relative rounded-lg overflow-hidden shadow-xl border border-amber-200/30 max-w-xl mx-auto" style={{ aspectRatio: "3 / 2" }}>
         <div
           className="absolute inset-0"
           style={{
@@ -247,6 +285,10 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
                   <div className="border-b border-gray-400/50" />
                 </div>
               </div>
+
+              <p className="text-gray-400/60 text-[7px] text-right mt-1 tracking-wide">
+                www.santaguy.co.uk
+              </p>
             </div>
           </div>
 
@@ -257,9 +299,20 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
           </div>
         </div>
       </div>
-      <p className="text-center mt-3 text-xs font-medium text-santa-gold uppercase tracking-wider">
-        {isJuly ? "🎄 Christmas in July Postcards" : `${new Date().getFullYear()} Holiday Postcards`}
-      </p>
+      <div className="flex items-center justify-center gap-3 mt-3">
+        <p className="text-xs font-medium text-santa-gold uppercase tracking-wider">
+          {isJuly ? "🎄 Christmas in July Postcards" : `${new Date().getFullYear()} Holiday Postcards`}
+        </p>
+        <button
+          onClick={handleShare}
+          disabled={sharing}
+          className="inline-flex items-center gap-1.5 text-[10px] text-gray-400 hover:text-santa-gold transition-colors uppercase tracking-wider disabled:opacity-50"
+          aria-label="Share this postcard"
+        >
+          <Share2 size={12} />
+          <span className="hidden sm:inline">{sharing ? "Saving..." : "Share"}</span>
+        </button>
+      </div>
     </div>
   );
 }
