@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getDashboardData, type HolidayDestination } from "@/lib/santaRoute";
+import { getDashboardData, isDecemberPrep, type HolidayDestination } from "@/lib/santaRoute";
 
 interface SantaStoryProps {
   effectiveTime: Date;
@@ -61,6 +61,59 @@ const holidayPostcards = [
   "The elves texted to say everything's under control. That sentence has never been true.",
 ];
 
+const workshopDispatches = [
+  "The workshop is in full swing. I can hear wrapping paper from three rooms away. It never stops.",
+  "Rudolph's been doing nose warm-ups since 5am. The other reindeer are pretending not to be impressed.",
+  "The naughty list is longer than expected this year. I've had to order more ink.",
+  "An elf just asked me if we can add same-day delivery. I said we've been doing that for centuries.",
+  "The sleigh's been serviced, polished, and given a fresh coat of paint. She's never looked better.",
+  "Mrs Claus has started a countdown calendar for me. It's mostly reminders to eat properly.",
+  "I've checked the list twice. Then a third time. Then Mrs Claus told me to put it down.",
+  "The toy department hit a new record today. I'd tell you the number, but it's classified.",
+  "Rudolph's been practising sharp turns in the training field. Two snowmen didn't make it.",
+  "Someone left a mince pie on my desk. Gone in twelve seconds. New personal best.",
+  "The wrapping station is running three shifts. Elf overtime has been approved. Again.",
+  "I tried on the suit today. Fits perfectly. Mrs Claus let out a small cheer.",
+  "The letter room is overflowing. We've had to open a second sorting office. And a third.",
+  "Blitzen has been doing extra cardio. Dasher says he's showing off. He absolutely is.",
+  "I tested the new toy drone. It flew into the Christmas tree. Twice. Back to development.",
+  "The elves have started singing carols during their shifts. Productivity is up 12%.",
+  "I've been reviewing chimney access reports from around the world. Some of them are... creative.",
+  "Mrs Claus made her famous hot chocolate today. Morale has never been higher.",
+  "The GPS on the sleigh has been updated. 195 countries, every rooftop mapped. We're ready.",
+  "An elf suggested we switch to electric. I told him the reindeer would be offended.",
+  "The boot polisher broke. Emergency repairs underway. Cannot fly in scuffed boots. Standards.",
+  "I've been doing practice runs in the simulator. Nailed the London rooftops. Mostly.",
+  "The gift inventory check is complete. 2.5 billion presents accounted for. Give or take.",
+  "Comet has developed a slight competitive streak with Cupid. Training laps are getting intense.",
+  "The elves decorated the workshop breakroom. It looks like a glitter bomb went off. I love it.",
+  "Prancer insists on a warm-up playlist before flights. Currently it's all 80s power ballads.",
+  "I found an elf asleep in a pile of teddy bears. Can't blame him, to be fair.",
+  "The sack has been magically expanded for the 847th year running. Never gets old.",
+  "Mrs Claus has started her famous Christmas biscuits. The workshop smells incredible.",
+  "Weather report from the Met Elves: clear skies expected worldwide. Fingers crossed.",
+  "The reindeer had their final health check. All nine in peak condition. Rudolph's nose: dazzling.",
+  "I've memorised every child's name on the nice list. Yes, all of them. It's a Santa thing.",
+  "The workshop floor is covered in ribbon. We've stopped trying to clean it up.",
+  "An elf asked if Santa gets nervous. I said no. I lied. A little bit. Every year.",
+  "Donner has been doing altitude training. He says he's fine. He's breathing quite heavily.",
+  "I've written my Christmas Eve speech for the elves. Mrs Claus says it's my best one yet.",
+  "The backup bells for the sleigh arrived today. You can never have too many jingle bells.",
+  "Quality control rejected a batch of toy robots. The eyes were too googly. Fair enough.",
+  "I've been stretching daily. Chimneys aren't getting any wider, and neither am I.",
+  "The navigation team has plotted the optimal route. It involves 43 million course corrections.",
+  "Vixen has been practising her landing technique. Graceful as ever. Dancer is taking notes.",
+  "The elves held a dress rehearsal of the loading sequence. 4.2 seconds. New record.",
+  "I caught an elf testing a trampoline meant for a child in Bristol. He was having the time of his life.",
+  "Mrs Claus has laid out my thermal underlayers. Seven pairs of socks. She knows the drill.",
+  "The final toy shipment arrived from Workshop B. We are fully stocked. This is not a drill.",
+  "I've polished my glasses, trimmed the beard, and practised my Ho Ho Ho. I'm ready.",
+  "The elves have hung a 'Days Until Launch' banner. The number is getting very small.",
+  "Rudolph did a full-power nose test today. Lit up the entire runway. Spectacular.",
+  "Every present has been wrapped, tagged, and loaded. The sack is practically humming with excitement.",
+  "The countdown is nearly over. The world is waiting. And honestly? I can't wait either.",
+];
+
 function HolidayPostcard({ message, holiday }: { message: string; holiday: HolidayDestination }) {
   return (
     <div className="max-w-3xl mx-auto">
@@ -70,7 +123,7 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
         </span>
       </div>
 
-      <div className="relative rounded-lg overflow-hidden shadow-xl border border-amber-200/30 mt-1 max-w-2xl mx-auto" style={{ aspectRatio: "3 / 2" }}>
+      <div className="relative rounded-lg overflow-hidden shadow-xl border border-amber-200/30 mt-1 max-w-xl mx-auto" style={{ aspectRatio: "3 / 2" }}>
         <div
           className="absolute inset-0"
           style={{
@@ -84,21 +137,33 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
           />
 
           <div className="relative flex flex-col sm:flex-row h-full">
-            <div className="flex-1 p-6 sm:p-8 flex items-center">
+            <div className="flex-1 p-5 sm:p-6 flex flex-col justify-center">
+              <p
+                className="text-gray-600 mb-1"
+                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(0.9rem, 2vw, 1.1rem)" }}
+              >
+                Hello, Santa here...
+              </p>
               <p
                 className="text-gray-800 leading-relaxed transition-opacity duration-700"
-                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.15rem, 2.8vw, 1.5rem)" }}
+                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1rem, 2.4vw, 1.3rem)" }}
               >
                 &ldquo;{message}&rdquo;
               </p>
+              <p
+                className="text-gray-700 mt-2"
+                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(0.95rem, 2.1vw, 1.15rem)" }}
+              >
+                Stay good... Santa x
+              </p>
             </div>
 
-            <div className="hidden sm:block w-px bg-gray-400/40 my-6 mx-0 self-stretch" />
-            <div className="block sm:hidden h-px bg-gray-400/40 mx-6" />
+            <div className="hidden sm:block w-px bg-gray-400/40 my-5 mx-0 self-stretch" />
+            <div className="block sm:hidden h-px bg-gray-400/40 mx-5" />
 
-            <div className="sm:w-[240px] p-6 sm:p-8 flex flex-col items-center justify-center">
-              <div className="flex justify-end w-full mb-5">
-                <div className="w-16 h-[72px] rounded-sm border-2 border-santa-red/70 flex flex-col items-center justify-center bg-white/60 relative overflow-hidden"
+            <div className="sm:w-[200px] p-5 sm:p-6 flex flex-col items-center justify-center">
+              <div className="flex justify-end w-full mb-4">
+                <div className="w-14 h-[62px] rounded-sm border-2 border-santa-red/70 flex flex-col items-center justify-center bg-white/60 relative overflow-hidden"
                   style={{ borderStyle: "dashed" }}
                 >
                   <div className="absolute inset-0 opacity-5"
@@ -106,29 +171,29 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
                       backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='40' height='40' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")`,
                     }}
                   />
-                  <span className="text-[10px] font-bold text-santa-red uppercase tracking-wide leading-tight text-center">
+                  <span className="text-[9px] font-bold text-santa-red uppercase tracking-wide leading-tight text-center">
                     North
                     <br />
                     Pole
                   </span>
-                  <span className="text-[16px] mt-0.5">🎅</span>
-                  <span className="text-[7px] text-santa-red/60 font-medium uppercase tracking-widest">
+                  <span className="text-[14px] mt-0.5">🎅</span>
+                  <span className="text-[6px] text-santa-red/60 font-medium uppercase tracking-widest">
                     Official
                   </span>
                 </div>
               </div>
 
-              <div className="w-full space-y-1.5">
-                <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-2">To:</p>
-                <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1rem, 2.2vw, 1.25rem)" }}>
+              <div className="w-full space-y-1">
+                <p className="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-1.5">To:</p>
+                <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(0.85rem, 1.8vw, 1.05rem)" }}>
                   The Workshop
                 </p>
                 <div className="border-b border-gray-400/50" />
-                <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1rem, 2.2vw, 1.25rem)" }}>
+                <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(0.85rem, 1.8vw, 1.05rem)" }}>
                   1 Candy Cane Lane
                 </p>
                 <div className="border-b border-gray-400/50" />
-                <p className="text-gray-800 leading-snug font-medium" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1rem, 2.2vw, 1.25rem)" }}>
+                <p className="text-gray-800 leading-snug font-medium" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(0.85rem, 1.8vw, 1.05rem)" }}>
                   North Pole 🎄
                 </p>
                 <div className="border-b border-gray-400/50" />
@@ -136,8 +201,8 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
             </div>
           </div>
 
-          <div className="absolute bottom-3 left-6 flex items-center gap-1.5 opacity-40">
-            <span className="text-[10px] text-gray-600 italic">
+          <div className="absolute bottom-2 left-5 flex items-center gap-1.5 opacity-40">
+            <span className="text-[9px] text-gray-600 italic">
               Sent from {holiday.name} {holiday.emoji}
             </span>
           </div>
@@ -147,26 +212,60 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
   );
 }
 
+function WorkshopDispatch({ message }: { message: string }) {
+  return (
+    <div className="max-w-3xl mx-auto">
+      <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 sm:p-8">
+        <div className="absolute -top-3 left-6 bg-[#0f1d32] px-3 py-1 rounded-full border border-white/10">
+          <span className="text-xs font-medium text-santa-gold uppercase tracking-wider">
+            🎄 Workshop Dispatch
+          </span>
+        </div>
+        <p className="text-gray-300 leading-relaxed text-sm sm:text-base mt-2 transition-opacity duration-700">
+          {message}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function SantaStory({ effectiveTime, holiday }: SantaStoryProps) {
   const data = getDashboardData(effectiveTime);
-  const onHoliday = data.state === "OFF_SEASON" && !!holiday;
+  const inDecemberPrep = data.state === "OFF_SEASON" && isDecemberPrep(effectiveTime);
+  const onHoliday = data.state === "OFF_SEASON" && !!holiday && !inDecemberPrep;
+
+  const [postcardIndex, setPostcardIndex] = useState(() =>
+    Math.floor(Math.random() * holidayPostcards.length)
+  );
 
   const [dispatchIndex, setDispatchIndex] = useState(() =>
-    Math.floor(Math.random() * holidayPostcards.length)
+    Math.floor(Math.random() * workshopDispatches.length)
   );
 
   useEffect(() => {
     if (!onHoliday) return;
     const interval = setInterval(() => {
-      setDispatchIndex((prev) => (prev + 1) % holidayPostcards.length);
+      setPostcardIndex((prev) => (prev + 1) % holidayPostcards.length);
     }, 15000);
     return () => clearInterval(interval);
   }, [onHoliday]);
 
+  useEffect(() => {
+    if (!inDecemberPrep) return;
+    const interval = setInterval(() => {
+      setDispatchIndex((prev) => (prev + 1) % workshopDispatches.length);
+    }, 15000);
+    return () => clearInterval(interval);
+  }, [inDecemberPrep]);
+
+  if (inDecemberPrep) {
+    return <WorkshopDispatch message={workshopDispatches[dispatchIndex]} />;
+  }
+
   if (onHoliday && holiday) {
     return (
       <div className="max-w-3xl mx-auto relative">
-        <HolidayPostcard message={holidayPostcards[dispatchIndex]} holiday={holiday} />
+        <HolidayPostcard message={holidayPostcards[postcardIndex]} holiday={holiday} />
       </div>
     );
   }

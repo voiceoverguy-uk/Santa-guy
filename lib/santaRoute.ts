@@ -63,6 +63,12 @@ export function isHolidaySeason(now: Date): boolean {
   return month >= 2 && month <= 8;
 }
 
+export function isDecemberPrep(now: Date): boolean {
+  const month = now.getUTCMonth();
+  const day = now.getUTCDate();
+  return month === 11 && day >= 1 && day <= 23;
+}
+
 export function getRandomHoliday(): HolidayDestination {
   const index = Math.floor(Math.random() * holidayDestinations.length);
   return holidayDestinations[index];
