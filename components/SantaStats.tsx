@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Clock, Navigation, Gift, Plane, Globe, Target, Zap } from "lucide-react";
 import { getDashboardData, formatNumber, type HolidayDestination } from "@/lib/santaRoute";
+import { holidayDestinations } from "@/data/santaHolidays";
 
 interface SantaStatsProps {
   effectiveTime: Date;
@@ -57,6 +58,10 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
   const isLive = data.mode === "LIVE";
 
   const onHoliday = data.mode === "OFF_SEASON" && !!holiday;
+  const [maybeNext] = useState(() => {
+    const others = holidayDestinations.filter(d => d.name !== holiday?.name);
+    return others[Math.floor(Math.random() * others.length)];
+  });
 
   if (onHoliday && holiday) {
     data.currentStopName = holiday.name;
@@ -95,7 +100,7 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
     {
       icon: <Navigation size={18} />,
       label: "Next Stop",
-      value: onHoliday ? "🏖️ Another holiday!" : (data.nextStopName !== "—" ? `${data.nextStopFlag} ${data.nextStopName}` : "—"),
+      value: onHoliday && maybeNext ? `Maybe ${maybeNext.name}?` : (data.nextStopName !== "—" ? `${data.nextStopFlag} ${data.nextStopName}` : "—"),
     },
     {
       icon: <Target size={18} />,
