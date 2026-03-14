@@ -7,9 +7,10 @@ import { worldMapPaths } from "@/data/worldMapPaths";
 interface SantaMapProps {
   effectiveTime: Date;
   mapPosition: MapPosition;
+  holidayEmoji?: string;
 }
 
-export default function SantaMap({ effectiveTime, mapPosition }: SantaMapProps) {
+export default function SantaMap({ effectiveTime, mapPosition, holidayEmoji }: SantaMapProps) {
   const visited = getVisitedStops(effectiveTime);
   const currentId = getCurrentStopId(effectiveTime);
 
@@ -112,10 +113,10 @@ export default function SantaMap({ effectiveTime, mapPosition }: SantaMapProps) 
                 y="0"
                 textAnchor="middle"
                 dominantBaseline="central"
-                fontSize="24"
+                fontSize={holidayEmoji ? "28" : "24"}
                 className="select-none"
               >
-                🎅
+                {holidayEmoji || "🎅"}
               </text>
             </g>
           )}

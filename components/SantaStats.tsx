@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Clock, Navigation, Gift, Plane, Globe, Target, Zap } from "lucide-react";
-import { getDashboardData, formatNumber } from "@/lib/santaRoute";
+import { getDashboardData, formatNumber, type HolidayDestination } from "@/lib/santaRoute";
 
 interface SantaStatsProps {
   effectiveTime: Date;
+  holiday?: HolidayDestination | null;
 }
 
 function useCountUp(target: number, duration: number = 800): number {
@@ -51,9 +52,14 @@ function useCountUp(target: number, duration: number = 800): number {
   return display;
 }
 
-export default function SantaStats({ effectiveTime }: SantaStatsProps) {
+export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) {
   const data = getDashboardData(effectiveTime);
   const isLive = data.mode === "LIVE";
+
+  if (data.mode === "OFF_SEASON" && holiday) {
+    data.currentStopName = holiday.name;
+    data.currentStopFlag = holiday.emoji;
+  }
 
   const animatedGifts = useCountUp(data.estimatedGifts);
   const animatedDistance = useCountUp(data.estimatedDistanceKm);

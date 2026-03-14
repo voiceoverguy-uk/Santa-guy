@@ -85,8 +85,8 @@ function SantaTrackerInner() {
     data.currentStopName = holiday.name;
     data.currentStopFlag = holiday.emoji;
     data.currentStopRegion = holiday.country;
-    const x = ((holiday.lng + 180) / 360) * 1000;
-    const y = ((90 - holiday.lat) / 180) * 500;
+    const x = ((holiday.lng + 180) / 360) * 100;
+    const y = ((90 - holiday.lat) / 180) * 100;
     data.mapPosition = { lat: holiday.lat, lng: holiday.lng, x, y };
   }
 
@@ -204,7 +204,7 @@ function SantaTrackerInner() {
 
       <section className="px-4 sm:px-6 pb-12">
         <div className="max-w-6xl mx-auto">
-          <SantaMap effectiveTime={effectiveTime} mapPosition={data.mapPosition} />
+          <SantaMap effectiveTime={effectiveTime} mapPosition={data.mapPosition} holidayEmoji={onHoliday && holiday ? holiday.emoji : undefined} />
         </div>
       </section>
 
@@ -213,7 +213,7 @@ function SantaTrackerInner() {
           <h2 className="text-lg sm:text-xl font-semibold text-white mb-4">
             Live Dashboard
           </h2>
-          <SantaStats effectiveTime={effectiveTime} />
+          <SantaStats effectiveTime={effectiveTime} holiday={onHoliday ? holiday : undefined} />
         </div>
       </section>
 
