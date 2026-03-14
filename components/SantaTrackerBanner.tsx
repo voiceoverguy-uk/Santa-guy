@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { getDashboardData } from "@/lib/santaRoute";
+import { getDashboardData, getCountdownToStart } from "@/lib/santaRoute";
 
 export default function SantaTrackerBanner() {
   const [now, setNow] = useState<Date | null>(null);
@@ -31,6 +31,7 @@ export default function SantaTrackerBanner() {
   }
 
   const data = getDashboardData(now);
+  const countdown = getCountdownToStart(now);
   const isLive = data.mode === "LIVE";
   const isComplete = data.mode === "COMPLETE";
 
@@ -56,9 +57,9 @@ export default function SantaTrackerBanner() {
     <section className="bg-[#0a1628] relative overflow-hidden">
       <div className="absolute inset-0 star-field opacity-60" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className={`flex flex-col ${isLive || isComplete ? "lg:flex-row" : ""} items-center gap-8 lg:gap-12`}>
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
 
-          <div className={`flex-1 text-center ${isLive || isComplete ? "lg:text-left" : ""}`}>
+          <div className="flex-1 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 mb-4">
               <span className={`w-2 h-2 rounded-full flex-shrink-0 ${dotColor}`} />
               <span className="text-xs font-medium text-gray-300 uppercase tracking-wider">
@@ -91,15 +92,53 @@ export default function SantaTrackerBanner() {
             </div>
           </div>
 
-          {(isLive || isComplete) && (
-            <div className="flex-shrink-0 w-full lg:w-auto">
+          <div className="flex-shrink-0 w-full lg:w-auto">
+            {isLive || isComplete ? (
               <LiveStats data={data} />
-            </div>
-          )}
+            ) : (
+              <CountdownDisplay countdown={countdown} />
+            )}
+          </div>
 
         </div>
       </div>
     </section>
+  );
+}
+
+function CountdownDisplay({ countdown }: { countdown: ReturnType<typeof getCountdownToStart> }) {
+  const units = [
+    { label: "Days", value: countdown.days },
+    { label: "Hours", value: countdown.hours },
+    { label: "Mins", value: countdown.minutes },
+    { label: "Secs", value: countdown.seconds },
+  ];
+
+  return (
+    <div className="text-center lg:text-right">
+      <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-3">
+        Countdown to Christmas Eve
+      </p>
+      <div className="inline-flex items-center gap-2 sm:gap-3">
+        {units.map((u, i, arr) => (
+          <div key={u.label} className="flex items-center gap-2 sm:gap-3">
+            <div className="text-center">
+              <div className="bg-white/5 border border-white/10 rounded-lg px-3 sm:px-4 py-2 sm:py-3 min-w-[52px] sm:min-w-[64px]">
+                <div className="text-xl sm:text-2xl font-bold text-santa-red tabular-nums">
+                  {String(u.value).padStart(2, "0")}
+                </div>
+              </div>
+              <div className="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-wider mt-1">
+                {u.label}
+              </div>
+            </div>
+            {i < arr.length - 1 && (
+              <span className="text-gray-600 text-lg font-light mb-4">:</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 

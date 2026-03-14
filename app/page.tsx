@@ -5,7 +5,6 @@ import ClientLogos from "@/components/ClientLogos";
 import SectionHeading from "@/components/SectionHeading";
 import Card from "@/components/Card";
 import TestimonialSlider from "@/components/TestimonialSlider";
-import CountdownTimer from "@/components/CountdownTimer";
 import CTASection from "@/components/CTASection";
 import SantaTrackerBanner from "@/components/SantaTrackerBanner";
 import FAQSection from "@/components/FAQSection";
@@ -342,15 +341,6 @@ export default function HomePage() {
             subtitle="Trusted by agencies, broadcasters, and brands across the UK"
           />
           <TestimonialSlider />
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm uppercase tracking-widest text-gray-400 font-medium mb-6">
-            Countdown to Christmas
-          </p>
-          <CountdownTimer />
         </div>
       </section>
 
