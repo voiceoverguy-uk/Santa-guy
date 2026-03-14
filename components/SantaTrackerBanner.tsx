@@ -66,8 +66,8 @@ export default function SantaTrackerBanner() {
   return (
     <section className="bg-[#0a1628] relative overflow-hidden">
       <div className="absolute inset-0 star-field opacity-60" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8">
 
           <div className="flex-1 text-center lg:text-left lg:max-w-lg">
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 mb-4">
