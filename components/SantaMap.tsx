@@ -2,6 +2,7 @@
 
 import { santaStops } from "@/data/santaRouteStops";
 import { getVisitedStops, getCurrentStopId, type MapPosition } from "@/lib/santaRoute";
+import { worldMapPaths } from "@/data/worldMapPaths";
 
 interface SantaMapProps {
   effectiveTime: Date;
@@ -131,13 +132,9 @@ export default function SantaMap({ effectiveTime, mapPosition }: SantaMapProps) 
 function ContinentPaths() {
   return (
     <g fill="#1e3a5f" stroke="#2a4d6e" strokeWidth="0.5" opacity="0.6">
-      <path d="M130,95 L180,80 L220,85 L260,75 L300,80 L320,95 L330,110 L310,130 L280,140 L250,135 L230,120 L200,110 L170,105 Z" />
-      <path d="M270,150 L310,145 L340,155 L380,150 L400,160 L420,175 L410,200 L380,220 L340,230 L310,225 L280,210 L270,190 L260,170 Z" />
-      <path d="M440,80 L480,60 L520,55 L570,60 L620,55 L680,60 L720,70 L750,85 L760,105 L740,120 L700,130 L660,125 L620,115 L580,120 L540,130 L510,140 L480,135 L460,120 L445,100 Z" />
-      <path d="M530,145 L570,135 L610,140 L650,145 L680,160 L690,180 L670,200 L640,210 L610,215 L580,205 L560,190 L540,170 Z" />
-      <path d="M450,200 L500,185 L540,190 L570,210 L580,240 L560,270 L530,290 L500,295 L470,280 L450,260 L440,230 Z" />
-      <path d="M750,250 L800,230 L850,240 L880,270 L870,310 L840,340 L800,350 L770,330 L755,300 L745,270 Z" />
-      <path d="M760,140 L810,130 L850,135 L870,150 L860,170 L830,180 L790,175 L770,160 Z" />
+      {worldMapPaths.map((d, i) => (
+        <path key={i} d={d} />
+      ))}
     </g>
   );
 }
