@@ -148,7 +148,7 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
                 className="text-gray-800 leading-relaxed transition-opacity duration-700"
                 style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}
               >
-                &ldquo;{message}&rdquo;
+                {message}
               </p>
               <p
                 className="text-gray-800 mt-2"
