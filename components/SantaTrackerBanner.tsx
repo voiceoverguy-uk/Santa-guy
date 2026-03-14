@@ -49,7 +49,7 @@ export default function SantaTrackerBanner() {
     : data.mode === "PREPARING"
     ? "Final Preparations Underway"
     : onHoliday && holiday
-    ? `${holiday.emoji} On Holiday in ${holiday.name}`
+    ? `🏖️ On Holiday in ${holiday.name}`
     : "At the North Pole";
 
   const dotColor = isLive

@@ -58,7 +58,7 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
 
   if (data.mode === "OFF_SEASON" && holiday) {
     data.currentStopName = holiday.name;
-    data.currentStopFlag = holiday.emoji;
+    data.currentStopFlag = "🏖️";
   }
 
   const animatedGifts = useCountUp(data.estimatedGifts);

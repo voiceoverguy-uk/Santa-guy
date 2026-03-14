@@ -80,10 +80,10 @@ function SantaTrackerInner() {
 
   if (onHoliday && holiday) {
     data.holiday = holiday;
-    data.statusHeadline = `${holiday.emoji} Santa is on holiday in ${holiday.name}`;
+    data.statusHeadline = `🏖️ Santa is on holiday in ${holiday.name}`;
     data.statusSubtext = holiday.activity;
     data.currentStopName = holiday.name;
-    data.currentStopFlag = holiday.emoji;
+    data.currentStopFlag = "🏖️";
     data.currentStopRegion = holiday.country;
     const x = ((holiday.lng + 180) / 360) * 100;
     const y = ((90 - holiday.lat) / 180) * 100;
@@ -109,7 +109,7 @@ function SantaTrackerInner() {
       : data.mode === "PREPARING"
       ? "Preparing for Takeoff"
       : onHoliday && holiday
-      ? `${holiday.emoji} On Holiday in ${holiday.name}`
+      ? `🏖️ On Holiday in ${holiday.name}`
       : "At the North Pole";
 
   return (
@@ -204,7 +204,7 @@ function SantaTrackerInner() {
 
       <section className="px-4 sm:px-6 pb-12">
         <div className="max-w-6xl mx-auto">
-          <SantaMap effectiveTime={effectiveTime} mapPosition={data.mapPosition} holidayEmoji={onHoliday && holiday ? holiday.emoji : undefined} />
+          <SantaMap effectiveTime={effectiveTime} mapPosition={data.mapPosition} />
         </div>
       </section>
 
