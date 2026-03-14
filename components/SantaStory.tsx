@@ -140,7 +140,7 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
             <div className="flex-1 p-5 sm:p-6 flex flex-col justify-center">
               <p
                 className="text-gray-800 mb-1"
-                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.05rem, 2.3vw, 1.25rem)" }}
+                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}
               >
                 Hello, Santa here...
               </p>
@@ -152,7 +152,7 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
               </p>
               <p
                 className="text-gray-800 mt-2"
-                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.05rem, 2.3vw, 1.25rem)" }}
+                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}
               >
                 Stay good... Santa x
               </p>
@@ -161,7 +161,7 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
             <div className="hidden sm:block w-px bg-gray-400/40 my-5 mx-0 self-stretch" />
             <div className="block sm:hidden h-px bg-gray-400/40 mx-5" />
 
-            <div className="sm:w-[200px] p-5 sm:p-6 flex flex-col items-center justify-center">
+            <div className="sm:w-[200px] p-5 sm:p-6 flex flex-col justify-between">
               <div className="flex justify-end w-full mb-3">
                 <div className="w-14 h-[62px] rounded-sm border-2 border-santa-red/70 flex flex-col items-center justify-center bg-white/60 relative overflow-hidden"
                   style={{ borderStyle: "dashed" }}
