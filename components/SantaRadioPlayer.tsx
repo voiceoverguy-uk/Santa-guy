@@ -1,10 +1,12 @@
 "use client";
 
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, Music } from "lucide-react";
 import { useRadio } from "@/contexts/RadioContext";
 
 export default function SantaRadioPlayer() {
-  const { playing, loading, toggle } = useRadio();
+  const { playing, loading, nowPlaying, toggle } = useRadio();
+
+  const hasTrack = playing && nowPlaying?.title;
 
   return (
     <div className="max-w-2xl mx-auto mb-12">
@@ -29,9 +31,18 @@ export default function SantaRadioPlayer() {
         <p className="relative z-10 mt-6 text-lg font-semibold text-white">
           {loading ? "Connecting..." : playing ? "Now Playing" : "Listen Live"}
         </p>
-        <p className="relative z-10 mt-1 text-sm text-white/80">
-          {playing ? "Santa Radio, non-stop Christmas music" : "Tap to start streaming Santa Radio"}
-        </p>
+        {hasTrack ? (
+          <div className="relative z-10 mt-1 flex items-center gap-2 max-w-md">
+            <Music size={14} className="text-santa-red flex-shrink-0" />
+            <p className="text-sm text-white/90 truncate">
+              {nowPlaying.artist ? `${nowPlaying.artist} — ${nowPlaying.title}` : nowPlaying.title}
+            </p>
+          </div>
+        ) : (
+          <p className="relative z-10 mt-1 text-sm text-white/80">
+            {playing ? "Santa Radio, non-stop Christmas music" : "Tap to start streaming Santa Radio"}
+          </p>
+        )}
       </div>
     </div>
   );
