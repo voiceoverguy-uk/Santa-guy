@@ -101,7 +101,7 @@ export default function SantaRadioPage() {
 
       <Hero
         title="Santa Radio"
-        subtitle="Non-stop Christmas music hosted by the real voice of Santa. The UK's favourite festive radio station. Listen free online or via the Santa Radio app."
+        subtitle="Non-stop Christmas music hosted by the real voice of Santa. The UK's favourite festive radio station. Listen free online or via the free Santa Radio App."
         primaryCTA={{ label: "Listen Live", href: "#listen" }}
         secondaryCTA={{ label: "Download the App", href: "/santa-apps" }}
         logoSrc="/santa-radio-logo.png"
