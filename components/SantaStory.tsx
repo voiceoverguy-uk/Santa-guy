@@ -161,8 +161,8 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
             <div className="hidden sm:block w-px bg-gray-400/40 my-5 mx-0 self-stretch" />
             <div className="block sm:hidden h-px bg-gray-400/40 mx-5" />
 
-            <div className="sm:w-[200px] p-5 sm:p-6 pt-4 sm:pt-4 flex flex-col">
-              <div className="flex justify-end mb-3">
+            <div className="sm:w-[200px] p-5 sm:p-6 flex flex-col items-center justify-center">
+              <div className="flex justify-end w-full mb-3">
                 <div className="w-14 h-[62px] rounded-sm border-2 border-santa-red/70 flex flex-col items-center justify-center bg-white/60 relative overflow-hidden"
                   style={{ borderStyle: "dashed" }}
                 >
@@ -185,15 +185,15 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
 
               <div className="w-full space-y-1">
                 <p className="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-1.5">To:</p>
-                <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(0.85rem, 1.8vw, 1.05rem)" }}>
+                <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}>
                   The Workshop
                 </p>
                 <div className="border-b border-gray-400/50" />
-                <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(0.85rem, 1.8vw, 1.05rem)" }}>
+                <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}>
                   1 Candy Cane Lane
                 </p>
                 <div className="border-b border-gray-400/50" />
-                <p className="text-gray-800 leading-snug font-medium" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(0.85rem, 1.8vw, 1.05rem)" }}>
+                <p className="text-gray-800 leading-snug font-medium" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}>
                   North Pole 🎄
                 </p>
                 <div className="border-b border-gray-400/50" />
