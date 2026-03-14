@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getDashboardData, getCountdownToStart, isHolidaySeason, getRandomHoliday, type HolidayDestination } from "@/lib/santaRoute";
+import { worldMapPaths } from "@/data/worldMapPaths";
 
 export default function SantaTrackerBanner() {
   const [now, setNow] = useState<Date | null>(null);
@@ -21,7 +22,7 @@ export default function SantaTrackerBanner() {
     return (
       <section className="bg-[#0a1628] relative overflow-hidden">
         <div className="absolute inset-0 star-field opacity-60" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
               Track Santa&apos;s Journey
@@ -65,8 +66,8 @@ export default function SantaTrackerBanner() {
   return (
     <section className="bg-[#0a1628] relative overflow-hidden">
       <div className="absolute inset-0 star-field opacity-60" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
 
           <div className="flex-1 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 mb-4">
@@ -92,7 +93,7 @@ export default function SantaTrackerBanner() {
                 : "Follow Santa's Christmas Eve journey in real time. Live route updates, fun facts, a countdown, and the full itinerary — from the Pacific Islands to Hawaii."}
             </p>
 
-            <div className="mt-6">
+            <div className="mt-5">
               <Link
                 href="/santa-tracker"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-santa-red text-white text-sm font-semibold rounded-lg hover:bg-santa-red-dark transition-colors shadow-lg"
@@ -107,7 +108,10 @@ export default function SantaTrackerBanner() {
             {isLive || isComplete ? (
               <LiveStats data={data} />
             ) : (
-              <CountdownDisplay countdown={countdown} />
+              <div className="flex flex-col items-center lg:items-end gap-4">
+                <CountdownDisplay countdown={countdown} />
+                <MiniMap holiday={onHoliday ? holiday : null} />
+              </div>
             )}
           </div>
 
@@ -182,6 +186,54 @@ function LiveStats({ data }: { data: ReturnType<typeof getDashboardData> }) {
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+
+function MiniMap({ holiday }: { holiday: HolidayDestination | null }) {
+  const santaX = holiday
+    ? ((holiday.lng + 180) / 360) * 1000
+    : ((0 + 180) / 360) * 1000;
+  const santaY = holiday
+    ? ((90 - holiday.lat) / 180) * 500
+    : ((90 - 90) / 180) * 500;
+
+  const caption = holiday
+    ? `Santa's holiday location`
+    : "Santa's at the North Pole";
+
+  return (
+    <div className="w-full lg:w-[280px] rounded-lg border border-white/10 bg-[#060e1a] overflow-hidden">
+      <svg
+        viewBox="0 0 1000 500"
+        className="w-full"
+        style={{ aspectRatio: "2 / 1" }}
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <rect width="1000" height="500" fill="transparent" />
+        <g fill="#1e3a5f" stroke="#2a4d6e" strokeWidth="0.5" opacity="0.5">
+          {worldMapPaths.map((d, i) => (
+            <path key={i} d={d} />
+          ))}
+        </g>
+        <circle cx={santaX} cy={santaY} r="18" fill="#9C060B" opacity="0.25">
+          <animate attributeName="r" values="12;22;12" dur="2s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <text
+          x={santaX}
+          y={santaY}
+          textAnchor="middle"
+          dominantBaseline="central"
+          fontSize="28"
+          className="select-none"
+        >
+          🎅
+        </text>
+      </svg>
+      <div className="px-2 py-1.5 text-[10px] text-gray-500 text-center">
+        {caption}
+      </div>
     </div>
   );
 }

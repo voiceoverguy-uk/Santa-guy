@@ -18,7 +18,7 @@ export default function CTASection({
 }: CTASectionProps) {
   return (
     <section
-      className={`py-10 sm:py-14 ${dark ? "bg-gray-900 text-white" : "bg-santa-cream"}`}
+      className={`py-8 sm:py-10 ${dark ? "bg-gray-900 text-white" : "bg-santa-cream"}`}
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2
