@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { Share2, Download } from "lucide-react";
+import { Share2 } from "lucide-react";
 import { getDashboardData, isDecemberPrep, isChristmasInJuly, type HolidayDestination } from "@/lib/santaRoute";
 
 interface SantaStoryProps {
@@ -200,7 +200,8 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
       }
-    } catch {
+    } catch (err) {
+      console.warn("Postcard share/download failed:", err);
     } finally {
       setSharing(false);
     }
