@@ -351,6 +351,7 @@ export default function HomePage() {
         description="Whether you need Santa voiceover for a national campaign, a podcast guest appearance, or festive radio imaging — Guy Harris delivers broadcast-quality recordings fast."
         primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Get in Touch", href: "/contact-santa-guy" }}
+        dark={false}
       />
 
       <FAQSection faqs={faqs} />

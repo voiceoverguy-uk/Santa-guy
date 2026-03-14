@@ -259,7 +259,7 @@ function SantaTrackerInner() {
 
       <section className="px-4 sm:px-6 pb-16">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="rounded-2xl border border-santa-red/20 bg-santa-red/5 p-8 sm:p-12">
+          <div className="rounded-2xl border border-santa-red/40 bg-santa-red/5 p-8 sm:p-12">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">
               Want Santa&apos;s Voice for Your Project?
             </h2>
