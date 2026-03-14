@@ -34,6 +34,12 @@ const testimonials = [
     author: "Jay Espindola",
     company: "Producer, ITV / GB News",
   },
+  {
+    quote:
+      "We use Guy regularly during the Christmas season at ARN in Dubai, and his Santa voice is absolutely spot on. Warm, authentic and full of festive character. Truly one of the best Santa voices in the world.",
+    author: "Russell Featherstone",
+    company: "Audio Engineer",
+  },
 ];
 
 export default function TestimonialSlider() {
