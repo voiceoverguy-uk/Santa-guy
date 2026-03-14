@@ -98,4 +98,5 @@ export const holidayDestinations: HolidayDestination[] = [
   { name: "Niagara-on-the-Lake", country: "Canada", lat: 43.26, lng: -79.07, emoji: "🍇", activity: "Wine tasting at every vineyard and calling it research" },
   { name: "The Azores", country: "Portugal", lat: 37.74, lng: -25.68, emoji: "🌋", activity: "Soaking in volcanic hot springs in the middle of the Atlantic" },
   { name: "The Great Barrier Reef", country: "Australia", lat: -18.29, lng: 147.70, emoji: "🤿", activity: "Scuba diving and waving at Nemo" },
+  { name: "Soho, London", country: "England", lat: 51.51, lng: -0.13, emoji: "💆", activity: "Having a 'massage' in Soho — no further questions please" },
 ];
