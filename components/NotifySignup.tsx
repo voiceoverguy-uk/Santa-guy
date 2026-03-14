@@ -60,7 +60,7 @@ export default function NotifySignup() {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+      <form onSubmit={handleSubmit} className="relative max-w-md mx-auto">
         {status === "error" && (
           <div className="flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2 mb-4">
             <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0" />
