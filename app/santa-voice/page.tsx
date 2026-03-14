@@ -303,7 +303,7 @@ export default function SantaVoicePage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <FAQSection
             faqs={faqs}
-            title="Santa Voice — Frequently Asked Questions"
+            title="Santa Voice: Frequently Asked Questions"
             subtitle="Common questions about hiring a professional Santa voice"
           />
         </div>

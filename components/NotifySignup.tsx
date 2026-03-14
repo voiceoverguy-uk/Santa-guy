@@ -56,7 +56,7 @@ export default function NotifySignup() {
           Notify Me on Christmas Eve
         </h3>
         <p className="text-gray-400 text-sm max-w-md mx-auto">
-          Get a reminder when Santa&apos;s live tracker goes online — straight to your inbox.
+          Get a reminder when Santa&apos;s live tracker goes online, straight to your inbox.
         </p>
       </div>
 

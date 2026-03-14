@@ -138,7 +138,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   As a professional voiceover artist, Guy brings decades of broadcast experience to every Santa
-                  recording. He is not a seasonal hobbyist or part-time entertainer — he is an established voice
+                  recording. He is not a seasonal hobbyist or part-time entertainer, he is an established voice
                   professional whose Santa characterisation is rooted in years of craft, trusted by the UK&apos;s
                   most demanding agencies, producers, and broadcasters.
                 </p>
@@ -151,7 +151,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   Guy&apos;s wider voiceover career spans commercial, corporate, narration, and character work. He is
-                  also known as VoiceoverGuy and Voice of God — visit{" "}
+                  also known as VoiceoverGuy and Voice of God, visit{" "}
                   <a
                     href="https://www.voiceoverguy.co.uk"
                     target="_blank"

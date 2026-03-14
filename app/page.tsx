@@ -241,7 +241,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Hear the Voice of Santa"
-            subtitle="Listen to real Santa voice demos recorded in the studio by Guy Harris — the UK's most trusted Santa voice artist"
+            subtitle="Listen to real Santa voice demos recorded in the studio by Guy Harris, the UK's most trusted Santa voice artist"
           />
           <DemoCards />
           <div className="text-center mt-10">
@@ -301,7 +301,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight">
-                Meet Guy Harris — The Voice Behind Santa
+                Meet Guy Harris, The Voice Behind Santa
               </h2>
               <div className="mt-4 w-16 h-1 bg-santa-red rounded-full" />
               <p className="mt-6 text-gray-600 leading-relaxed">
@@ -348,7 +348,7 @@ export default function HomePage() {
 
       <CTASection
         title="Ready to Hire the UK's Trusted Voice of Santa?"
-        description="Whether you need Santa voiceover for a national campaign, a podcast guest appearance, or festive radio imaging — Guy Harris delivers broadcast-quality recordings fast."
+        description="Whether you need Santa voiceover for a national campaign, a podcast guest appearance, or festive radio imaging, Guy Harris delivers broadcast-quality recordings fast."
         primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Get in Touch", href: "/contact-santa-guy" }}
         dark={false}

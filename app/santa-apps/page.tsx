@@ -173,7 +173,7 @@ export default function SantaAppsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Free Christmas Apps"
-            subtitle="Fun, festive, and free on iOS — powered by the UK's trusted voice of Santa"
+            subtitle="Fun, festive, and free on iOS. Powered by the UK's trusted voice of Santa"
           />
 
           <div className="space-y-16">
@@ -264,7 +264,7 @@ export default function SantaAppsPage() {
               href="/guy-harris-santa-voice"
               className="text-santa-red hover:text-santa-red-dark font-medium"
             >
-              Guy Harris — the voice of Santa
+              Guy Harris, the voice of Santa
             </Link>{" "}
             or{" "}
             <Link

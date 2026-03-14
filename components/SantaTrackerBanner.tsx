@@ -85,12 +85,12 @@ export default function SantaTrackerBanner() {
 
             <p className="mt-3 text-gray-400 text-sm sm:text-base leading-relaxed max-w-lg mx-auto lg:mx-0">
               {isLive
-                ? `Santa is live! Follow his Christmas Eve journey in real time — from the Pacific Islands to Hawaii, watch as he delivers gifts to ${(data.estimatedGifts / 1_000_000).toFixed(0)}M+ children.`
+                ? `Santa is live! Follow his Christmas Eve journey in real time. From the Pacific Islands to Hawaii, watch as he delivers gifts to ${(data.estimatedGifts / 1_000_000).toFixed(0)}M+ children.`
                 : isComplete
                 ? "Santa's journey is complete! Relive the route and explore fun facts from every region he visited."
                 : onHoliday && holiday
                 ? `Santa's taking a well-earned break! He's currently ${holiday.activity.charAt(0).toLowerCase()}${holiday.activity.slice(1)}. He'll be back at the North Pole in October to start preparing for the big night.`
-                : "Follow Santa's Christmas Eve journey in real time. Live route updates, fun facts, a countdown, and the full itinerary — from the Pacific Islands to Hawaii."}
+                : "Follow Santa's Christmas Eve journey in real time. Live route updates, fun facts, a countdown, and the full itinerary."}
             </p>
 
             <div className="mt-5">

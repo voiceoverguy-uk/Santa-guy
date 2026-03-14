@@ -127,7 +127,7 @@ export default function HireSantaVoicePage() {
 
       <Hero
         title="Hire the UK's Trusted Santa Voice"
-        subtitle="Professional Santa voiceover for agencies, producers, radio stations, podcasts, and brands. Broadcast-quality recordings delivered fast from Guy Harris — the definitive voice of Santa."
+        subtitle="Professional Santa voiceover for agencies, producers, radio stations, podcasts, and brands. Broadcast-quality recordings delivered fast from Guy Harris, the definitive voice of Santa."
         primaryCTA={{ label: "Get in Touch", href: "/contact-santa-guy" }}
         secondaryCTA={{ label: "Hear Demos", href: "/santa-voice-demo" }}
       />

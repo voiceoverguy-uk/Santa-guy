@@ -104,7 +104,7 @@ export default function SantaVoiceDemoPage() {
               learn more about hiring the Santa voice
             </Link>. Find out about{" "}
             <Link href="/guy-harris-santa-voice" className="text-santa-red hover:text-santa-red-dark font-medium">
-              Guy Harris — the voice of Santa
+              Guy Harris, the voice of Santa
             </Link>{" "}
             or send a{" "}
             <Link href="/santa-guy-message" className="text-santa-red hover:text-santa-red-dark font-medium">

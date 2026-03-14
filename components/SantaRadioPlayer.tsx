@@ -30,7 +30,7 @@ export default function SantaRadioPlayer() {
           {loading ? "Connecting..." : playing ? "Now Playing" : "Listen Live"}
         </p>
         <p className="relative z-10 mt-1 text-sm text-white/80">
-          {playing ? "Santa Radio — Non-stop Christmas music" : "Tap to start streaming Santa Radio"}
+          {playing ? "Santa Radio, non-stop Christmas music" : "Tap to start streaming Santa Radio"}
         </p>
       </div>
     </div>

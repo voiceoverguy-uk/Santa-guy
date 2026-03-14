@@ -99,7 +99,7 @@ export default function SantaMessagePage() {
               <div className="mt-4 w-16 h-1 bg-santa-red rounded-full" />
               <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Imagine receiving a personalised video message with the real Voice of Santa — the same
+                  Imagine receiving a personalised video message with the real Voice of Santa, the same
                   voice trusted by the BBC, ITV, and the UK&apos;s biggest brands. That&apos;s exactly what
                   Festive Studio delivers.
                 </p>

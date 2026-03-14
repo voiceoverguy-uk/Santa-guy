@@ -19,15 +19,15 @@ import NotifySignup from "./NotifySignup";
 
 const funFacts = [
   "In Iceland, 13 Yule Lads visit children on the 13 nights before Christmas, each leaving a gift in shoes left on windowsills.",
-  "Ukrainians decorate Christmas trees with spider web ornaments — finding a spider web on Christmas morning is considered good luck!",
+  "Ukrainians decorate Christmas trees with spider web ornaments. Finding a spider web on Christmas morning is considered good luck!",
   "In Norway, brooms are hidden on Christmas Eve to prevent witches from stealing them for a ride.",
-  "Venezuelans roller-skate to Christmas morning mass — roads in Caracas are closed to traffic to make way for skaters.",
-  "In Catalonia, families keep a 'Caga Tió' — a small hollow log that 'poops' out presents when beaten with sticks on Christmas Eve.",
-  "Japanese families traditionally eat KFC for Christmas dinner — orders must be placed weeks in advance!",
-  "In the Czech Republic, single women throw a shoe over their shoulder on Christmas Eve — if it lands pointing toward the door, they'll marry within the year.",
+  "Venezuelans roller-skate to Christmas morning mass. Roads in Caracas are closed to traffic to make way for skaters.",
+  "In Catalonia, families keep a 'Caga Tió', a small hollow log that 'poops' out presents when beaten with sticks on Christmas Eve.",
+  "Japanese families traditionally eat KFC for Christmas dinner. Orders must be placed weeks in advance!",
+  "In the Czech Republic, single women throw a shoe over their shoulder on Christmas Eve. If it lands pointing toward the door, they'll marry within the year.",
   "Australians often celebrate Christmas with a BBQ on the beach, and Santa sometimes arrives by surfboard!",
-  "In Finland, families visit saunas on Christmas Eve before the celebrations begin — a tradition dating back centuries.",
-  "Greenland's Christmas delicacy is mattak — raw whale skin with blubber — along with kiviak, a fermented bird dish.",
+  "In Finland, families visit saunas on Christmas Eve before the celebrations begin, a tradition dating back centuries.",
+  "Greenland's Christmas delicacy is mattak, raw whale skin with blubber, along with kiviak, a fermented bird dish.",
 ];
 
 function SantaTrackerInner() {
@@ -117,7 +117,7 @@ function SantaTrackerInner() {
       {previewState.enabled && (
         <div className="bg-santa-gold/10 border-b border-santa-gold/20 px-4 py-2 text-center">
           <span className="text-xs text-santa-gold font-medium uppercase tracking-wider">
-            Preview Mode Active — Simulated Christmas Eve
+            Preview Mode Active: Simulated Christmas Eve
           </span>
         </div>
       )}
@@ -145,7 +145,7 @@ function SantaTrackerInner() {
               ? data.statusSubtext
               : onHoliday && holiday
               ? `Santa's taking a well-earned break! He's currently ${holiday.activity.charAt(0).toLowerCase()}${holiday.activity.slice(1)}. He'll be back at the North Pole in October.`
-              : "Follow Santa as Christmas Eve midnight sweeps across the globe — from the Pacific Islands to Hawaii, watch his estimated journey unfold in real time."}
+              : "Follow Santa as Christmas Eve midnight sweeps across the globe. From the Pacific Islands to Hawaii, watch his estimated journey unfold in real time."}
           </p>
 
           {!isLive && !isComplete && (
@@ -264,7 +264,7 @@ function SantaTrackerInner() {
               Want Santa&apos;s Voice for Your Project?
             </h2>
             <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">
-              Guy Harris is the UK&apos;s trusted Voice of Santa — available for
+              Guy Harris is the UK&apos;s trusted Voice of Santa, available for
               radio, TV, podcasts, campaigns, and festive voiceover.
             </p>
             <a
