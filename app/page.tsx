@@ -259,7 +259,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Watch Santa Guy in Action"
-            subtitle="See why BBC Radio 2, CBeebies, Zoe Ball, and P&O Ferries trust Guy Harris as the voice of Santa for their biggest festive moments"
+            subtitle="See why BBC Radio 1 & 2, Heart, ITV, CBeebies, ASDA, Zoe Ball, and P&O Ferries trust Guy Harris as the voice of Santa for their biggest festive moments"
           />
           <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 -mt-4 leading-relaxed">
             From national radio broadcasts to major brand campaigns, Guy Harris has delivered the definitive Santa voice across television, radio, and digital platforms. Watch highlights from some of his most recognised festive voiceover work.
