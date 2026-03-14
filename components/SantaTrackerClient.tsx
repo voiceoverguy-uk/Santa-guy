@@ -15,6 +15,7 @@ import SantaStats from "./SantaStats";
 import SantaStory from "./SantaStory";
 import SantaTimeline from "./SantaTimeline";
 import SantaPreviewPanel from "./SantaPreviewPanel";
+import NotifySignup from "./NotifySignup";
 
 const funFacts = [
   "In Iceland, 13 Yule Lads visit children on the 13 nights before Christmas, each leaving a gift in shoes left on windowsills.",
@@ -224,6 +225,14 @@ function SantaTrackerInner() {
           </div>
         </div>
       </section>
+
+      {!isLive && !isComplete && (
+        <section className="px-4 sm:px-6 pb-12">
+          <div className="max-w-3xl mx-auto">
+            <NotifySignup />
+          </div>
+        </section>
+      )}
 
       <section className="px-4 sm:px-6 pb-16">
         <div className="max-w-3xl mx-auto text-center">

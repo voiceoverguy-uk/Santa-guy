@@ -84,11 +84,17 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - `components/SantaRadioPlayer.tsx` — Live stream player (HTML5 Audio, play/pause toggle, streams from Citrus3)
 - `components/FAQSection.tsx` — Accordion FAQ with auto-generated FAQPage JSON-LD schema
 - `app/api/contact/route.ts` — Contact API (Resend, env vars, rate limiting, branded HTML email template)
+- `app/api/notify-signup/route.ts` — Christmas Eve notification signup API (rate limiting, honeypot, PostgreSQL)
+- `app/api/cron/christmas-eve/route.ts` — Vercel cron job (06:00 UTC Dec 24) sends branded email to all subscribers via Resend
+- `components/NotifySignup.tsx` — Email signup widget for Santa Tracker page
+- `lib/db.ts` — PostgreSQL connection pool and schema initialisation
 
 ## Environment Variables
-- `RESEND_API_KEY` — Required for contact form
+- `RESEND_API_KEY` — Required for contact form and Christmas Eve notifications
 - `CONTACT_TO_EMAIL` — Recipient email
-- `CONTACT_FROM_EMAIL` — Sender email
+- `CONTACT_FROM_EMAIL` — Sender email (also used as From address for notification emails)
+- `CRON_SECRET` — Vercel cron secret for securing the Christmas Eve cron endpoint
+- `DATABASE_URL` — PostgreSQL connection string (Replit built-in DB)
 
 ## Email Protection
 - Raw email addresses are NOT displayed in HTML anywhere on the site
@@ -113,7 +119,8 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **Components**: SantaMap (inline SVG), SantaStats (dashboard cards), SantaStory (editorial), SantaTimeline (journey timeline), SantaPreviewPanel (preview controls), SantaTrackerClient (top-level client wrapper with Suspense)
 - **Journey**: Dec 24 10:00 UTC (Pacific/UTC+14) → Dec 25 10:00 UTC (Hawaii/UTC-10); UK at midnight UTC
 - **Map**: Equirectangular projection, no external map library; dwell-aware interpolation (marker stays put during stop, moves between stops)
-- **Off-season**: Shows countdown to Christmas Eve departure
+- **Off-season**: Shows countdown to Christmas Eve departure; includes email notification signup widget
+- **Notification signup**: NotifySignup component collects emails → stored in PostgreSQL `subscribers` table → Vercel cron sends branded emails at 06:00 UTC Dec 24
 - **SEO**: WebPage + BreadcrumbList schema, OG/Twitter tags, sitemap entry (priority 0.8)
 
 ## Placeholder Assets Still Needed
