@@ -70,9 +70,9 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
         </span>
       </div>
 
-      <div className="relative rounded-lg overflow-hidden shadow-xl border border-amber-200/30 mt-1">
+      <div className="relative rounded-lg overflow-hidden shadow-xl border border-amber-200/30 mt-1 aspect-video max-w-2xl mx-auto">
         <div
-          className="relative"
+          className="absolute inset-0"
           style={{
             background: "linear-gradient(135deg, #fdf6e3 0%, #f5e6c8 30%, #faf0d7 60%, #f0dbb8 100%)",
           }}
@@ -83,7 +83,7 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
             }}
           />
 
-          <div className="relative flex flex-col sm:flex-row min-h-[200px] sm:min-h-[220px]">
+          <div className="relative flex flex-col sm:flex-row h-full">
             <div className="flex-1 p-5 sm:p-6 flex items-center">
               <p
                 className="text-gray-800 leading-relaxed text-base sm:text-lg transition-opacity duration-700"
