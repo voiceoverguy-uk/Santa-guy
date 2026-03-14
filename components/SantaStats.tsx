@@ -11,7 +11,7 @@ interface SantaStatsProps {
 function useCountUp(target: number, duration: number = 800): number {
   const [display, setDisplay] = useState(target);
   const prevRef = useRef(target);
-  const frameRef = useRef<number>();
+  const frameRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
