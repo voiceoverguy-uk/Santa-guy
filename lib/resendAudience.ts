@@ -55,11 +55,14 @@ export async function addContact(email: string): Promise<void> {
 
     if (!error) return;
 
-    if (error.message?.includes("already exists")) {
+    const msg = error.message?.toLowerCase() ?? "";
+    const name = (error as { name?: string }).name?.toLowerCase() ?? "";
+
+    if (msg.includes("already exists") || name === "conflict") {
       return;
     }
 
-    if (error.message?.includes("rate") && attempt < 2) {
+    if ((msg.includes("rate") || name === "rate_limit_exceeded") && attempt < 2) {
       await delay(1000 * (attempt + 1));
       continue;
     }
