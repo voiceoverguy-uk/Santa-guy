@@ -170,13 +170,7 @@ const workshopDispatches = [
 function HolidayPostcard({ message, holiday, isJuly }: { message: string; holiday: HolidayDestination; isJuly?: boolean }) {
   return (
     <div className="max-w-3xl mx-auto">
-      <div className="absolute -top-3 left-6 bg-[#0f1d32] px-3 py-1 rounded-full border border-white/10 z-10">
-        <span className="text-xs font-medium text-santa-gold uppercase tracking-wider">
-          {isJuly ? "🎄 Christmas in July Postcards" : `${new Date().getFullYear()} Holiday Postcards`}
-        </span>
-      </div>
-
-      <div className="relative rounded-lg overflow-hidden shadow-xl border border-amber-200/30 mt-1 max-w-xl mx-auto" style={{ aspectRatio: "3 / 2" }}>
+      <div className="relative rounded-lg overflow-hidden shadow-xl border border-amber-200/30 max-w-xl mx-auto" style={{ aspectRatio: "3 / 2" }}>
         <div
           className="absolute inset-0"
           style={{
@@ -263,6 +257,9 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
           </div>
         </div>
       </div>
+      <p className="text-center mt-3 text-xs font-medium text-santa-gold uppercase tracking-wider">
+        {isJuly ? "🎄 Christmas in July Postcards" : `${new Date().getFullYear()} Holiday Postcards`}
+      </p>
     </div>
   );
 }
