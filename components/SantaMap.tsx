@@ -7,9 +7,10 @@ import { worldMapPaths } from "@/data/worldMapPaths";
 interface SantaMapProps {
   effectiveTime: Date;
   mapPosition: MapPosition;
+  onHoliday?: boolean;
 }
 
-export default function SantaMap({ effectiveTime, mapPosition }: SantaMapProps) {
+export default function SantaMap({ effectiveTime, mapPosition, onHoliday }: SantaMapProps) {
   const visited = getVisitedStops(effectiveTime);
   const currentId = getCurrentStopId(effectiveTime);
 
@@ -123,7 +124,7 @@ export default function SantaMap({ effectiveTime, mapPosition }: SantaMapProps) 
       </div>
 
       <div className="absolute bottom-3 left-3 bg-black/50 backdrop-blur-sm rounded-lg px-3 py-1.5 text-xs text-gray-400">
-        Estimated route based on local midnight across time zones
+        {onHoliday ? "Santa's current holiday location" : "Estimated route based on local midnight across time zones"}
       </div>
     </div>
   );

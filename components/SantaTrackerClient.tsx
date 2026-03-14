@@ -204,7 +204,7 @@ function SantaTrackerInner() {
 
       <section className="px-4 sm:px-6 pb-12">
         <div className="max-w-6xl mx-auto">
-          <SantaMap effectiveTime={effectiveTime} mapPosition={data.mapPosition} />
+          <SantaMap effectiveTime={effectiveTime} mapPosition={data.mapPosition} onHoliday={onHoliday} />
         </div>
       </section>
 
@@ -219,7 +219,7 @@ function SantaTrackerInner() {
 
       <section className="px-4 sm:px-6 pb-12">
         <div className="max-w-6xl mx-auto">
-          <SantaStory effectiveTime={effectiveTime} />
+          <SantaStory effectiveTime={effectiveTime} holiday={onHoliday ? holiday : undefined} />
         </div>
       </section>
 
