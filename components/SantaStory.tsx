@@ -139,20 +139,20 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
           <div className="relative flex flex-col sm:flex-row h-full">
             <div className="flex-1 p-5 sm:p-6 flex flex-col justify-center">
               <p
-                className="text-gray-600 mb-1"
-                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(0.9rem, 2vw, 1.1rem)" }}
+                className="text-gray-800 mb-1"
+                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.05rem, 2.3vw, 1.25rem)" }}
               >
                 Hello, Santa here...
               </p>
               <p
                 className="text-gray-800 leading-relaxed transition-opacity duration-700"
-                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1rem, 2.4vw, 1.3rem)" }}
+                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}
               >
                 &ldquo;{message}&rdquo;
               </p>
               <p
-                className="text-gray-700 mt-2"
-                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(0.95rem, 2.1vw, 1.15rem)" }}
+                className="text-gray-800 mt-2"
+                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.05rem, 2.3vw, 1.25rem)" }}
               >
                 Stay good... Santa x
               </p>
@@ -161,8 +161,8 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
             <div className="hidden sm:block w-px bg-gray-400/40 my-5 mx-0 self-stretch" />
             <div className="block sm:hidden h-px bg-gray-400/40 mx-5" />
 
-            <div className="sm:w-[200px] p-5 sm:p-6 flex flex-col items-center justify-center">
-              <div className="flex justify-end w-full mb-4">
+            <div className="sm:w-[200px] p-5 sm:p-6 pt-4 sm:pt-4 flex flex-col">
+              <div className="flex justify-end mb-3">
                 <div className="w-14 h-[62px] rounded-sm border-2 border-santa-red/70 flex flex-col items-center justify-center bg-white/60 relative overflow-hidden"
                   style={{ borderStyle: "dashed" }}
                 >
