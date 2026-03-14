@@ -117,7 +117,7 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **OG image**: `public/santa-guy-logo-og.png` (1200×630)
 
 ## Santa Tracker (`/santa-tracker`)
-- **Route engine**: `data/santaRouteStops.ts` (18 stops, UTC+14→UTC-10), `lib/santaRoute.ts` (pure functions, all accept Date)
+- **Route engine**: `data/santaRouteStops.ts` (31 stops, UTC+14→UTC-10), `lib/santaRoute.ts` (pure functions, all accept Date)
 - **Preview mode**: `lib/santaPreview.ts` — activated via `?preview=1` query param; jump targets, speed multipliers, localStorage persistence
 - **Components**: SantaMap (inline SVG), SantaStats (dashboard cards), SantaStory (editorial), SantaTimeline (journey timeline), SantaPreviewPanel (preview controls), SantaTrackerClient (top-level client wrapper with Suspense)
 - **Journey**: Dec 24 10:00 UTC (Pacific/UTC+14) → Dec 25 10:00 UTC (Hawaii/UTC-10); UK at midnight UTC

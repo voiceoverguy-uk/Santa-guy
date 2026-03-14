@@ -160,7 +160,7 @@ function CountdownDisplay({ countdown }: { countdown: ReturnType<typeof getCount
 function LiveStats({ data }: { data: ReturnType<typeof getDashboardData> }) {
   const stats = [
     { label: "Journey Progress", value: `${data.progressPercent.toFixed(1)}%` },
-    { label: "Regions Visited", value: `${data.visitedCount} / 18` },
+    { label: "Regions Visited", value: `${data.visitedCount} / ${data.totalStops}` },
     {
       label: "Gifts Delivered",
       value:

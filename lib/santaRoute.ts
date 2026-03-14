@@ -44,6 +44,7 @@ export interface DashboardData {
   etaMs: number;
   progressPercent: number;
   visitedCount: number;
+  totalStops: number;
   remainingCount: number;
   estimatedGifts: number;
   estimatedDistanceKm: number;
@@ -428,6 +429,7 @@ export function getDashboardData(now: Date): DashboardData {
     etaMs,
     progressPercent: Math.round(progress * 10) / 10,
     visitedCount,
+    totalStops: santaStops.length,
     remainingCount,
     estimatedGifts,
     estimatedDistanceKm,
