@@ -81,7 +81,10 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - `components/ContactForm.tsx` — Form with 25-char min validation, honeypot, obfuscated email
 - `components/HirePageDemos.tsx` — Client wrapper for audio demos on hire page with exclusive playback
 - `components/EmailButton.tsx` — Reusable obfuscated email button (JS-based mailto, no raw email in HTML)
-- `components/SantaRadioPlayer.tsx` — Live stream player (HTML5 Audio, play/pause toggle, streams from Citrus3)
+- `components/SantaRadioPlayer.tsx` — Live stream player on radio page (uses shared RadioContext)
+- `contexts/RadioContext.tsx` — Global radio state (play/stop/loading) shared across all pages
+- `components/MiniRadioPlayer.tsx` — Persistent mini player bar (fixed bottom, appears when radio is active)
+- `components/Providers.tsx` — Client-side provider wrapper (RadioProvider) used in layout
 - `components/FAQSection.tsx` — Accordion FAQ with auto-generated FAQPage JSON-LD schema
 - `app/api/contact/route.ts` — Contact API (Resend, env vars, rate limiting, branded HTML email template)
 - `app/api/notify-signup/route.ts` — Christmas Eve notification signup API (rate limiting, honeypot, PostgreSQL)

@@ -1,38 +1,10 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
 import { Play, Pause } from "lucide-react";
-
-const STREAM_URL = "https://global.citrus3.com:8164/stream";
+import { useRadio } from "@/contexts/RadioContext";
 
 export default function SantaRadioPlayer() {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [playing, setPlaying] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const toggle = useCallback(() => {
-    if (playing) {
-      audioRef.current?.pause();
-      audioRef.current = null;
-      setPlaying(false);
-      setLoading(false);
-    } else {
-      const audio = new Audio(STREAM_URL);
-      audioRef.current = audio;
-      setLoading(true);
-      audio.addEventListener("playing", () => {
-        setLoading(false);
-        setPlaying(true);
-      });
-      audio.addEventListener("error", () => {
-        setLoading(false);
-        setPlaying(false);
-      });
-      audio.play().catch(() => {
-        setLoading(false);
-      });
-    }
-  }, [playing]);
+  const { playing, loading, toggle } = useRadio();
 
   return (
     <div className="max-w-2xl mx-auto mb-12">

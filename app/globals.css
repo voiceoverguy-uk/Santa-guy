@@ -50,6 +50,11 @@ body {
     radial-gradient(1px 1px at 40% 50%, rgba(255,255,255,0.2), transparent);
 }
 
+@keyframes equalizer {
+  0% { height: 4px; }
+  100% { height: 14px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .star-field {
     animation: none !important;
