@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
 import { getDashboardData, isHolidaySeason, getRandomHoliday, type HolidayDestination } from "@/lib/santaRoute";
 import { santaStops } from "@/data/santaRouteStops";
 import {
@@ -30,9 +29,7 @@ const funFacts = [
   "Greenland's Christmas delicacy is mattak, raw whale skin with blubber, along with kiviak, a fermented bird dish.",
 ];
 
-function SantaTrackerInner() {
-  const searchParams = useSearchParams();
-  const showPreview = searchParams.get("preview") === "1";
+function SantaTrackerInner({ showPreview = false }: { showPreview?: boolean }) {
 
   const [previewState, setPreviewState] = useState<PreviewState>(getDefaultPreviewState);
   const [effectiveTime, setEffectiveTime] = useState(() => new Date());
@@ -299,10 +296,10 @@ function TrackerSkeleton() {
   );
 }
 
-export default function SantaTrackerClient() {
+export default function SantaTrackerClient({ showPreview = false }: { showPreview?: boolean }) {
   return (
     <Suspense fallback={<TrackerSkeleton />}>
-      <SantaTrackerInner />
+      <SantaTrackerInner showPreview={showPreview} />
     </Suspense>
   );
 }
