@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getPool, initSubscribersTable } from "@/lib/db";
+import { addContact } from "@/lib/resendAudience";
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT = 5;
@@ -17,8 +17,6 @@ function isRateLimited(ip: string): boolean {
   entry.count++;
   return entry.count > RATE_LIMIT;
 }
-
-let tableInitialised = false;
 
 export async function POST(request: Request) {
   try {
@@ -56,16 +54,7 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!tableInitialised) {
-      await initSubscribersTable();
-      tableInitialised = true;
-    }
-
-    const pool = getPool();
-    await pool.query(
-      `INSERT INTO subscribers (email) VALUES ($1) ON CONFLICT (email) DO NOTHING`,
-      [email.trim().toLowerCase()],
-    );
+    await addContact(email);
 
     return NextResponse.json({ success: true });
   } catch (error) {

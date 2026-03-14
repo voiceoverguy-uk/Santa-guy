@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { getPool, initSubscribersTable } from "@/lib/db";
+import { listContacts } from "@/lib/resendAudience";
 
 function buildNotificationHtml(trackerUrl: string): string {
   return `
@@ -75,13 +75,9 @@ export async function GET(request: Request) {
       );
     }
 
-    await initSubscribersTable();
-    const pool = getPool();
-    const result = await pool.query(
-      "SELECT email FROM subscribers ORDER BY id",
-    );
+    const contacts = await listContacts();
 
-    if (result.rows.length === 0) {
+    if (contacts.length === 0) {
       return NextResponse.json({
         success: true,
         message: "No subscribers to notify.",
@@ -96,23 +92,23 @@ export async function GET(request: Request) {
     let sent = 0;
     let failed = 0;
 
-    for (const row of result.rows) {
+    for (const contact of contacts) {
       try {
         const sendResult = await resend.emails.send({
           from: `SantaGuy <${fromEmail}>`,
-          to: row.email,
+          to: contact.email,
           subject: "🎅 Santa Is On His Way! Track Him Live Now",
           html,
         });
 
         if (sendResult.error) {
-          console.error(`Failed to send to ${row.email}:`, sendResult.error);
+          console.error(`Failed to send to ${contact.email}:`, sendResult.error);
           failed++;
         } else {
           sent++;
         }
       } catch (err) {
-        console.error(`Error sending to ${row.email}:`, err);
+        console.error(`Error sending to ${contact.email}:`, err);
         failed++;
       }
     }
@@ -121,7 +117,7 @@ export async function GET(request: Request) {
       success: true,
       sent,
       failed,
-      total: result.rows.length,
+      total: contacts.length,
     });
   } catch (error) {
     console.error("Christmas Eve cron error:", error);
