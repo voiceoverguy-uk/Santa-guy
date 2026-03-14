@@ -4,6 +4,7 @@ import {
   getStopArrivalDate,
   type SantaStop,
 } from "@/data/santaRouteStops";
+import { holidayDestinations, type HolidayDestination } from "@/data/santaHolidays";
 
 export type SeasonalMode = "OFF_SEASON" | "PREPARING" | "LIVE" | "COMPLETE";
 
@@ -54,6 +55,17 @@ export interface DashboardData {
   countdownToChristmasEve: CountdownValues;
   countdownToUK: CountdownValues;
   currentFunFact: string;
+  holiday: HolidayDestination | null;
+}
+
+export function isHolidaySeason(now: Date): boolean {
+  const month = now.getUTCMonth();
+  return month >= 2 && month <= 8;
+}
+
+export function getRandomHoliday(): HolidayDestination {
+  const index = Math.floor(Math.random() * holidayDestinations.length);
+  return holidayDestinations[index];
 }
 
 function getChristmasEveYear(now: Date): number {
@@ -421,6 +433,7 @@ export function getDashboardData(now: Date): DashboardData {
     countdownToChristmasEve: countdownToStart,
     countdownToUK: countdownToUK,
     currentFunFact: current?.funFact || "Santa is busy preparing at the North Pole!",
+    holiday: null,
   };
 }
 
@@ -448,3 +461,4 @@ export function getCurrentStopId(now: Date): string | null {
 }
 
 export { santaStops, formatNumber };
+export type { HolidayDestination };

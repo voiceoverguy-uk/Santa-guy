@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { getDashboardData } from "@/lib/santaRoute";
+import { getDashboardData, isHolidaySeason, getRandomHoliday, type HolidayDestination } from "@/lib/santaRoute";
 import { santaStops } from "@/data/santaRouteStops";
 import {
   type PreviewState,
@@ -38,11 +38,15 @@ function SantaTrackerInner() {
   const [effectiveTime, setEffectiveTime] = useState(() => new Date());
   const [mounted, setMounted] = useState(false);
   const [currentFactIndex, setCurrentFactIndex] = useState(0);
+  const [holiday, setHoliday] = useState<HolidayDestination | null>(null);
 
   useEffect(() => {
     setMounted(true);
     if (showPreview) {
       setPreviewState(loadPreviewState());
+    }
+    if (isHolidaySeason(new Date())) {
+      setHoliday(getRandomHoliday());
     }
   }, [showPreview]);
 
@@ -72,6 +76,19 @@ function SantaTrackerInner() {
   const data = getDashboardData(effectiveTime);
   const isLive = data.mode === "LIVE";
   const isComplete = data.mode === "COMPLETE";
+  const onHoliday = data.mode === "OFF_SEASON" && holiday !== null;
+
+  if (onHoliday && holiday) {
+    data.holiday = holiday;
+    data.statusHeadline = `${holiday.emoji} Santa is on holiday in ${holiday.name}`;
+    data.statusSubtext = holiday.activity;
+    data.currentStopName = holiday.name;
+    data.currentStopFlag = holiday.emoji;
+    data.currentStopRegion = holiday.country;
+    const x = ((holiday.lng + 180) / 360) * 1000;
+    const y = ((90 - holiday.lat) / 180) * 500;
+    data.mapPosition = { lat: holiday.lat, lng: holiday.lng, x, y };
+  }
 
   const statusColor =
     isLive
@@ -80,6 +97,8 @@ function SantaTrackerInner() {
       ? "bg-santa-gold"
       : data.mode === "PREPARING"
       ? "bg-yellow-500"
+      : onHoliday
+      ? "bg-orange-400"
       : "bg-blue-500";
 
   const statusLabel =
@@ -89,6 +108,8 @@ function SantaTrackerInner() {
       ? "Journey Complete"
       : data.mode === "PREPARING"
       ? "Preparing for Takeoff"
+      : onHoliday && holiday
+      ? `${holiday.emoji} On Holiday in ${holiday.name}`
       : "At the North Pole";
 
   return (
@@ -122,6 +143,8 @@ function SantaTrackerInner() {
           <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             {isLive || isComplete
               ? data.statusSubtext
+              : onHoliday && holiday
+              ? `Santa's taking a well-earned break! He's currently ${holiday.activity.charAt(0).toLowerCase()}${holiday.activity.slice(1)}. He'll be back at the North Pole in October.`
               : "Follow Santa as Christmas Eve midnight sweeps across the globe — from the Pacific Islands to Hawaii, watch his estimated journey unfold in real time."}
           </p>
 
