@@ -70,7 +70,7 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
         </span>
       </div>
 
-      <div className="relative rounded-lg overflow-hidden shadow-xl border border-amber-200/30 mt-1 aspect-video max-w-2xl mx-auto">
+      <div className="relative rounded-lg overflow-hidden shadow-xl border border-amber-200/30 mt-1 max-w-2xl mx-auto" style={{ aspectRatio: "3 / 2" }}>
         <div
           className="absolute inset-0"
           style={{
@@ -84,20 +84,20 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
           />
 
           <div className="relative flex flex-col sm:flex-row h-full">
-            <div className="flex-1 p-5 sm:p-6 flex items-center">
+            <div className="flex-1 p-6 sm:p-8 flex items-center">
               <p
-                className="text-gray-800 leading-relaxed text-base sm:text-lg transition-opacity duration-700"
-                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.5vw, 1.35rem)" }}
+                className="text-gray-800 leading-relaxed transition-opacity duration-700"
+                style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.15rem, 2.8vw, 1.5rem)" }}
               >
                 &ldquo;{message}&rdquo;
               </p>
             </div>
 
-            <div className="hidden sm:block w-px bg-gray-400/40 my-4 mx-0 self-stretch" />
-            <div className="block sm:hidden h-px bg-gray-400/40 mx-5" />
+            <div className="hidden sm:block w-px bg-gray-400/40 my-6 mx-0 self-stretch" />
+            <div className="block sm:hidden h-px bg-gray-400/40 mx-6" />
 
-            <div className="sm:w-[200px] p-5 sm:p-6 flex flex-col justify-between">
-              <div className="flex justify-end mb-4">
+            <div className="sm:w-[240px] p-6 sm:p-8 flex flex-col items-center justify-center">
+              <div className="flex justify-end w-full mb-5">
                 <div className="w-16 h-[72px] rounded-sm border-2 border-santa-red/70 flex flex-col items-center justify-center bg-white/60 relative overflow-hidden"
                   style={{ borderStyle: "dashed" }}
                 >
@@ -118,28 +118,26 @@ function HolidayPostcard({ message, holiday }: { message: string; holiday: Holid
                 </div>
               </div>
 
-              <div className="space-y-0.5">
-                <div className="flex gap-2 items-center mb-2">
-                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider flex-shrink-0">To:</span>
-                </div>
-                <p className="text-gray-700 text-sm leading-snug" style={{ fontFamily: "'Caveat', cursive" }}>
+              <div className="w-full space-y-1.5">
+                <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-2">To:</p>
+                <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1rem, 2.2vw, 1.25rem)" }}>
                   The Workshop
                 </p>
-                <div className="border-b border-gray-300/60" />
-                <p className="text-gray-700 text-sm leading-snug" style={{ fontFamily: "'Caveat', cursive" }}>
+                <div className="border-b border-gray-400/50" />
+                <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1rem, 2.2vw, 1.25rem)" }}>
                   1 Candy Cane Lane
                 </p>
-                <div className="border-b border-gray-300/60" />
-                <p className="text-gray-700 text-sm leading-snug font-medium" style={{ fontFamily: "'Caveat', cursive" }}>
+                <div className="border-b border-gray-400/50" />
+                <p className="text-gray-800 leading-snug font-medium" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1rem, 2.2vw, 1.25rem)" }}>
                   North Pole 🎄
                 </p>
-                <div className="border-b border-gray-300/60" />
+                <div className="border-b border-gray-400/50" />
               </div>
             </div>
           </div>
 
-          <div className="absolute bottom-2 left-5 flex items-center gap-1.5 opacity-40">
-            <span className="text-[9px] text-gray-600 italic">
+          <div className="absolute bottom-3 left-6 flex items-center gap-1.5 opacity-40">
+            <span className="text-[10px] text-gray-600 italic">
               Sent from {holiday.name} {holiday.emoji}
             </span>
           </div>
