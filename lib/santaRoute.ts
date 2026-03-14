@@ -407,7 +407,7 @@ export function getDashboardData(now: Date): DashboardData {
     nowMs < ukArrival.getTime() &&
     ukArrival.getTime() - nowMs <= TRACKER_CONSTANTS.ukSpecialWindowHours * 60 * 60 * 1000;
 
-  const speedLabel = mode === "LIVE" ? "10,703,437 km/h" : "—";
+  const speedLabel = mode === "LIVE" ? "6,650,000 mph" : "—";
 
   return {
     mode,

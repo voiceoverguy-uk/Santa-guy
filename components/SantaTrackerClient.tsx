@@ -112,7 +112,7 @@ function SantaTrackerInner({ showPreview = false }: { showPreview?: boolean }) {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       {previewState.enabled && (
-        <div className="bg-santa-gold/10 border-b border-santa-gold/20 px-4 py-2 text-center">
+        <div className="bg-santa-gold/10 border-b border-santa-gold/20 px-4 py-2 text-center mt-16 sm:mt-20">
           <span className="text-xs text-santa-gold font-medium uppercase tracking-wider">
             Preview Mode Active: Simulated Christmas Eve
           </span>

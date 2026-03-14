@@ -127,7 +127,7 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
     {
       icon: <Plane size={18} />,
       label: "Distance Flown",
-      value: isLive || data.mode === "COMPLETE" ? `${formatNumber(animatedDistance)} km` : onHoliday ? funDistance : "—",
+      value: isLive || data.mode === "COMPLETE" ? `${formatNumber(Math.round(animatedDistance * 0.621371))} miles` : onHoliday ? funDistance : "—",
     },
     {
       icon: <Globe size={18} />,

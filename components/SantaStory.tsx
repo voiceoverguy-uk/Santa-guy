@@ -202,7 +202,7 @@ export default function SantaStory({ effectiveTime, holiday }: SantaStoryProps) 
       break;
 
     case "COMPLETE":
-      story = `What an incredible journey! Santa has completed his worldwide Christmas Eve trip, delivering an estimated ${(data.estimatedGifts / 1_000_000_000).toFixed(1)} billion gifts across ${data.visitedCount} regions. From the Pacific Islands to Hawaii, he travelled an estimated ${(data.estimatedDistanceKm / 1_000_000).toFixed(0)} million kilometres in just 24 hours. The reindeer have earned a well-deserved rest, and Santa is back at the North Pole, warming up by the fire. Merry Christmas to all, and to all a good night!`;
+      story = `What an incredible journey! Santa has completed his worldwide Christmas Eve trip, delivering an estimated ${(data.estimatedGifts / 1_000_000_000).toFixed(1)} billion gifts across ${data.visitedCount} regions. From the Pacific Islands to Hawaii, he travelled an estimated ${Math.round(data.estimatedDistanceKm * 0.621371 / 1_000_000)} million miles in just 24 hours. The reindeer have earned a well-deserved rest, and Santa is back at the North Pole, warming up by the fire. Merry Christmas to all, and to all a good night!`;
       label = "Journey Summary";
       break;
   }
