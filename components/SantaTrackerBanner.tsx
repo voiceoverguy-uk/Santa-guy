@@ -21,7 +21,7 @@ export default function SantaTrackerBanner() {
     return (
       <section className="bg-[#0a1628] relative overflow-hidden">
         <div className="absolute inset-0 star-field opacity-60" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
               Track Santa&apos;s Journey
@@ -65,7 +65,7 @@ export default function SantaTrackerBanner() {
   return (
     <section className="bg-[#0a1628] relative overflow-hidden">
       <div className="absolute inset-0 star-field opacity-60" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
 
           <div className="flex-1 text-center lg:text-left">
