@@ -7,6 +7,7 @@ import Card from "@/components/Card";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import CountdownTimer from "@/components/CountdownTimer";
 import CTASection from "@/components/CTASection";
+import SantaTrackerBanner from "@/components/SantaTrackerBanner";
 import FAQSection from "@/components/FAQSection";
 import StructuredData from "@/components/StructuredData";
 import DemoCards from "@/components/DemoCards";
@@ -352,6 +353,8 @@ export default function HomePage() {
           <CountdownTimer />
         </div>
       </section>
+
+      <SantaTrackerBanner />
 
       <CTASection
         title="Ready to Hire the UK's Trusted Voice of Santa?"
