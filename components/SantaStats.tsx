@@ -56,7 +56,9 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
   const data = getDashboardData(effectiveTime);
   const isLive = data.mode === "LIVE";
 
-  if (data.mode === "OFF_SEASON" && holiday) {
+  const onHoliday = data.mode === "OFF_SEASON" && !!holiday;
+
+  if (onHoliday && holiday) {
     data.currentStopName = holiday.name;
     data.currentStopFlag = "🏖️";
   }
@@ -64,6 +66,19 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
   const animatedGifts = useCountUp(data.estimatedGifts);
   const animatedDistance = useCountUp(data.estimatedDistanceKm);
   const animatedVisited = useCountUp(data.visitedCount, 400);
+
+  function getHolidayLocalTime(): string {
+    if (!holiday) return "—";
+    const offsetHours = Math.round(holiday.lng / 15);
+    const nowUtc = new Date();
+    const localMs = nowUtc.getTime() + offsetHours * 60 * 60 * 1000;
+    const localDate = new Date(localMs);
+    const h = localDate.getUTCHours();
+    const m = localDate.getUTCMinutes();
+    const period = h >= 12 ? "PM" : "AM";
+    const h12 = h % 12 || 12;
+    return `${h12}:${String(m).padStart(2, "0")} ${period}`;
+  }
 
   const cards = [
     {
@@ -75,17 +90,17 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
     {
       icon: <Clock size={18} />,
       label: "Local Time",
-      value: data.localTimeAtStop,
+      value: onHoliday ? getHolidayLocalTime() : data.localTimeAtStop,
     },
     {
       icon: <Navigation size={18} />,
       label: "Next Stop",
-      value: data.nextStopName !== "—" ? `${data.nextStopFlag} ${data.nextStopName}` : "—",
+      value: onHoliday ? "🏖️ Another holiday!" : (data.nextStopName !== "—" ? `${data.nextStopFlag} ${data.nextStopName}` : "—"),
     },
     {
       icon: <Target size={18} />,
       label: "ETA",
-      value: data.etaText,
+      value: onHoliday ? "Relaxing..." : data.etaText,
     },
     {
       icon: <Gift size={18} />,
@@ -100,7 +115,7 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
     {
       icon: <Globe size={18} />,
       label: "Countries Visited",
-      value: `${animatedVisited} / ${data.visitedCount + data.remainingCount}`,
+      value: onHoliday ? "—" : `${animatedVisited} / ${data.visitedCount + data.remainingCount}`,
     },
     {
       icon: <Zap size={18} />,
