@@ -99,7 +99,7 @@ export function RadioProvider({ children }: { children: ReactNode }) {
     }
 
     fetchNowPlaying();
-    const interval = setInterval(fetchNowPlaying, 15000);
+    const interval = setInterval(fetchNowPlaying, 10000);
     return () => {
       cancelled = true;
       clearInterval(interval);

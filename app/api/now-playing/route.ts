@@ -9,7 +9,7 @@ let cachedTrack: { title: string; artist: string; raw: string; fetchedAt: number
   fetchedAt: 0,
 };
 
-const CACHE_TTL = 10_000;
+const CACHE_TTL = 5_000;
 
 async function fetchNowPlaying(): Promise<{ title: string; artist: string; raw: string }> {
   const controller = new AbortController();
