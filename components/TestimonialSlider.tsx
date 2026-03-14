@@ -38,7 +38,7 @@ const testimonials = [
     quote:
       "We use Guy regularly during the Christmas season at ARN in Dubai, and his Santa voice is absolutely spot on. Warm, authentic and full of festive character. Truly one of the best Santa voices in the world.",
     author: "Russell Featherstone",
-    company: "Audio Engineer",
+    company: "Production Manager",
   },
 ];
 

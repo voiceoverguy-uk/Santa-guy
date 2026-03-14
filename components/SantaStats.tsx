@@ -63,6 +63,18 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
     return others[Math.floor(Math.random() * others.length)];
   });
 
+  const offSeasonGifts = [
+    "Still receiving lists", "Reading lists", "Checking twice", "Workshop approving",
+    "Wrapping presents", "Elves on overtime", "Testing toys", "Quality control",
+    "Sorting the nice list", "Counting requests",
+  ];
+  const offSeasonDistance = [
+    "Sleigh in the garage", "Reindeer resting", "Polishing the sleigh", "Route planning",
+    "Feeding reindeer", "Waxing the runners", "Map pinned to the wall", "GPS calibrating",
+  ];
+  const [funGifts] = useState(() => offSeasonGifts[Math.floor(Math.random() * offSeasonGifts.length)]);
+  const [funDistance] = useState(() => offSeasonDistance[Math.floor(Math.random() * offSeasonDistance.length)]);
+
   if (onHoliday && holiday) {
     data.currentStopName = holiday.name;
     data.currentStopFlag = "🏖️";
@@ -110,17 +122,17 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
     {
       icon: <Gift size={18} />,
       label: "Gifts Delivered",
-      value: isLive || data.mode === "COMPLETE" ? formatNumber(animatedGifts) : "—",
+      value: isLive || data.mode === "COMPLETE" ? formatNumber(animatedGifts) : onHoliday ? funGifts : "—",
     },
     {
       icon: <Plane size={18} />,
       label: "Distance Flown",
-      value: isLive || data.mode === "COMPLETE" ? `${formatNumber(animatedDistance)} km` : "—",
+      value: isLive || data.mode === "COMPLETE" ? `${formatNumber(animatedDistance)} km` : onHoliday ? funDistance : "—",
     },
     {
       icon: <Globe size={18} />,
       label: "Countries Visited",
-      value: onHoliday ? "—" : `${animatedVisited} / ${data.visitedCount + data.remainingCount}`,
+      value: onHoliday ? "Back in October" : `${animatedVisited} / ${data.visitedCount + data.remainingCount}`,
     },
     {
       icon: <Zap size={18} />,
