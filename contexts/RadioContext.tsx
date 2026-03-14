@@ -8,16 +8,20 @@ interface RadioContextType {
   playing: boolean;
   loading: boolean;
   active: boolean;
+  volume: number;
   toggle: () => void;
   stop: () => void;
+  setVolume: (v: number) => void;
 }
 
 const RadioContext = createContext<RadioContextType>({
   playing: false,
   loading: false,
   active: false,
+  volume: 1,
   toggle: () => {},
   stop: () => {},
+  setVolume: () => {},
 });
 
 export function RadioProvider({ children }: { children: ReactNode }) {
@@ -25,6 +29,15 @@ export function RadioProvider({ children }: { children: ReactNode }) {
   const [playing, setPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
   const [active, setActive] = useState(false);
+  const [volume, setVolumeState] = useState(1);
+
+  const setVolume = useCallback((v: number) => {
+    const clamped = Math.max(0, Math.min(1, v));
+    setVolumeState(clamped);
+    if (audioRef.current) {
+      audioRef.current.volume = clamped;
+    }
+  }, []);
 
   const stop = useCallback(() => {
     audioRef.current?.pause();
@@ -42,6 +55,7 @@ export function RadioProvider({ children }: { children: ReactNode }) {
       setLoading(false);
     } else {
       const audio = new Audio(STREAM_URL);
+      audio.volume = volume;
       audioRef.current = audio;
       setLoading(true);
       setActive(true);
@@ -57,10 +71,10 @@ export function RadioProvider({ children }: { children: ReactNode }) {
         setLoading(false);
       });
     }
-  }, [playing]);
+  }, [playing, volume]);
 
   return (
-    <RadioContext.Provider value={{ playing, loading, active, toggle, stop }}>
+    <RadioContext.Provider value={{ playing, loading, active, volume, toggle, stop, setVolume }}>
       {children}
     </RadioContext.Provider>
   );

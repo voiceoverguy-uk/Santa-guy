@@ -1,12 +1,23 @@
 "use client";
 
-import { Play, Square, Radio } from "lucide-react";
+import { Play, Square, Radio, Volume2, VolumeX } from "lucide-react";
 import { useRadio } from "@/contexts/RadioContext";
+import { useRef } from "react";
 
 export default function MiniRadioPlayer() {
-  const { playing, loading, active, toggle, stop } = useRadio();
+  const { playing, loading, active, volume, toggle, stop, setVolume } = useRadio();
+  const prevVolume = useRef(1);
 
   if (!active) return null;
+
+  const handleMuteToggle = () => {
+    if (volume > 0) {
+      prevVolume.current = volume;
+      setVolume(0);
+    } else {
+      setVolume(prevVolume.current || 1);
+    }
+  };
 
   return (
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 animate-in slide-in-from-bottom-4 fade-in duration-300">
@@ -25,13 +36,34 @@ export default function MiniRadioPlayer() {
                 key={i}
                 className="w-[3px] bg-santa-red rounded-full"
                 style={{
-                  animation: `equalizer 0.8s ease-in-out ${i * 0.15}s infinite alternate`,
-                  height: "12px",
+                  animation: volume > 0 ? `equalizer 0.8s ease-in-out ${i * 0.15}s infinite alternate` : "none",
+                  height: volume > 0 ? "12px" : "4px",
+                  transition: "height 0.2s",
                 }}
               />
             ))}
           </div>
         )}
+
+        <div className="flex items-center gap-1.5">
+          <button
+            onClick={handleMuteToggle}
+            aria-label={volume > 0 ? "Mute" : "Unmute"}
+            className="text-gray-400 hover:text-white transition-colors flex-shrink-0"
+          >
+            {volume > 0 ? <Volume2 size={14} /> : <VolumeX size={14} />}
+          </button>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.05"
+            value={volume}
+            onChange={(e) => setVolume(parseFloat(e.target.value))}
+            aria-label="Volume"
+            className="w-16 h-1 appearance-none bg-white/20 rounded-full cursor-pointer accent-santa-red [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-2.5 [&::-webkit-slider-thumb]:h-2.5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-santa-red [&::-webkit-slider-thumb]:hover:bg-santa-red-light [&::-moz-range-thumb]:w-2.5 [&::-moz-range-thumb]:h-2.5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-santa-red [&::-moz-range-thumb]:border-0"
+          />
+        </div>
 
         <button
           onClick={toggle}
