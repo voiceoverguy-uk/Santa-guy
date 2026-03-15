@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   },
   description:
     "Sign up for festive Santa text alerts and Christmas messages from the voice of Father Christmas, Guy Harris.",
-  alternates: { canonical: "https://santaguy.co.uk/santa-text-alerts" },
+  alternates: { canonical: "https://www.santaguy.co.uk/santa-text-alerts" },
   openGraph: {
     title: "Santa Text Alerts | Festive Messages from Santa",
     description:
       "Sign up for festive Santa text alerts and Christmas messages from the voice of Father Christmas, Guy Harris.",
-    url: "https://santaguy.co.uk/santa-text-alerts",
+    url: "https://www.santaguy.co.uk/santa-text-alerts",
     siteName: "SantaGuy",
     type: "website",
   },
@@ -36,7 +36,7 @@ const pageSchema = {
   "@type": "Service",
   name: "Santa Text Alerts",
   description: "Sign up for festive Santa text alerts and Christmas messages from the voice of Father Christmas, Guy Harris.",
-  url: "https://santaguy.co.uk/santa-text-alerts",
+  url: "https://www.santaguy.co.uk/santa-text-alerts",
 };
 
 export default function SantaTextAlertsPage() {

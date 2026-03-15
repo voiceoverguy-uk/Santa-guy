@@ -12,18 +12,18 @@ export const metadata: Metadata = {
   },
   description:
     "Discover Guy Harris, the UK's Official Voice of Santa. Learn how his award-winning voice brings festive magic to BBC, ITV, Heart, Tesco, and Santa Radio.",
-  alternates: { canonical: "https://santaguy.co.uk/guy-harris-santa-voice" },
+  alternates: { canonical: "https://www.santaguy.co.uk/guy-harris-santa-voice" },
   openGraph: {
     title: "The UK's Official Voice of Santa | About SantaGuy.co.uk",
     description:
       "Discover Guy Harris, the UK's Official Voice of Santa. Learn how his award-winning voice brings festive magic to BBC, ITV, Heart, Tesco, and Santa Radio.",
-    url: "https://santaguy.co.uk/guy-harris-santa-voice",
+    url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
     type: "website",
     locale: "en_GB",
     siteName: "SantaGuy",
     images: [
       {
-        url: "https://santaguy.co.uk/santa-guy-logo-og.png",
+        url: "https://www.santaguy.co.uk/santa-guy-logo-og.png",
         width: 1200,
         height: 630,
         alt: "The UK's Official Voice of Santa — Guy Harris",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "The UK's Official Voice of Santa | About SantaGuy.co.uk",
     description:
       "Discover Guy Harris, the UK's Official Voice of Santa. Learn how his award-winning voice brings festive magic to BBC, ITV, Heart, Tesco, and Santa Radio.",
-    images: ["https://santaguy.co.uk/santa-guy-logo-og.png"],
+    images: ["https://www.santaguy.co.uk/santa-guy-logo-og.png"],
     site: "@voiceoverman",
     creator: "@voiceoverman",
   },
@@ -45,7 +45,7 @@ const profilePageSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   name: "About Guy Harris — The Voice of Santa",
-  url: "https://santaguy.co.uk/guy-harris-santa-voice",
+  url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
   description:
     "Discover Guy Harris, the UK's Official Voice of Santa. Learn how his award-winning voice brings festive magic to BBC, ITV, Heart, Tesco, and Santa Radio.",
   mainEntity: {
@@ -53,8 +53,8 @@ const profilePageSchema = {
     name: "Guy Harris",
     alternateName: "Santa Guy",
     jobTitle: "British Voiceover Artist and Voice of Santa",
-    url: "https://santaguy.co.uk/guy-harris-santa-voice",
-    image: "https://santaguy.co.uk/images/santa-guy-voice-over-1.jpg",
+    url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
+    image: "https://www.santaguy.co.uk/images/santa-guy-voice-over-1.jpg",
     sameAs: ["https://www.voiceoverguy.co.uk"],
     description:
       "Guy Harris is the UK's Official Voice of Santa, known for festive voiceovers for BBC, ITV, Heart, Tesco and Santa Radio.",
@@ -69,13 +69,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://santaguy.co.uk",
+      item: "https://www.santaguy.co.uk",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "About Guy Harris",
-      item: "https://santaguy.co.uk/guy-harris-santa-voice",
+      item: "https://www.santaguy.co.uk/guy-harris-santa-voice",
     },
   ],
 };

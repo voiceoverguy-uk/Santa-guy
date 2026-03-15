@@ -5,7 +5,7 @@ import Providers from "@/components/Providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://santaguy.co.uk"),
+  metadataBase: new URL("https://www.santaguy.co.uk"),
   title: {
     default: "SantaGuy | The UK's Trusted Voice of Santa — Guy Harris",
     template: "%s | SantaGuy",

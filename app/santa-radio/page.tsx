@@ -13,18 +13,18 @@ export const metadata: Metadata = {
   },
   description:
     "Santa Radio, hosted by Santa himself and voiced by Guy Harris, streams Christmas hits 24/7 with festive favourites, celebrity MugShots and Santa fun.",
-  alternates: { canonical: "https://santaguy.co.uk/santa-radio" },
+  alternates: { canonical: "https://www.santaguy.co.uk/santa-radio" },
   openGraph: {
     title: "The World's Biggest Christmas Radio Station | SantaGuy.co.uk",
     description:
       "Santa Radio, hosted by Santa himself and voiced by Guy Harris, streams Christmas hits 24/7 with festive favourites, celebrity MugShots and Santa fun.",
-    url: "https://santaguy.co.uk/santa-radio",
+    url: "https://www.santaguy.co.uk/santa-radio",
     type: "website",
     locale: "en_GB",
     siteName: "SantaGuy",
     images: [
       {
-        url: "https://santaguy.co.uk/santa-guy-logo-og.png",
+        url: "https://www.santaguy.co.uk/santa-guy-logo-og.png",
         width: 1200,
         height: 630,
         alt: "Santa Radio — The World's Biggest Christmas Radio Station",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "The World's Biggest Christmas Radio Station | SantaGuy.co.uk",
     description:
       "Santa Radio, hosted by Santa himself and voiced by Guy Harris, streams Christmas hits 24/7 with festive favourites, celebrity MugShots and Santa fun.",
-    images: ["https://santaguy.co.uk/santa-guy-logo-og.png"],
+    images: ["https://www.santaguy.co.uk/santa-guy-logo-og.png"],
     site: "@voiceoverman",
     creator: "@voiceoverman",
   },
@@ -48,7 +48,7 @@ const radioStationSchema = {
   name: "Santa Radio",
   description:
     "Santa Radio, hosted by Santa himself and voiced by Guy Harris, streams Christmas hits 24/7 with festive favourites, celebrity MugShots and Santa fun.",
-  url: "https://santaguy.co.uk/santa-radio",
+  url: "https://www.santaguy.co.uk/santa-radio",
 };
 
 const breadcrumbSchema = {
@@ -59,13 +59,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://santaguy.co.uk",
+      item: "https://www.santaguy.co.uk",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Santa Radio",
-      item: "https://santaguy.co.uk/santa-radio",
+      item: "https://www.santaguy.co.uk/santa-radio",
     },
   ],
 };

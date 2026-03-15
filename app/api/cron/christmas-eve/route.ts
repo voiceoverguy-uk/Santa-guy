@@ -86,7 +86,7 @@ export async function GET(request: Request) {
     }
 
     const resend = new Resend(apiKey);
-    const trackerUrl = "https://santaguy.co.uk/santa-tracker";
+    const trackerUrl = "https://www.santaguy.co.uk/santa-tracker";
     const html = buildNotificationHtml(trackerUrl);
 
     let sent = 0;

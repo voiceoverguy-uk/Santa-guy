@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   },
   description:
     "Listen to the official Santa voice of Guy Harris. Hear festive Father Christmas voiceovers used in TV, radio promotions and Christmas campaigns.",
-  alternates: { canonical: "https://santaguy.co.uk/santa-voice-demo" },
+  alternates: { canonical: "https://www.santaguy.co.uk/santa-voice-demo" },
   openGraph: {
     title: "Santa Voice Demo | Hear the Voice of Father Christmas",
     description:
       "Listen to the official Santa voice of Guy Harris. Hear festive Father Christmas voiceovers used in TV, radio promotions and Christmas campaigns.",
-    url: "https://santaguy.co.uk/santa-voice-demo",
+    url: "https://www.santaguy.co.uk/santa-voice-demo",
     type: "website",
   },
   twitter: {
@@ -36,7 +36,7 @@ const pageSchema = {
   "@type": "AudioObject",
   name: "Santa Voice Demo",
   description: "Listen to the official Santa voice of Guy Harris. Hear festive Father Christmas voiceovers used in TV, radio promotions and Christmas campaigns.",
-  url: "https://santaguy.co.uk/santa-voice-demo",
+  url: "https://www.santaguy.co.uk/santa-voice-demo",
 };
 
 const demos = [

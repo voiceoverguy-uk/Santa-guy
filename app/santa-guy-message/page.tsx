@@ -12,18 +12,18 @@ export const metadata: Metadata = {
   },
   description:
     "Guy Harris, the UK's most recognisable Santa voice, delivers personalised Santa messages and Santa calls that delight children and adults alike.",
-  alternates: { canonical: "https://santaguy.co.uk/santa-guy-message" },
+  alternates: { canonical: "https://www.santaguy.co.uk/santa-guy-message" },
   openGraph: {
     title: "Santa Message | Order a Christmas Santa call today",
     description:
       "Guy Harris, the UK's most recognisable Santa voice, delivers personalised Santa messages and Santa calls that delight children and adults alike.",
-    url: "https://santaguy.co.uk/santa-guy-message",
+    url: "https://www.santaguy.co.uk/santa-guy-message",
     type: "website",
     locale: "en_GB",
     siteName: "SantaGuy",
     images: [
       {
-        url: "https://santaguy.co.uk/santa-guy-logo-og.png",
+        url: "https://www.santaguy.co.uk/santa-guy-logo-og.png",
         width: 1200,
         height: 630,
         alt: "Santa Message — Personalised Santa Messages from Guy Harris",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Santa Message | Order a Christmas Santa call today",
     description:
       "Guy Harris, the UK's most recognisable Santa voice, delivers personalised Santa messages and Santa calls that delight children and adults alike.",
-    images: ["https://santaguy.co.uk/santa-guy-logo-og.png"],
+    images: ["https://www.santaguy.co.uk/santa-guy-logo-og.png"],
     site: "@voiceoverman",
     creator: "@voiceoverman",
   },
@@ -48,12 +48,12 @@ const serviceSchema = {
   serviceType: "Personalised Santa Messages / Santa Calls",
   description:
     "Guy Harris, the UK's most recognisable Santa voice, delivers personalised Santa messages and Santa calls that delight children and adults alike.",
-  url: "https://santaguy.co.uk/santa-guy-message",
+  url: "https://www.santaguy.co.uk/santa-guy-message",
   provider: {
     "@type": "Person",
     name: "Guy Harris",
     alternateName: "Santa Guy",
-    url: "https://santaguy.co.uk",
+    url: "https://www.santaguy.co.uk",
   },
 };
 
@@ -65,13 +65,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://santaguy.co.uk",
+      item: "https://www.santaguy.co.uk",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Santa Message",
-      item: "https://santaguy.co.uk/santa-guy-message",
+      item: "https://www.santaguy.co.uk/santa-guy-message",
     },
   ],
 };

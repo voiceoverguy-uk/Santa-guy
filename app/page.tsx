@@ -19,18 +19,18 @@ export const metadata: Metadata = {
   },
   description:
     "Looking for a Santa voice or Father Christmas voice for your next TV advert, radio promo or event? Welcome to SantaGuy, home of Guy Harris.",
-  alternates: { canonical: "https://santaguy.co.uk/" },
+  alternates: { canonical: "https://www.santaguy.co.uk/" },
   openGraph: {
     title: "Santa Voice | Guy Harris | Voice of Father Christmas",
     description:
       "Looking for a Santa voice or Father Christmas voice for your next TV advert, radio promo or event? Welcome to SantaGuy, home of Guy Harris.",
-    url: "https://santaguy.co.uk/",
+    url: "https://www.santaguy.co.uk/",
     type: "website",
     locale: "en_GB",
     siteName: "SantaGuy",
     images: [
       {
-        url: "https://santaguy.co.uk/santa-guy-logo-og.png",
+        url: "https://www.santaguy.co.uk/santa-guy-logo-og.png",
         width: 1200,
         height: 630,
         alt: "SantaGuy — Santa Voice | Guy Harris | Voice of Father Christmas",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Santa Voice | Guy Harris | Voice of Father Christmas",
     description:
       "Looking for a Santa voice or Father Christmas voice for your next TV advert, radio promo or event? Welcome to SantaGuy, home of Guy Harris.",
-    images: ["https://santaguy.co.uk/santa-guy-logo-og.png"],
+    images: ["https://www.santaguy.co.uk/santa-guy-logo-og.png"],
     site: "@voiceoverman",
     creator: "@voiceoverman",
   },
@@ -144,7 +144,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "SantaGuy",
-  url: "https://santaguy.co.uk",
+  url: "https://www.santaguy.co.uk",
   description:
     "The UK's trusted voice of Santa. Professional Santa voiceover for radio, TV, podcasts, brands and Christmas campaigns.",
 };
@@ -153,8 +153,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "SantaGuy",
-  url: "https://santaguy.co.uk",
-  logo: "https://santaguy.co.uk/santa-guy-logo-og.png",
+  url: "https://www.santaguy.co.uk",
+  logo: "https://www.santaguy.co.uk/santa-guy-logo-og.png",
   sameAs: ["https://www.voiceoverguy.co.uk"],
 };
 
@@ -166,7 +166,7 @@ const personSchema = {
   jobTitle: "Voice Actor",
   description:
     "Guy Harris is the UK's Official Voice of Santa, known for festive voiceovers for BBC, ITV, Heart, Tesco and Santa Radio.",
-  url: "https://santaguy.co.uk",
+  url: "https://www.santaguy.co.uk",
   sameAs: ["https://www.voiceoverguy.co.uk"],
 };
 
@@ -174,7 +174,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Santa Voice | Guy Harris | Voice of Father Christmas",
-  url: "https://santaguy.co.uk",
+  url: "https://www.santaguy.co.uk",
 };
 
 const videoSchemas = videos.map((video) => ({
@@ -193,7 +193,7 @@ const audioSchemas = [
     "@type": "AudioObject",
     name: "Santa Voice Demo 1",
     description: "Professional Santa voice showreel performed by Guy Harris.",
-    contentUrl: "https://santaguy.co.uk/demos/Santa-voice-Guy-Demo-1.mp3",
+    contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-1.mp3",
     uploadDate: "2024-01-01T08:00:00+00:00",
   },
   {
@@ -201,7 +201,7 @@ const audioSchemas = [
     "@type": "AudioObject",
     name: "Santa Voice Demo 2",
     description: "Santa voice demo featuring Guy Harris on BBC Radio 2 Naughty and Nice list.",
-    contentUrl: "https://santaguy.co.uk/demos/Santa-voice-Guy-Demo-2.mp3",
+    contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-2.mp3",
     uploadDate: "2024-01-01T08:00:00+00:00",
   },
   {
@@ -209,7 +209,7 @@ const audioSchemas = [
     "@type": "AudioObject",
     name: "Santa Voice Demo 3",
     description: "Guy Harris as Santa chatting with Zoe Ball on BBC Radio 2 Breakfast Show.",
-    contentUrl: "https://santaguy.co.uk/demos/Santa-voice-Guy-Demo-3.mp3",
+    contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-3.mp3",
     uploadDate: "2024-01-01T08:00:00+00:00",
   },
 ];

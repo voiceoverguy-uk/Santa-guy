@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Hire Santa Voice — Professional Santa Voiceover for Radio, TV & Brands",
   description:
     "Hire Guy Harris, the UK's trusted Santa voice, for radio, TV, podcasts, Christmas campaigns, and branded festive content. Broadcast-quality Santa voiceover delivered fast from a professional studio.",
-  alternates: { canonical: "/hire-santa-voice" },
+  alternates: { canonical: "https://www.santaguy.co.uk/hire-santa-voice" },
 };
 
 const pageSchema = {
@@ -21,7 +21,7 @@ const pageSchema = {
   name: "Hire Santa Voice",
   description:
     "Hire the UK's trusted Santa voice for radio, TV, podcasts, brands, and festive campaigns.",
-  url: "https://santaguy.co.uk/hire-santa-voice",
+  url: "https://www.santaguy.co.uk/hire-santa-voice",
 };
 
 const services = [

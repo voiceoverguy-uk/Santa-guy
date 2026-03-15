@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   },
   description:
     "Contact Guy Harris, the UK's official Santa voice, to enquire about Santa voiceovers, Christmas campaigns, radio promotions or festive projects.",
-  alternates: { canonical: "https://santaguy.co.uk/contact-santa-guy" },
+  alternates: { canonical: "https://www.santaguy.co.uk/contact-santa-guy" },
   openGraph: {
     title: "Contact Santa | Enquire About Santa Voiceovers",
     description:
       "Contact Guy Harris, the UK's official Santa voice, to enquire about Santa voiceovers, Christmas campaigns, radio promotions or festive projects.",
-    url: "https://santaguy.co.uk/contact-santa-guy",
+    url: "https://www.santaguy.co.uk/contact-santa-guy",
     type: "website",
   },
   twitter: {
@@ -34,7 +34,7 @@ const pageSchema = {
   "@type": "ContactPage",
   name: "Contact Santa | Enquire About Santa Voiceovers",
   description: "Contact Guy Harris, the UK's official Santa voice, to enquire about Santa voiceovers, Christmas campaigns, radio promotions or festive projects.",
-  url: "https://santaguy.co.uk/contact-santa-guy",
+  url: "https://www.santaguy.co.uk/contact-santa-guy",
 };
 
 const trustBadges = [

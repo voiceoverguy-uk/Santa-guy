@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   },
   description:
     "Download festive Santa ringtones and Christmas sounds featuring the voice of Father Christmas by UK voice actor Guy Harris.",
-  alternates: { canonical: "https://santaguy.co.uk/santa-ringtones" },
+  alternates: { canonical: "https://www.santaguy.co.uk/santa-ringtones" },
   openGraph: {
     title: "Santa Ringtones | Christmas Sounds from Santa",
     description:
       "Download festive Santa ringtones and Christmas sounds featuring the voice of Father Christmas by UK voice actor Guy Harris.",
-    url: "https://santaguy.co.uk/santa-ringtones",
+    url: "https://www.santaguy.co.uk/santa-ringtones",
     type: "website",
   },
   twitter: {
@@ -35,7 +35,7 @@ const pageSchema = {
   "@type": "CreativeWork",
   name: "Santa Ringtones",
   description: "Download festive Santa ringtones and Christmas sounds featuring the voice of Father Christmas by UK voice actor Guy Harris.",
-  url: "https://santaguy.co.uk/santa-ringtones",
+  url: "https://www.santaguy.co.uk/santa-ringtones",
 };
 
 const ringtones = [

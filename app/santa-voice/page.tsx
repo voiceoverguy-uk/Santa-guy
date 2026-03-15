@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   },
   description:
     "Hire the UK's leading Santa voice. Guy Harris provides Father Christmas voiceovers for TV, radio, events, personalised messages and festive campaigns.",
-  alternates: { canonical: "https://santaguy.co.uk/santa-voice" },
+  alternates: { canonical: "https://www.santaguy.co.uk/santa-voice" },
   openGraph: {
     title: "Santa Voice | Hire the Voice of Father Christmas",
     description:
       "Hire the UK's leading Santa voice. Guy Harris provides Father Christmas voiceovers for TV, radio, events, personalised messages and festive campaigns.",
-    url: "https://santaguy.co.uk/santa-voice",
+    url: "https://www.santaguy.co.uk/santa-voice",
     type: "website",
   },
   twitter: {
@@ -37,7 +37,7 @@ const webPageSchema = {
   name: "Santa Voice | Hire the Voice of Father Christmas",
   description:
     "Hire the UK's leading Santa voice. Guy Harris provides Father Christmas voiceovers for TV, radio, events, personalised messages and festive campaigns.",
-  url: "https://santaguy.co.uk/santa-voice",
+  url: "https://www.santaguy.co.uk/santa-voice",
 };
 
 const personSchema = {
@@ -46,7 +46,7 @@ const personSchema = {
   name: "Guy Harris",
   alternateName: "Santa Guy",
   jobTitle: "Voice Actor",
-  url: "https://santaguy.co.uk/guy-harris-santa-voice",
+  url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
 };
 
 const faqs = [

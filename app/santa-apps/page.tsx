@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   },
   description:
     "Explore festive Santa apps featuring the voice of Father Christmas. Discover Christmas apps and projects voiced by Guy Harris.",
-  alternates: { canonical: "https://santaguy.co.uk/santa-apps" },
+  alternates: { canonical: "https://www.santaguy.co.uk/santa-apps" },
   openGraph: {
     title: "Santa Apps | Christmas Apps Featuring Santa",
     description:
       "Explore festive Santa apps featuring the voice of Father Christmas. Discover Christmas apps and projects voiced by Guy Harris.",
-    url: "https://santaguy.co.uk/santa-apps",
+    url: "https://www.santaguy.co.uk/santa-apps",
     type: "website",
   },
   twitter: {
@@ -35,7 +35,7 @@ const pageSchema = {
   name: "Santa Apps",
   description:
     "7 free Christmas apps for iOS from SantaGuy including Santa Radio, Santa Voicemail, Santa Messages, and more.",
-  url: "https://santaguy.co.uk/santa-apps",
+  url: "https://www.santaguy.co.uk/santa-apps",
 };
 
 const apps = [
