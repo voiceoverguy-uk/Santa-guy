@@ -8,6 +8,7 @@ import TestimonialSlider from "@/components/TestimonialSlider";
 import CTASection from "@/components/CTASection";
 import SantaTrackerBanner from "@/components/SantaTrackerBanner";
 import FAQSection from "@/components/FAQSection";
+import GoogleReviews from "@/components/GoogleReviews";
 import StructuredData from "@/components/StructuredData";
 import DemoCards from "@/components/DemoCards";
 import VideoCard from "@/components/VideoCard";
@@ -353,6 +354,8 @@ export default function HomePage() {
         secondaryCTA={{ label: "Get in Touch", href: "/contact-santa-guy" }}
         dark={false}
       />
+
+      <GoogleReviews />
 
       <FAQSection faqs={faqs} />
     </>

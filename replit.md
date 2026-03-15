@@ -128,6 +128,13 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **Notification signup**: NotifySignup component collects emails → stored in PostgreSQL `subscribers` table → Vercel cron sends branded emails at 06:00 UTC Dec 24
 - **SEO**: WebPage + BreadcrumbList schema, OG/Twitter tags, sitemap entry (priority 0.8)
 
+## Google Reviews
+- **API route**: `app/api/reviews/route.ts` — calls Google Places API (Find Place + Place Details), returns `{ rating, reviewCount }`
+- **Cache**: In-memory, 24-hour TTL; falls back to hardcoded defaults `{ rating: 5.0, reviewCount: 119 }` on any failure
+- **Secret**: `GOOGLE_PLACES_API_KEY` (server-side only)
+- **Component**: `components/GoogleReviews.tsx` — client component, fetches `/api/reviews` on mount, displays star rating + review count
+- **Placement**: Between "Ready to Hire" CTA and FAQ section on homepage
+
 ## Placeholder Assets Still Needed
 - Testimonial quotes (real ones to replace placeholders)
 
