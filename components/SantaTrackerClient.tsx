@@ -32,13 +32,14 @@ const funFacts = [
 function SantaTrackerInner({ showPreview = false }: { showPreview?: boolean }) {
 
   const [previewState, setPreviewState] = useState<PreviewState>(getDefaultPreviewState);
-  const [effectiveTime, setEffectiveTime] = useState(() => new Date());
+  const [effectiveTime, setEffectiveTime] = useState<Date | null>(null);
   const [mounted, setMounted] = useState(false);
   const [currentFactIndex, setCurrentFactIndex] = useState(0);
   const [holiday, setHoliday] = useState<HolidayDestination | null>(null);
 
   useEffect(() => {
     setMounted(true);
+    setEffectiveTime(new Date());
     if (showPreview) {
       setPreviewState(loadPreviewState());
     }
@@ -66,7 +67,7 @@ function SantaTrackerInner({ showPreview = false }: { showPreview?: boolean }) {
     setEffectiveTime(getEffectiveTime(state));
   }, []);
 
-  if (!mounted) {
+  if (!mounted || !effectiveTime) {
     return <TrackerSkeleton />;
   }
 
