@@ -345,6 +345,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <GoogleReviews />
+
       <SantaTrackerBanner />
 
       <CTASection
@@ -354,8 +356,6 @@ export default function HomePage() {
         secondaryCTA={{ label: "Get in Touch", href: "/contact-santa-guy" }}
         dark={false}
       />
-
-      <GoogleReviews />
 
       <FAQSection faqs={faqs} />
     </>
