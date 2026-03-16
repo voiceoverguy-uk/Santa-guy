@@ -187,6 +187,9 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
         style: {
           overflow: "visible",
         },
+        filter: (node: HTMLElement) => {
+          return !node?.dataset?.texture;
+        },
       });
       const res = await fetch(dataUrl);
       const blob = await res.blob();
@@ -221,6 +224,7 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
           }}
         >
           <div className="absolute inset-0 opacity-[0.03]"
+            data-texture="true"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")`,
             }}
