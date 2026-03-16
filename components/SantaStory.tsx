@@ -296,7 +296,7 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
                 <img
                   src="/images/santa-post-stamp.png"
                   alt="North Pole Official Mail stamp"
-                  className="w-20 sm:w-24 opacity-85"
+                  className="w-28 sm:w-32 opacity-85"
                   style={{ transform: "rotate(6deg)" }}
                   draggable={false}
                 />
@@ -305,15 +305,15 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
               <div className="flex-1 flex items-center">
                 <div className="w-full space-y-1.5">
                   <p className="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-1">To:</p>
-                  <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "0.95rem" }}>
+                  <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}>
                     The Workshop
                   </p>
                   <div className="border-b border-gray-400/50" />
-                  <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "0.95rem" }}>
+                  <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}>
                     1 Candy Cane Lane
                   </p>
                   <div className="border-b border-gray-400/50" />
-                  <p className="text-gray-800 leading-snug font-medium" style={{ fontFamily: "'Caveat', cursive", fontSize: "0.95rem" }}>
+                  <p className="text-gray-800 leading-snug font-medium" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}>
                     North Pole 🎄
                   </p>
                   <div className="border-b border-gray-400/50" />
