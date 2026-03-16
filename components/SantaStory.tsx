@@ -178,6 +178,26 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
     try {
       const { toPng } = await import("html-to-image");
       const el = postcardRef.current;
+
+      const images = el.querySelectorAll("img");
+      const origSrcs: { img: HTMLImageElement; src: string }[] = [];
+      await Promise.all(
+        Array.from(images).map(async (img) => {
+          if (img.src.startsWith("data:")) return;
+          origSrcs.push({ img, src: img.src });
+          try {
+            const resp = await fetch(img.src);
+            const blob = await resp.blob();
+            const reader = new FileReader();
+            const dataUrl = await new Promise<string>((resolve) => {
+              reader.onloadend = () => resolve(reader.result as string);
+              reader.readAsDataURL(blob);
+            });
+            img.src = dataUrl;
+          } catch {}
+        })
+      );
+
       const prevOverflow = el.style.overflow;
       const prevMaxWidth = el.style.maxWidth;
       el.style.overflow = "visible";
@@ -197,6 +217,7 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
       });
       el.style.overflow = prevOverflow;
       el.style.maxWidth = prevMaxWidth;
+      origSrcs.forEach(({ img, src }) => { img.src = src; });
       const res = await fetch(dataUrl);
       const blob = await res.blob();
 
@@ -218,6 +239,11 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
       if (postcardRef.current) {
         postcardRef.current.style.overflow = "";
         postcardRef.current.style.maxWidth = "";
+        postcardRef.current.querySelectorAll("img").forEach((img) => {
+          if (!img.src.startsWith("data:")) return;
+          const cached = img.getAttribute("data-orig-src");
+          if (cached) img.src = cached;
+        });
       }
     } finally {
       setSharing(false);
@@ -265,29 +291,29 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
             <div className="hidden sm:block w-px bg-gray-400/40 my-5 mx-0 self-stretch" />
             <div className="block sm:hidden h-px bg-gray-400/40 mx-5" />
 
-            <div className="sm:w-[200px] p-5 sm:p-6 flex flex-col">
+            <div className="sm:w-[220px] p-4 sm:p-5 flex flex-col">
               <div className="flex justify-end w-full">
                 <img
                   src="/images/santa-post-stamp.png"
                   alt="North Pole Official Mail stamp"
-                  className="w-28 sm:w-32 opacity-85"
+                  className="w-20 sm:w-24 opacity-85"
                   style={{ transform: "rotate(6deg)" }}
                   draggable={false}
                 />
               </div>
 
               <div className="flex-1 flex items-center">
-                <div className="w-full space-y-1">
-                  <p className="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-1.5">To:</p>
-                  <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}>
+                <div className="w-full space-y-1.5">
+                  <p className="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-1">To:</p>
+                  <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "0.95rem" }}>
                     The Workshop
                   </p>
                   <div className="border-b border-gray-400/50" />
-                  <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}>
+                  <p className="text-gray-800 leading-snug" style={{ fontFamily: "'Caveat', cursive", fontSize: "0.95rem" }}>
                     1 Candy Cane Lane
                   </p>
                   <div className="border-b border-gray-400/50" />
-                  <p className="text-gray-800 leading-snug font-medium" style={{ fontFamily: "'Caveat', cursive", fontSize: "clamp(1.1rem, 2.6vw, 1.4rem)" }}>
+                  <p className="text-gray-800 leading-snug font-medium" style={{ fontFamily: "'Caveat', cursive", fontSize: "0.95rem" }}>
                     North Pole 🎄
                   </p>
                   <div className="border-b border-gray-400/50" />
