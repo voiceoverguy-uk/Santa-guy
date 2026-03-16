@@ -177,9 +177,16 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
     setSharing(true);
     try {
       const { toPng } = await import("html-to-image");
-      const dataUrl = await toPng(postcardRef.current, {
+      const el = postcardRef.current;
+      const rect = el.getBoundingClientRect();
+      const dataUrl = await toPng(el, {
         pixelRatio: 2,
         cacheBust: true,
+        width: rect.width,
+        height: rect.height,
+        style: {
+          overflow: "visible",
+        },
       });
       const res = await fetch(dataUrl);
       const blob = await res.blob();
