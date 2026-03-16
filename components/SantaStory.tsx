@@ -176,16 +176,13 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
     if (!postcardRef.current || sharing) return;
     setSharing(true);
     try {
-      const html2canvas = (await import("html2canvas")).default;
-      const canvas = await html2canvas(postcardRef.current, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: null,
+      const { toPng } = await import("html-to-image");
+      const dataUrl = await toPng(postcardRef.current, {
+        pixelRatio: 2,
+        cacheBust: true,
       });
-      const blob = await new Promise<Blob | null>((resolve) =>
-        canvas.toBlob(resolve, "image/png")
-      );
-      if (!blob) return;
+      const res = await fetch(dataUrl);
+      const blob = await res.blob();
 
       if (navigator.share && navigator.canShare?.({ files: [new File([blob], "santa-postcard.png", { type: "image/png" })] })) {
         const file = new File([blob], "santa-postcard.png", { type: "image/png" });
