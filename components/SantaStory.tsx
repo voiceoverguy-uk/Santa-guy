@@ -252,7 +252,7 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
                 <img
                   src="/images/santa-post-stamp.png"
                   alt="North Pole Official Mail stamp"
-                  className="w-16 h-16 sm:w-20 sm:h-20 opacity-85"
+                  className="w-28 sm:w-32 opacity-85"
                   style={{ transform: "rotate(6deg)" }}
                   draggable={false}
                 />
