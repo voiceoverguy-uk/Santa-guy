@@ -17,11 +17,12 @@ function getTimeUntilChristmas() {
 }
 
 export default function CountdownTimer() {
-  const [time, setTime] = useState(getTimeUntilChristmas());
+  const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    setTime(getTimeUntilChristmas());
     const interval = setInterval(() => {
       setTime(getTimeUntilChristmas());
     }, 1000);

@@ -59,10 +59,12 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
 
   const onHoliday = data.mode === "OFF_SEASON" && !!holiday;
   const inJuly = data.mode === "OFF_SEASON" && isChristmasInJuly(effectiveTime);
-  const [maybeNext] = useState(() => {
+  const [maybeNext, setMaybeNext] = useState<HolidayDestination | null>(null);
+
+  useEffect(() => {
     const others = holidayDestinations.filter(d => d.name !== holiday?.name);
-    return others[Math.floor(Math.random() * others.length)];
-  });
+    setMaybeNext(others[Math.floor(Math.random() * others.length)]);
+  }, [holiday]);
 
   const offSeasonGifts = [
     "Still receiving lists", "Reading lists", "Checking twice", "Workshop approving",
@@ -83,8 +85,13 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
   ];
   const activeGifts = inJuly ? julyGifts : offSeasonGifts;
   const activeDistance = inJuly ? julyDistance : offSeasonDistance;
-  const [funGifts] = useState(() => activeGifts[Math.floor(Math.random() * activeGifts.length)]);
-  const [funDistance] = useState(() => activeDistance[Math.floor(Math.random() * activeDistance.length)]);
+  const [funGifts, setFunGifts] = useState(activeGifts[0]);
+  const [funDistance, setFunDistance] = useState(activeDistance[0]);
+
+  useEffect(() => {
+    setFunGifts(activeGifts[Math.floor(Math.random() * activeGifts.length)]);
+    setFunDistance(activeDistance[Math.floor(Math.random() * activeDistance.length)]);
+  }, []);
 
   if (onHoliday && holiday) {
     data.currentStopName = holiday.name;

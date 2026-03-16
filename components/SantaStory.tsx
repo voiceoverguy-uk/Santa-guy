@@ -350,29 +350,31 @@ export default function SantaStory({ effectiveTime, holiday }: SantaStoryProps) 
 
   const activePostcards = inJuly ? christmasInJulyPostcards : holidayPostcards;
 
-  const [postcardIndex, setPostcardIndex] = useState(() =>
-    Math.floor(Math.random() * activePostcards.length)
-  );
-
-  const [dispatchIndex, setDispatchIndex] = useState(() =>
-    Math.floor(Math.random() * workshopDispatches.length)
-  );
+  const [postcardIndex, setPostcardIndex] = useState(0);
+  const [dispatchIndex, setDispatchIndex] = useState(0);
+  const [storyMounted, setStoryMounted] = useState(false);
 
   useEffect(() => {
-    if (!onHoliday) return;
+    setPostcardIndex(Math.floor(Math.random() * activePostcards.length));
+    setDispatchIndex(Math.floor(Math.random() * workshopDispatches.length));
+    setStoryMounted(true);
+  }, [activePostcards.length]);
+
+  useEffect(() => {
+    if (!onHoliday || !storyMounted) return;
     const interval = setInterval(() => {
       setPostcardIndex((prev) => (prev + 1) % activePostcards.length);
     }, 15000);
     return () => clearInterval(interval);
-  }, [onHoliday, activePostcards.length]);
+  }, [onHoliday, storyMounted, activePostcards.length]);
 
   useEffect(() => {
-    if (!inDecemberPrep) return;
+    if (!inDecemberPrep || !storyMounted) return;
     const interval = setInterval(() => {
       setDispatchIndex((prev) => (prev + 1) % workshopDispatches.length);
     }, 15000);
     return () => clearInterval(interval);
-  }, [inDecemberPrep]);
+  }, [inDecemberPrep, storyMounted]);
 
   if (inDecemberPrep) {
     return <WorkshopDispatch message={workshopDispatches[dispatchIndex]} />;
