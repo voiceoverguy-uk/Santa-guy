@@ -249,24 +249,13 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
 
             <div className="sm:w-[200px] p-5 sm:p-6 flex flex-col">
               <div className="flex justify-end w-full">
-                <div className="w-14 h-[62px] rounded-sm border-2 border-santa-red/70 flex flex-col items-center justify-center bg-white/60 relative overflow-hidden"
-                  style={{ borderStyle: "dashed" }}
-                >
-                  <div className="absolute inset-0 opacity-5"
-                    style={{
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='40' height='40' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")`,
-                    }}
-                  />
-                  <span className="text-[9px] font-bold text-santa-red uppercase tracking-wide leading-tight text-center">
-                    North
-                    <br />
-                    Pole
-                  </span>
-                  <span className="text-[14px] mt-0.5">🎅</span>
-                  <span className="text-[6px] text-santa-red/60 font-medium uppercase tracking-widest">
-                    Official
-                  </span>
-                </div>
+                <img
+                  src="/images/santa-post-stamp.png"
+                  alt="North Pole Official Mail stamp"
+                  className="w-16 h-16 sm:w-20 sm:h-20 opacity-85"
+                  style={{ transform: "rotate(6deg)" }}
+                  draggable={false}
+                />
               </div>
 
               <div className="flex-1 flex items-center">
