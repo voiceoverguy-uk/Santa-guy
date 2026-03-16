@@ -178,19 +178,25 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
     try {
       const { toPng } = await import("html-to-image");
       const el = postcardRef.current;
-      const rect = el.getBoundingClientRect();
+      const prevOverflow = el.style.overflow;
+      const prevMaxWidth = el.style.maxWidth;
+      el.style.overflow = "visible";
+      el.style.maxWidth = "none";
+      const w = el.scrollWidth;
+      const h = el.scrollHeight;
       const dataUrl = await toPng(el, {
         pixelRatio: 2,
         cacheBust: true,
-        width: rect.width,
-        height: rect.height,
-        style: {
-          overflow: "visible",
-        },
+        width: w,
+        height: h,
+        canvasWidth: w * 2,
+        canvasHeight: h * 2,
         filter: (node: HTMLElement) => {
           return !node?.dataset?.texture;
         },
       });
+      el.style.overflow = prevOverflow;
+      el.style.maxWidth = prevMaxWidth;
       const res = await fetch(dataUrl);
       const blob = await res.blob();
 
@@ -209,6 +215,10 @@ function HolidayPostcard({ message, holiday, isJuly }: { message: string; holida
       }
     } catch (err) {
       console.warn("Postcard share/download failed:", err);
+      if (postcardRef.current) {
+        postcardRef.current.style.overflow = "";
+        postcardRef.current.style.maxWidth = "";
+      }
     } finally {
       setSharing(false);
     }
