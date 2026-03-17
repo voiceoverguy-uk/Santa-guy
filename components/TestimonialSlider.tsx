@@ -40,6 +40,12 @@ const testimonials = [
     author: "Russell Featherstone",
     company: "Production Manager",
   },
+  {
+    quote:
+      "Such a warm, authentic Santa voice - instantly puts a smile on your face.",
+    author: "Carl Woods",
+    company: "Creative Producer, Bauer",
+  },
 ];
 
 export default function TestimonialSlider() {
