@@ -43,6 +43,57 @@ const serviceSchema = {
     "@type": "Country",
     name: "United Kingdom",
   },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Santa Voice Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Santa Voiceover for Radio, TV & Web",
+          serviceType: "Broadcast Santa Voiceover",
+          description: "Broadcast-quality Santa voiceover for commercials, promos, jingles, and branded content.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Podcast & Radio Appearances",
+          serviceType: "Santa Guest Appearance",
+          description: "Santa guest appearances on podcasts, radio shows, and live broadcasts for festive specials.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Radio Station Christmas Campaigns",
+          serviceType: "Radio Station Christmas Imaging",
+          description: "Dedicated Santa check-ins, jingle packages, and seasonal imaging for radio stations.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Christmas Campaign Promos",
+          serviceType: "Christmas Campaign Voiceover",
+          description: "Premium Santa voiceover for national and regional Christmas campaigns.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Personalised Santa Videos",
+          serviceType: "Personalised Santa Messages",
+          description: "Bespoke personalised video messages from Santa through Festive Studio.",
+        },
+      },
+    ],
+  },
 };
 
 const breadcrumbSchema = {

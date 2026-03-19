@@ -256,6 +256,10 @@ const personSchema = {
     "Voice Acting",
     "Radio Imaging",
   ],
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
   hasOccupation: {
     "@type": "Occupation",
     name: "Santa Voice Actor",

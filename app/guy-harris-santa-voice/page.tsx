@@ -67,6 +67,10 @@ const profilePageSchema = {
       name: "SantaGuy",
       url: "https://www.santaguy.co.uk",
     },
+    areaServed: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
     hasOccupation: {
       "@type": "Occupation",
       name: "Santa Voice Actor",

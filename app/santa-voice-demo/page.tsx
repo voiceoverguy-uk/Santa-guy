@@ -59,6 +59,33 @@ const breadcrumbSchema = {
   ],
 };
 
+const audioSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "AudioObject",
+    name: "Santa Voice Demo 1",
+    description: "Professional Santa voice showreel performed by Guy Harris.",
+    contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-1.mp3",
+    uploadDate: "2024-01-01T08:00:00+00:00",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "AudioObject",
+    name: "Santa Voice Demo 2",
+    description: "Santa voice demo featuring Guy Harris on BBC Radio 2 Naughty and Nice list.",
+    contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-2.mp3",
+    uploadDate: "2024-01-01T08:00:00+00:00",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "AudioObject",
+    name: "Santa Voice Demo 3",
+    description: "Guy Harris as Santa chatting with Zoe Ball on BBC Radio 2 Breakfast Show.",
+    contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-3.mp3",
+    uploadDate: "2024-01-01T08:00:00+00:00",
+  },
+];
+
 const demos = [
   { title: "Santa Commercial Reel", description: "Full showreel — radio and TV Santa voiceover highlights" },
   { title: "Santa Character Voice", description: "Warm, authentic, classic Santa character voice" },
@@ -75,6 +102,9 @@ export default function SantaVoiceDemoPage() {
     <>
       <StructuredData data={pageSchema} />
       <StructuredData data={breadcrumbSchema} />
+      {audioSchemas.map((schema, i) => (
+        <StructuredData key={`audio-${i}`} data={schema} />
+      ))}
 
       <Hero
         title="Santa Voice Demo"
