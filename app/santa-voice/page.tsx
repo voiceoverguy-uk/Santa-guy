@@ -51,10 +51,34 @@ const personSchema = {
     "Guy Harris is the UK's leading Santa voice, trusted by BBC Radio 1, BBC Radio 2, Heart, Capital, ITV, Tesco, Butlins, CBeebies, Poundland, Center Parcs, and GB News.",
   url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
   image: "https://www.santaguy.co.uk/images/santa-guy-voice-over-1.jpg",
+  nationality: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
   worksFor: {
     "@type": "ProfessionalService",
     name: "SantaGuy",
     url: "https://www.santaguy.co.uk",
+  },
+  knowsAbout: [
+    "Santa Voiceover",
+    "Father Christmas Voice",
+    "Christmas Radio",
+    "Festive Broadcasting",
+    "Voice Acting",
+  ],
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Santa Voice Actor",
+    description: "Professional voice artist specialising in Santa Claus and Father Christmas character voiceover for broadcast, brands, and campaigns.",
+    occupationLocation: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
   },
   sameAs: [
     "https://www.voiceoverguy.co.uk",
