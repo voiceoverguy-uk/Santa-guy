@@ -33,10 +33,30 @@ export const metadata: Metadata = {
 
 const pageSchema = {
   "@context": "https://schema.org",
-  "@type": "AudioObject",
-  name: "Santa Voice Demo",
+  "@type": "WebPage",
+  name: "Santa Voice Demo | Hear the Voice of Father Christmas",
   description: "Listen to the official Santa voice of Guy Harris. Hear festive Father Christmas voiceovers used in TV, radio promotions and Christmas campaigns.",
   url: "https://www.santaguy.co.uk/santa-voice-demo",
+  inLanguage: "en-GB",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.santaguy.co.uk",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Santa Voice Demo",
+      item: "https://www.santaguy.co.uk/santa-voice-demo",
+    },
+  ],
 };
 
 const demos = [
@@ -54,6 +74,7 @@ export default function SantaVoiceDemoPage() {
   return (
     <>
       <StructuredData data={pageSchema} />
+      <StructuredData data={breadcrumbSchema} />
 
       <Hero
         title="Santa Voice Demo"

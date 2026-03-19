@@ -48,16 +48,47 @@ const profilePageSchema = {
   url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
   description:
     "Discover Guy Harris, the UK's Official Voice of Santa. Learn how his award-winning voice brings festive magic to BBC, ITV, Heart, Tesco, and Santa Radio.",
+  inLanguage: "en-GB",
   mainEntity: {
     "@type": "Person",
     name: "Guy Harris",
-    alternateName: "Santa Guy",
-    jobTitle: "British Voiceover Artist and Voice of Santa",
+    alternateName: ["Santa Guy", "The Voice of Santa", "Voice of Father Christmas"],
+    jobTitle: "Voice of Santa",
     url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
     image: "https://www.santaguy.co.uk/images/santa-guy-voice-over-1.jpg",
-    sameAs: ["https://www.voiceoverguy.co.uk"],
     description:
-      "Guy Harris is the UK's Official Voice of Santa, known for festive voiceovers for BBC, ITV, Heart, Tesco and Santa Radio.",
+      "Guy Harris is the UK's Official Voice of Santa, trusted by BBC Radio 1, BBC Radio 2, Heart, Capital, ITV, Tesco, Butlins, CBeebies, Poundland, Center Parcs, GB News, Bauer, and ARN Dubai. He is the creator and voice of Santa Radio and the most established Santa voice artist in British broadcasting.",
+    nationality: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
+    worksFor: {
+      "@type": "ProfessionalService",
+      name: "SantaGuy",
+      url: "https://www.santaguy.co.uk",
+    },
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Santa Voice Actor",
+      description: "Professional voice artist specialising in Santa Claus and Father Christmas character voiceover for broadcast, brands, and campaigns.",
+      occupationLocation: {
+        "@type": "Country",
+        name: "United Kingdom",
+      },
+    },
+    knowsAbout: [
+      "Santa Voiceover",
+      "Father Christmas Voice",
+      "Christmas Radio",
+      "Festive Broadcasting",
+      "Voice Acting",
+      "Radio Imaging",
+      "Personalised Santa Messages",
+    ],
+    sameAs: [
+      "https://www.voiceoverguy.co.uk",
+      "https://x.com/voiceoverman",
+    ],
   },
 };
 

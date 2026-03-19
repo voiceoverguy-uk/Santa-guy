@@ -36,6 +36,32 @@ const pageSchema = {
   name: "Santa Ringtones",
   description: "Download festive Santa ringtones and Christmas sounds featuring the voice of Father Christmas by UK voice actor Guy Harris.",
   url: "https://www.santaguy.co.uk/santa-ringtones",
+  author: {
+    "@type": "Person",
+    name: "Guy Harris",
+    alternateName: "Santa Guy",
+    url: "https://www.santaguy.co.uk",
+  },
+  inLanguage: "en-GB",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.santaguy.co.uk",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Santa Ringtones",
+      item: "https://www.santaguy.co.uk/santa-ringtones",
+    },
+  ],
 };
 
 const ringtones = [
@@ -51,6 +77,7 @@ export default function SantaRingtonesPage() {
   return (
     <>
       <StructuredData data={pageSchema} />
+      <StructuredData data={breadcrumbSchema} />
 
       <Hero
         title="Santa Ringtones"

@@ -22,6 +22,46 @@ const pageSchema = {
   description:
     "Hire the UK's trusted Santa voice for radio, TV, podcasts, brands, and festive campaigns.",
   url: "https://www.santaguy.co.uk/hire-santa-voice",
+  inLanguage: "en-GB",
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Hire Santa Voice — Professional Santa Voiceover",
+  serviceType: "Santa Voiceover",
+  description:
+    "Hire Guy Harris, the UK's trusted Santa voice, for broadcast-quality Santa voiceover. Available for radio, TV, podcasts, Christmas campaigns, and branded festive content. Trusted by BBC, ITV, Heart, Capital, Tesco, Butlins, CBeebies, and leading UK brands.",
+  url: "https://www.santaguy.co.uk/hire-santa-voice",
+  provider: {
+    "@type": "Person",
+    name: "Guy Harris",
+    alternateName: "Santa Guy",
+    url: "https://www.santaguy.co.uk",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.santaguy.co.uk",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Hire Santa Voice",
+      item: "https://www.santaguy.co.uk/hire-santa-voice",
+    },
+  ],
 };
 
 const services = [
@@ -124,6 +164,8 @@ export default function HireSantaVoicePage() {
   return (
     <>
       <StructuredData data={pageSchema} />
+      <StructuredData data={serviceSchema} />
+      <StructuredData data={breadcrumbSchema} />
 
       <Hero
         title="Hire the UK's Trusted Santa Voice"

@@ -35,6 +35,26 @@ const pageSchema = {
   name: "Contact Santa | Enquire About Santa Voiceovers",
   description: "Contact Guy Harris, the UK's official Santa voice, to enquire about Santa voiceovers, Christmas campaigns, radio promotions or festive projects.",
   url: "https://www.santaguy.co.uk/contact-santa-guy",
+  inLanguage: "en-GB",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.santaguy.co.uk",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Contact Santa",
+      item: "https://www.santaguy.co.uk/contact-santa-guy",
+    },
+  ],
 };
 
 const trustBadges = [
@@ -47,6 +67,7 @@ export default function ContactPage() {
   return (
     <>
       <StructuredData data={pageSchema} />
+      <StructuredData data={breadcrumbSchema} />
 
       <Hero
         title="Contact Santa"

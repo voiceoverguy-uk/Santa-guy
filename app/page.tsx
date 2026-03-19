@@ -144,30 +144,131 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "SantaGuy",
+  alternateName: "Santa Guy",
   url: "https://www.santaguy.co.uk",
   description:
-    "The UK's trusted voice of Santa. Professional Santa voiceover for radio, TV, podcasts, brands and Christmas campaigns.",
+    "The UK's trusted voice of Santa. Professional Santa voiceover for radio, TV, podcasts, brands and Christmas campaigns by Guy Harris.",
+  inLanguage: "en-GB",
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
   name: "SantaGuy",
   url: "https://www.santaguy.co.uk",
   logo: "https://www.santaguy.co.uk/santa-guy-logo-og.png",
-  sameAs: ["https://www.voiceoverguy.co.uk"],
+  image: "https://www.santaguy.co.uk/santa-guy-logo-og.png",
+  description:
+    "SantaGuy is the home of Guy Harris, the UK's trusted Voice of Santa. Professional Santa voiceover trusted by BBC Radio 1, BBC Radio 2, Heart, Capital, ITV, Tesco, Butlins, CBeebies, Poundland, Center Parcs, GB News, Bauer, and leading brands across the UK.",
+  founder: {
+    "@type": "Person",
+    name: "Guy Harris",
+    url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+  knowsAbout: [
+    "Santa Voiceover",
+    "Father Christmas Voice",
+    "Christmas Radio Imaging",
+    "Festive Broadcasting",
+    "Christmas Campaign Voiceover",
+    "Personalised Santa Messages",
+  ],
+  sameAs: [
+    "https://www.voiceoverguy.co.uk",
+    "https://x.com/voiceoverman",
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Santa Voiceover Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Santa Voiceover for Radio, TV & Brands",
+          description: "Broadcast-quality Santa voiceover for commercials, promos, jingles, and branded content. Trusted by BBC, ITV, Heart, Capital, Tesco, and leading UK brands.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Personalised Santa Messages & Santa Calls",
+          description: "Bespoke personalised Santa messages and Santa video calls recorded by Guy Harris, the UK's Voice of Santa.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Podcast & Radio Guest Appearances",
+          description: "Santa guest appearances on podcasts, radio shows, and live broadcasts for festive specials and Christmas programming.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Radio Station Christmas Imaging",
+          description: "Dedicated Santa check-ins, jingle packages, and seasonal imaging for radio stations across the UK and worldwide.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Christmas Campaign Voiceover",
+          description: "Premium Santa voiceover for national and regional Christmas campaigns, from high street retailers to online brands.",
+        },
+      },
+    ],
+  },
 };
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Guy Harris",
-  alternateName: "Santa Guy",
-  jobTitle: "Voice Actor",
+  alternateName: ["Santa Guy", "The Voice of Santa", "Voice of Father Christmas"],
+  jobTitle: "Voice of Santa",
   description:
-    "Guy Harris is the UK's Official Voice of Santa, known for festive voiceovers for BBC, ITV, Heart, Tesco and Santa Radio.",
+    "Guy Harris is the UK's trusted Voice of Santa, known for festive voiceovers for BBC Radio 1, BBC Radio 2, Heart, Capital, ITV, Tesco, Butlins, CBeebies, Poundland, Center Parcs, GB News, Bauer, and Santa Radio. He is the most established Santa voice artist in British broadcasting.",
   url: "https://www.santaguy.co.uk",
-  sameAs: ["https://www.voiceoverguy.co.uk"],
+  image: "https://www.santaguy.co.uk/images/santa-guy-voice-over-1.jpg",
+  nationality: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+  worksFor: {
+    "@type": "ProfessionalService",
+    name: "SantaGuy",
+    url: "https://www.santaguy.co.uk",
+  },
+  knowsAbout: [
+    "Santa Voiceover",
+    "Father Christmas Voice",
+    "Christmas Radio",
+    "Festive Broadcasting",
+    "Voice Acting",
+    "Radio Imaging",
+  ],
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Santa Voice Actor",
+    description: "Professional voice artist specialising in Santa Claus and Father Christmas character voiceover for broadcast, brands, and campaigns.",
+    occupationLocation: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
+  },
+  sameAs: [
+    "https://www.voiceoverguy.co.uk",
+    "https://x.com/voiceoverman",
+  ],
 };
 
 const webPageSchema = {
@@ -175,6 +276,80 @@ const webPageSchema = {
   "@type": "WebPage",
   name: "Santa Voice | Guy Harris | Voice of Father Christmas",
   url: "https://www.santaguy.co.uk",
+  description:
+    "Looking for a Santa voice or Father Christmas voice for your next TV advert, radio promo or event? Welcome to SantaGuy, home of Guy Harris.",
+  inLanguage: "en-GB",
+};
+
+const reviewSchemas = [
+  {
+    author: "Simon Borszowski",
+    role: "Producer, BBC",
+    body: "Guy IS Santa. I'd rather cancel Christmas than use anyone else.",
+  },
+  {
+    author: "Matt Lomax",
+    role: "Head of Sound Design, Heart",
+    body: "The most convincing Santa voice we have ever had on our promos and liners. If you're looking for the real Santa, I'm pretty sure he's outsourced the job to Guy Harris.",
+  },
+  {
+    author: "Liam Hadley",
+    role: "Creative Audio Producer, BBC",
+    body: "A Father Christmas who delivers every single year, even those last minute panic buys are no bother! Whether your list to him requires something spoken, sung or simply a bit of improvised flair, this Guy will oblige!",
+  },
+  {
+    author: "Dan Riedo",
+    role: "The Property Podcast Producer",
+    body: "After 20+ years in the industry and having heard thousands of voices. Guy is the undisputed gold standard Santa. It's not even close!",
+  },
+  {
+    author: "Jay Espindola",
+    role: "Producer, ITV / GB News",
+    body: "Guy is top of my Christmas list each year, and the festive season wouldn't be the same without him. His Santa is not just a seasonal audio treat, it's a Christmas miracle.",
+  },
+  {
+    author: "Russell Featherstone",
+    role: "Production Manager, ARN Dubai",
+    body: "We use Guy regularly during the Christmas season at ARN in Dubai, and his Santa voice is absolutely spot on. Warm, authentic and full of festive character. Truly one of the best Santa voices in the world.",
+  },
+  {
+    author: "Carl Woods",
+    role: "Creative Producer, Bauer",
+    body: "Such a warm, authentic Santa voice - instantly puts a smile on your face.",
+  },
+].map((r) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  itemReviewed: {
+    "@type": "ProfessionalService",
+    name: "SantaGuy",
+    url: "https://www.santaguy.co.uk",
+  },
+  author: {
+    "@type": "Person",
+    name: r.author,
+    jobTitle: r.role,
+  },
+  reviewBody: r.body,
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: 5,
+    bestRating: 5,
+  },
+}));
+
+const aggregateRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "SantaGuy",
+  url: "https://www.santaguy.co.uk",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "119",
+    bestRating: "5",
+    worstRating: "1",
+  },
 };
 
 const videoSchemas = videos.map((video) => ({
@@ -227,6 +402,10 @@ export default function HomePage() {
       {audioSchemas.map((schema, i) => (
         <StructuredData key={`audio-${i}`} data={schema} />
       ))}
+      {reviewSchemas.map((schema, i) => (
+        <StructuredData key={`review-${i}`} data={schema} />
+      ))}
+      <StructuredData data={aggregateRatingSchema} />
 
       <Hero
         title="Santa Voiceover by Guy Harris"

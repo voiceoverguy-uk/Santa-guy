@@ -38,15 +38,47 @@ const webPageSchema = {
   description:
     "Hire the UK's leading Santa voice. Guy Harris provides Father Christmas voiceovers for TV, radio, events, personalised messages and festive campaigns.",
   url: "https://www.santaguy.co.uk/santa-voice",
+  inLanguage: "en-GB",
 };
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Guy Harris",
-  alternateName: "Santa Guy",
-  jobTitle: "Voice Actor",
+  alternateName: ["Santa Guy", "The Voice of Santa"],
+  jobTitle: "Voice of Santa",
+  description:
+    "Guy Harris is the UK's leading Santa voice, trusted by BBC Radio 1, BBC Radio 2, Heart, Capital, ITV, Tesco, Butlins, CBeebies, Poundland, Center Parcs, and GB News.",
   url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
+  image: "https://www.santaguy.co.uk/images/santa-guy-voice-over-1.jpg",
+  worksFor: {
+    "@type": "ProfessionalService",
+    name: "SantaGuy",
+    url: "https://www.santaguy.co.uk",
+  },
+  sameAs: [
+    "https://www.voiceoverguy.co.uk",
+    "https://x.com/voiceoverman",
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.santaguy.co.uk",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Santa Voice",
+      item: "https://www.santaguy.co.uk/santa-voice",
+    },
+  ],
 };
 
 const faqs = [
@@ -121,6 +153,7 @@ export default function SantaVoicePage() {
     <>
       <StructuredData data={webPageSchema} />
       <StructuredData data={personSchema} />
+      <StructuredData data={breadcrumbSchema} />
 
       <Hero
         title="Santa Voice"

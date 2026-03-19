@@ -36,6 +36,38 @@ const pageSchema = {
   description:
     "7 free Christmas apps for iOS from SantaGuy including Santa Radio, Santa Voicemail, Santa Messages, and more.",
   url: "https://www.santaguy.co.uk/santa-apps",
+  author: {
+    "@type": "Person",
+    name: "Guy Harris",
+    alternateName: "Santa Guy",
+    url: "https://www.santaguy.co.uk",
+  },
+  applicationCategory: "EntertainmentApplication",
+  operatingSystem: "iOS",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "GBP",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.santaguy.co.uk",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Santa Apps",
+      item: "https://www.santaguy.co.uk/santa-apps",
+    },
+  ],
 };
 
 const apps = [
@@ -157,6 +189,7 @@ export default function SantaAppsPage() {
   return (
     <>
       <StructuredData data={pageSchema} />
+      <StructuredData data={breadcrumbSchema} />
 
       <Hero
         title="Santa Apps"

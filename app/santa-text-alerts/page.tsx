@@ -37,12 +37,42 @@ const pageSchema = {
   name: "Santa Text Alerts",
   description: "Sign up for festive Santa text alerts and Christmas messages from the voice of Father Christmas, Guy Harris.",
   url: "https://www.santaguy.co.uk/santa-text-alerts",
+  provider: {
+    "@type": "Person",
+    name: "Guy Harris",
+    alternateName: "Santa Guy",
+    url: "https://www.santaguy.co.uk",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.santaguy.co.uk",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Santa Text Alerts",
+      item: "https://www.santaguy.co.uk/santa-text-alerts",
+    },
+  ],
 };
 
 export default function SantaTextAlertsPage() {
   return (
     <>
       <StructuredData data={pageSchema} />
+      <StructuredData data={breadcrumbSchema} />
 
       <Hero
         title="Santa Text Alerts"

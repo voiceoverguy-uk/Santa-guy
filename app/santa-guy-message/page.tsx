@@ -55,6 +55,10 @@ const serviceSchema = {
     alternateName: "Santa Guy",
     url: "https://www.santaguy.co.uk",
   },
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
 };
 
 const breadcrumbSchema = {
