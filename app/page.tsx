@@ -190,7 +190,10 @@ const organizationSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Santa Voiceover for Radio, TV & Brands",
+          serviceType: "Broadcast Santa Voiceover",
           description: "Broadcast-quality Santa voiceover for commercials, promos, jingles, and branded content. Trusted by BBC, ITV, Heart, Capital, Tesco, and leading UK brands.",
+          provider: { "@type": "Person", name: "Guy Harris", url: "https://www.santaguy.co.uk" },
+          areaServed: { "@type": "Country", name: "United Kingdom" },
         },
       },
       {
@@ -198,7 +201,10 @@ const organizationSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Personalised Santa Messages & Santa Calls",
+          serviceType: "Personalised Santa Messages",
           description: "Bespoke personalised Santa messages and Santa video calls recorded by Guy Harris, the UK's Voice of Santa.",
+          provider: { "@type": "Person", name: "Guy Harris", url: "https://www.santaguy.co.uk" },
+          areaServed: { "@type": "Country", name: "United Kingdom" },
         },
       },
       {
@@ -206,7 +212,10 @@ const organizationSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Podcast & Radio Guest Appearances",
+          serviceType: "Santa Guest Appearance",
           description: "Santa guest appearances on podcasts, radio shows, and live broadcasts for festive specials and Christmas programming.",
+          provider: { "@type": "Person", name: "Guy Harris", url: "https://www.santaguy.co.uk" },
+          areaServed: { "@type": "Country", name: "United Kingdom" },
         },
       },
       {
@@ -214,7 +223,10 @@ const organizationSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Radio Station Christmas Imaging",
+          serviceType: "Radio Station Christmas Imaging",
           description: "Dedicated Santa check-ins, jingle packages, and seasonal imaging for radio stations across the UK and worldwide.",
+          provider: { "@type": "Person", name: "Guy Harris", url: "https://www.santaguy.co.uk" },
+          areaServed: { "@type": "Country", name: "United Kingdom" },
         },
       },
       {
@@ -222,7 +234,10 @@ const organizationSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Christmas Campaign Voiceover",
+          serviceType: "Christmas Campaign Voiceover",
           description: "Premium Santa voiceover for national and regional Christmas campaigns, from high street retailers to online brands.",
+          provider: { "@type": "Person", name: "Guy Harris", url: "https://www.santaguy.co.uk" },
+          areaServed: { "@type": "Country", name: "United Kingdom" },
         },
       },
     ],
