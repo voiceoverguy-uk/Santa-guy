@@ -1,0 +1,70 @@
+Please audit and fix URL canonicalisation and redirects across the Santa Guy site so Google only ever sees one final version of every page.
+
+Goals:
+- Canonical format must be: https://www.santaguy.co.uk/page-slug
+- All old or alternate versions must 301 redirect in a single hop to the final canonical URL
+- Avoid redirect chains completely
+- Keep this clean for SEO and Google Search Console
+
+Please implement the following:
+
+1. Redirect rules
+- Redirect all http requests to https
+- Redirect all non-www requests to www
+- Redirect all trailing-slash URLs to the non-trailing-slash version if the site’s chosen canonical format is without trailing slashes
+- Use permanent redirects only (301 or Next.js permanent redirects)
+- Ensure these old formats all resolve directly to the final canonical URL in one hop:
+  - http://santaguy.co.uk/...
+  - http://www.santaguy.co.uk/...
+  - https://santaguy.co.uk/...
+  - any trailing slash versions like /santa-radio/
+
+2. No redirect chains
+- Check that old URLs do not go through multiple steps
+- Every legacy URL should land directly on the final canonical https://www.santaguy.co.uk/... URL in one redirect only
+
+3. Canonical tags
+- Ensure every page outputs a canonical tag using the final absolute URL format:
+  https://www.santaguy.co.uk/page-slug
+- No canonicals should point to http, non-www, or trailing-slash variants
+
+4. Sitemap cleanup
+- Ensure sitemap.xml contains only final canonical URLs
+- No http URLs
+- No non-www URLs
+- No duplicate URLs
+- No trailing-slash variants if the canonical format is non-trailing-slash
+- Confirm all current live pages are present and only once
+
+5. Internal link audit
+- Check header, footer, buttons, cards, breadcrumbs, XML sitemap generation, structured data, and any hardcoded links
+- Replace any internal links still using:
+  - http
+  - non-www
+  - trailing slash versions
+- All internal links should use either relative links or final canonical absolute URLs consistently
+
+6. Structured data and metadata
+- Ensure any schema markup, Open Graph URLs, Twitter URLs, breadcrumb URLs, and metadata alternates all use the final canonical https://www.santaguy.co.uk/... format only
+
+7. Validation
+- Test these examples and confirm the exact final destination is correct:
+  - http://www.santaguy.co.uk/santa-radio/
+  - http://santaguy.co.uk/santa-text-alerts/
+  - https://www.santaguy.co.uk/santa-text-alerts/
+  - http://www.santaguy.co.uk/santa-ringtones/
+  - https://www.santaguy.co.uk/guy-harris-santa-voice/
+  - http://www.santaguy.co.uk/contact-santa/
+- Report whether each resolves in one hop to the correct canonical final URL
+
+8. Final output
+- Summarise what was changed
+- Show the redirect rules added
+- Confirm the canonical pattern now enforced sitewide
+- Confirm whether Google Search Console’s “Page with redirect” entries are now expected to settle naturally after recrawl
+
+Important:
+- Do not change page content or design
+- Do not introduce temporary redirects
+- Do not leave mixed versions anywhere in the codebase
+- Keep the live canonical host as: https://www.santaguy.co.uk
