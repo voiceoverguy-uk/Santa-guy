@@ -59,7 +59,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     {
-      source: "/((?!_next/static|_next/image|favicon\\.ico|apple-touch-icon\\.png|icon-192\\.png|icon-512\\.png|images/|demos/|santaguy-logo|santa-guy-|api/).*)",
+      source: "/((?!_next/static|_next/image|favicon\\.ico|apple-touch-icon\\.png|icon-192\\.png|icon-512\\.png|images/|demos/|santaguy-logo|santa-guy-favicon|santa-guy-logo|santa-guy-voice-over|api/).*)",
       missing: [
         { type: "header", key: "next-router-prefetch" },
         { type: "header", key: "purpose", value: "prefetch" },
