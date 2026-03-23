@@ -9,7 +9,27 @@ interface SantaStoryProps {
   holiday?: HolidayDestination | null;
 }
 
-const holidayPostcards = [
+const MONTHS = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+function getDateContext() {
+  const now = new Date();
+  const month = MONTHS[now.getMonth()];
+  const year = now.getFullYear();
+  const christmas = new Date(year, 11, 25);
+  if (now > christmas) {
+    christmas.setFullYear(year + 1);
+  }
+  const daysUntilChristmas = Math.ceil((christmas.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+  const dayOfWeek = now.toLocaleDateString("en-GB", { weekday: "long" });
+  return { month, year, daysUntilChristmas, dayOfWeek };
+}
+
+type PostcardEntry = string | ((ctx: ReturnType<typeof getDateContext>) => string);
+
+const holidayPostcardEntries: PostcardEntry[] = [
   "I'm officially on holiday. The elves have been told not to call me unless it's an emergency.",
   "My out-of-office is on. Auto-reply: Ho Ho Ho, I'm on holiday!",
   "The elves have started a group chat without me. It's mostly memes about my driving.",
@@ -31,7 +51,7 @@ const holidayPostcards = [
   "I attempted a holiday lie-in. Woke up at 4am out of habit. Old habits die hard.",
   "I've started a holiday journal. Day one: 'Thought about lists. Must stop.'",
   "Bought a Hawaiian shirt. Mrs Claus says I look ridiculous. She took a photo anyway.",
-  "I accidentally said 'Merry Christmas' to a waiter. It's July. He looked concerned.",
+  (ctx) => `I accidentally said 'Merry Christmas' to a waiter. It's ${ctx.month}. He looked concerned.`,
   "Found a chimney on the hotel and had to resist the urge. Very proud of myself.",
   "The beard gets a lot of attention in warm weather. I've started a trend, apparently.",
   "I've been reading reviews of chimneys online. Mrs Claus has confiscated my phone.",
@@ -60,6 +80,26 @@ const holidayPostcards = [
   "Saw a red coat in a shop window. Bought it immediately. Mrs Claus sighed.",
   "I built a sandcastle today. It looked suspiciously like the North Pole. I can't help it.",
   "The elves texted to say everything's under control. That sentence has never been true.",
+  (ctx) => `${ctx.daysUntilChristmas} days until Christmas. I counted. Then I counted again. Mrs Claus told me to stop counting.`,
+  (ctx) => `Woke up this ${ctx.dayOfWeek} and forgot I was on holiday. Got halfway into the suit before Mrs Claus stopped me.`,
+  (ctx) => `Someone asked me what month it is. I said '${ctx.month}.' They said 'yes, so why are you wearing a Santa hat?' Fair point.`,
+  (ctx) => `Only ${ctx.daysUntilChristmas} days to go. I'm not panicking. I am slightly panicking.`,
+  (ctx) => `Dear diary: it's ${ctx.month} ${ctx.year}. I have not mentioned Christmas once today. Update: I just did.`,
+  (ctx) => `An elf rang to say there's ${ctx.daysUntilChristmas} days left and they haven't started the bikes yet. I need a moment.`,
+  (ctx) => `It's ${ctx.dayOfWeek}. Perfect day for not thinking about work. I lasted until breakfast.`,
+  "I accidentally wore my work boots to the beach. Left big Santa prints in the sand. A child followed them for twenty minutes.",
+  "A seagull stole my sandwich. I put it on the naughty list. Non-negotiable.",
+  "I tried mini golf. Hit the ball into a water feature. Blamed the wind. There was no wind.",
+  "Mrs Claus has started reading a mystery novel. She says it's more suspenseful than my route planning. Harsh but fair.",
+  "I found a cat at the hotel. It sat on my lap for an hour. Best meeting I've had all year.",
+  "Tried to do a jigsaw puzzle. All the pieces are sky. I've been at it since Tuesday.",
+  "I overheard someone say they don't like mince pies. I had to sit down for a moment.",
+  "The hotel has a quiz night. I entered under a false name. Won the Christmas round. Nobody was surprised.",
+  "I attempted to make a cocktail. It tasted like tinsel smells. Mrs Claus poured it into a plant pot.",
+  "A man at the pool is wearing the exact same swimming trunks as me. We've been avoiding eye contact all day.",
+  "Tried to send a postcard to the elves. Realised the North Pole doesn't have a postcode. That's actually a problem I should sort out.",
+  "I fell asleep in a hammock. Woke up an hour later completely tangled. The hotel staff had to assist.",
+  (ctx) => `I wrote '${ctx.month}' on a postcard and then stared at it for a while. Doesn't feel like a real month when you live at the North Pole.`,
 ];
 
 const christmasInJulyPostcards = [
@@ -374,6 +414,10 @@ export default function SantaStory({ effectiveTime, holiday }: SantaStoryProps) 
   const inJuly = data.state === "OFF_SEASON" && isChristmasInJuly(effectiveTime);
   const onHoliday = data.state === "OFF_SEASON" && !!holiday && !inDecemberPrep;
 
+  const ctx = getDateContext();
+  const holidayPostcards = holidayPostcardEntries.map((entry) =>
+    typeof entry === "function" ? entry(ctx) : entry
+  );
   const activePostcards = inJuly ? christmasInJulyPostcards : holidayPostcards;
 
   const [postcardIndex, setPostcardIndex] = useState(0);
