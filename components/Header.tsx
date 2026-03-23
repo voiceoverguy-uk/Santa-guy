@@ -37,8 +37,8 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16">
-          <Link href="/" className="flex items-center group">
+        <div className="flex items-center h-14 sm:h-16">
+          <Link href="/" className="flex items-center group shrink-0">
             <img
               src={scrolled ? "/santaguy-logo-black.png" : "/santaguy-logo-white.png"}
               alt="Guy Harris — Voice of Santa | Santa Voiceover | Father Christmas Voice | Voice of Father Christmas | SantaGuy.co.uk"
@@ -46,7 +46,7 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center">
+          <nav className="hidden lg:flex items-center ml-6 xl:ml-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -70,7 +70,7 @@ export default function Header() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 transition-colors duration-300 ${
+            className={`lg:hidden ml-auto p-2 transition-colors duration-300 ${
               scrolled ? "text-gray-700 hover:text-santa-red" : "text-white hover:text-white/80"
             }`}
             aria-label="Toggle menu"
