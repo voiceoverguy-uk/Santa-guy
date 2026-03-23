@@ -46,12 +46,12 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative px-3 py-1.5 text-sm font-medium transition-all duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-santa-red after:rounded-full after:transition-all after:duration-300 hover:after:w-full ${
+                className={`relative px-2.5 xl:px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-santa-red after:rounded-full after:transition-all after:duration-300 hover:after:w-full ${
                   scrolled
                     ? "text-gray-700 hover:text-santa-red"
                     : "text-white/90 hover:text-white"
@@ -62,7 +62,7 @@ export default function Header() {
             ))}
             <Link
               href="/contact-santa-guy"
-              className="ml-2 px-4 py-2 bg-santa-red text-white text-sm font-semibold rounded-lg hover:bg-santa-red-dark transition-colors shadow-sm"
+              className="ml-1.5 xl:ml-2 px-4 py-2 bg-santa-red text-white text-sm font-semibold rounded-lg hover:bg-santa-red-dark transition-colors shadow-sm whitespace-nowrap"
             >
               Contact
             </Link>
