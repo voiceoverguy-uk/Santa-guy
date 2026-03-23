@@ -65,6 +65,22 @@ export default function ContactForm() {
   };
 
   if (status === "success") {
+    const now = new Date();
+    const hour = now.getHours();
+    const dayOfWeek = now.getDay();
+    const isFridayEvening = dayOfWeek === 5 && hour >= 18;
+    const isWeekend = dayOfWeek === 6 || dayOfWeek === 0;
+    let greeting: string;
+    if (isFridayEvening || isWeekend) {
+      greeting = "Have a good evening and weekend! 🎄";
+    } else if (hour < 12) {
+      greeting = "Have a good morning! 🎄";
+    } else if (hour < 18) {
+      greeting = "Have a good afternoon! 🎄";
+    } else {
+      greeting = "Have a good evening! 🎄";
+    }
+
     return (
       <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
         <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-4" />
@@ -73,6 +89,9 @@ export default function ContactForm() {
         </h3>
         <p className="text-green-700">
           Thank you for your enquiry. Santa Guy will be in touch shortly.
+        </p>
+        <p className="text-green-600 mt-2 font-medium">
+          {greeting}
         </p>
         <button
           onClick={() => setStatus("idle")}
