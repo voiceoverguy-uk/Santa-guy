@@ -8,11 +8,10 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About Santa Guy", href: "/guy-harris-santa-voice" },
   { label: "Santa Voice", href: "/santa-voice" },
-  { label: "Hire Santa Voice", href: "/hire-santa-voice" },
+  { label: "Hire Santa", href: "/hire-santa-voice" },
   { label: "Santa Apps", href: "/santa-apps" },
   { label: "Santa Radio", href: "/santa-radio" },
   { label: "Santa Tracker", href: "/santa-tracker" },
-  { label: "Contact", href: "/contact-santa-guy" },
 ];
 
 export default function Header() {
@@ -62,10 +61,10 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/hire-santa-voice"
+              href="/contact-santa-guy"
               className="ml-2 px-4 py-2 bg-santa-red text-white text-sm font-semibold rounded-lg hover:bg-santa-red-dark transition-colors shadow-sm"
             >
-              Check Availability
+              Contact
             </Link>
           </nav>
 
@@ -96,11 +95,11 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/hire-santa-voice"
+              href="/contact-santa-guy"
               onClick={() => setMobileOpen(false)}
               className="block mt-3 px-4 py-3 bg-santa-red text-white text-center font-semibold rounded-lg hover:bg-santa-red-dark transition-colors"
             >
-              Check Availability
+              Contact
             </Link>
           </nav>
         </div>
