@@ -67,7 +67,7 @@ body {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: marquee-scroll 60s linear infinite;
+  animation: marquee-scroll 70s linear infinite;
 }
 
 .marquee-logo-set {
@@ -89,12 +89,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 56px;
+  height: 60px;
 }
 
 @media (min-width: 640px) {
   .marquee-logo-wrapper {
-    height: 70px;
+    height: 80px;
   }
 }
 
