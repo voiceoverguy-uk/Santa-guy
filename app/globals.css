@@ -103,20 +103,12 @@ body {
   width: auto;
   max-width: 140px;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.6;
-  transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
 @media (min-width: 640px) {
   .marquee-logo {
     max-width: 160px;
   }
-}
-
-.marquee-logo:hover {
-  filter: grayscale(0%);
-  opacity: 1;
 }
 
 @keyframes equalizer {
@@ -133,10 +125,6 @@ body {
   }
   .marquee-track {
     animation: none !important;
-  }
-  .marquee-logo {
-    filter: grayscale(0%);
-    opacity: 1;
   }
   svg animate {
     animation: none !important;
