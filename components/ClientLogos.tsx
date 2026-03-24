@@ -14,6 +14,10 @@ const clients = [
   { name: "Smyths Toys", src: "/clients/smyths-toys.png" },
   { name: "P&O Cruises", src: "/clients/p-and-o.png" },
   { name: "The Range", src: "/clients/the-range.png" },
+  { name: "Asda", src: "/clients/asda.png" },
+  { name: "Global", src: "/clients/global.png" },
+  { name: "Bauer Media", src: "/clients/bauer.png" },
+  { name: "GB News", src: "/clients/gb-news.png" },
 ];
 
 function LogoSet({ ariaHidden }: { ariaHidden?: boolean }) {
