@@ -1,3 +1,7 @@
+"use client";
+
+import { useMemo } from "react";
+
 const clients = [
   { name: "BBC Radio 1", src: "/clients/bbc-1.png" },
   { name: "BBC Radio 2", src: "/clients/bbc-2.png" },
@@ -20,10 +24,19 @@ const clients = [
   { name: "GB News", src: "/clients/gb-news.png" },
 ];
 
-function LogoSet({ ariaHidden }: { ariaHidden?: boolean }) {
+function shuffle<T>(arr: T[]): T[] {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function LogoSet({ logos, ariaHidden }: { logos: typeof clients; ariaHidden?: boolean }) {
   return (
     <div className="marquee-logo-set" aria-hidden={ariaHidden || undefined}>
-      {clients.map((client) => (
+      {logos.map((client) => (
         <div key={client.name} className="marquee-logo-wrapper">
           <img
             src={client.src}
@@ -38,6 +51,8 @@ function LogoSet({ ariaHidden }: { ariaHidden?: boolean }) {
 }
 
 export default function ClientLogos() {
+  const shuffled = useMemo(() => shuffle(clients), []);
+
   return (
     <section className="py-10 sm:py-14 bg-gray-50 border-y border-gray-100" aria-label="Client logos">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,8 +63,8 @@ export default function ClientLogos() {
 
       <div className="marquee-container">
         <div className="marquee-track">
-          <LogoSet />
-          <LogoSet ariaHidden />
+          <LogoSet logos={shuffled} />
+          <LogoSet logos={shuffled} ariaHidden />
         </div>
       </div>
     </section>
