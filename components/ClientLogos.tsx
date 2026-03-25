@@ -42,7 +42,7 @@ export default function ClientLogos() {
     <section className="py-10 sm:py-14 bg-gray-50 border-y border-gray-100" aria-label="Client logos">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-xs uppercase tracking-widest text-gray-400 font-medium mb-8">
-          Trusted by leading broadcasters and brands
+          Trusted as the Voice of Santa by leading broadcasters and brands
         </p>
       </div>
 
