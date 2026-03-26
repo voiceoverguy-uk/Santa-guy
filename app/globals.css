@@ -67,7 +67,7 @@ body {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: marquee-scroll 35s linear infinite;
+  animation: marquee-scroll 28s linear infinite;
 }
 
 .marquee-logo-set {
