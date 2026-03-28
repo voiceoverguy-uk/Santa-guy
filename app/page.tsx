@@ -253,7 +253,7 @@ const personSchema = {
   description:
     "Guy Harris is the UK's trusted Voice of Santa, known for festive voiceovers for BBC Radio 1, BBC Radio 2, Heart, Capital, ITV, Tesco, Butlins, CBeebies, Poundland, Center Parcs, GB News, Bauer, and Santa Radio. He is the most established Santa voice artist in British broadcasting.",
   url: "https://www.santaguy.co.uk",
-  image: "https://www.santaguy.co.uk/images/santa-guy-voice-over-1.jpg",
+  image: "https://www.santaguy.co.uk/guy-harris-uk-voice-of-santa.webp",
   nationality: {
     "@type": "Country",
     name: "United Kingdom",
@@ -523,7 +523,7 @@ export default function HomePage() {
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <img
-                src="/guy-santa-voice-over.jpg"
+                src="/guy-harris-uk-voice-of-santa.webp"
                 alt="Guy Harris — Voice of Santa and Santa voiceover artist in his professional recording studio"
                 className="w-full h-auto object-cover"
               />
