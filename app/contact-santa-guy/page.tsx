@@ -149,6 +149,16 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-16 sm:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <img
+            src="/images/santa-guy-montage.webp"
+            alt="Guy Harris montage — Voice of Santa, Santa voiceover artist, and Voice of Father Christmas"
+            className="rounded-xl w-full object-cover"
+          />
+        </div>
+      </section>
     </>
   );
 }
