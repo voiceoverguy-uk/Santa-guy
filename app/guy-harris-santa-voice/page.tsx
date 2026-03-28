@@ -55,7 +55,7 @@ const profilePageSchema = {
     alternateName: ["Santa Guy", "The Voice of Santa", "Voice of Father Christmas"],
     jobTitle: "Voice of Santa",
     url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
-    image: "https://www.santaguy.co.uk/images/santa-guy-voice-over-1.jpg",
+    image: "https://www.santaguy.co.uk/images/santa-guy-voice-over-2.jpg",
     description:
       "Guy Harris is the UK's Official Voice of Santa, trusted by BBC Radio 1, BBC Radio 2, Heart, Capital, ITV, Tesco, Butlins, CBeebies, Poundland, Center Parcs, GB News, Bauer, and ARN Dubai. He is the creator and voice of Santa Radio and the most established Santa voice artist in British broadcasting.",
     nationality: {
@@ -202,7 +202,7 @@ export default function AboutPage() {
 
             <div className="space-y-4">
               <img
-                src="/images/santa-guy-voice-over-1.jpg"
+                src="/images/santa-guy-voice-over-2.jpg"
                 alt="Guy Harris — Voice of Santa and Father Christmas voice artist in his professional recording studio"
                 className="rounded-2xl w-full aspect-[4/3] object-cover"
               />
