@@ -137,7 +137,7 @@ export default function SantaVoiceDemoPage() {
               Watch the full Santa Guy video showreel with highlights from campaigns and appearances.
             </p>
             <div className="max-w-2xl mx-auto">
-              <VideoCard id="P44bGiUI0vE" title="Santa Guy Video Showreel" alt="Santa voiceover showreel — Voice of Santa highlights from campaigns and appearances by Guy Harris" />
+              <VideoCard id="P44bGiUI0vE" title="Santa Guy Video Showreel" thumbnail="/santa-guy-santa-voice-over.webp" alt="Santa voiceover showreel — Voice of Santa highlights from campaigns and appearances by Guy Harris" />
             </div>
           </div>
         </div>
