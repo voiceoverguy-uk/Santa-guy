@@ -20,8 +20,10 @@ export default function GoogleReviews() {
   }, []);
 
   return (
-    <section className="bg-santa-cream -mt-6 sm:-mt-8 pb-10 sm:pb-12">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <section className="relative overflow-hidden -mt-6 sm:-mt-8 pb-10 sm:pb-12">
+      <div className="absolute inset-0 bg-santa-cream" />
+      <div className="absolute inset-0 bg-cover bg-center opacity-[0.08]" style={{ backgroundImage: "url('/images/santa-xmas-bg.webp')" }} />
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div className="flex items-center justify-center gap-1 mb-3">
           {[1, 2, 3, 4, 5].map((i) => {
             const fill = Math.min(Math.max(data.rating - (i - 1), 0), 1);

@@ -533,8 +533,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 bg-santa-cream">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-santa-cream" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-[0.08]" style={{ backgroundImage: "url('/images/santa-xmas-bg.webp')" }} />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="What Clients Say"
             subtitle="Trusted by agencies, broadcasters, and global brands across the UK"
