@@ -542,10 +542,9 @@ export default function HomePage() {
             subtitle="Trusted by agencies, broadcasters, and global brands across the UK"
           />
           <TestimonialSlider />
+          <GoogleReviews />
         </div>
       </section>
-
-      <GoogleReviews />
 
       <SantaTrackerBanner />
 
