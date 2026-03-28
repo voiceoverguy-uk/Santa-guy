@@ -12,6 +12,7 @@ const externalLinks = [
   { label: "Halloween Voice", href: "https://halloweenvoice.co.uk" },
   { label: "Voice of God", href: "https://www.voiceofgod.co.uk" },
   { label: "Pathe Voice", href: "https://www.pathevoice.co.uk" },
+  { label: "Arabella Harris", href: "https://www.arabellaharris.com" },
 ];
 
 export default function Footer() {
@@ -64,7 +65,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="text-xs text-gray-400 hover:text-white transition-colors"
                   >
-                    {link.label} &rarr;
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -72,11 +73,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-800 text-center">
-          <p className="text-xs text-gray-500">
-            &copy; 2000–{new Date().getFullYear()} SantaGuy / Guy Harris. All rights reserved.
-          </p>
-        </div>
+        <p className="mt-8 pt-6 border-t border-gray-800 text-xs text-gray-500">
+          &copy; 2000–{new Date().getFullYear()} SantaGuy / Guy Harris. All rights reserved.
+        </p>
       </div>
     </footer>
   );

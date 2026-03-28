@@ -133,7 +133,8 @@ export default function ContactPage() {
                   Need non-Santa voiceover too? Guy&apos;s{" "}
                   <a href="https://www.voiceoverguy.co.uk/apple-voice-style" target="_blank" rel="noopener noreferrer" className="text-santa-red hover:text-santa-red-dark font-medium">regular voice</a>,{" "}
                   <a href="https://www.voiceoverguy.co.uk/character-voiceover" target="_blank" rel="noopener noreferrer" className="text-santa-red hover:text-santa-red-dark font-medium">Characters</a>,{" "}
-                  <a href="https://www.voiceoverguy.co.uk/david-attenborough-voice" target="_blank" rel="noopener noreferrer" className="text-santa-red hover:text-santa-red-dark font-medium">David Attenborough</a>, visit Guy&apos;s main VoiceoverGuy site:
+                  <a href="https://www.voiceoverguy.co.uk/david-attenborough-voice" target="_blank" rel="noopener noreferrer" className="text-santa-red hover:text-santa-red-dark font-medium">David Attenborough</a>,{" "}
+                  <a href="https://www.voiceoverguy.co.uk/football-commentator-voice" target="_blank" rel="noopener noreferrer" className="text-santa-red hover:text-santa-red-dark font-medium">Football Commentator</a>, visit Guy&apos;s main VoiceoverGuy site:
                 </p>
                 <a
                   href="https://www.voiceoverguy.co.uk"
