@@ -51,7 +51,7 @@ export default function VideoCard({ id, title, thumbnail, alt }: VideoCardProps)
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
         <div className="absolute inset-0 flex items-center justify-center">
           <svg
-            className="w-16 h-16 text-red-600 drop-shadow-lg group-hover:scale-110 transition-transform duration-250"
+            className="w-20 h-20 text-santa-red drop-shadow-lg group-hover:scale-110 transition-transform duration-250"
             viewBox="0 0 68 48"
             fill="currentColor"
           >
