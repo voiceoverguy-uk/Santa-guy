@@ -440,7 +440,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Hear the Voice of Santa"
-            subtitle="Listen to real Santa voice demos recorded in the studio by Guy Harris, the UK's most trusted Santa voice artist"
+            subtitle={<>Listen to real Santa voice demos recorded in the studio by Guy Harris,<br />the UK&apos;s most trusted Santa voice artist</>}
           />
           <DemoCards />
           <div className="text-center mt-10">
