@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
-import AudioPlayer from "@/components/AudioPlayer";
+import HirePageDemos from "@/components/HirePageDemos";
 import CTASection from "@/components/CTASection";
 import VideoCard from "@/components/VideoCard";
 import StructuredData from "@/components/StructuredData";
@@ -86,16 +86,6 @@ const audioSchemas = [
   },
 ];
 
-const demos = [
-  { title: "Santa Commercial Reel", description: "Full showreel — radio and TV Santa voiceover highlights" },
-  { title: "Santa Character Voice", description: "Warm, authentic, classic Santa character voice" },
-  { title: "Radio Station Imaging", description: "Jingles, drops, and festive station imaging samples" },
-  { title: "Christmas Campaign Promo", description: "National brand campaign Santa voiceover example" },
-  { title: "Podcast Intro / Outro", description: "Santa hosting and guest appearance demo" },
-  { title: "Corporate Christmas Message", description: "Professional corporate festive greeting voiceover" },
-  { title: "Children's Content", description: "Santa voice for children's TV and family content" },
-  { title: "Live Radio Appearance", description: "Example of live Santa radio check-in" },
-];
 
 export default function SantaVoiceDemoPage() {
   return (
@@ -121,15 +111,7 @@ export default function SantaVoiceDemoPage() {
             subtitle="Broadcast-quality Santa voice recordings from Guy Harris's professional studio"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {demos.map((demo) => (
-              <AudioPlayer
-                key={demo.title}
-                title={demo.title}
-                description={demo.description}
-              />
-            ))}
-          </div>
+          <HirePageDemos />
 
           <div className="mt-12 bg-santa-cream rounded-xl p-6 sm:p-8 text-center">
             <h3 className="font-semibold text-gray-900 mb-2">Video Showreel</h3>

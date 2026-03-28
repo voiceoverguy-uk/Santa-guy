@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Mic, Radio, Headphones, Video, Megaphone, Star, CheckCircle } from "lucide-react";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
-import HirePageDemos from "@/components/HirePageDemos";
 import CTASection from "@/components/CTASection";
 import StructuredData from "@/components/StructuredData";
 
@@ -298,24 +297,6 @@ export default function HireSantaVoicePage() {
                 <p className="text-sm text-gray-700 font-medium">{signal}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            title="Listen to Santa Voice Demos"
-            subtitle="Hear the quality that leading broadcasters and brands rely on"
-          />
-          <HirePageDemos />
-          <div className="text-center mt-8">
-            <Link
-              href="/santa-voice-demo"
-              className="text-sm font-medium text-santa-red hover:text-santa-red-dark transition-colors"
-            >
-              View full demo page &rarr;
-            </Link>
           </div>
         </div>
       </section>
