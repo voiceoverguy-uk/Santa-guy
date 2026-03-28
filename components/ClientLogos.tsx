@@ -23,6 +23,7 @@ const clients = [
   { name: "Bauer Media", src: "/clients/bauer.png" },
   { name: "GB News", src: "/clients/gb-news.png" },
   { name: "SnowDome", src: "/clients/snowdome.png" },
+  { name: "Boom Radio", src: "/clients/boom-radio.png" },
 ];
 
 function shuffle<T>(arr: T[]): T[] {
