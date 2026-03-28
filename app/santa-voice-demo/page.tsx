@@ -63,28 +63,46 @@ const audioSchemas = [
   {
     "@context": "https://schema.org",
     "@type": "AudioObject",
-    name: "Santa Voice Demo 1",
-    description: "Professional Santa voice showreel performed by Guy Harris.",
-    contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-1.mp3",
+    name: "Santa Calls Capital Breakfast",
+    description: "Guy Harris as Santa calling Capital Breakfast on air Christmas Day.",
+    contentUrl: "https://www.santaguy.co.uk/demos/santa-calls-capital-breakfast-show.mp3",
     uploadDate: "2024-01-01T08:00:00+00:00",
   },
   {
     "@context": "https://schema.org",
     "@type": "AudioObject",
-    name: "Santa Voice Demo 2",
-    description: "Santa voice demo featuring Guy Harris on BBC Radio 2 Naughty and Nice list.",
+    name: "Santa Commercial Reel",
+    description: "Santa voice commercial showreel — radio and TV showcase by Guy Harris.",
     contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-2.mp3",
     uploadDate: "2024-01-01T08:00:00+00:00",
   },
   {
     "@context": "https://schema.org",
     "@type": "AudioObject",
-    name: "Santa Voice Demo 3",
+    name: "Zoe Ball Chats to Santa",
     description: "Guy Harris as Santa chatting with Zoe Ball on BBC Radio 2 Breakfast Show.",
     contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-3.mp3",
     uploadDate: "2024-01-01T08:00:00+00:00",
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "AudioObject",
+    name: "The Global Radio Cash Call with Santa",
+    description: "Guy Harris as Santa in a live radio cash call moment on Global Radio.",
+    contentUrl: "https://www.santaguy.co.uk/demos/global-cash-call-santa-guy-harris.mp3",
+    uploadDate: "2024-01-01T08:00:00+00:00",
+  },
 ];
+
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Santa Guy Video Showreel",
+  description: "Watch the full Santa Guy video showreel with highlights from campaigns and appearances by Guy Harris, the UK's Voice of Santa.",
+  thumbnailUrl: "https://www.santaguy.co.uk/santa-guy-santa-voice-over.webp",
+  uploadDate: "2024-01-01T08:00:00+00:00",
+  embedUrl: "https://www.youtube.com/embed/P44bGiUI0vE",
+};
 
 
 export default function SantaVoiceDemoPage() {
@@ -92,6 +110,7 @@ export default function SantaVoiceDemoPage() {
     <>
       <StructuredData data={pageSchema} />
       <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={videoSchema} />
       {audioSchemas.map((schema, i) => (
         <StructuredData key={`audio-${i}`} data={schema} />
       ))}
