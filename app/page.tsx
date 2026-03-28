@@ -500,7 +500,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight">
-                Meet Guy Harris, The Voice Behind Santa
+                Meet The Voice Behind Santa
               </h2>
               <div className="mt-4 w-16 h-1 bg-santa-red rounded-full" />
               <p className="mt-6 text-gray-600 leading-relaxed">
