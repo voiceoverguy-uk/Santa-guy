@@ -32,6 +32,9 @@ export default function Footer() {
               The UK&apos;s trusted voice of Santa. Professional Santa voiceover for
               radio, TV, podcasts, brands, and festive campaigns.
             </p>
+            <p className="mt-3 text-xs text-gray-600">
+              &copy; 2000–{new Date().getFullYear()} SantaGuy / Guy Harris. All rights reserved.
+            </p>
           </div>
 
           <div>
@@ -73,9 +76,6 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-8 pt-6 border-t border-gray-800 text-xs text-gray-500">
-          &copy; 2000–{new Date().getFullYear()} SantaGuy / Guy Harris. All rights reserved.
-        </p>
       </div>
     </footer>
   );
