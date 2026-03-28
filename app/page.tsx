@@ -537,7 +537,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="What Clients Say"
-            subtitle="Trusted by agencies, broadcasters, and brands across the UK"
+            subtitle="Trusted by agencies, broadcasters, and global brands across the UK"
           />
           <TestimonialSlider />
         </div>

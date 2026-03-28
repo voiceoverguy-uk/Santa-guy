@@ -20,7 +20,7 @@ export default function GoogleReviews() {
   }, []);
 
   return (
-    <section className="bg-santa-cream pt-2 pb-10 sm:pt-3 sm:pb-12">
+    <section className="bg-santa-cream -mt-6 sm:-mt-8 pb-10 sm:pb-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div className="flex items-center justify-center gap-1 mb-3">
           {[1, 2, 3, 4, 5].map((i) => {
