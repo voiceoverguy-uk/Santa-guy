@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/guy-harris-santa-voice" },
-  { label: "Santa Voice", href: "/santa-voice" },
+  { label: "Santa Voice", href: "/santa-voice-demo" },
   { label: "Hire Santa", href: "/hire-santa-voice" },
   { label: "Santa Apps", href: "/santa-apps" },
   { label: "Santa Radio", href: "/santa-radio" },

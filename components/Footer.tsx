@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const moreLinks = [
   { label: "Santa Message", href: "/santa-guy-message" },
-  { label: "Santa Voice Demo", href: "/santa-voice-demo" },
+  { label: "Santa Voice", href: "/santa-voice" },
   { label: "Santa Ringtones", href: "/santa-ringtones" },
   { label: "Santa Text Alerts", href: "/santa-text-alerts" },
 ];
