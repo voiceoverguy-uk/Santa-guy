@@ -98,7 +98,7 @@ export default function SantaVoiceDemoPage() {
 
       <Hero
         title="Santa Voice Demo"
-        subtitle="Hear the Santa voice trusted by the BBC, ITV, Heart, Capital, and leading brands. Listen to showreel clips and demo recordings from the UK's most established Santa voice artist."
+        subtitle="Hear the Santa voice trusted by the BBC, ITV, Heart, Capital, P&amp;O Ferries and leading global brands. Listen to showreel clips and demo recordings from the UK's most established Santa and Father Christmas voice artist."
         primaryCTA={{ label: "Check Availability", href: "/hire-santa-voice" }}
         secondaryCTA={{ label: "Contact", href: "/contact-santa-guy" }}
         compact
