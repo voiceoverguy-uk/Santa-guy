@@ -13,6 +13,7 @@ const externalLinks = [
   { label: "Voice of God", href: "https://www.voiceofgod.co.uk" },
   { label: "Pathe Voice", href: "https://www.pathevoice.co.uk" },
   { label: "Arabella Harris", href: "https://www.arabellaharris.com" },
+  { label: "Movie Trailer Voice", href: "https://www.movietrailervoice.co.uk" },
 ];
 
 export default function Footer() {
