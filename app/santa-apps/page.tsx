@@ -34,7 +34,7 @@ const pageSchema = {
   "@type": "SoftwareApplication",
   name: "Santa Apps",
   description:
-    "7 free Christmas apps for iOS from SantaGuy including Santa Radio, Santa Voicemail, Santa Messages, and more.",
+    "6 free Christmas apps for iOS from SantaGuy including Santa Radio, Santa Voicemail, Santa Messages, and more.",
   url: "https://www.santaguy.co.uk/santa-apps",
   author: {
     "@type": "Person",
@@ -137,21 +137,6 @@ const apps = [
     ],
   },
   {
-    title: "Sleeps til Santa",
-    description:
-      "How many sleeps til Santa arrives? Count down to Christmas with a catchy tune and share the excitement.",
-    image: "/images/apps/sleeps-til-santa.webp",
-    alt: "Sleeps til Santa iOS app — Christmas countdown featuring the Voice of Father Christmas",
-    storeUrl: "https://apps.apple.com/gb/app/sleeps-to-santa/id949843943",
-    features: [
-      "See how many sleeps til Santa",
-      "Play the catchy Sleeps to Santa song",
-      "See the lyrics and sing along",
-      "Share on Facebook and Twitter",
-      "100% FREE with no adverts",
-    ],
-  },
-  {
     title: "Santa Text",
     description:
       "Text Santa and the Father Christmas auto-bot will reply. Have a full text chat, send postcards, and enjoy free festive fun.",
@@ -193,7 +178,7 @@ export default function SantaAppsPage() {
 
       <Hero
         title="Santa Apps"
-        subtitle="7 free Christmas apps for iOS created by the real voice of Santa. Download Santa Radio, Santa Voicemail, Santa Messages, Santa Dash and more festive fun for the whole family."
+        subtitle="6 free Christmas apps for iOS created by the real voice of Santa. Download Santa Radio, Santa Voicemail, Santa Messages, Santa Dash and more festive fun for the whole family."
         primaryCTA={{ label: "Listen to Santa Radio", href: "/santa-radio" }}
         secondaryCTA={{
           label: "Contact Santa Guy",
