@@ -75,7 +75,7 @@ const apps = [
     title: "Santa Radio",
     description:
       "Non-stop Christmas music hosted by the real voice of Santa. Leave messages, play the Santa Soundboard, and enjoy festive fun all season long.",
-    image: "/images/apps/santa-radio.png",
+    image: "/images/apps/santa-radio.webp",
     alt: "Santa Radio iOS app — non-stop Christmas music hosted by Guy Harris, Voice of Santa",
     storeUrl: "https://apps.apple.com/us/app/santa-radio/id1021183593",
     features: [
@@ -91,9 +91,9 @@ const apps = [
     title: "Santa Voicemail",
     description:
       "Let your child leave a FREE voicemail message for Santa. Call Santa, call the workshop, or try the Naughty List Hotline.",
-    image: "/images/apps/santa-voicemail.png",
+    image: "/images/apps/santa-voicemail.webp",
     alt: "Santa Voicemail iOS app — leave a message for Father Christmas voiced by Guy Harris",
-    storeUrl: "https://itunes.apple.com/us/app/santa-voicemail/id586387813",
+    storeUrl: "https://apps.apple.com/us/app/santa-voicemail/id586387813",
     features: [
       "Leave a voicemail for Santa",
       "Playback your child\u2019s message",
@@ -107,9 +107,9 @@ const apps = [
     title: "Santa Messages",
     description:
       "Santa has a personal message just for your child. Find their name, play the message, and share the magic.",
-    image: "/images/apps/santa-messages.png",
+    image: "/images/apps/santa-messages.webp",
     alt: "Santa Messages iOS app — personalised messages from the Voice of Father Christmas, Guy Harris",
-    storeUrl: "https://itunes.apple.com/gb/app/santa-messages/id1062532143",
+    storeUrl: "https://apps.apple.com/gb/app/santa-messages/id1062532143",
     features: [
       "Find your child\u2019s name",
       "Share your child\u2019s message",
@@ -123,10 +123,10 @@ const apps = [
     title: "Christmas Radio",
     description:
       "A simpler version of our radio app. Christmas music 24/7, 365 days a year \u2014 the classics to today\u2019s hits.",
-    image: "/images/apps/christmas-radio.png",
+    image: "/images/apps/christmas-radio.webp",
     alt: "Christmas Radio iOS app — festive music featuring the Voice of Santa, Guy Harris",
     storeUrl:
-      "https://itunes.apple.com/gb/app/christmas-radio-uk/id1157967613",
+      "https://apps.apple.com/gb/app/christmas-radio-uk/id1157967613",
     features: [
       "Christmas music 24/7",
       "Record a message for Santa",
@@ -140,9 +140,9 @@ const apps = [
     title: "Sleeps til Santa",
     description:
       "How many sleeps til Santa arrives? Count down to Christmas with a catchy tune and share the excitement.",
-    image: "/images/apps/sleeps-til-santa.png",
+    image: "/images/apps/sleeps-til-santa.webp",
     alt: "Sleeps til Santa iOS app — Christmas countdown featuring the Voice of Father Christmas",
-    storeUrl: "https://itunes.apple.com/gb/app/sleeps-to-santa/id949843943",
+    storeUrl: "https://apps.apple.com/gb/app/sleeps-to-santa/id949843943",
     features: [
       "See how many sleeps til Santa",
       "Play the catchy Sleeps to Santa song",
@@ -155,9 +155,9 @@ const apps = [
     title: "Santa Text",
     description:
       "Text Santa and the Father Christmas auto-bot will reply. Have a full text chat, send postcards, and enjoy free festive fun.",
-    image: "/images/apps/santa-text.png",
+    image: "/images/apps/santa-text.webp",
     alt: "Santa Text iOS app — chat with Father Christmas voiced by Santa voiceover artist Guy Harris",
-    storeUrl: "https://itunes.apple.com/gb/app/santa-text/id1024535991",
+    storeUrl: "https://apps.apple.com/gb/app/santa-text/id1024535991",
     features: [
       "Have a full text chat with Santa",
       "Free festive fun \u2014 see what Santa says",
@@ -171,10 +171,10 @@ const apps = [
     title: "Santa Dash",
     description:
       "A great free festive game for all ages. Help Santa jump over the buildings and collect the mince pies!",
-    image: "/images/apps/santa-dash.png",
+    image: "/images/apps/santa-dash.webp",
     alt: "Santa Dash iOS game — festive fun from the Voice of Santa, Guy Harris",
     storeUrl:
-      "https://itunes.apple.com/gb/app/santa-dash-from-santa-guy/id1057048397",
+      "https://apps.apple.com/gb/app/santa-dash-from-santa-guy/id1057048397",
     landscape: true,
     features: [
       "Fun free game for all ages",

@@ -112,7 +112,9 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - **Ringtone downloads**: 6 zips in `public/ringtones/santa-guy-ringtone-{1-6}.zip`
 - **Video thumbnails**: 4 custom WebP thumbnails in `public/images/` (santa-voice-bbc-radio-2, santa-cbeebies-go-jetters, santa-zoe-ball-bbc-radio-2, santa-po-ferries-christmas-ad)
 - **Hire page images**: 5 custom WebP illustrations in `public/images/` (santa-voiceover-recording-studio, santa-podcast-radio-guest, santa-radio-station-imaging, santa-christmas-campaign-voiceover, santa-personalised-video-messages) with gradient overlays and corner badges
-- **About page images**: `santa-guy-voice-over-1.jpg` (portrait), `voiceover-cartoon-santa-style.png`, `voiceover-cartoon-santa-calls.png`, `santa-guy-montage.jpg` (montage banner)
+- **About page images**: `santa-guy-voice-over-1.jpg` (portrait), `voiceover-cartoon-santa-style.webp`, `voiceover-cartoon-santa-calls.webp`, `santa-guy-montage.webp` (montage banner)
+- **Image optimization**: All app screenshots, cartoon illustrations, message-from-santa, and coca-cola logo converted from PNG to WebP (Apr 2026, ~4.2MB savings). App store images now in `/public/images/apps/*.webp`.
+- **App Store URLs**: All 7 Santa Apps use `https://apps.apple.com/...` (modern); never use the legacy iTunes domain.
 - **Homepage videos**: 4 YouTube embeds (BBC Radio 2, CBeebies, Zoe Ball, P&O Ferries) with custom thumbnails, gradient overlays, and descriptive alt text
 - **OG image**: `public/santa-guy-logo-og.png` (1200×630)
 

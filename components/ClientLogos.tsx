@@ -12,7 +12,7 @@ const clients = [
   { name: "Tesco", src: "/clients/tesco.png" },
   { name: "Sainsbury's", src: "/clients/sainsburys.png" },
   { name: "Morrisons", src: "/clients/morrisons.png" },
-  { name: "Coca-Cola", src: "/clients/coca-cola.png" },
+  { name: "Coca-Cola", src: "/clients/coca-cola.webp" },
   { name: "Butlins", src: "/clients/butlins.png" },
   { name: "Centre Parcs", src: "/clients/centre-parcs.png" },
   { name: "Smyths Toys", src: "/clients/smyths-toys.png" },

@@ -208,12 +208,12 @@ export default function AboutPage() {
               />
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="/images/voiceover-cartoon-santa-style.png"
+                  src="/images/voiceover-cartoon-santa-style.webp"
                   alt="Cartoon of Guy Harris performing Santa voiceover in the studio — Voice of Father Christmas"
                   className="rounded-xl w-full aspect-square object-cover"
                 />
                 <img
-                  src="/images/voiceover-cartoon-santa-calls.png"
+                  src="/images/voiceover-cartoon-santa-calls.webp"
                   alt="Cartoon of Guy Harris making live Father Christmas voice calls — Santa voiceover artist"
                   className="rounded-xl w-full aspect-square object-cover"
                 />
