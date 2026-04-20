@@ -10,12 +10,12 @@ export const metadata: Metadata = {
     absolute: "Santa Apps | Christmas Apps Featuring Santa",
   },
   description:
-    "Explore festive Santa apps featuring the voice of Father Christmas. Discover Christmas apps and projects voiced by Guy Harris.",
+    "6 free Christmas apps for iOS featuring the Voice of Father Christmas. Download Santa Radio, Santa Voicemail, Santa Messages, Santa Dash and more festive fun voiced by Guy Harris.",
   alternates: { canonical: "https://www.santaguy.co.uk/santa-apps" },
   openGraph: {
     title: "Santa Apps | Christmas Apps Featuring Santa",
     description:
-      "Explore festive Santa apps featuring the voice of Father Christmas. Discover Christmas apps and projects voiced by Guy Harris.",
+      "6 free Christmas apps for iOS featuring the Voice of Father Christmas. Download Santa Radio, Santa Voicemail, Santa Messages, Santa Dash and more festive fun voiced by Guy Harris.",
     url: "https://www.santaguy.co.uk/santa-apps",
     type: "website",
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Santa Apps | Christmas Apps Featuring Santa",
     description:
-      "Explore festive Santa apps featuring the voice of Father Christmas. Discover Christmas apps and projects voiced by Guy Harris.",
+      "6 free Christmas apps for iOS featuring the Voice of Father Christmas. Download Santa Radio, Santa Voicemail, Santa Messages, Santa Dash and more festive fun voiced by Guy Harris.",
     site: "@voiceoverman",
     creator: "@voiceoverman",
   },
