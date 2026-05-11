@@ -5,6 +5,8 @@ const CANONICAL_HOST = "www.santaguy.co.uk";
 const LEGACY_REDIRECTS: Record<string, string> = {
   "/santa-message": "/santa-guy-message",
   "/contact-santa": "/contact-santa-guy",
+  "/hello-world/santa-apps": "/santa-apps",
+  "/hello-world": "/",
 };
 
 export function middleware(request: NextRequest) {
@@ -15,7 +17,8 @@ export function middleware(request: NextRequest) {
 
   const isProduction = hostWithoutPort === CANONICAL_HOST ||
     hostWithoutPort === "santaguy.co.uk" ||
-    hostWithoutPort.endsWith(".santaguy.co.uk");
+    hostWithoutPort.endsWith(".santaguy.co.uk") ||
+    hostWithoutPort === "santa-guy.vercel.app";
 
   let needsRedirect = false;
   let finalProto = proto;
