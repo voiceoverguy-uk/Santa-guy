@@ -91,6 +91,7 @@ Multi-page Next.js (App Router) website for Guy Harris — the UK's trusted voic
 - `app/api/cron/christmas-eve/route.ts` — Vercel cron job (06:00 UTC Dec 24) sends branded email to all subscribers via Resend
 - `components/NotifySignup.tsx` — Email signup widget for Santa Tracker page
 - `lib/db.ts` — PostgreSQL connection pool and schema initialisation
+- `app/not-found.tsx` — Branded 404 page (dark hero gradient, noindex, links to key pages; returns real HTTP 404 status)
 
 ## Environment Variables
 - `RESEND_API_KEY` — Required for contact form and Christmas Eve notifications
