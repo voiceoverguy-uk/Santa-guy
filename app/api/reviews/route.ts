@@ -5,7 +5,7 @@ const CACHE_TTL = 24 * 60 * 60 * 1000;
 
 let cached: { rating: number; reviewCount: number; ts: number } | null = null;
 
-async function findPlaceId(apiKey: string): Promise<string | null> {
+async function findPlaceIds(apiKey: string): Promise<string[]> {
   const url = new URL("https://maps.googleapis.com/maps/api/place/findplacefromtext/json");
   url.searchParams.set("input", "VoiceoverGuy");
   url.searchParams.set("inputtype", "textquery");
@@ -13,28 +13,57 @@ async function findPlaceId(apiKey: string): Promise<string | null> {
   url.searchParams.set("key", apiKey);
 
   const res = await fetch(url.toString());
-  if (!res.ok) return null;
+  if (!res.ok) return [];
   const data = await res.json();
-  return data?.candidates?.[0]?.place_id ?? null;
+  if (data?.status !== "OK" || !Array.isArray(data.candidates)) return [];
+  return [...new Set<string>(data.candidates
+    .map((candidate: { place_id?: unknown } | null) => candidate?.place_id)
+    .filter((id: unknown): id is string => typeof id === "string" && id.length > 0))];
 }
 
-async function fetchReviews(apiKey: string): Promise<{ rating: number; reviewCount: number }> {
-  const placeId = await findPlaceId(apiKey);
-  if (!placeId) return FALLBACK;
+function isVerifiedBusiness(result: { name?: unknown; website?: unknown }): boolean {
+  if (typeof result.name !== "string" || result.name.trim().toLowerCase() !== "voiceoverguy") {
+    return false;
+  }
+  if (typeof result.website !== "string") return false;
+  try {
+    const website = new URL(result.website);
+    return (website.protocol === "https:" || website.protocol === "http:") &&
+      !website.username && !website.password &&
+      (website.hostname === "voiceoverguy.co.uk" || website.hostname === "www.voiceoverguy.co.uk");
+  } catch {
+    return false;
+  }
+}
 
+async function fetchPlace(apiKey: string, placeId: string) {
   const url = new URL("https://maps.googleapis.com/maps/api/place/details/json");
   url.searchParams.set("place_id", placeId);
-  url.searchParams.set("fields", "rating,user_ratings_total");
+  url.searchParams.set("fields", "name,website,rating,user_ratings_total");
   url.searchParams.set("key", apiKey);
 
   const res = await fetch(url.toString());
-  if (!res.ok) return FALLBACK;
+  if (!res.ok) return null;
   const data = await res.json();
+  return data?.status === "OK" ? data.result : null;
+}
 
-  const rating = data?.result?.rating;
-  const reviewCount = data?.result?.user_ratings_total;
+async function fetchReviews(apiKey: string): Promise<{ rating: number; reviewCount: number }> {
+  const placeIds = await findPlaceIds(apiKey);
+  const matches = [];
+  for (const placeId of placeIds) {
+    const result = await fetchPlace(apiKey, placeId);
+    // An unresolved candidate means we cannot establish a unique match.
+    if (!result) return FALLBACK;
+    if (isVerifiedBusiness(result)) matches.push(result);
+  }
+  if (matches.length !== 1) return FALLBACK;
 
-  if (typeof rating !== "number" || typeof reviewCount !== "number") return FALLBACK;
+  const { rating, user_ratings_total: reviewCount } = matches[0];
+  if (typeof rating !== "number" || !Number.isFinite(rating) || rating < 1 || rating > 5 ||
+      typeof reviewCount !== "number" || !Number.isSafeInteger(reviewCount) || reviewCount < 0) {
+    return FALLBACK;
+  }
 
   return { rating, reviewCount };
 }
