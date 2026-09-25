@@ -53,7 +53,8 @@ export default function GoogleReviews() {
       </p>
 
       <a
-        href="https://www.google.com/search?q=VoiceoverGuy+reviews"
+        // Exact Places API (New) reviewsUri for VoiceoverGuy, verified by websiteUri.
+        href="https://www.google.com/maps/place//data=!4m4!3m3!1s0x4879672543b8552f:0xa3cdce7ae1235f05!9m1!1b1?g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-1.5 mt-3 text-xs text-gray-500 hover:text-santa-red transition-colors uppercase tracking-wider"
