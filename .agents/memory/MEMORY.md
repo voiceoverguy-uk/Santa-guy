@@ -1,1 +1,2 @@
+- [Portable dependency lockfiles](dependency-portability.md) — temporary test tooling can leave internal registry URLs that fail on Vercel.
 - [Google reviews links](google-reviews.md) — use the verified official reviews URI; signed-out Google desktop may suppress reviews even when mobile shows them.
