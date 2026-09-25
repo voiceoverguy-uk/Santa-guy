@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 
 const clients = [
   { name: "BBC Radio 1", src: "/clients/bbc-1.png" },
@@ -53,7 +53,12 @@ function LogoSet({ logos, ariaHidden }: { logos: typeof clients; ariaHidden?: bo
 }
 
 export default function ClientLogos() {
-  const shuffled = useMemo(() => shuffle(clients), []);
+  const [shuffled, setShuffled] = useState(clients);
+
+  useEffect(() => {
+    // Keep the first browser render identical to the server-rendered order.
+    setShuffled(shuffle(clients));
+  }, []);
 
   return (
     <section className="py-10 sm:py-14 bg-gray-50 border-y border-gray-100" aria-label="Client logos">
