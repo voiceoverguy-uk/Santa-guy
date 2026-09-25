@@ -1,0 +1,1 @@
+- [Google reviews links](google-reviews.md) — use the verified official reviews URI; signed-out Google desktop may suppress reviews even when mobile shows them.
