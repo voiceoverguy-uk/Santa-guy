@@ -1,0 +1,335 @@
+We have completed and deployed SantaGuy Pass 1 (#46), and its production structured data has been validated with Google Rich Results Test.
+
+I now want PASS 2 to focus ONLY on improving the existing Santa Tracker page:
+
+https://www.santaguy.co.uk/santa-tracker
+
+PLAN ONLY FIRST.
+
+Do not implement, build, publish, deploy, sync or commit anything yet.
+
+The existing Santa Tracker is a working feature that I like. This is NOT a request to redesign or rebuild it.
+
+The objective is to make the page more understandable and useful to Google, other search/AI systems, accessibility tools and users BEFORE the JavaScript tracker has rendered, while preserving the existing tracker experience.
+
+--------------------------------------------------
+1. PRESERVE THE EXISTING TRACKER
+--------------------------------------------------
+
+The existing tracker functionality must remain intact.
+
+Do not change unnecessarily:
+
+- the world map
+- Santa marker
+- countdown
+- timeline
+- journey logic
+- Christmas Eve schedule
+- holiday/off-season behaviour
+- animations
+- tracker calculations
+- visual design
+- responsive layout
+- existing CTA
+- existing client-side functionality
+
+Do not replace the tracker with static content.
+
+Do not make the tracker significantly heavier or slower.
+
+Do not move volatile/random/time-dependent tracker calculations into server-rendered output if that could introduce hydration mismatches.
+
+The objective is to ADD useful stable context around the application, not rewrite the application.
+
+--------------------------------------------------
+2. CURRENT PROBLEM
+--------------------------------------------------
+
+The previous audit established that the initial server response for /santa-tracker contains:
+
+- correct title
+- description
+- canonical
+- WebPage schema
+- BreadcrumbList
+- navigation/footer
+- essentially only "Loading Santa Tracker..." as meaningful body content
+
+The useful tracker content appears after JavaScript mounts.
+
+The rendered application itself works correctly.
+
+We therefore want useful, stable, server-rendered content in the initial HTML.
+
+--------------------------------------------------
+3. SERVER-RENDERED INTRODUCTION
+--------------------------------------------------
+
+Plan a concise server-rendered introduction ABOVE or appropriately around the tracker.
+
+It should include one stable H1 such as:
+
+"Track Santa's Journey Around the World"
+
+and concise natural copy explaining that visitors can:
+
+- follow Santa's estimated Christmas Eve journey
+- see the countdown to Santa's departure
+- follow progress on the world map
+- see the estimated Christmas Eve schedule/timeline
+
+The wording should be warm, festive and family-friendly.
+
+It should read naturally for humans first.
+
+Do NOT create a large block of SEO copy.
+
+Do NOT keyword-stuff phrases such as:
+"Santa tracker"
+"track Santa"
+"Santa Claus tracker"
+"Father Christmas tracker"
+
+A short introduction plus, if genuinely useful, a compact "How the Santa Tracker works" explanation should be sufficient.
+
+Show me the proposed wording in the PLAN before implementation.
+
+--------------------------------------------------
+4. ACCURACY / "LIVE" WORDING
+--------------------------------------------------
+
+The tracker is entertainment based on an estimated/calculated route rather than external real-world telemetry.
+
+We do NOT want to spoil the Christmas magic with heavy-handed wording such as:
+
+"THIS IS ONLY A SIMULATION"
+
+throughout the page.
+
+Instead propose subtle, accurate wording.
+
+Preferred language includes concepts such as:
+
+- "estimated Christmas Eve journey"
+- "estimated route"
+- "Santa's journey updates as Christmas Eve progresses"
+
+Where the interface currently uses "live", inspect the context before proposing any changes.
+
+Do not automatically remove every use of "live".
+
+If clarification is needed, explain gracefully that the tracker updates in real time as Santa follows his estimated Christmas Eve route.
+
+Do not make unnecessary wording changes merely for legalistic precision.
+
+--------------------------------------------------
+5. INITIAL HTML AND H1
+--------------------------------------------------
+
+The previous audit found that the H1 exists only after the client tracker renders.
+
+Plan the page so the main H1 and useful introductory context are present in initial server-rendered HTML.
+
+Avoid duplicate H1s.
+
+If the tracker component currently generates the same H1 after mounting, plan the smallest safe refactor necessary so there remains ONE appropriate page H1.
+
+Do not introduce hydration problems.
+
+--------------------------------------------------
+6. LOADING STATE
+--------------------------------------------------
+
+Review the current "Loading Santa Tracker..." state.
+
+Do not remove a useful loading indicator if the application genuinely needs it.
+
+However, the loading state should no longer be the only meaningful initial page content.
+
+The static introduction should remain useful while the interactive tracker loads.
+
+--------------------------------------------------
+7. STRUCTURED DATA
+--------------------------------------------------
+
+Review the current WebPage and BreadcrumbList markup for /santa-tracker.
+
+Do NOT add schema simply to increase schema volume.
+
+There is no need to invent a special SantaTracker schema type.
+
+Do NOT invent:
+
+- Event
+- BroadcastEvent
+- LiveBlogPosting
+- SoftwareApplication
+- live-stream schema
+- ratings
+- reviews
+- interaction statistics
+
+unless genuinely applicable and evidence-backed.
+
+Prefer accurate WebPage/BreadcrumbList markup if that remains the appropriate representation.
+
+Where appropriate, connect the tracker WebPage to the existing SantaGuy website/business entity IDs created during Pass 1, but do not alter the wider Pass 1 entity architecture unnecessarily.
+
+Explain any proposed schema change before implementation.
+
+--------------------------------------------------
+8. SEARCH INTENT
+--------------------------------------------------
+
+Assess the existing page against genuine seasonal intent such as:
+
+- Santa tracker
+- track Santa
+- Christmas Eve Santa tracker
+- Santa journey around the world
+- Father Christmas tracker
+
+This is for content/context assessment only.
+
+Do NOT create doorway pages or multiple keyword variants.
+
+Do NOT rewrite the tracker into generic SEO copy.
+
+Do NOT promise rankings.
+
+If the existing title/meta description can be improved naturally, show the current and proposed versions in the plan and explain why.
+
+Do not change them yet.
+
+--------------------------------------------------
+9. INTERNAL LINKING
+--------------------------------------------------
+
+The audit already established that /santa-tracker is linked from the navigation and homepage and is not orphaned.
+
+Do not add repetitive site-wide links simply for SEO.
+
+Check whether one or two genuinely contextual links from existing relevant SantaGuy content would materially help users discover the tracker.
+
+If not, recommend NO CHANGE.
+
+Do not alter navigation in this pass.
+
+--------------------------------------------------
+10. ACCESSIBILITY
+--------------------------------------------------
+
+Review the tracker-specific accessibility findings from the previous audit.
+
+In particular:
+
+- map accessible name/summary
+- preview/expansion control labels and state
+- keyboard accessibility
+- mobile control overlap
+- reduced-motion handling
+- use of text as well as colour
+
+Preserve the accessibility features that already work.
+
+Only propose targeted corrections where there is an evidenced problem.
+
+Do not redesign the interface.
+
+--------------------------------------------------
+11. PERFORMANCE
+--------------------------------------------------
+
+Preserve the current deferred/lazy behaviour where it provides a performance benefit.
+
+The audit noted that tracker time updates every second and festive facts update periodically.
+
+Do not optimise these speculatively.
+
+Identify an actual unnecessary workload before recommending code changes.
+
+Do not make videos, maps or third-party resources eagerly load simply for theoretical SEO benefits.
+
+No dependency upgrades in this pass unless absolutely necessary and separately approved.
+
+--------------------------------------------------
+12. PREVIEW ROUTE
+--------------------------------------------------
+
+Pass 1 has already made:
+
+/santa-tracker/preview
+
+noindex.
+
+Preserve that behaviour.
+
+Do not accidentally make the preview route indexable again.
+
+Do not apply noindex to the production /santa-tracker page.
+
+--------------------------------------------------
+13. DO NOT TOUCH
+--------------------------------------------------
+
+Do NOT change:
+
+- homepage testimonials
+- Google reviews system
+- VideoObject work from Pass 1
+- AudioObject work from Pass 1
+- Santa Apps schema
+- sitemap changes
+- entity IDs except where the tracker needs to reference an existing entity
+- FAQ markup
+- promotional phrases
+- other SantaGuy pages
+- Santa voiceover service copy
+- navigation
+- analytics
+- unrelated redirects
+- dependencies
+- branding
+
+This is a focused Santa Tracker task.
+
+--------------------------------------------------
+14. PLAN OUTPUT
+--------------------------------------------------
+
+Before touching code, provide:
+
+1. Current tracker architecture and which components/files control it.
+2. What is currently present in INITIAL HTML.
+3. What appears only AFTER JavaScript rendering.
+4. Proposed server-rendered H1 and introductory copy.
+5. Proposed "How it works" copy, if you believe it adds genuine value.
+6. Any proposed changes to "live"/estimated wording.
+7. Current versus proposed title/meta description, only if changes are recommended.
+8. Any proposed structured-data changes.
+9. Accessibility changes that have actual evidence behind them.
+10. Any performance changes that have actual evidence behind them.
+11. Exact files you would change.
+12. Exact files/components you will deliberately leave untouched.
+13. Risks, particularly hydration or tracker-functionality risks.
+14. Validation plan.
+
+Validation after eventual implementation should include:
+
+- production build/typecheck
+- initial HTML contains useful H1 and tracker explanation without requiring JavaScript
+- tracker still renders and functions normally after hydration
+- no duplicate H1
+- no hydration errors
+- countdown/map/timeline continue working
+- mobile and desktop screenshots
+- production tracker remains indexable
+- preview remains noindex
+- existing Pass 1 structured-data corrections remain intact
+- Google Rich Results Test after a separately approved deployment
+- Search Console Live URL test after deployment
+
+STOP AFTER THE PLAN.
+
+Do not implement, Build, publish, deploy, sync or commit until I explicitly approve the plan.
