@@ -1,0 +1,378 @@
+Please carry out a comprehensive evidence-first SEO, Google Search, structured-data and AI-search audit of the entire SantaGuy website:
+
+https://www.santaguy.co.uk
+
+This is a PLAN / AUDIT ONLY.
+
+DO NOT change any code.
+DO NOT edit any pages.
+DO NOT add or remove schema.
+DO NOT publish, deploy, sync or commit anything.
+DO NOT create an implementation task yet.
+
+The purpose of this audit is to make sure SantaGuy is technically excellent and giving Google and AI/search systems the clearest, most truthful signals possible ahead of the 2026 Christmas season.
+
+The site is a real professional Santa voiceover website and includes audio demos, video, client work, reviews, informational content and an interactive Santa Tracker.
+
+IMPORTANT PRINCIPLE
+
+Do not recommend schema merely because Schema.org supports it.
+
+Separate:
+1. Google-supported rich-result opportunities
+2. Schema.org-valid semantic markup
+3. General SEO improvements
+4. AI/search discoverability improvements
+5. Things that provide little or no likely benefit
+
+Never invent or infer dates, authorship, creator/publisher relationships, ratings, review counts, engagement statistics, durations, locations or other facts simply to complete structured data.
+
+Where evidence is unavailable, say so.
+
+--------------------------------------------------
+1. FULL SITE INVENTORY / CRAWL
+--------------------------------------------------
+
+First identify all important indexable routes/pages in the project.
+
+For each important page inspect:
+
+- HTTP/indexability
+- robots directives
+- canonical URL
+- title
+- meta description
+- H1 and heading structure
+- page purpose/search intent
+- internal linking
+- structured data present
+- duplicate/conflicting structured data
+- Open Graph/social metadata where relevant
+- image metadata where relevant
+- whether the important content is available to crawlers in the initial/rendered HTML
+- whether important content depends entirely on client-side JavaScript
+- whether there are orphaned or weakly linked pages
+
+Check robots.txt and XML sitemap(s).
+
+Check whether sitemap URLs, canonical URLs and actual indexable routes agree.
+
+Identify stale, duplicate, thin, broken, redirected or accidental indexable URLs.
+
+Do not change anything.
+
+--------------------------------------------------
+2. ENTITY / SITE IDENTITY AUDIT
+--------------------------------------------------
+
+Audit how SantaGuy itself and Guy Harris are represented across the site's structured data.
+
+Inspect all existing:
+
+- Organization
+- LocalBusiness / ProfessionalService if present
+- Person
+- WebSite
+- WebPage
+- ProfilePage
+- BreadcrumbList
+- Article
+- Review / AggregateRating
+- AudioObject
+- VideoObject
+- FAQPage
+- any other schema currently emitted
+
+Map the site's entity graph and existing @id values.
+
+Look specifically for:
+
+- duplicate Person entities
+- duplicate Organization entities
+- inconsistent names
+- conflicting @ids
+- disconnected schema objects
+- inconsistent URLs
+- SantaGuy vs Guy Harris identity confusion
+- VoiceoverGuy references if present
+- unsupported or unnecessary schema
+- schema whose claims cannot be substantiated by visible page content
+
+Recommend consolidation only where there is a genuine reason.
+
+Do not create new entities merely for completeness.
+
+--------------------------------------------------
+3. REVIEWS / RATINGS
+--------------------------------------------------
+
+Audit all reviews and ratings on the site.
+
+Establish:
+
+- where the reviews originate
+- whether they are visible to users
+- whether Review or AggregateRating schema is currently present
+- whether the schema accurately describes what is visible
+- whether review counts/rating values are genuinely supported
+- whether Google's current rich-result policies permit the implementation in its present context
+
+Do not manufacture aggregate ratings or convert testimonials into structured reviews unless justified.
+
+Report anything potentially risky separately.
+
+--------------------------------------------------
+4. AUDIO
+--------------------------------------------------
+
+SantaGuy is fundamentally a voiceover site, so audit all audio demos and any AudioObject markup.
+
+For every AudioObject or equivalent audio implementation determine:
+
+- visible/accessible audio it describes
+- name
+- description
+- content URL
+- encoding information if known
+- duration if genuinely known
+- creator only if evidenced
+- associated page/entity
+- duplicate markup
+- broken media URLs
+
+Explain which AudioObject properties are useful semantically even if they do not produce a Google rich result.
+
+Do not invent metadata.
+
+--------------------------------------------------
+5. VIDEO — APPLY THE SAME EVIDENCE STANDARD USED ON VOICEOVERGUY
+--------------------------------------------------
+
+Inventory every visible/playable video and every VideoObject currently emitted.
+
+For each video establish where possible:
+
+- page URL
+- visible video title
+- provider
+- provider video ID
+- provider title
+- genuine provider publication/upload date
+- working thumbnail URL
+- thumbnail dimensions
+- embed URL
+- contentUrl only where a genuine direct media file exists
+- duration only if verified
+- uploader/channel
+- creator/publisher only if actually established
+- whether the video is visible/playable on the page
+- whether multiple placements duplicate the same VideoObject
+
+Compare the implementation against CURRENT Google Video structured-data documentation.
+
+Pay particular attention to:
+
+- name
+- thumbnailUrl
+- uploadDate
+- description
+- embedUrl
+- contentUrl
+- duration
+- creator / author
+- interactionStatistic
+
+Do not use:
+- fabricated fallback upload dates
+- page/blog dates as video upload dates
+- current/build dates
+- broken maxresdefault YouTube thumbnails
+- YouTube watch pages labelled as contentUrl
+- invented view counts
+- invented duration
+- automatic creator attribution simply because Guy supplied the voiceover
+
+If a VideoObject cannot be supported truthfully, recommend omitting the VideoObject while leaving the visible video intact.
+
+--------------------------------------------------
+6. SANTA TRACKER — DEEP AUDIT
+--------------------------------------------------
+
+Give this page special attention:
+
+https://www.santaguy.co.uk/santa-tracker
+
+This is an important interactive feature of the site.
+
+Audit BOTH what a normal user experiences and what search-engine crawlers receive.
+
+Determine:
+
+- what HTML/content exists before JavaScript executes
+- what appears after rendering
+- whether Googlebot can understand the purpose of the page
+- whether meaningful explanatory copy exists outside the application
+- whether the initial response is effectively just "Loading Santa Tracker..."
+- whether title/meta/H1 accurately describe the tracker
+- canonical/indexability
+- internal links pointing to the tracker
+- structured data currently present
+- whether structured data describes visible content truthfully
+- whether the tracker has enough crawlable textual context for Google and AI/search systems to understand what it is
+
+Do NOT assume that client-side rendering is automatically a problem.
+
+Explain whether the current implementation gives Google sufficient content after rendering and whether useful server-rendered/static introductory content would materially improve crawlability and understanding.
+
+Consider whether the page could benefit from crawlable content explaining things such as:
+
+- what the Santa Tracker is
+- how it works
+- when it becomes active
+- what visitors can do with it
+- Christmas Eve / Santa tracking context
+- who created/provides it
+
+BUT do not recommend keyword stuffing or large amounts of filler copy.
+
+Assess whether any relevant structured-data type genuinely fits this page.
+
+Do not invent a special "Santa Tracker" schema type if none exists.
+
+Also assess whether the tracker has a realistic opportunity to attract seasonal organic searches and what search intents it could truthfully satisfy.
+
+--------------------------------------------------
+7. CHRISTMAS / SEASONAL SEARCH AUDIT
+--------------------------------------------------
+
+Review the site's content architecture specifically for the run-up to Christmas 2026.
+
+Identify existing pages that could legitimately serve searches around topics such as:
+
+- Santa voiceover
+- Father Christmas voice
+- Santa Claus voice over
+- Christmas voiceover
+- Santa voice actor
+- personalised Santa voice / recordings if genuinely offered
+- Christmas advertising voiceover
+- Santa tracker / track Santa
+- related genuine services or content already provided by the site
+
+Do NOT create doorway pages or near-duplicate keyword pages.
+
+Identify genuine gaps only where SantaGuy has something useful and distinctive to offer.
+
+Check whether seasonal pages are internally linked well enough for Google to discover their importance before Christmas.
+
+Distinguish:
+REQUIRED technical fixes
+HIGH-VALUE opportunities
+OPTIONAL improvements
+NO ACTION / already good
+
+--------------------------------------------------
+8. AI SEARCH / AI OVERVIEW READINESS
+--------------------------------------------------
+
+Assess whether the site is easy for modern search and AI systems to understand and cite.
+
+Do not claim that special "AI schema" exists if it does not.
+
+Instead examine fundamentals such as:
+
+- clear entity identity
+- concise factual descriptions
+- useful original content
+- first-hand expertise
+- demonstrable professional experience
+- client/project evidence
+- clear authorship where appropriate
+- crawlable text
+- sensible page structure
+- descriptive headings
+- internal linking
+- accurate structured data
+- media context
+- consistent business/person identity
+
+Identify content that is genuinely distinctive enough to be useful as a source, rather than suggesting generic SEO filler.
+
+--------------------------------------------------
+9. GOOGLE SEARCH FEATURES / CURRENT GUIDANCE
+--------------------------------------------------
+
+Compare the site against CURRENT Google Search Central documentation rather than old SEO assumptions.
+
+Clearly distinguish between:
+
+A. Required for eligibility
+B. Recommended by Google
+C. Valid Schema.org but not currently used for a Google rich result
+D. General SEO best practice
+E. Speculative / low-value SEO advice
+
+Do not recommend deprecated Google search features.
+
+Flag any existing markup aimed at rich results Google no longer supports.
+
+--------------------------------------------------
+10. PERFORMANCE / TECHNICAL SEO
+--------------------------------------------------
+
+Perform a code-level review for obvious issues affecting:
+
+- Core Web Vitals
+- LCP
+- CLS
+- INP
+- excessive JavaScript
+- image loading
+- video loading
+- iframe loading
+- font loading
+- mobile usability
+- accessibility that affects search usability
+- hydration/rendering issues
+- broken links
+- unnecessary third-party scripts
+
+The Santa Tracker may legitimately require JavaScript, so distinguish between necessary application code and unnecessary site-wide overhead.
+
+Do not optimise or refactor anything yet.
+
+--------------------------------------------------
+11. FINAL REPORT
+--------------------------------------------------
+
+Before proposing any implementation, give me a clear audit report.
+
+For every finding classify it as:
+
+CRITICAL
+REQUIRED FIX
+HIGH-VALUE IMPROVEMENT
+RECOMMENDED
+OPTIONAL
+NO CHANGE NEEDED
+
+For each finding provide:
+
+- affected URL(s)
+- what currently happens
+- evidence
+- why it matters
+- whether it affects Google eligibility, ordinary SEO, AI/search understanding, usability, or performance
+- exact recommended action
+- risk of making the change
+- confidence level
+
+Then provide a short prioritised action plan for what you believe should actually be implemented before Christmas 2026.
+
+IMPORTANT:
+
+Do not implement the action plan.
+
+Stop after presenting the evidence and recommendations and wait for approval.
+
+I want to review the audit before any code changes are made.
