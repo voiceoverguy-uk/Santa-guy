@@ -3,27 +3,113 @@
 import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 
-const FALLBACK = { rating: 5.0, reviewCount: 119 };
+type Reviews = {
+  status: "verified" | "stale";
+  rating: number;
+  reviewCount: number;
+  checkedAt: string;
+};
+type Display = Reviews | { status: "loading" | "unavailable" };
+
+const STALE_TTL = 7 * 24 * 60 * 60 * 1000;
+const REFRESH_INTERVAL = 5 * 60 * 1000;
+const REQUEST_TIMEOUT = 8 * 1000;
+
+function validReviews(value: unknown): value is Reviews {
+  if (!value || typeof value !== "object") return false;
+  const data = value as Record<string, unknown>;
+  if (data.status !== "verified" && data.status !== "stale") return false;
+  if (typeof data.rating !== "number" || !Number.isFinite(data.rating) ||
+      data.rating < 1 || data.rating > 5 ||
+      typeof data.reviewCount !== "number" || !Number.isSafeInteger(data.reviewCount) ||
+      data.reviewCount < 0 || typeof data.checkedAt !== "string") return false;
+  const checkedAt = Date.parse(data.checkedAt);
+  return !Number.isNaN(checkedAt) && new Date(checkedAt).toISOString() === data.checkedAt &&
+    checkedAt <= Date.now() && Date.now() - checkedAt <= STALE_TTL &&
+    (data.status !== "verified" || Date.now() - checkedAt < 24 * 60 * 60 * 1000);
+}
 
 export default function GoogleReviews() {
-  const [data, setData] = useState(FALLBACK);
+  const [data, setData] = useState<Display>({ status: "loading" });
 
   useEffect(() => {
-    fetch("/api/reviews")
-      .then((r) => r.json())
-      .then((d) => {
-        if (typeof d.rating === "number" && typeof d.reviewCount === "number") {
-          setData(d);
+    let active = true;
+    let pending = false;
+    let lastAttempt = 0;
+    let currentRequest: AbortController | null = null;
+
+    const refresh = async () => {
+      if (pending || document.visibilityState === "hidden") return;
+      pending = true;
+      lastAttempt = Date.now();
+      const controller = new AbortController();
+      currentRequest = controller;
+      const timeout = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT);
+      try {
+        const response = await fetch("/api/reviews", {
+          cache: "no-store",
+          signal: controller.signal,
+        });
+        const body: unknown = await response.json();
+        if (!active) return;
+        if (response.status === 503 && body && typeof body === "object" &&
+            (body as { status?: unknown }).status === "unavailable") {
+          setData(previous => {
+            if (previous.status !== "verified" && previous.status !== "stale") {
+              return { status: "unavailable" };
+            }
+            return validReviews({ ...previous, status: "stale" })
+              ? { ...previous, status: "stale" } : { status: "unavailable" };
+          });
+        } else if (response.ok && validReviews(body)) {
+          setData(body);
+        } else {
+          throw new Error("Invalid reviews response");
         }
-      })
-      .catch(() => {});
+      } catch {
+        if (active) setData(previous => {
+          if (previous.status !== "verified" && previous.status !== "stale") {
+            return { status: "unavailable" };
+          }
+          return validReviews({ ...previous, status: "stale" })
+            ? { ...previous, status: "stale" } : { status: "unavailable" };
+        });
+      } finally {
+        window.clearTimeout(timeout);
+        currentRequest = null;
+        pending = false;
+      }
+    };
+
+    void refresh();
+    const onVisible = () => {
+      if (document.visibilityState === "visible") {
+        setData(previous => {
+          if (previous.status !== "verified" && previous.status !== "stale") return previous;
+          if (!validReviews({ ...previous, status: "stale" })) return { status: "unavailable" };
+          return previous;
+        });
+        if (Date.now() - lastAttempt >= REFRESH_INTERVAL) void refresh();
+      }
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    const timer = window.setInterval(onVisible, REFRESH_INTERVAL);
+    return () => {
+      active = false;
+      currentRequest?.abort();
+      window.clearInterval(timer);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
   }, []);
+
+  const hasReviews = data.status === "verified" || data.status === "stale";
+  const rating = hasReviews ? data.rating : 0;
 
   return (
     <div className="mt-10 sm:mt-12 max-w-4xl mx-auto text-center">
       <div className="flex items-center justify-center gap-1 mb-3">
         {[1, 2, 3, 4, 5].map((i) => {
-          const fill = Math.min(Math.max(data.rating - (i - 1), 0), 1);
+          const fill = Math.min(Math.max(rating - (i - 1), 0), 1);
           return (
             <span key={i} className="relative inline-block w-6 h-6 sm:w-7 sm:h-7">
               <Star
@@ -44,13 +130,26 @@ export default function GoogleReviews() {
         })}
       </div>
 
-      <p className="text-lg sm:text-xl font-semibold text-gray-800 tracking-tight">
-        Rated{" "}
-        <span className="text-santa-red">{data.rating.toFixed(1)}</span> on
-        Google by{" "}
-        <span className="text-santa-red">{data.reviewCount}</span> Happy
-        Clients
-      </p>
+      {hasReviews ? (
+        <>
+          <p className="text-lg sm:text-xl font-semibold text-gray-800 tracking-tight">
+            Rated{" "}
+            <span className="text-santa-red">{data.rating.toFixed(1)}</span> on
+            Google by{" "}
+            <span className="text-santa-red">{data.reviewCount}</span> Happy
+            Clients
+          </p>
+          {data.status === "stale" && (
+            <p className="mt-1 text-sm text-gray-500">
+              Last checked {new Date(data.checkedAt).toLocaleDateString()}; temporarily unable to refresh.
+            </p>
+          )}
+        </>
+      ) : (
+        <p className="text-lg sm:text-xl font-semibold text-gray-800 tracking-tight">
+          {data.status === "loading" ? "Loading Google reviews" : "Google reviews temporarily unavailable"}
+        </p>
+      )}
 
       <a
         // Exact Places API (New) reviewsUri for VoiceoverGuy, verified by websiteUri.

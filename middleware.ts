@@ -6,6 +6,7 @@ const LEGACY_REDIRECTS: Record<string, string> = {
   "/santa-message": "/santa-guy-message",
   "/contact-santa": "/contact-santa-guy",
   "/hello-world/santa-apps": "/santa-apps",
+  "/hello-world/santa-voice-demo": "/santa-voice-demo",
   "/hello-world": "/",
 };
 

@@ -38,9 +38,10 @@ const pageSchema = {
   url: "https://www.santaguy.co.uk/santa-ringtones",
   author: {
     "@type": "Person",
+    "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person",
     name: "Guy Harris",
     alternateName: "Santa Guy",
-    url: "https://www.santaguy.co.uk",
+    url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
   },
   inLanguage: "en-GB",
 };

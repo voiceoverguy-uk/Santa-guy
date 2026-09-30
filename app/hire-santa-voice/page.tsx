@@ -17,11 +17,13 @@ export const metadata: Metadata = {
 const pageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
+  "@id": "https://www.santaguy.co.uk/hire-santa-voice#webpage",
   name: "Hire Santa Voice",
   description:
     "Hire the UK's trusted Santa voice for radio, TV, podcasts, brands, and festive campaigns.",
   url: "https://www.santaguy.co.uk/hire-santa-voice",
   inLanguage: "en-GB",
+  isPartOf: { "@id": "https://www.santaguy.co.uk/#website" },
 };
 
 const serviceSchema = {
@@ -34,9 +36,10 @@ const serviceSchema = {
   url: "https://www.santaguy.co.uk/hire-santa-voice",
   provider: {
     "@type": "Person",
+    "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person",
     name: "Guy Harris",
     alternateName: "Santa Guy",
-    url: "https://www.santaguy.co.uk",
+    url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
   },
   areaServed: {
     "@type": "Country",

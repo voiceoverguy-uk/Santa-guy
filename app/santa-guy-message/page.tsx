@@ -51,9 +51,10 @@ const serviceSchema = {
   url: "https://www.santaguy.co.uk/santa-guy-message",
   provider: {
     "@type": "Person",
+    "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person",
     name: "Guy Harris",
     alternateName: "Santa Guy",
-    url: "https://www.santaguy.co.uk",
+    url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
   },
   areaServed: {
     "@type": "Country",

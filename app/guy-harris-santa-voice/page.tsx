@@ -44,13 +44,16 @@ export const metadata: Metadata = {
 const profilePageSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
+  "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#webpage",
   name: "About Guy Harris — The Voice of Santa",
   url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
   description:
     "Discover Guy Harris, the UK's Official Voice of Santa. Learn how his award-winning voice brings festive magic to BBC, ITV, Heart, Tesco, and Santa Radio.",
   inLanguage: "en-GB",
+  isPartOf: { "@id": "https://www.santaguy.co.uk/#website" },
   mainEntity: {
     "@type": "Person",
+    "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person",
     name: "Guy Harris",
     alternateName: ["Santa Guy", "The Voice of Santa", "Voice of Father Christmas"],
     jobTitle: "Voice of Santa",
@@ -64,6 +67,7 @@ const profilePageSchema = {
     },
     worksFor: {
       "@type": "ProfessionalService",
+      "@id": "https://www.santaguy.co.uk/#business",
       name: "SantaGuy",
       url: "https://www.santaguy.co.uk",
     },
@@ -89,10 +93,7 @@ const profilePageSchema = {
       "Radio Imaging",
       "Personalised Santa Messages",
     ],
-    sameAs: [
-      "https://www.voiceoverguy.co.uk",
-      "https://x.com/voiceoverman",
-    ],
+    sameAs: ["https://www.voiceoverguy.co.uk"],
   },
 };
 

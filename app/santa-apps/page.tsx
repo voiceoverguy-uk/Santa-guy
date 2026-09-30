@@ -31,23 +31,14 @@ export const metadata: Metadata = {
 
 const pageSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "CollectionPage",
+  "@id": "https://www.santaguy.co.uk/santa-apps#webpage",
   name: "Santa Apps",
   description:
     "6 free Christmas apps for iOS from SantaGuy including Santa Radio, Santa Voicemail, Santa Messages, and more.",
   url: "https://www.santaguy.co.uk/santa-apps",
-  author: {
-    "@type": "Person",
-    name: "Guy Harris",
-    alternateName: "Santa Guy",
-    url: "https://www.santaguy.co.uk",
-  },
-  applicationCategory: "EntertainmentApplication",
-  operatingSystem: "iOS",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "GBP",
+  isPartOf: {
+    "@id": "https://www.santaguy.co.uk/#website",
   },
 };
 

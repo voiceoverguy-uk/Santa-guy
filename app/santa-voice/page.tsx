@@ -34,16 +34,19 @@ export const metadata: Metadata = {
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
+  "@id": "https://www.santaguy.co.uk/santa-voice#webpage",
   name: "Santa Voice | Hire the Voice of Father Christmas",
   description:
     "Hire the UK's leading Santa voice. Guy Harris provides Father Christmas voiceovers for TV, radio, events, personalised messages and festive campaigns.",
   url: "https://www.santaguy.co.uk/santa-voice",
   inLanguage: "en-GB",
+  isPartOf: { "@id": "https://www.santaguy.co.uk/#website" },
 };
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person",
   name: "Guy Harris",
   alternateName: ["Santa Guy", "The Voice of Santa"],
   jobTitle: "Voice of Santa",
@@ -61,6 +64,7 @@ const personSchema = {
   },
   worksFor: {
     "@type": "ProfessionalService",
+    "@id": "https://www.santaguy.co.uk/#business",
     name: "SantaGuy",
     url: "https://www.santaguy.co.uk",
   },
@@ -80,10 +84,7 @@ const personSchema = {
       name: "United Kingdom",
     },
   },
-  sameAs: [
-    "https://www.voiceoverguy.co.uk",
-    "https://x.com/voiceoverman",
-  ],
+  sameAs: ["https://www.voiceoverguy.co.uk"],
 };
 
 const breadcrumbSchema = {

@@ -143,6 +143,7 @@ const faqs = [
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": "https://www.santaguy.co.uk/#website",
   name: "SantaGuy",
   alternateName: "Santa Guy",
   url: "https://www.santaguy.co.uk",
@@ -154,6 +155,7 @@ const websiteSchema = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://www.santaguy.co.uk/#business",
   name: "SantaGuy",
   url: "https://www.santaguy.co.uk",
   logo: "https://www.santaguy.co.uk/santa-guy-logo-og.png",
@@ -162,6 +164,7 @@ const organizationSchema = {
     "SantaGuy is the home of Guy Harris, the UK's trusted Voice of Santa. Professional Santa voiceover trusted by BBC Radio 1, BBC Radio 2, Heart, Capital, ITV, Tesco, Butlins, CBeebies, Poundland, Center Parcs, GB News, Bauer, and leading brands across the UK.",
   founder: {
     "@type": "Person",
+    "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person",
     name: "Guy Harris",
     url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
   },
@@ -177,10 +180,6 @@ const organizationSchema = {
     "Christmas Campaign Voiceover",
     "Personalised Santa Messages",
   ],
-  sameAs: [
-    "https://www.voiceoverguy.co.uk",
-    "https://x.com/voiceoverman",
-  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Santa Voiceover Services",
@@ -192,7 +191,7 @@ const organizationSchema = {
           name: "Santa Voiceover for Radio, TV & Brands",
           serviceType: "Broadcast Santa Voiceover",
           description: "Broadcast-quality Santa voiceover for commercials, promos, jingles, and branded content. Trusted by BBC, ITV, Heart, Capital, Tesco, and leading UK brands.",
-          provider: { "@type": "Person", name: "Guy Harris", url: "https://www.santaguy.co.uk" },
+          provider: { "@type": "Person", "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person", name: "Guy Harris", url: "https://www.santaguy.co.uk/guy-harris-santa-voice" },
           areaServed: { "@type": "Country", name: "United Kingdom" },
         },
       },
@@ -203,7 +202,7 @@ const organizationSchema = {
           name: "Personalised Santa Messages & Santa Calls",
           serviceType: "Personalised Santa Messages",
           description: "Bespoke personalised Santa messages and Santa video calls recorded by Guy Harris, the UK's Voice of Santa.",
-          provider: { "@type": "Person", name: "Guy Harris", url: "https://www.santaguy.co.uk" },
+          provider: { "@type": "Person", "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person", name: "Guy Harris", url: "https://www.santaguy.co.uk/guy-harris-santa-voice" },
           areaServed: { "@type": "Country", name: "United Kingdom" },
         },
       },
@@ -214,7 +213,7 @@ const organizationSchema = {
           name: "Podcast & Radio Guest Appearances",
           serviceType: "Santa Guest Appearance",
           description: "Santa guest appearances on podcasts, radio shows, and live broadcasts for festive specials and Christmas programming.",
-          provider: { "@type": "Person", name: "Guy Harris", url: "https://www.santaguy.co.uk" },
+          provider: { "@type": "Person", "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person", name: "Guy Harris", url: "https://www.santaguy.co.uk/guy-harris-santa-voice" },
           areaServed: { "@type": "Country", name: "United Kingdom" },
         },
       },
@@ -225,7 +224,7 @@ const organizationSchema = {
           name: "Radio Station Christmas Imaging",
           serviceType: "Radio Station Christmas Imaging",
           description: "Dedicated Santa check-ins, jingle packages, and seasonal imaging for radio stations across the UK and worldwide.",
-          provider: { "@type": "Person", name: "Guy Harris", url: "https://www.santaguy.co.uk" },
+          provider: { "@type": "Person", "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person", name: "Guy Harris", url: "https://www.santaguy.co.uk/guy-harris-santa-voice" },
           areaServed: { "@type": "Country", name: "United Kingdom" },
         },
       },
@@ -236,7 +235,7 @@ const organizationSchema = {
           name: "Christmas Campaign Voiceover",
           serviceType: "Christmas Campaign Voiceover",
           description: "Premium Santa voiceover for national and regional Christmas campaigns, from high street retailers to online brands.",
-          provider: { "@type": "Person", name: "Guy Harris", url: "https://www.santaguy.co.uk" },
+          provider: { "@type": "Person", "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person", name: "Guy Harris", url: "https://www.santaguy.co.uk/guy-harris-santa-voice" },
           areaServed: { "@type": "Country", name: "United Kingdom" },
         },
       },
@@ -247,12 +246,13 @@ const organizationSchema = {
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person",
   name: "Guy Harris",
   alternateName: ["Santa Guy", "The Voice of Santa", "Voice of Father Christmas"],
   jobTitle: "Voice of Santa",
   description:
     "Guy Harris is the UK's trusted Voice of Santa, known for festive voiceovers for BBC Radio 1, BBC Radio 2, Heart, Capital, ITV, Tesco, Butlins, CBeebies, Poundland, Center Parcs, GB News, Bauer, and Santa Radio. He is the most established Santa voice artist in British broadcasting.",
-  url: "https://www.santaguy.co.uk",
+  url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
   image: "https://www.santaguy.co.uk/guy-harris-uk-voice-of-santa.webp",
   nationality: {
     "@type": "Country",
@@ -260,6 +260,7 @@ const personSchema = {
   },
   worksFor: {
     "@type": "ProfessionalService",
+    "@id": "https://www.santaguy.co.uk/#business",
     name: "SantaGuy",
     url: "https://www.santaguy.co.uk",
   },
@@ -284,127 +285,80 @@ const personSchema = {
       name: "United Kingdom",
     },
   },
-  sameAs: [
-    "https://www.voiceoverguy.co.uk",
-    "https://x.com/voiceoverman",
-  ],
+  sameAs: ["https://www.voiceoverguy.co.uk"],
 };
 
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
+  "@id": "https://www.santaguy.co.uk/#webpage",
   name: "Santa Voice | Guy Harris | Voice of Father Christmas",
   url: "https://www.santaguy.co.uk",
   description:
     "Looking for a Santa voice or Father Christmas voice for your next TV advert, radio promo or event? Welcome to SantaGuy, home of Guy Harris.",
   inLanguage: "en-GB",
+  isPartOf: { "@id": "https://www.santaguy.co.uk/#website" },
+  about: { "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person" },
 };
 
-const reviewSchemas = [
-  {
-    author: "Simon Borszowski",
-    role: "Producer, BBC",
-    body: "Guy IS Santa. I'd rather cancel Christmas than use anyone else.",
-  },
-  {
-    author: "Matt Lomax",
-    role: "Head of Sound Design, Heart",
-    body: "The most convincing Santa voice we have ever had on our promos and liners. If you're looking for the real Santa, I'm pretty sure he's outsourced the job to Guy Harris.",
-  },
-  {
-    author: "Liam Hadley",
-    role: "Creative Audio Producer, BBC",
-    body: "A Father Christmas who delivers every single year, even those last minute panic buys are no bother! Whether your list to him requires something spoken, sung or simply a bit of improvised flair, this Guy will oblige!",
-  },
-  {
-    author: "Dan Riedo",
-    role: "The Property Podcast Producer",
-    body: "After 20+ years in the industry and having heard thousands of voices. Guy is the undisputed gold standard Santa. It's not even close!",
-  },
-  {
-    author: "Jay Espindola",
-    role: "Producer, ITV / GB News",
-    body: "Guy is top of my Christmas list each year, and the festive season wouldn't be the same without him. His Santa is not just a seasonal audio treat, it's a Christmas miracle.",
-  },
-  {
-    author: "Russell Featherstone",
-    role: "Production Manager, ARN Dubai",
-    body: "We use Guy regularly during the Christmas season at ARN in Dubai, and his Santa voice is absolutely spot on. Warm, authentic and full of festive character. Truly one of the best Santa voices in the world.",
-  },
-  {
-    author: "Carl Woods",
-    role: "Creative Producer, Bauer",
-    body: "Such a warm, authentic Santa voice - instantly puts a smile on your face.",
-  },
-].map((r) => ({
-  "@context": "https://schema.org",
-  "@type": "Review",
-  itemReviewed: {
-    "@type": "ProfessionalService",
-    name: "SantaGuy",
-    url: "https://www.santaguy.co.uk",
-  },
-  author: {
-    "@type": "Person",
-    name: r.author,
-    jobTitle: r.role,
-  },
-  reviewBody: r.body,
-  reviewRating: {
-    "@type": "Rating",
-    ratingValue: 5,
-    bestRating: 5,
-  },
-}));
-
-const aggregateRatingSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "SantaGuy",
-  url: "https://www.santaguy.co.uk",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "119",
-    bestRating: "5",
-    worstRating: "1",
-  },
+const videoDates: Record<string, string> = {
+  "5o9Va4YsI3g": "2020-10-19T04:52:35-07:00",
+  "yi-4Fm40nmE": "2016-12-07T07:58:07-08:00",
+  "Qqu-HDA2KJE": "2022-01-18T04:00:11-08:00",
+  "Jjj1as7mpUw": "2025-12-15T06:49:31-08:00",
 };
 
 const videoSchemas = videos.map((video) => ({
   "@context": "https://schema.org",
   "@type": "VideoObject",
+  "@id": `https://www.youtube.com/watch?v=${video.id}#video`,
   name: video.title,
   description: `Guy Harris performing as the voice of Santa — ${video.title}.`,
   thumbnailUrl: `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`,
-  uploadDate: "2024-01-01T08:00:00+00:00",
+  uploadDate: videoDates[video.id],
   embedUrl: `https://www.youtube.com/embed/${video.id}`,
+  isPartOf: { "@id": "https://www.santaguy.co.uk/#webpage" },
 }));
 
 const audioSchemas = [
   {
     "@context": "https://schema.org",
     "@type": "AudioObject",
+    "@id": "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-1.mp3#audio",
     name: "Santa Voice Demo 1",
     description: "Professional Santa voice showreel performed by Guy Harris.",
     contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-1.mp3",
-    uploadDate: "2024-01-01T08:00:00+00:00",
+    encodingFormat: "audio/mpeg",
+    duration: "PT53.995S",
+    isPartOf: { "@id": "https://www.santaguy.co.uk/#webpage" },
   },
   {
     "@context": "https://schema.org",
     "@type": "AudioObject",
-    name: "Santa Voice Demo 2",
-    description: "Santa voice demo featuring Guy Harris on BBC Radio 2 Naughty and Nice list.",
+    "@id": "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-2.mp3#audio",
+    name: "Santa Commercial Reel",
+    description: "Santa Commercial Reel performed by Guy Harris.",
     contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-2.mp3",
-    uploadDate: "2024-01-01T08:00:00+00:00",
+    encodingFormat: "audio/mpeg",
+    duration: "PT38.504S",
+    isPartOf: [
+      { "@id": "https://www.santaguy.co.uk/#webpage" },
+      { "@id": "https://www.santaguy.co.uk/santa-voice-demo#webpage" },
+    ],
   },
   {
     "@context": "https://schema.org",
     "@type": "AudioObject",
+    "@id": "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-3.mp3#audio",
     name: "Santa Voice Demo 3",
     description: "Guy Harris as Santa chatting with Zoe Ball on BBC Radio 2 Breakfast Show.",
     contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-3.mp3",
-    uploadDate: "2024-01-01T08:00:00+00:00",
+    encodingFormat: "audio/mpeg",
+    duration: "PT165.564S",
+    isPartOf: [
+      { "@id": "https://www.santaguy.co.uk/#webpage" },
+      { "@id": "https://www.santaguy.co.uk/santa-voice-demo#webpage" },
+    ],
   },
 ];
 
@@ -421,10 +375,6 @@ export default function HomePage() {
       {audioSchemas.map((schema, i) => (
         <StructuredData key={`audio-${i}`} data={schema} />
       ))}
-      {reviewSchemas.map((schema, i) => (
-        <StructuredData key={`review-${i}`} data={schema} />
-      ))}
-      <StructuredData data={aggregateRatingSchema} />
 
       <Hero
         title="Santa Voiceover by Guy Harris"

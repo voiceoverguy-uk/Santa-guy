@@ -39,9 +39,10 @@ const pageSchema = {
   url: "https://www.santaguy.co.uk/santa-text-alerts",
   provider: {
     "@type": "Person",
+    "@id": "https://www.santaguy.co.uk/guy-harris-santa-voice#person",
     name: "Guy Harris",
     alternateName: "Santa Guy",
-    url: "https://www.santaguy.co.uk",
+    url: "https://www.santaguy.co.uk/guy-harris-santa-voice",
   },
   areaServed: {
     "@type": "Country",

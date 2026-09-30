@@ -13,9 +13,8 @@ const demos = [
   {
     image: "/santa-guy-voice-over-2.jpg",
     audio: "/demos/Santa-voice-Guy-Demo-2.mp3",
-    caption:
-      "Listen to Santa on Radio 2's celebrity Naughty and Nice list promo, sharing festive fun as he checks who's made the cut this Christmas.",
-    alt: "Guy Harris as the Voice of Father Christmas on BBC Radio 2 Naughty and Nice list promo",
+    caption: "Listen to Santa Commercial Reel, performed by Guy Harris.",
+    alt: "Guy Harris — Santa Commercial Reel",
   },
   {
     image: "/santa-guy-voice-over-3.jpg",

@@ -34,10 +34,12 @@ export const metadata: Metadata = {
 const pageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
+  "@id": "https://www.santaguy.co.uk/santa-voice-demo#webpage",
   name: "Santa Voice Demo | Hear the Voice of Father Christmas",
   description: "Listen to the official Santa voice of Guy Harris. Hear festive Father Christmas voiceovers used in TV, radio promotions and Christmas campaigns.",
   url: "https://www.santaguy.co.uk/santa-voice-demo",
   inLanguage: "en-GB",
+  isPartOf: { "@id": "https://www.santaguy.co.uk/#website" },
 };
 
 const breadcrumbSchema = {
@@ -63,45 +65,65 @@ const audioSchemas = [
   {
     "@context": "https://schema.org",
     "@type": "AudioObject",
+    "@id": "https://www.santaguy.co.uk/demos/santa-calls-capital-breakfast-show.mp3#audio",
     name: "Santa Calls Capital Breakfast",
     description: "Guy Harris as Santa calling Capital Breakfast on air Christmas Day.",
     contentUrl: "https://www.santaguy.co.uk/demos/santa-calls-capital-breakfast-show.mp3",
-    uploadDate: "2024-01-01T08:00:00+00:00",
+    encodingFormat: "audio/mpeg",
+    duration: "PT477.283S",
+    isPartOf: { "@id": "https://www.santaguy.co.uk/santa-voice-demo#webpage" },
   },
   {
     "@context": "https://schema.org",
     "@type": "AudioObject",
+    "@id": "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-2.mp3#audio",
     name: "Santa Commercial Reel",
     description: "Santa voice commercial showreel — radio and TV showcase by Guy Harris.",
     contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-2.mp3",
-    uploadDate: "2024-01-01T08:00:00+00:00",
+    encodingFormat: "audio/mpeg",
+    duration: "PT38.504S",
+    isPartOf: [
+      { "@id": "https://www.santaguy.co.uk/#webpage" },
+      { "@id": "https://www.santaguy.co.uk/santa-voice-demo#webpage" },
+    ],
   },
   {
     "@context": "https://schema.org",
     "@type": "AudioObject",
+    "@id": "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-3.mp3#audio",
     name: "Zoe Ball Chats to Santa",
     description: "Guy Harris as Santa chatting with Zoe Ball on BBC Radio 2 Breakfast Show.",
     contentUrl: "https://www.santaguy.co.uk/demos/Santa-voice-Guy-Demo-3.mp3",
-    uploadDate: "2024-01-01T08:00:00+00:00",
+    encodingFormat: "audio/mpeg",
+    duration: "PT165.564S",
+    isPartOf: [
+      { "@id": "https://www.santaguy.co.uk/#webpage" },
+      { "@id": "https://www.santaguy.co.uk/santa-voice-demo#webpage" },
+    ],
   },
   {
     "@context": "https://schema.org",
     "@type": "AudioObject",
+    "@id": "https://www.santaguy.co.uk/demos/global-cash-call-santa-guy-harris.mp3#audio",
     name: "The Global Radio Cash Call with Santa",
     description: "Guy Harris as Santa in a live radio cash call moment on Global Radio.",
     contentUrl: "https://www.santaguy.co.uk/demos/global-cash-call-santa-guy-harris.mp3",
-    uploadDate: "2024-01-01T08:00:00+00:00",
+    encodingFormat: "audio/mpeg",
+    duration: "PT211.069S",
+    isPartOf: { "@id": "https://www.santaguy.co.uk/santa-voice-demo#webpage" },
   },
 ];
 
 const videoSchema = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
+  "@id": "https://www.youtube.com/watch?v=P44bGiUI0vE#video",
   name: "Santa Guy Video Showreel",
   description: "Watch the full Santa Guy video showreel with highlights from campaigns and appearances by Guy Harris, the UK's Voice of Santa.",
   thumbnailUrl: "https://www.santaguy.co.uk/santa-guy-santa-voice-over.webp",
-  uploadDate: "2024-01-01T08:00:00+00:00",
+  uploadDate: "2022-11-18T19:01:50-08:00",
   embedUrl: "https://www.youtube.com/embed/P44bGiUI0vE",
+  isPartOf: { "@id": "https://www.santaguy.co.uk/santa-voice-demo#webpage" },
 };
 
 
