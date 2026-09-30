@@ -1,0 +1,362 @@
+We have reviewed your SantaGuy SEO/structured-data audit and I now want a tightly controlled implementation plan for PASS 1.
+
+This pass is for factual technical/schema corrections only.
+
+DO NOT redesign the website.
+DO NOT rewrite the site's branding or positioning.
+DO NOT change the visible testimonials.
+DO NOT remove the Google reviews display or Google reviews link.
+DO NOT change the Santa Tracker application/content yet — that will be a separate Pass 2.
+DO NOT publish, deploy, sync or commit anything yet.
+
+Please plan the following changes, using the evidence from your audit.
+
+--------------------------------------------------
+1. REVIEWS AND TESTIMONIALS
+--------------------------------------------------
+
+IMPORTANT: The visible testimonials MUST remain.
+
+The testimonial carousel, testimonial wording, names/credits and visual presentation should remain unchanged.
+
+The genuine Google reviews display and its link to the Google reviews should also remain.
+
+Current visible presentation such as:
+
+Rated 5.0 on Google by 124 Happy Clients
+Read Reviews on Google
+
+is legitimate visible social proof and should NOT be removed merely because self-serving LocalBusiness/Organization review structured data is not eligible for Google review stars.
+
+What should change is the structured data.
+
+Remove:
+
+- invented 5/5 Review ratings assigned to testimonials where the testimonial author did not independently provide a numerical rating;
+- self-serving ProfessionalService/LocalBusiness AggregateRating/Review markup that Google does not permit for its review-star feature.
+
+Do NOT remove the testimonials themselves.
+
+Do NOT remove the Google review widget/link.
+
+Do NOT attempt to circumvent Google's policy by changing the reviewed entity to Product, Service or another schema type.
+
+Also fix the stale review-count implementation.
+
+Your audit found:
+- hard-coded/fallback/schema count: 119
+- live /api/reviews result: 124
+
+The visible Google rating/count should use the existing live review source wherever possible so that, when a genuine new Google review increases the count, the website updates without requiring us to manually change 124 to 125, 126, etc.
+
+Please inspect the existing reviews API/widget architecture and propose the safest implementation.
+
+Requirements:
+
+- use the genuine live value returned by the existing reviews source;
+- do not hard-code 124 as the new permanent answer;
+- retain graceful failure behaviour if the reviews API temporarily fails;
+- do not present a stale fallback number as though it has just been verified;
+- preserve the existing design and Google reviews link;
+- do not create AggregateRating JSON-LD from the external Google review count merely to chase review stars.
+
+Explain exactly how the fallback should behave before implementation.
+
+--------------------------------------------------
+2. VIDEOOBJECT ACCURACY
+--------------------------------------------------
+
+There are five VideoObjects:
+
+Homepage:
+- Voice of Santa for BBC Radio 2
+  YouTube ID: 5o9Va4YsI3g
+
+- CBeebies Santa for the Go Jetters
+  YouTube ID: yi-4Fm40nmE
+
+- Santa on Zoe Ball Breakfast Show
+  YouTube ID: Qqu-HDA2KJE
+
+- Voice of Santa for P&O Ferries Christmas Campaign
+  YouTube ID: Jjj1as7mpUw
+
+/santa-voice-demo:
+- Santa Guy Video Showreel
+  YouTube ID: P44bGiUI0vE
+
+The current identical 2024-01-01 uploadDate values are unsupported and must not remain.
+
+Apply the same evidence standard used successfully on the VoiceoverGuy VideoObject project.
+
+Before changing each VideoObject, attempt to obtain the genuine YouTube/provider publication timestamp from reliable provider metadata.
+
+For each video record:
+
+- YouTube ID
+- provider title
+- uploader/channel
+- genuine provider publication/upload timestamp
+- working thumbnail
+- thumbnail dimensions
+- embed URL
+
+Use the genuine provider uploadDate only when established.
+
+Never use:
+- 2024-01-01 fallback
+- page publication date
+- current date
+- build/deployment date
+- an inferred approximate date
+- campaign year
+- user-visible copyright year
+
+If a genuine required uploadDate cannot be established, retain the visible video but OMIT its VideoObject.
+
+Do not remove a visible video because its structured data is incomplete.
+
+Continue using working thumbnails.
+
+Do not introduce:
+- invented duration
+- invented interactionStatistic
+- invented view counts
+- invented creator/author
+- YouTube watch URLs as contentUrl.
+
+Uploader/channel does not automatically establish creator/publisher of the underlying production.
+
+Do not change the current click-to-load video player behaviour in this pass.
+
+--------------------------------------------------
+3. AUDIOOBJECT ACCURACY
+--------------------------------------------------
+
+Remove the unsupported identical:
+
+2024-01-01T08:00:00+00:00
+
+uploadDate from all AudioObjects.
+
+There is no need to replace it with another date unless a genuine audio publication date is independently evidenced.
+
+Retain truthful AudioObject markup for audio that is genuinely present/playable.
+
+Your audit measured genuine media durations for the five MP3 demos. These measured file durations may be used where appropriate because they are evidence-backed rather than guessed.
+
+Use correct ISO 8601 duration formatting if duration is added.
+
+Retain truthful:
+- name
+- description
+- contentUrl
+- encodingFormat
+- measured duration
+- page/media relationship
+
+where supported.
+
+Do not infer authorship, production ownership or publisher information from Guy Harris simply being the voice performer.
+
+IMPORTANT OWNER CONFIRMATION:
+
+Santa-voice-Guy-Demo-2.mp3 is:
+
+"SANTA COMMERCIAL REEL"
+
+That is the correct identity of Demo 2.
+
+Please make its descriptions consistent wherever that same MP3 appears.
+
+Do not describe Demo 2 as BBC Radio 2 Naughty and Nice material.
+
+Do not otherwise rewrite the demo copy unnecessarily.
+
+--------------------------------------------------
+4. TRACKER PREVIEW INDEXING
+--------------------------------------------------
+
+The production Santa Tracker itself is NOT being changed in this pass.
+
+For:
+
+/santa-tracker/preview
+
+add an appropriate route-specific noindex directive so this testing/preview version is not intended for Google indexing.
+
+Do not block the main:
+
+/santa-tracker
+
+page.
+
+Do not accidentally apply noindex site-wide or to the production tracker.
+
+If the preview route is intended to remain publicly accessible for testing, it may remain accessible; this task is about preventing indexing.
+
+--------------------------------------------------
+5. SANTA APPS STRUCTURED DATA
+--------------------------------------------------
+
+The /santa-apps page contains six different apps but currently represents the collection as one SoftwareApplication named "Santa Apps".
+
+Correct this inaccurate representation.
+
+Do not invent six detailed SoftwareApplication entities unless the page/code contains sufficient verified facts about each individual application.
+
+If sufficient verified app-level metadata does not exist, prefer removing the inaccurate single SoftwareApplication representation and retaining accurate page-level/Breadcrumb structured data.
+
+Do not invent:
+- app ratings
+- review counts
+- prices
+- operating systems
+- developers
+- download statistics
+- application categories
+
+unless genuinely evidenced.
+
+--------------------------------------------------
+6. LEGACY REDIRECT
+--------------------------------------------------
+
+Correct:
+
+/hello-world/santa-voice-demo
+
+so that it redirects to:
+
+/santa-voice-demo
+
+rather than the homepage.
+
+Preserve any other legitimate redirects.
+
+Do not perform a wholesale redirect restructure.
+
+--------------------------------------------------
+7. SITEMAP LASTMOD
+--------------------------------------------------
+
+The audit found that sitemap entries use new Date(), causing every URL to appear freshly modified.
+
+Plan a correction so lastmod represents a genuine significant page modification date where reliable data exists.
+
+Where no reliable modification date exists, omit lastmod rather than inventing one.
+
+Do not use:
+- current build time
+- deployment time
+- request time
+
+as a substitute for genuine page modification.
+
+Do not alter sitemap URLs, canonical URLs or indexing architecture unnecessarily.
+
+--------------------------------------------------
+8. ENTITY IDENTITY CLEAN-UP
+--------------------------------------------------
+
+Plan a conservative improvement to the existing schema entity graph.
+
+The site currently repeats Guy Harris Person, SantaGuy ProfessionalService and WebSite entities without stable @id values.
+
+Where appropriate, establish stable canonical identifiers for the EXISTING entities and reference them consistently.
+
+The objective is clarity, not schema volume.
+
+Do not create new fictional/additional organisations, businesses, people or places.
+
+Do not invent LocalBusiness properties such as:
+- street address
+- opening hours
+- telephone
+- geo coordinates
+
+unless already genuinely supplied and appropriate.
+
+Be especially careful with sameAs.
+
+SantaGuy, Guy Harris and VoiceoverGuy are related, but do not blindly assert that separate brands/websites are the same entity simply because Guy operates them.
+
+Explain the proposed entity graph before implementing it.
+
+--------------------------------------------------
+9. FAQPAGE
+--------------------------------------------------
+
+Do not expand FAQPage markup.
+
+Google has retired FAQ rich results.
+
+Visible useful FAQs should remain.
+
+Removal of obsolete FAQPage JSON-LD is OPTIONAL in this pass.
+
+Tell me whether you recommend simply leaving the harmless existing markup alone or removing it as cleanup, and why.
+
+Do not remove visible FAQ content.
+
+--------------------------------------------------
+10. DO NOT TOUCH THESE ITEMS IN PASS 1
+--------------------------------------------------
+
+Do NOT:
+
+- rewrite "The UK's Official Voice of Santa"
+- rewrite "most established Santa voice artist"
+- rewrite "The World's Biggest Christmas Radio Station"
+- rewrite general branding or promotional copy
+- redesign pages
+- change navigation
+- create new landing pages
+- create new watch pages
+- change the click-to-load video architecture
+- alter the main Santa Tracker
+- add generic SEO copy
+- add AI-specific schema
+- add speculative llms.txt optimisation
+- change unrelated analytics/canonicals/metadata
+- change unrelated performance code
+- publish/deploy/sync/commit
+
+The owner is aware of the audit comments regarding strong promotional claims and has chosen not to change those phrases in this pass.
+
+--------------------------------------------------
+11. PLAN OUTPUT REQUIRED
+--------------------------------------------------
+
+Before changing any code, show me:
+
+1. Exact files you propose changing.
+2. Exact issue each change fixes.
+3. Which existing visible elements will remain untouched.
+4. The five-video evidence inventory, including genuine uploadDate where established.
+5. Proposed review API/fallback behaviour so the visible genuine Google review count can update automatically as new reviews arrive.
+6. Proposed AudioObject corrections.
+7. Proposed entity @id structure.
+8. Any item you cannot verify and therefore propose leaving out.
+9. Any risk or uncertainty.
+10. Validation you will perform after implementation.
+
+Validation should eventually include:
+
+- rendered JSON-LD inspection
+- no invented VideoObject dates
+- no invented AudioObject dates
+- no unsupported testimonial star ratings
+- no self-serving AggregateRating business markup
+- visible testimonials preserved
+- Google reviews display/link preserved
+- live review count architecture verified
+- /santa-tracker remains indexable
+- /santa-tracker/preview is noindex
+- /hello-world/santa-voice-demo redirects correctly
+- sitemap output checked
+- representative Google Rich Results Test checks after production deployment
+
+STOP AFTER THE PLAN.
+
+Do not implement, build, publish, sync or commit until I explicitly approve the plan.
