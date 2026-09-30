@@ -22,7 +22,8 @@ export default function SantaTimeline({ effectiveTime }: SantaTimelineProps) {
       const elRect = el.getBoundingClientRect();
       const scrollLeft =
         elRect.left - containerRect.left + container.scrollLeft - containerRect.width / 2 + elRect.width / 2;
-      container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      container.scrollTo({ left: scrollLeft, behavior: reducedMotion ? "instant" : "smooth" });
     }
   }, [currentId]);
 
@@ -68,11 +69,13 @@ export default function SantaTimeline({ effectiveTime }: SantaTimelineProps) {
                     UTC{stop.utcOffset >= 0 ? "+" : ""}{stop.utcOffset}
                   </p>
                 </div>
-                {isCurrent && (
-                  <span className="flex-shrink-0 text-[10px] bg-santa-red/20 text-santa-red-light border border-santa-red/30 rounded-full px-2 py-0.5 uppercase tracking-wider font-medium">
-                    Now
-                  </span>
-                )}
+                <span className={`flex-shrink-0 text-[10px] rounded-full px-2 py-0.5 uppercase tracking-wider font-medium ${
+                  isCurrent
+                    ? "bg-santa-red/20 text-santa-red-light border border-santa-red/30"
+                    : "text-gray-400"
+                }`}>
+                  {isCurrent ? "Now" : isVisited ? "Visited" : "Upcoming"}
+                </span>
               </div>
             </div>
           );
@@ -81,6 +84,8 @@ export default function SantaTimeline({ effectiveTime }: SantaTimelineProps) {
 
       <div
         ref={scrollRef}
+        tabIndex={0}
+        aria-label="Santa's estimated journey timeline; scroll horizontally to see all stops"
         className="hidden sm:block overflow-x-auto pb-4 scrollbar-thin"
         style={{ scrollbarColor: "rgba(156,6,11,0.3) transparent" }}
       >
@@ -122,11 +127,13 @@ export default function SantaTimeline({ effectiveTime }: SantaTimelineProps) {
                     <p className="text-[9px] text-gray-600 mt-0.5">
                       UTC{stop.utcOffset >= 0 ? "+" : ""}{stop.utcOffset}
                     </p>
-                    {isCurrent && (
-                      <span className="inline-block mt-1 text-[9px] bg-santa-red/20 text-santa-red-light border border-santa-red/30 rounded-full px-1.5 py-0.5 uppercase tracking-wider font-medium">
-                        Now
-                      </span>
-                    )}
+                    <span className={`inline-block mt-1 text-[9px] rounded-full px-1.5 py-0.5 uppercase tracking-wider font-medium ${
+                      isCurrent
+                        ? "bg-santa-red/20 text-santa-red-light border border-santa-red/30"
+                        : "text-gray-400"
+                    }`}>
+                      {isCurrent ? "Now" : isVisited ? "Visited" : "Upcoming"}
+                    </span>
                   </div>
                 </div>
               );

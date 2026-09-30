@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useId } from "react";
 import { Play, Pause, SkipForward, RotateCcw, Eye, EyeOff } from "lucide-react";
 import {
   type PreviewState,
@@ -25,6 +25,7 @@ export default function SantaPreviewPanel({
   effectiveTime,
 }: SantaPreviewPanelProps) {
   const [expanded, setExpanded] = useState(true);
+  const controlsId = useId();
 
   const handleToggle = useCallback(() => {
     if (previewState.enabled) {
@@ -86,6 +87,8 @@ export default function SantaPreviewPanel({
       <div className="rounded-2xl border border-white/15 bg-[#0a1628]/95 backdrop-blur-lg shadow-2xl overflow-hidden">
         <button
           onClick={() => setExpanded(!expanded)}
+          aria-expanded={expanded}
+          aria-controls={controlsId}
           className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-white/5 transition-colors"
         >
           <div className="flex items-center gap-2">
@@ -98,15 +101,17 @@ export default function SantaPreviewPanel({
               Preview Controls
             </span>
           </div>
-          <span className="text-gray-500 text-xs">{expanded ? "▼" : "▲"}</span>
+          <span aria-hidden="true" className="text-gray-500 text-xs">{expanded ? "▼" : "▲"}</span>
         </button>
 
-        {expanded && (
-          <div className="px-4 pb-4 space-y-3 border-t border-white/10">
+        <div id={controlsId} hidden={!expanded} role="region" aria-label="Preview controls" className="px-4 pb-4 space-y-3 border-t border-white/10">
             <div className="flex items-center justify-between pt-3">
               <span className="text-xs text-gray-400">Preview Mode</span>
               <button
                 onClick={handleToggle}
+                role="switch"
+                aria-label="Preview mode"
+                aria-checked={previewState.enabled}
                 className={`relative w-10 h-5 rounded-full transition-colors ${
                   previewState.enabled ? "bg-santa-red" : "bg-gray-600"
                 }`}
@@ -132,11 +137,12 @@ export default function SantaPreviewPanel({
                   <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-1.5">
                     Speed
                   </p>
-                  <div className="flex gap-1.5">
+                  <div role="group" aria-label="Preview speed" className="flex gap-1.5">
                     {speeds.map((s) => (
                       <button
                         key={s}
                         onClick={() => handleSpeedChange(s)}
+                        aria-pressed={previewState.speedMultiplier === s}
                         className={`flex-1 text-xs py-1.5 rounded-lg border transition-colors ${
                           previewState.speedMultiplier === s
                             ? "border-santa-red bg-santa-red/20 text-white"
@@ -194,8 +200,7 @@ export default function SantaPreviewPanel({
                 </button>
               </>
             )}
-          </div>
-        )}
+        </div>
       </div>
     </div>
   );

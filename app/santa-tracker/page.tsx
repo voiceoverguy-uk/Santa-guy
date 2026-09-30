@@ -13,7 +13,7 @@ export function generateMetadata(): Metadata {
     : "Santa Tracker | Track Santa's Journey Around the World";
   const description = inJuly
     ? "It's Christmas in July! See what Santa's up to mid-year — festive fun, holiday postcards, and countdown to the big night. Track Santa at SantaGuy.co.uk."
-    : "Track Santa's magical Christmas Eve journey around the world. Live route updates, countdown, festive facts, and family fun — powered by SantaGuy.co.uk.";
+    : "Follow Santa's estimated Christmas Eve journey around the world, with a countdown, updating world map, festive facts and family fun from SantaGuy.";
 
   return {
     title: { absolute: title },
@@ -49,14 +49,14 @@ export function generateMetadata(): Metadata {
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
+  "@id": "https://www.santaguy.co.uk/santa-tracker#webpage",
+  inLanguage: "en-GB",
   name: "Santa Tracker | Track Santa's Journey Around the World",
   description:
-    "Track Santa's magical Christmas Eve journey around the world with live updates, countdowns, route progress, festive facts, and family fun.",
+    "Follow Santa's estimated Christmas Eve journey around the world, with a countdown, updating world map, festive facts and family fun from SantaGuy.",
   url: "https://www.santaguy.co.uk/santa-tracker",
   isPartOf: {
-    "@type": "WebSite",
-    name: "SantaGuy",
-    url: "https://www.santaguy.co.uk",
+    "@id": "https://www.santaguy.co.uk/#website",
   },
 };
 
@@ -84,7 +84,22 @@ export default function SantaTrackerPage() {
     <>
       <StructuredData data={webPageSchema} />
       <StructuredData data={breadcrumbSchema} />
-      <SantaTrackerClient />
+      <SantaTrackerClient
+        introduction={
+          <>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+              Track Santa&apos;s Journey
+              <br />
+              <span className="text-santa-red">Around the World</span>
+            </h1>
+            <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+              Follow Santa&apos;s estimated Christmas Eve journey around the world.
+              Count down to his departure, follow his progress on the world map,
+              and explore the estimated schedule for the big night.
+            </p>
+          </>
+        }
+      />
     </>
   );
 }

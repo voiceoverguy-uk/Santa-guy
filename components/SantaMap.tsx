@@ -1,5 +1,6 @@
 "use client";
 
+import { useId } from "react";
 import { santaStops } from "@/data/santaRouteStops";
 import { getVisitedStops, getCurrentStopId, type MapPosition } from "@/lib/santaRoute";
 import { worldMapPaths } from "@/data/worldMapPaths";
@@ -11,8 +12,11 @@ interface SantaMapProps {
 }
 
 export default function SantaMap({ effectiveTime, mapPosition, onHoliday }: SantaMapProps) {
+  const titleId = useId();
+  const descriptionId = useId();
   const visited = getVisitedStops(effectiveTime);
   const currentId = getCurrentStopId(effectiveTime);
+  const currentStop = santaStops.find((stop) => stop.id === currentId);
 
   const visitedStops = santaStops.filter((s) => visited.has(s.id));
   const pathPoints = visitedStops.map((s) => ({
@@ -27,7 +31,16 @@ export default function SantaMap({ effectiveTime, mapPosition, onHoliday }: Sant
           viewBox="0 0 1000 500"
           className="absolute inset-0 w-full h-full"
           preserveAspectRatio="xMidYMid meet"
+          role="img"
+          aria-labelledby={titleId}
+          aria-describedby={descriptionId}
         >
+          <title id={titleId}>{onHoliday ? "Santa's holiday location map" : "Santa's estimated journey map"}</title>
+          <desc id={descriptionId}>
+            {onHoliday
+              ? "The Santa marker shows his current holiday location. Faint dots mark stops on the estimated Christmas Eve route."
+              : `The Santa marker shows his estimated position on the world map. Red dots mark visited stops, faint dots mark upcoming stops${currentStop ? `, and a glowing dot marks ${currentStop.displayLabel} as the current stop` : ""}.`}
+          </desc>
           <defs>
             <radialGradient id="glow" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="#9C060B" stopOpacity="0.6" />

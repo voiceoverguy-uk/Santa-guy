@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, Suspense } from "react";
+import { useState, useEffect, useCallback, Suspense, type ReactNode } from "react";
 import { getDashboardData, isHolidaySeason, isChristmasInJuly, getRandomHoliday, type HolidayDestination } from "@/lib/santaRoute";
 import { santaStops } from "@/data/santaRouteStops";
 import {
@@ -29,7 +29,24 @@ const funFacts = [
   "Greenland's Christmas delicacy is mattak, raw whale skin with blubber, along with kiviak, a fermented bird dish.",
 ];
 
-function SantaTrackerInner({ showPreview = false }: { showPreview?: boolean }) {
+interface SantaTrackerProps {
+  showPreview?: boolean;
+  introduction?: ReactNode;
+}
+
+function TrackerHero({ children }: { children: ReactNode }) {
+  return (
+    <section className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-20">
+      <div className="absolute inset-0 star-field" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a1628]/50 to-[#0a1628]" />
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
+        {children}
+      </div>
+    </section>
+  );
+}
+
+function SantaTrackerInner({ showPreview = false, introduction }: SantaTrackerProps) {
 
   const [previewState, setPreviewState] = useState<PreviewState>(getDefaultPreviewState);
   const [effectiveTime, setEffectiveTime] = useState<Date | null>(null);
@@ -68,7 +85,7 @@ function SantaTrackerInner({ showPreview = false }: { showPreview?: boolean }) {
   }, []);
 
   if (!mounted || !effectiveTime) {
-    return <TrackerSkeleton />;
+    return <TrackerSkeleton introduction={introduction} />;
   }
 
   const data = getDashboardData(effectiveTime);
@@ -127,11 +144,7 @@ function SantaTrackerInner({ showPreview = false }: { showPreview?: boolean }) {
         </div>
       )}
 
-      <section className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-20">
-        <div className="absolute inset-0 star-field" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a1628]/50 to-[#0a1628]" />
-
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <TrackerHero>
           <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6">
             <span className={`w-2 h-2 rounded-full ${statusColor} animate-pulse`} />
             <span className="text-xs font-medium text-gray-300 uppercase tracking-wider">
@@ -139,13 +152,13 @@ function SantaTrackerInner({ showPreview = false }: { showPreview?: boolean }) {
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          {introduction ?? <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Track Santa&apos;s Journey
             <br />
             <span className="text-santa-red">Around the World</span>
-          </h1>
+          </h1>}
 
-          <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          {(!introduction || isLive || isComplete || (onHoliday && holiday)) && <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             {isLive || isComplete
               ? data.statusSubtext
               : onHoliday && inJuly && holiday
@@ -153,7 +166,7 @@ function SantaTrackerInner({ showPreview = false }: { showPreview?: boolean }) {
               : onHoliday && holiday
               ? `Santa's taking a well-earned break! He's currently ${holiday.activity.charAt(0).toLowerCase()}${holiday.activity.slice(1)}. He'll be back at the North Pole in October.`
               : "Follow Santa as Christmas Eve midnight sweeps across the globe. From the Pacific Islands to Hawaii, watch his estimated journey unfold in real time."}
-          </p>
+          </p>}
 
           {!isLive && !isComplete && (
             <div className="mt-8">
@@ -206,8 +219,7 @@ function SantaTrackerInner({ showPreview = false }: { showPreview?: boolean }) {
               </div>
             </div>
           )}
-        </div>
-      </section>
+      </TrackerHero>
 
       <section className="px-4 sm:px-6 pb-12">
         <div className="max-w-6xl mx-auto">
@@ -295,7 +307,21 @@ function SantaTrackerInner({ showPreview = false }: { showPreview?: boolean }) {
   );
 }
 
-function TrackerSkeleton() {
+function TrackerSkeleton({ introduction }: { introduction?: ReactNode }) {
+  if (introduction) {
+    return (
+      <div className="min-h-screen bg-[#0a1628] text-white">
+        <TrackerHero>
+          {/* Reserve the existing status badge's space without inventing a status. */}
+          <div aria-hidden="true" className="h-8 mb-6" />
+          {introduction}
+          <div role="status" className="mt-8 text-gray-500 text-sm">
+            Loading Santa Tracker...
+          </div>
+        </TrackerHero>
+      </div>
+    );
+  }
   return (
     <div className="min-h-screen bg-[#0a1628] flex items-center justify-center">
       <div className="text-center">
@@ -306,10 +332,10 @@ function TrackerSkeleton() {
   );
 }
 
-export default function SantaTrackerClient({ showPreview = false }: { showPreview?: boolean }) {
+export default function SantaTrackerClient({ showPreview = false, introduction }: SantaTrackerProps) {
   return (
-    <Suspense fallback={<TrackerSkeleton />}>
-      <SantaTrackerInner showPreview={showPreview} />
+    <Suspense fallback={<TrackerSkeleton introduction={introduction} />}>
+      <SantaTrackerInner showPreview={showPreview} introduction={introduction} />
     </Suspense>
   );
 }
