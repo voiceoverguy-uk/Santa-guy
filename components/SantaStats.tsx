@@ -150,7 +150,7 @@ export default function SantaStats({ effectiveTime, holiday }: SantaStatsProps) 
     {
       icon: <Globe size={18} />,
       label: "Countries Visited",
-      value: onHoliday ? (inJuly ? "Celebrating mid-year!" : "Back in October") : `${animatedVisited} / ${data.visitedCount + data.remainingCount}`,
+      value: onHoliday ? (inJuly ? "Celebrating mid-year!" : "Back on 1 November") : `${animatedVisited} / ${data.visitedCount + data.remainingCount}`,
     },
     {
       icon: <Zap size={18} />,

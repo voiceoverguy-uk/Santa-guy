@@ -12,6 +12,16 @@ const canonical = "https://www.santaguy.co.uk/santa-tracker";
 const intro = "Follow Santa's estimated Christmas Eve journey around the world. Count down to his departure, follow his progress on the world map, and explore the estimated schedule for the big night.";
 const description = "Follow Santa's estimated Christmas Eve journey around the world, with a countdown, updating world map, festive facts and family fun from SantaGuy.";
 
+test("holiday season includes October and ends at midnight UTC on 1 November", () => {
+  const { isHolidaySeason } = harness().load("lib/santaRoute.ts");
+  for (const iso of ["2026-03-01T00:00:00Z", "2026-10-01T00:00:00Z", "2026-10-31T23:59:59.999Z"]) {
+    assert.equal(isHolidaySeason(new Date(iso)), true, iso);
+  }
+  for (const iso of ["2026-02-28T23:59:59.999Z", "2026-11-01T00:00:00Z", "2026-12-24T12:00:00Z"]) {
+    assert.equal(isHolidaySeason(new Date(iso)), false, iso);
+  }
+});
+
 function harness(iso = "2026-11-15T12:00:00Z") {
   const clock = new global.Date(iso).getTime();
   class FixedDate extends global.Date {

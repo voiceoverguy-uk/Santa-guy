@@ -164,7 +164,7 @@ function SantaTrackerInner({ showPreview = false, introduction }: SantaTrackerPr
               : onHoliday && inJuly && holiday
               ? `It's Christmas in July! Santa's celebrating mid-year festivities while ${holiday.activity.charAt(0).toLowerCase()}${holiday.activity.slice(1)}. Festive fun doesn't stop just because it's summer!`
               : onHoliday && holiday
-              ? `Santa's taking a well-earned break! He's currently ${holiday.activity.charAt(0).toLowerCase()}${holiday.activity.slice(1)}. He'll be back at the North Pole in October.`
+              ? `Santa's taking a well-earned break! He's currently ${holiday.activity.charAt(0).toLowerCase()}${holiday.activity.slice(1)}. He'll be back at the North Pole on 1 November.`
               : "Follow Santa as Christmas Eve midnight sweeps across the globe. From the Pacific Islands to Hawaii, watch his estimated journey unfold in real time."}
           </p>}
 
