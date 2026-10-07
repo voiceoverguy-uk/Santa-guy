@@ -64,9 +64,9 @@ export default function NotFound() {
               </Link>
             </li>
             <li>
-              <Link href="/santa-tracker" className="hover:text-white underline underline-offset-4">
+              <a href="https://www.santaradio.co.uk/santa-tracker" className="hover:text-white underline underline-offset-4">
                 Santa Tracker
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>

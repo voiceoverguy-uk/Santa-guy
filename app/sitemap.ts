@@ -14,7 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/santa-guy-message`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/santa-voice-demo`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/santa-ringtones`, changeFrequency: "monthly", priority: 0.5 },
-    { url: `${baseUrl}/santa-tracker`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/santa-text-alerts`, changeFrequency: "monthly", priority: 0.4 },
   ];
 }

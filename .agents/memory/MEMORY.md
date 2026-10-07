@@ -2,3 +2,4 @@
 - [Google reviews links](google-reviews.md) — use the verified official reviews URI; signed-out Google desktop may suppress reviews even when mobile shows them.
 - [YouTube date evidence](youtube-date-evidence.md) — oEmbed lacks dates; matched watch-page player metadata can supply exact publication timestamps without inference.
 - [Tracker holiday season](tracker-season.md) — keep holiday fun through October, returning to the North Pole on 1 November.
+- [Tracker home](tracker-migration.md) — Santa Radio owns the tracker; SantaGuy links out and must not collect or send duplicate tracker reminders.

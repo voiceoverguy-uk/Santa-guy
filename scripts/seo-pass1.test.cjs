@@ -141,21 +141,19 @@ test("app collection is a CollectionPage with breadcrumbs, not a fictional app",
   assert.doesNotMatch(JSON.stringify(data), /SoftwareApplication|aggregateRating|operatingSystem|offers/);
 });
 
-test("noindex applies only to preview metadata", () => {
-  assert.equal(load("app/santa-tracker/preview/page.tsx").metadata.robots.index, false);
-  const main = load("app/santa-tracker/page.tsx").generateMetadata();
-  assert.notEqual(main.robots?.index, false);
-  assert.equal(main.alternates.canonical, "https://www.santaguy.co.uk/santa-tracker");
+test("retired tracker pages are removed without noindexing the site", () => {
+  assert.equal(fs.existsSync("app/santa-tracker/page.tsx"), false);
+  assert.equal(fs.existsSync("app/santa-tracker/preview/page.tsx"), false);
   assert.doesNotMatch(fs.readFileSync("app/layout.tsx", "utf8"), /noindex|index:\s*false/);
 });
 
-test("sitemap keeps exactly the twelve canonical routes and omits unverified lastmod", () => {
+test("sitemap keeps eleven canonical routes, excluding the retired tracker", () => {
   const entries = load("app/sitemap.ts").default();
   const paths = entries.map(item => new URL(item.url).pathname).sort();
   assert.equal(JSON.stringify(paths), JSON.stringify([
     "/", "/guy-harris-santa-voice", "/hire-santa-voice", "/santa-voice",
     "/santa-apps", "/santa-radio", "/contact-santa-guy", "/santa-guy-message",
-    "/santa-voice-demo", "/santa-ringtones", "/santa-tracker", "/santa-text-alerts",
+    "/santa-voice-demo", "/santa-ringtones", "/santa-text-alerts",
   ].sort()));
   for (const entry of entries) assert.equal(entry.lastModified, undefined);
 });

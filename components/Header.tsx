@@ -11,7 +11,7 @@ const navItems = [
   { label: "Hire Santa", href: "/hire-santa-voice" },
   { label: "Santa Apps", href: "/santa-apps" },
   { label: "Santa Radio", href: "/santa-radio" },
-  { label: "Santa Tracker", href: "/santa-tracker" },
+  { label: "Santa Tracker", href: "https://www.santaradio.co.uk/santa-tracker" },
 ];
 
 export default function Header() {
@@ -47,8 +47,10 @@ export default function Header() {
           </Link>
 
           <nav className="hidden lg:flex items-center ml-6 xl:ml-8">
-            {navItems.map((item) => (
-              <Link
+            {navItems.map((item) => {
+              const NavLink = item.href.startsWith("https://") ? "a" : Link;
+              return (
+              <NavLink
                 key={item.href}
                 href={item.href}
                 className={`relative px-2.5 xl:px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-santa-red after:rounded-full after:transition-all after:duration-300 hover:after:w-full ${
@@ -58,8 +60,8 @@ export default function Header() {
                 }`}
               >
                 {item.label}
-              </Link>
-            ))}
+              </NavLink>
+            ); })}
             <Link
               href="/contact-santa-guy"
               className="ml-1.5 xl:ml-2 px-4 py-2 bg-santa-red text-white text-sm font-semibold rounded-lg hover:bg-santa-red-dark transition-colors shadow-sm whitespace-nowrap"
@@ -84,16 +86,18 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
           <nav className="max-w-7xl mx-auto px-4 py-4 space-y-1">
-            {navItems.map((item) => (
-              <Link
+            {navItems.map((item) => {
+              const NavLink = item.href.startsWith("https://") ? "a" : Link;
+              return (
+              <NavLink
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
                 className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-santa-red hover:bg-santa-cream rounded-lg transition-all"
               >
                 {item.label}
-              </Link>
-            ))}
+              </NavLink>
+            ); })}
             <Link
               href="/contact-santa-guy"
               onClick={() => setMobileOpen(false)}

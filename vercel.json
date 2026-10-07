@@ -1,9 +1,3 @@
 {
-  "framework": "nextjs",
-  "crons": [
-    {
-      "path": "/api/cron/christmas-eve",
-      "schedule": "0 6 24 12 *"
-    }
-  ]
+  "framework": "nextjs"
 }

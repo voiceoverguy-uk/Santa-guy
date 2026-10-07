@@ -43,6 +43,11 @@ export default function Footer() {
               More
             </h3>
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
+              <li>
+                <a href="https://www.santaradio.co.uk/santa-tracker" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Santa Tracker
+                </a>
+              </li>
               {moreLinks.map((link) => (
                 <li key={link.href}>
                   <Link
