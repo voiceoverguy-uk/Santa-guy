@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "Bc-pbR6mnnEfr3rfxIJUy"
+uri = "file://exports/santa-tracker-transfer.zip"
+type = "unspecified"
+title = "Santa Tracker transfer ZIP"
+description = "Verified tracker source, assets, styles and tests, with a transfer guide and optional email reminders. No credentials, subscriber data or duplicate radio player."
+logical_id = "1420f5d8-c5f9-4eeb-b5ca-b4a823741a62"
+content_hash = "sha256:f73ae65ff3364c5741109b0c10ab1929c3f595c8c47734cadd6e21d51d57f585"
+size = 206660
+mtime_ms = 1791375227989
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:61a46d4a-ffd0-43b4-a99c-0fbd0416ea2b/1420f5d8-c5f9-4eeb-b5ca-b4a823741a62/2b695835-30b5-4dd9-869d-69de5398cb44"
+storage_version_token = "1791375234129520"
+content_type = "application/octet-stream"
