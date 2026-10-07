@@ -13,7 +13,7 @@ const demos = [
   {
     image: "/santa-guy-voice-over-2.jpg",
     audio: "/demos/Santa-voice-Guy-Demo-2.mp3",
-    caption: "Listen to Santa Commercial Reel, performed by Guy Harris. Looking for A Father Christmas Voice? You've found him!",
+    caption: "Listen to Santa's Commercial Showreel, performed by Voice Actor Guy Harris. Looking for A Father Christmas Voice? You've found him!",
     alt: "Guy Harris — Santa Commercial Reel",
   },
   {
